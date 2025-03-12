@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+.navbar-nav .nav-link,
+.btn-outline-light,
+.dropdown-toggle {
+    font-size: 14px; /* أو أي حجم يناسبك */
+}
+
+
+footer .col-md-2, footer .col-md-4 {
+    padding: 15px; /* زيادة المسافة داخل كل عمود */
+}
+
+footer h5 {
+    margin-bottom: 12px; /* تقليل المسافة بين العنوان والقائمة */
+}
+
+footer ul {
+    padding-left: 0;
+}
+
+footer ul li {
+    margin-bottom: 5px; /* زيادة المسافة بين الروابط */
+}
+
+footer a {
+    transition: 0.3s;
+}
+
+footer a:hover {
+    color: #FFD700 !important; /* تغيير اللون عند التحويل */
+}
+
+/* استجابة للشاشات الصغيرة */
+@media (max-width: 768px) {
+    footer .row {
+        text-align: center;
+    }
+    
+    footer .col-md-4 {
+        text-align: center !important;
+    }
+}
