@@ -1,0 +1,123 @@
+body {
+  background-color: #f8f9fa;
+}
+
+.container_card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+  min-height: calc(100vh - 100px);
+}
+
+.card {
+  width: 600px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.btn {
+  display: block;
+  margin: 10px auto;
+  font-size: 14px;
+  padding: 8px 12px;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #4267b2;
+  border: none;
+}
+
+.btn-danger {
+  font-weight: bold;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.divider {
+  position: relative;
+  text-align: center;
+  font-weight: bold;
+  color: gray;
+  margin: 15px 0;
+}
+
+  .divider::before,
+  .divider::after {
+    content: "";
+    display: inline-block;
+    width: 40%;
+    height: 1px;
+    background-color: #ddd;
+    vertical-align: middle;
+    margin: 0 10px;
+  }
+
+  .divider span {
+    display: inline-block;
+    background-color: #fff;
+    padding: 5px 15px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+  }
+
+.col-form-label {
+  font-weight: bold;
+}
+
+.d-flex input {
+  margin-left: 10px;
+}
+
+.form-check-label {
+  margin-left: 8px;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.or-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #555;
+  margin: 0 10px;
+}
+
+.signup-link {
+  color: blue;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 3px;
+  padding-left: 15px;
+}
+
+  .signup-link::after {
+    content: "";
+    position: absolute;
+    left: 10px;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: red;
+  }
+
+.text-danger {
+  font-size: 13px;
+  margin-top: 5px;
+}
