@@ -1,46 +1,56 @@
-<div class="container container_card d-flex justify-content-center align-items-center ">
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
   <div class="card shadow-sm" style="width: 350px;">
-    <!-- Header with Blue Background -->
+    <!-- Header -->
     <div class="card-header bg-primary text-white text-center py-2">
       <h5 class="mb-0">Login</h5>
     </div>
 
     <div class="card-body">
       <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" novalidate>
-        <!-- Email / Mobile -->
+
+        <!-- Email / Mobile Input -->
         <div class="mb-3">
           <label for="email" class="form-label">Mobile or Email *</label>
           <input type="text" id="email" class="form-control"
                  [(ngModel)]="user.email" name="email" required
-                 pattern="^([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}|[0-9]{10,15})$"
+                 pattern="^([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}|01[0-2,5]{1}[0-9]{8})$"
                  #emailInput="ngModel"
                  [class.is-invalid]="emailInput.invalid && emailInput.touched"
                  [class.is-valid]="emailInput.valid && emailInput.touched">
-          <div class="invalid-feedback">Please enter vaild email.</div>
+          <div class="invalid-feedback">
+            Please enter a valid email or mobile number &  Only English characters are allowed.
+            .
+          </div>
         </div>
 
-        <!-- Password -->
+
         <div class="mb-3">
           <label for="password" class="form-label">Password *</label>
           <input type="password" id="password" class="form-control"
-                 [(ngModel)]="user.password" name="password" required minlength="6"
+                 [(ngModel)]="user.password" name="password" required
+                 pattern="^(?=.*[a-z])(?=.*[A-Z]).{6,}$"
                  #passwordInput="ngModel"
                  [class.is-invalid]="passwordInput.invalid && passwordInput.touched"
                  [class.is-valid]="passwordInput.valid && passwordInput.touched">
-          <div class="invalid-feedback">Password must be at least 6 characters.</div>
-        </div>
-
-        <!-- Login Button -->
-        <button type="submit" class="btn btn-danger w-100 mb-3">LOGIN</button>
-
-        <!-- Remember Me & Forgot Password -->
-        <div class="d-flex justify-content-between align-items-center">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="remember">
-            <label class="form-check-label" for="remember">Remember me</label>
+          <div class="invalid-feedback">
+            Password must be at least 6 characters and include uppercase & lowercase letters.
           </div>
-          <a href="#" class="text-danger fw-bold">Forgot Password?</a>
         </div>
+
+
+
+
+          <!-- Login Button -->
+          <button type="submit" class="btn btn-danger w-100 mb-3">LOGIN</button>
+
+          <!-- Remember Me & Forgot Password -->
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="remember">
+              <label class="form-check-label fw-bold" for="remember">Remember me</label>
+            </div>
+            <a href="#" class="text-success fw-bold text-decoration-none">Forgot Password?</a>
+          </div>
       </form>
 
       <!-- OR Divider -->
@@ -50,15 +60,15 @@
         <hr class="flex-grow-1">
       </div>
 
-
       <!-- Facebook Login Button -->
-      <a href="https://www.facebook.com/login.php" class="btn btn-primary w-30 text-white d-flex align-items-center justify-content-center">
+      <a href="https://www.facebook.com/login.php" class="btn btn-primary w-100 text-white d-flex align-items-center justify-content-center">
         <i class="fab fa-facebook me-2"></i> Connect With Facebook
       </a>
 
       <!-- Sign Up Link -->
       <p class="text-center mt-2">
-        New User? <a href="/signup" class="signup-link fw-bold">Sign Up</a>
+        New User? <a href="/signup" class="signup-link fw-bold text-primary">Sign Up</a>
+      </p>
     </div>
   </div>
 </div>
