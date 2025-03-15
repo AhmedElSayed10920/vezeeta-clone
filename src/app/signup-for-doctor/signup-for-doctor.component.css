@@ -1,0 +1,25 @@
+.profile-upload {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.profile-preview {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 2px solid #007bff;
+}
+
+.profile-placeholder {
+  width: 100px;
+  height: 100px;
+  background-color: #f8f9fa;
+  border: 2px dashed #007bff;
+}
+
+.invalid-feedback {
+  font-size: 0.875rem;
+  color: #dc3545;
+}
