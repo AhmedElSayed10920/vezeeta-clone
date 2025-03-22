@@ -4,6 +4,7 @@ import { AppComponent } from './app/app.component';
 import { provideRouter } from '@angular/router';
 import { provideHttpClient } from '@angular/common/http';
 import { routes } from './app/app.routes';
+import { LoginComponent } from './app/login/login.component';
 
 bootstrapApplication(AppComponent, {
   ...appConfig, // ✅ الاحتفاظ بالإعدادات الأصلية
@@ -12,3 +13,9 @@ bootstrapApplication(AppComponent, {
     provideHttpClient(), // ✅ توفير HttpClient
   ],
 }).catch((err) => console.error(err));
+
+bootstrapApplication(AppComponent, appConfig)
+  .catch((err) => console.error(err));
+
+bootstrapApplication(LoginComponent)
+  .catch(err => console.error(err));

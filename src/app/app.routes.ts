@@ -4,9 +4,11 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginForDoctorComponent } from './login-for-doctor/login-for-doctor.component';
 import { SignupForDoctorComponent } from './signup-for-doctor/signup-for-doctor.component';
 import { ContactUSComponent } from './contact-us/contact-us.component';
+import { HomeComponent } from './home/home.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  
+  { path: '', component:HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'loginForDoctor', component: LoginForDoctorComponent },
