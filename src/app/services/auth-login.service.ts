@@ -3,14 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root' 
+  providedIn: 'root',
 })
 export class AuthLoginService {
-  private apiUrl = 'http://localhost:5267/api/Patient/login';
+  private apiUrl = 'https://localhost:7167/api/Patient/login';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   onlogin(user: any): Observable<any> {
-    return this.http.post(this.apiUrl, user); 
+    return this.http.post(this.apiUrl, user);
   }
 }

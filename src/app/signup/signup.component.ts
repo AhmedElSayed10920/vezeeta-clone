@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  styleUrls: ['./signup.component.css'],
 })
 export class SignupComponent {
   user = {
@@ -17,7 +17,7 @@ export class SignupComponent {
     gender: '',
     birthDate: '',
     password: '',
-    insurance: false
+    insurance: false,
   };
 
   formSubmitted = false;
@@ -27,6 +27,6 @@ export class SignupComponent {
     if (signupForm.invalid) {
       return;
     }
-    console.log("Form Submitted!", this.user);
+    console.log('Form Submitted!', this.user);
   }
 }
