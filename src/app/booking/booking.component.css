@@ -1,0 +1,60 @@
+
+/*Ensure the card does not come off the screen */
+.card {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15); 
+  }
+
+  /*in small screens it make content vertical not horizontal */
+  @media (max-width: 768px) {
+    .row.align-items-center {
+      flex-direction: column;
+    }
+    .booking-box {
+        position: static !important;
+        transform: none !important;
+        margin-top: 1rem;
+        padding: 0 1rem;
+      }
+    
+      .better,
+      .book {
+        text-align: center;
+        font-size: 1.2rem;
+      }
+    
+      .hero .position-absolute {
+        position: static !important;
+        padding: 1rem;
+        text-align: center;
+      }
+  
+    .row.align-items-center > .col-md-8,
+    .row.align-items-center > .col-md-4 {
+      width: 100%;
+      border: none !important;
+      margin-bottom: 1rem;
+    }
+  
+    .d-flex.mt-5 {
+      flex-direction: column;
+    }
+  
+    .d-flex.mt-5 .form-control {
+      margin-bottom: 0.5rem;
+    }
+  
+    .search-icon {
+      width: 100% !important;
+    }
+    .flex-grow-1{
+      width: 100% !important;
+    }
+  }
+
+
+
+  
+  
+  

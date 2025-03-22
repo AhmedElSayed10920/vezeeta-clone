@@ -1,0 +1,30 @@
+/* hero text */
+.better ,.book{
+    color: rgb(111, 112, 114);
+    position: relative;
+    z-index: 222;
+}
+/* overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.4); 
+    pointer-events: none; 
+    z-index: 1;
+}
+/* .hero{
+    height: 70%;
+} */
+
+@media (max-width: 768px) {
+    .hero h1.better {
+      font-size: 1.3rem;
+    }
+  
+    .hero p.book {
+      font-size: 1rem;
+    }
+  }

@@ -1,0 +1,81 @@
+
+<div
+  class="booking-box position-absolute top-50 start-50 translate-middle w-100 px-3"
+  style="z-index: 10; max-width: 1200px;"
+>
+  <div class="container">
+    <section class="container my-5">
+      <div class="row justify-content-center">
+        <div class="col-md-12">
+          <div class="card shadow-lg p-4">
+            <div class="row align-items-center">
+              <div class="col-md-8 border-end">
+                <div class="d-flex align-items-center mb-3">
+                  <i class="fas fa-calendar-alt fa-2x text-primary me-3"></i>
+                  <div>
+                    <h5 class="fw-bold">Book a doctor</h5>
+                    <p class="text-muted mb-1">Examination or procedure</p>
+                  </div>
+                </div>
+                <div class="row g-2 align-items-center">
+                  <div class="col-md-4">
+                    <select class="form-select" [(ngModel)]="selectedSpecialty">
+                      <option value="">Select a specialty</option>
+                      <option
+                        *ngFor="let specialty of specialties"
+                        [value]="specialty"
+                      >
+                        {{ specialty }}
+                      </option>
+                    </select>
+                  </div>
+                  <div class="col-md-4">
+                    <select class="form-select" [(ngModel)]="selectedCity">
+                      <option value="">Choose city</option>
+                      <option *ngFor="let city of cities" [value]="city">
+                        {{ city }}
+                      </option>
+                    </select>
+                  </div>
+                  <div class="col-md-4">
+                    <select class="form-select" [(ngModel)]="selectedGovernorate">
+                      <option value="">Choose governorate</option>
+                      <option
+                        *ngFor="let governorate of governorates"
+                        [value]="governorate"
+                      >
+                        {{ governorate }}
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 align-self-end mt-4">
+                <div class="d-flex mt-5">
+                  <div class="flex-grow-1 me-3 mt-1">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="name"
+                      [(ngModel)]="doctorName"
+                      placeholder="OR Search by name"
+                    />
+                  </div>
+                  <div
+                    data-testid="search-bar__search-button"
+                    class="search-icon btn btn-danger d-flex align-items-center justify-content-center"
+                    (click)="search()"
+                    style="height: 45px; min-width: 60px"
+                  >
+                  <i class="fas fa-search me-2"></i>
+                  <span class="fw-bold small">Search</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>  
+  </div>
+</div>
