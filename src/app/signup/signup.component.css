@@ -11,7 +11,7 @@ body {
 }
 
 .card {
-  width: 600px;
+  width: 850px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
@@ -52,24 +52,24 @@ body {
   margin: 15px 0;
 }
 
-  .divider::before,
-  .divider::after {
-    content: "";
-    display: inline-block;
-    width: 40%;
-    height: 1px;
-    background-color: #ddd;
-    vertical-align: middle;
-    margin: 0 10px;
-  }
+.divider::before,
+.divider::after {
+  content: "";
+  display: inline-block;
+  width: 40%;
+  height: 1px;
+  background-color: #ddd;
+  vertical-align: middle;
+  margin: 0 10px;
+}
 
-  .divider span {
-    display: inline-block;
-    background-color: #fff;
-    padding: 5px 15px;
-    border-radius: 50%;
-    border: 1px solid #ddd;
-  }
+.divider span {
+  display: inline-block;
+  background-color: #fff;
+  padding: 5px 15px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+}
 
 .col-form-label {
   font-weight: bold;
@@ -107,17 +107,33 @@ body {
   padding-left: 15px;
 }
 
-  .signup-link::after {
-    content: "";
-    position: absolute;
-    left: 10px;
-    bottom: 0;
-    width: 100%;
-    height: 2px;
-    background-color: red;
-  }
+.signup-link::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: red;
+}
 
 .text-danger {
   font-size: 13px;
   margin-top: 5px;
+}
+.custom-link {
+  color: blue;
+  text-decoration: none;
+  position: relative;
+  font-size: medium;
+}
+
+.custom-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background-color: red;
 }
