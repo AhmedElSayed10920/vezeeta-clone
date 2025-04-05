@@ -1,0 +1,73 @@
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.card-custom {
+  width: 95%;
+  max-width: 1100px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+h3, h4 {
+  font-weight: normal;
+}
+
+.input-group-text img {
+  margin-left: 5px;
+}
+
+.btn-danger {
+  width: 120px;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 6px;
+}
+
+.border-start {
+  border-left: 2px solid #ddd !important;
+}
+
+.form-control {
+  height: 36px;
+  font-size: 14px;
+}
+
+textarea.form-control {
+  height: 50px;
+}
+
+.contact-info {
+  padding-left: 20px;
+}
+
+  .contact-info p {
+    margin-bottom: 6px;
+    font-weight: normal;
+  }
+
+  .contact-info h4 {
+    margin-bottom: 10px;
+    font-weight: normal;
+  }
+
+.social-icons img {
+  width: 24px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+.email-link {
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s ease-in-out;
+}
+
+  .email-link:hover {
+    color: red; 
+  }
+.text-danger {
+  font-size: 0.85rem;
+}

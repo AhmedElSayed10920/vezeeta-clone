@@ -1,41 +1,81 @@
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0052AC;">
-    <div class="container">
-        <!-- الشعار -->
-        <a class="navbar-brand" href="#">
-            <img src="images/logo.png" alt="Logo" style="width: 120px; height: 40px;">
-        </a>
+<nav
+  class="navbar navbar-expand-lg navbar-dark"
+  style="background-color: #0052ac"
+>
+  <div class="container">
+    <!-- الشعار -->
+    <a class="navbar-brand" href="#">
+      <img
+        src="images/logo.png"
+        alt="Logo"
+        style="width: 120px; height: 40px"
+      />
+    </a>
 
-        <!-- زر القائمة للهاتف -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <!-- زر القائمة للهاتف -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <!-- القائمة -->
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav d-flex align-items-center text-light">
-                <li class="nav-item">
-                    <a href="#" class="btn btn-outline-light fs-7 fw-bold" style="font-size: 12px;" routerLink="/signup">Sign Up</a>
-                </li>
-                <li class="nav-item"><a class="nav-link text-light fs-7" routerLink="/login">Login</a></li>
-                <li class="nav-item"><a class="nav-link text-light fs-7" routerLink="#">Vezeeta For Doctors</a></li>
-                <li class="nav-item"><a class="nav-link text-light fs-7" routerLink="#">Contact Us</a></li>
-                <li class="nav-item"><a class="nav-link text-light fs-7" routerLink="#">عربى</a></li>
-            </ul>
+    <!-- القائمة -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav d-flex align-items-center text-light">
+        <li class="nav-item">
+          <a
+            href="#"
+            class="btn btn-outline-light fs-7 fw-bold"
+            style="font-size: 12px"
+            routerLink="/signup"
+            >Sign Up</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light fs-7" routerLink="/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light fs-7" routerLink="/loginForDoctor"
+            >Vezeeta For Doctors</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light fs-7" routerLink="/contactUS"
+            >Contact Us</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light fs-7" routerLink="#">عربى</a>
+        </li>
+      </ul>
 
-            <!-- لغة البلد -->
-            <div class="d-flex align-items-center ms-3">
-                <div class="dropdown">
-                    <button class="btn text-light dropdown-toggle fs-7" type="button" data-bs-toggle="dropdown"
-                        style="background-color:#0052AC;">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg" width="20"> Egypt
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Egypt</a></li>
-                        <li><a class="dropdown-item" href="#">السعودية</a></li>
-                    </ul>
-                </div>
-            </div>
+      <!-- لغة البلد -->
+      <div class="d-flex align-items-center ms-3">
+        <div class="dropdown">
+          <button
+            class="btn text-light dropdown-toggle fs-7"
+            type="button"
+            data-bs-toggle="dropdown"
+            style="background-color: #0052ac"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg"
+              width="20"
+            />
+            Egypt
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Egypt</a></li>
+            <li><a class="dropdown-item" href="#">السعودية</a></li>
+          </ul>
         </div>
+      </div>
     </div>
+  </div>
 </nav>

@@ -2,114 +2,191 @@
   <div class="card">
     <h2 class="card-header text-center bg-primary text-white">Sign Up</h2>
     <div class="card-body">
-      <a href="https://www.facebook.com/login.php" class="btn btn-primary w-30 text-white d-flex align-items-center justify-content-center">
+      <a
+        href="https://www.facebook.com/login.php"
+        class="btn btn-primary w-30 text-white d-flex align-items-center justify-content-center"
+      >
         <i class="fab fa-facebook me-2"></i> Connect With Facebook
       </a>
       <div class="d-flex align-items-center my-3">
-        <hr class="flex-grow-1">
+        <hr class="flex-grow-1" />
         <span class="or-circle">OR</span>
-        <hr class="flex-grow-1">
+        <hr class="flex-grow-1" />
       </div>
 
-      <form #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm)" novalidate>
-
+      <form #signupForm="ngForm" (ngSubmit)="register()" novalidate>
         <!-- Name Field -->
         <div class="mb-3 row">
-          <label class="col-md-4 col-form-label">Your Name <span class="text-danger">*</span></label>
+          <label class="col-md-4 col-form-label"
+            >Your Name <span class="text-danger">*</span></label
+          >
           <div class="col-md-8">
-            <input type="text" class="form-control" placeholder="First name and Last name"
-                   [(ngModel)]="user.name" name="name" #name="ngModel" required
-                   pattern="^[A-Za-z\s]+$"
-                   [ngClass]="{'is-invalid': name.invalid && name.touched}">
-            <div class="invalid-feedback" *ngIf="name.invalid && name.touched">
-              Name must contain only letters and spaces.
+            <input
+              type="text"
+              class="form-control"
+              placeholder="First name and Last name"
+              [(ngModel)]="user.name"
+              name="name"
+              #name="ngModel"
+              required
+              pattern="^[A-Za-z\s]{3,}$"
+            />
+            <div
+              class="invalid-feedback d-block ms-4"
+              *ngIf="name.invalid && (name.touched || signupForm.submitted)"
+            >
+              Name must be at least 3 characters long and contain only English
+              letters and spaces.
             </div>
           </div>
         </div>
 
         <!-- Mobile Number Field -->
         <div class="mb-3 row">
-          <label class="col-md-4 col-form-label">Mobile Number <span class="text-danger">*</span></label>
+          <label class="col-md-4 col-form-label"
+            >Mobile Number <span class="text-danger">*</span></label
+          >
           <div class="col-md-8">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Mobile Number"
-                     [(ngModel)]="user.mobile" name="mobile" #mobile="ngModel" required
-                     pattern="^01[0-2,5]\d{8}$"
-                     [ngClass]="{'is-invalid': mobile.invalid && mobile.touched}">
-              <span class="input-group-text"><img src="https://flagcdn.com/w40/eg.png" width="25"></span>
-              <div class="invalid-feedback" *ngIf="mobile.invalid && mobile.touched">
-                Enter a valid Egyptian mobile number (11 digits).
-              </div>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Mobile Number"
+              [(ngModel)]="user.phone"
+              name="mobile"
+              #mobile="ngModel"
+              required
+              pattern="^01[0-2,5]\d{8}$"
+            />
+            <div
+              class="invalid-feedback d-block ms-4"
+              *ngIf="mobile.invalid && (mobile.touched || signupForm.submitted)"
+            >
+              Enter a valid Egyptian mobile number(010 // 011 // 012 // 015) (11
+              digits).
             </div>
           </div>
         </div>
 
-        <!-- Email Field -->
+        <!-- Email Address Field -->
         <div class="mb-3 row">
-          <label class="col-md-4 col-form-label">Email Address <span class="text-danger">*</span></label>
+          <label class="col-md-4 col-form-label"
+            >Email Address <span class="text-danger">*</span></label
+          >
           <div class="col-md-8">
-            <input type="email" class="form-control" placeholder="example@domain.com"
-                   [(ngModel)]="user.email" name="email" #email="ngModel" required
-                   pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-                   [ngClass]="{'is-invalid': email.invalid && email.touched}">
-            <div class="invalid-feedback" *ngIf="email.invalid && email.touched">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="example@domain.com"
+              [(ngModel)]="user.email"
+              name="email"
+              #email="ngModel"
+              required
+            />
+            <div
+              class="invalid-feedback d-block ms-4"
+              *ngIf="email.invalid && (email.touched || signupForm.submitted)"
+            >
               Please enter a valid email address.
             </div>
           </div>
         </div>
 
-        <!-- Gender Field -->
-        <div class="mb-3 row">
-          <label class="col-md-4 col-form-label">Gender <span class="text-danger">*</span></label>
-          <div class="col-md-8 d-flex align-items-center">
-            <input type="radio" id="female" name="gender" value="female" [(ngModel)]="user.gender" required>
-            <label for="female" class="ms-2">Female</label>
-            <input type="radio" id="male" name="gender" value="male" [(ngModel)]="user.gender" class="ms-4">
-            <label for="male" class="ms-2">Male</label>
+        <div class="mb-3 d-flex align-items-center">
+          <label class="col-sm-4 col-form-label text-start">Gender *</label>
+          <div class="d-flex">
+            <div class="form-check me-3">
+              <input
+                class="form-check-input"
+                type="radio"
+                [(ngModel)]="user.gender"
+                name="gender"
+                value="M"
+                required
+              />
+              <label class="form-check-label">Male</label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                [(ngModel)]="user.gender"
+                name="gender"
+                value="F"
+                required
+              />
+              <label class="form-check-label">Female</label>
+            </div>
           </div>
         </div>
 
         <!-- Birth Date Field -->
         <div class="mb-3 row">
-          <label class="col-md-4 col-form-label">Birth Date</label>
+          <label class="col-md-4 col-form-label"
+            >Birth Date <span class="text-danger">*</span></label
+          >
           <div class="col-md-8">
-            <input type="date" class="form-control" [(ngModel)]="user.birthDate" name="birthDate">
+            <input
+              type="date"
+              class="form-control"
+              [(ngModel)]="user.birthDate"
+              name="birthDate"
+              #birthDate="ngModel"
+              required
+            />
+            <div
+              class="invalid-feedback d-block ms-4"
+              *ngIf="
+                birthDate.invalid && (birthDate.touched || signupForm.submitted)
+              "
+            >
+              Birth date is required.
+            </div>
           </div>
         </div>
 
         <!-- Password Field -->
         <div class="mb-3 row">
-          <label class="col-md-4 col-form-label">Password <span class="text-danger">*</span></label>
+          <label class="col-md-4 col-form-label"
+            >Password <span class="text-danger">*</span></label
+          >
           <div class="col-md-8">
-            <input type="password" class="form-control" placeholder="At least 6 characters"
-                   [(ngModel)]="user.password" name="password" #password="ngModel" required
-                   pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$"
-                   [ngClass]="{'is-invalid': password.invalid && password.touched}">
-            <div class="invalid-feedback" *ngIf="password.invalid && password.touched">
-              Password must be at least 6 characters, include an uppercase letter, a lowercase letter, and a number.
+            <input
+              type="password"
+              class="form-control"
+              placeholder="At least 6 characters"
+              [(ngModel)]="user.password"
+              name="password"
+              #password="ngModel"
+              required
+              pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$"
+            />
+            <div
+              class="invalid-feedback d-block ms-4"
+              *ngIf="
+                password.invalid && (password.touched || signupForm.submitted)
+              "
+            >
+              Password must be at least 6 characters, include an uppercase &
+              lowercase letters
             </div>
           </div>
         </div>
 
-        <!-- Insurance Checkbox -->
-        <div class="mb-3 row">
-          <div class="col-md-8 offset-md-4">
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" id="insurance" [(ngModel)]="user.insurance" name="insurance">
-              <label class="form-check-label" for="insurance">Add Insurance</label>
-            </div>
-          </div>
-        </div>
+        <!-- Terms and Submit Button -->
+        <p class="text-center small">
+          By signing up you agree to our
+          <a href="https://www.vezeeta.com/en/Generic/TermsAndConditions"
+            >Terms Of Use</a
+          >
+        </p>
 
-        <p class="text-center small">By signing up you agree to our <a href="https://www.vezeeta.com/en/Generic/TermsAndConditions">Terms Of Use</a></p>
-
-        <!-- Submit Button -->
-        <button type="submit" class="btn btn-danger w-30" >JOIN NOW</button>
+        <button type="submit" class="btn btn-danger w-30">JOIN NOW</button>
       </form>
     </div>
 
     <div class="card-footer text-center">
-      Already Registered in Vezeeta? <a href="./login" class="signup-link fw-bold">Login</a>
+      Already Registered in Vezeeta?
+      <a href="./login" class="signup-link fw-bold">Login</a>
     </div>
   </div>
 </div>

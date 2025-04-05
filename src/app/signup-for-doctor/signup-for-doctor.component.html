@@ -1,0 +1,97 @@
+<div class="container d-flex justify-content-center align-items-center mb-3 mt-3">
+  <div class="card p-4 shadow-lg" style="max-width: 600px; width: 100%">
+    <h3 class="mb-3 text-center">Enter your personal info</h3>
+    <p class="text-center text-muted">
+      This is your personal account information, you will be prompted next for your clinic/hospital information.
+    </p>
+
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <!-- Profile Image Upload -->
+      <div class="d-flex justify-content-center mb-3">
+        <label for="profileImage" class="profile-upload">
+          <img *ngIf="profileImage; else defaultImage" [src]="profileImage" class="profile-preview rounded-circle">
+          <ng-template #defaultImage>
+            <div class="profile-placeholder rounded-circle d-flex align-items-center justify-content-center">
+              <i class="fas fa-camera fa-2x text-primary"></i>
+            </div>
+          </ng-template>
+          <input type="file" id="profileImage" (change)="onFileSelected($event)" hidden accept="image/*">
+        </label>
+      </div>
+
+      <!-- Name Fields -->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label class="form-label"><i class="fas fa-user"></i> First Name*</label>
+            <input type="text" class="form-control" formControlName="firstName" placeholder="First Name"
+                   [class.is-invalid]="isInvalid('firstName')">
+            <div *ngIf="isInvalid('firstName')" class="invalid-feedback">
+              First name must be at least 3 characters and contain only English letters.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label class="form-label"><i class="fas fa-user"></i> Last Name*</label>
+            <input type="text" class="form-control" formControlName="lastName" placeholder="Last Name"
+                   [class.is-invalid]="isInvalid('lastName')">
+            <div *ngIf="isInvalid('lastName')" class="invalid-feedback">
+              Last name must be at least 3 characters and contain only English letters.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label"><i class="fas fa-phone"></i> Mobile Number*</label>
+        <div class="input-group">
+          <span class="input-group-text">
+            <span class="input-group-text">
+              <i class="fas fa-flag text-danger"></i> 🇪🇬 +20
+            </span>
+
+          </span>
+          <input type="text" class="form-control" formControlName="mobileNumber" placeholder="Mobile Number"
+                 [ngClass]="{'is-invalid': isInvalid('mobileNumber')}">
+        </div>
+        <div *ngIf="isInvalid('mobileNumber')" class="invalid-feedback d-block">
+          Mobile number must be exactly 11 digits and start with 010, 011, 012, or 015.
+        </div>
+      </div>
+
+      <!-- Speciality -->
+      <div class="mb-3">
+        <label class="form-label"><i class="fas fa-user-md"></i> Speciality*</label>
+        <select class="form-select" formControlName="specialty" [class.is-invalid]="isInvalid('specialty')">
+          <option value="">Select Speciality</option>
+          <option value="cardiology">Cardiology</option>
+          <option value="neurology">Neurology</option>
+          <option value="orthopedics">Orthopedics</option>
+        </select>
+        <div *ngIf="isInvalid('specialty')" class="invalid-feedback">Please select a specialty.</div>
+      </div>
+
+      <!-- Email Address -->
+      <div class="mb-3">
+        <label class="form-label"><i class="fas fa-envelope"></i> Email Address*</label>
+        <input type="email" class="form-control" formControlName="email" placeholder="Email Address"
+               [class.is-invalid]="isInvalid('email')">
+        <div *ngIf="isInvalid('email')" class="invalid-feedback">Please enter a valid email address.</div>
+      </div>
+
+      <!-- Password -->
+      <div class="mb-3">
+        <label class="form-label"><i class="fas fa-lock"></i> Password (You can change it later)*</label>
+        <input type="password" class="form-control" formControlName="password" placeholder="Password"
+               [class.is-invalid]="isInvalid('password')">
+        <div *ngIf="isInvalid('password')" class="invalid-feedback">
+          Password must be at least 6 characters long and contain at least one uppercase letter and one lowercase letter.
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary w-100">Update Account</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="container mt-5">
+  <h2 class="mb-4 fw-bold">Featured Doctors</h2>
+
+  <!-- شريط التخصصات -->
+  <div class="specialties-container">
+    <button
+      *ngFor="let spec of specialties()"
+      (click)="filterDoctors(spec)"
+      [class.active]="selectedSpecialty() === spec"
+    >
+      {{ spec }}
+    </button>
+  </div>
+
+  <!-- منطقة عرض الأطباء بالسكرول -->
+  <div class="doctors-container">
+    <div class="doctors-wrapper">
+      <div
+        class="doctor-card"
+        *ngFor="let doctor of filteredDoctors()"
+        [routerLink]="['doctorDetails', doctor.id]"
+        style="cursor: pointer;"
+      >
+        <img src="/images/1.jpg" class="doctor-img" alt="Doctor Image" />
+        <div class="doctor-info">
+          <h5 class="doctor-name">{{ doctor.doctorName }}</h5>
+          <p class="specialty">{{ doctor.mainSpecialty }}</p>
+          <p class="location">
+            <i class="fa-solid fa-location-dot" style="color: #519ed8;"></i>
+            {{ doctor.street }}, {{ doctor.city }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- نقاط التمرير -->
+  <div class="pagination-dots">
+    <span
+      *ngFor="let dot of paginationDots()"
+      [class.active]="dot.active"
+    ></span>
+  </div>
+
+  <!-- زر Show More -->
+  <div class="text-end mt-3">
+    <button class="btn btn-primary" [routerLink]="['allDoctors']" [queryParams]="{ specialty: selectedSpecialty() }">
+      Show More
+    </button>
+  </div>
+</div>

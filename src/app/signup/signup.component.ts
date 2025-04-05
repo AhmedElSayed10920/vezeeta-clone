@@ -1,32 +1,53 @@
-import { Component } from '@angular/core';
-import { FormsModule, NgForm } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+
+import { Component } from '@angular/core';
+import { AuthRegisterService } from '../services/auth-register.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  styleUrls: ['./signup.component.css'],
 })
 export class SignupComponent {
   user = {
     name: '',
-    mobile: '',
     email: '',
-    gender: '',
+    phone: '',
+    gender: 'M', // القيمة الافتراضية
     birthDate: '',
+    location: '',
     password: '',
-    insurance: false
   };
 
-  formSubmitted = false;
+  errorMessage: string = '';
 
-  onSubmit(signupForm: NgForm) {
-    this.formSubmitted = true;
-    if (signupForm.invalid) {
-      return;
+  constructor(
+    private authService: AuthRegisterService,
+    private router: Router
+  ) {}
+
+  register() {
+    // تأكيد أن قيمة gender هي 'M' أو 'F' فقط
+    if (this.user.gender !== 'M' && this.user.gender !== 'F') {
+      this.user.gender = 'M'; // تعيين القيمة الافتراضية إذا لم تكن صحيحة
     }
-    console.log("Form Submitted!", this.user);
+
+    console.log('Sending user data:', this.user); // لتأكيد القيم المرسلة
+
+    this.authService.register(this.user).subscribe({
+      next: (response) => {
+        console.log('Registration successful:', response);
+        alert('Registration successful!');
+        this.router.navigate(['/login']);
+      },
+      error: (err) => {
+        this.errorMessage = 'Registration failed. Please try again.';
+        console.error('Registration error:', err);
+      },
+    });
   }
 }
