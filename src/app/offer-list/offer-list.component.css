@@ -1,18 +1,16 @@
 .offer-card {
-    transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
 .offer-card:hover {
-    transform: scale(1.05);
-    cursor: pointer;
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
-/* تحسين شكل الأزرار */
 button {
-    z-index: 10;
+  z-index: 10;
 }
 
-/* تحسين عرض الكروت داخل الـ Slider */
 .row {
-    transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }

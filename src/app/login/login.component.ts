@@ -9,7 +9,7 @@ import { Router, RouterModule } from '@angular/router';
   standalone: true,
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  imports: [FormsModule, CommonModule, RouterModule] 
+  imports: [FormsModule, CommonModule, RouterModule]
 })
 export class LoginComponent {
   user = { email: '', password: '' };
@@ -27,7 +27,7 @@ export class LoginComponent {
     }
 
     console.log('✅ Form is valid, sending login request...');
-    this.onlogin(); // ✅ استدعاء `onlogin()` بعد التأكد من صحة النموذج
+    this.onlogin();
   }
   onlogin() {
     console.log('🚀 Sending login request...', this.user);

@@ -4,13 +4,14 @@ import { map } from 'rxjs/operators';
 import { Doctor } from '../doctor';
 import { HttpClient } from '@angular/common/http';
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DoctorService {
-  private apiUrl = 'http://localhost:5267/api/Doctor/Doctors';
-  private doctorByIdUrl = 'http://localhost:5267/api/Doctor';
+  // private apiUrl = 'http://localhost:5267/api/Doctor/Doctors';
+  private apiUrl = 'https://localhost:7167/api/Doctor/Doctors';
+
+  private doctorByIdUrl = 'https://localhost:7167/api/Doctor';
 
   constructor(private http: HttpClient) {}
 
@@ -25,14 +26,16 @@ export class DoctorService {
   getSpecialties(): Observable<string[]> {
     return this.getDoctors().pipe(
       map((doctors: Doctor[]) => {
-        const specialties = doctors.map(doc => doc.mainSpecialty).filter(s => s);
+        const specialties = doctors
+          .map((doc) => doc.mainSpecialty)
+          .filter((s) => s);
         const uniqueSpecialties = Array.from(new Set(specialties));
         return ['All Specialties', ...uniqueSpecialties];
       })
     );
   }
 
-//////////////////// offer service /////////////
+  //////////////////// offer service /////////////
 
   // getOffers(): Observable<Offer[]> {
   //   return this.http.get<Offer[]>(this.offersUrl);

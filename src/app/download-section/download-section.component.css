@@ -1,39 +1,38 @@
 .download-section {
-    background-color: #007bff;
-    color: white;
-    padding-top: 50px;
-    padding-right: 50px;
-    border-radius: 10px;
-    margin: auto;
-    width: 75%; /* بدل 70% علشان يبقى أوسع ومناسب */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background-color: #007bff;
+  color: white;
+  padding-top: 50px;
+  padding-right: 50px;
+  border-radius: 10px;
+  margin: auto;
+  width: 75%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.text-section {
+  position: relative;
+  top: -20px;
+  right: -20px;
+}
+
+.download-buttons img {
+  height: 45px;
+  margin: 8px;
+  max-width: 160px;
+}
+
+@media (max-width: 768px) {
+  .download-section {
+    width: 90%;
+    padding: 50px;
   }
-  
   .text-section {
-    position: relative;
-    top: -20px;    /* يتحرك لفوق */
-    right: -20px;  /* يتحرك شمال */
+    top: 0;
+    right: 0;
+    text-align: center !important;
   }
-  
-  .download-buttons img {
-    height: 45px;
-    margin: 8px;
-    max-width: 160px;
+
+  .download-buttons {
+    justify-content: center !important;
   }
-  
-  /* للشاشات الصغيرة */
-  @media (max-width: 768px) {
-    .download-section{
-        width: 90%; /* بدل 70% علشان يبقى أوسع ومناسب */
-        padding: 50px;
-    }
-    .text-section {
-      top: 0;
-      right: 0;
-      text-align: center !important;
-    }
-  
-    .download-buttons {
-      justify-content: center !important;
-    }
-  }
+}

@@ -1,49 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-    font-family: "Source Code Pro", monospace;
-    font-optical-sizing: auto;
-    font-weight: 900;
-    font-style: normal;
-    direction: ltr;
-  }
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  direction: ltr;
+}
 .navbar-nav .nav-link,
 .btn-outline-light,
 .dropdown-toggle {
-    font-size: 14px; /* أو أي حجم يناسبك */
+  font-size: 14px;
 }
 
-
-footer .col-md-2, footer .col-md-4 {
-    padding: 15px; /* زيادة المسافة داخل كل عمود */
+footer .col-md-2,
+footer .col-md-4 {
+  padding: 15px;
 }
 
 footer h5 {
-    margin-bottom: 12px; /* تقليل المسافة بين العنوان والقائمة */
+  margin-bottom: 12px;
 }
 
 footer ul {
-    padding-left: 0;
+  padding-left: 0;
 }
 
 footer ul li {
-    margin-bottom: 5px; /* زيادة المسافة بين الروابط */
+  margin-bottom: 5px;
 }
 
 footer a {
-    transition: 0.3s;
+  transition: 0.3s;
 }
 
 footer a:hover {
-    color: #FFD700 !important; /* تغيير اللون عند التحويل */
+  color: #ffd700 !important;
 }
 
-/* استجابة للشاشات الصغيرة */
 @media (max-width: 768px) {
-    footer .row {
-        text-align: center;
-    }
-    
-    footer .col-md-4 {
-        text-align: center !important;
-    }
+  footer .row {
+    text-align: center;
+  }
+
+  footer .col-md-4 {
+    text-align: center !important;
+  }
 }
