@@ -19,11 +19,10 @@ import { RouterModule } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { OfferListComponent } from "./offer-list/offer-list.component";
-import { BookSpecialtiesComponent } from "./book-specialties/book-specialties.component";
+
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, RouterModule, OfferListComponent, BookSpecialtiesComponent],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, RouterModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   standalone: true,
