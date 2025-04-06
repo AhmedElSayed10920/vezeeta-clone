@@ -1,0 +1,102 @@
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.specialties-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.specialty-card {
+    position: relative;
+    width: 220px;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.specialty-card:hover {
+    transform: scale(1.05);
+}
+
+.specialty-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.specialty-name {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+
+
+.title {
+    padding: 13px 5px 11px;
+    width: calc(100% - 32px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    background-color: white;
+    margin: -4px 0px 0px;
+    color: rgb(102, 102, 102);
+    border-radius: 0px 0px 8px 8px;
+}
+
+
+
+.parent {
+    background-color: rgb(238, 240, 242);
+    padding: 35px 0px;
+    width: 100%;
+}
+
+
+.h3-title {
+
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+
+
+}
+
+
+.h2-style {
+    color: rgb(102, 102, 102);
+    margin-top: 0px;
+    font-size: 20px;
+    line-height: 28px;
+    width: 100%;
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+    margin-bottom: 16px;
+}
