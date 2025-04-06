@@ -1,4 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    direction: ltr;
+  }
 .navbar-nav .nav-link,
 .btn-outline-light,
 .dropdown-toggle {
