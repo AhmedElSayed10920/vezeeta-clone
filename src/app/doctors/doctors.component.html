@@ -2,7 +2,7 @@
 <div class="container mt-5">
   <h2 class="mb-4 fw-bold">Featured Doctors</h2>
 
-  <!-- شريط التخصصات -->
+  <!-- Specialties Filter Buttons -->
   <div class="specialties-container">
     <button
       *ngFor="let spec of specialties()"
@@ -13,7 +13,7 @@
     </button>
   </div>
 
-  <!-- منطقة عرض الأطباء بالسكرول -->
+<!-- Doctors Cards -->
   <div class="doctors-container">
     <div class="doctors-wrapper">
       <div
@@ -35,7 +35,7 @@
     </div>
   </div>
 
-  <!-- نقاط التمرير -->
+  <!-- Pagination Dots -->
   <div class="pagination-dots">
     <span
       *ngFor="let dot of paginationDots()"
@@ -43,7 +43,7 @@
     ></span>
   </div>
 
-  <!-- زر Show More -->
+  <!-- Show More Button -->
   <div class="text-end mt-3">
     <button class="btn btn-primary" [routerLink]="['allDoctors']" [queryParams]="{ specialty: selectedSpecialty() }">
       Show More

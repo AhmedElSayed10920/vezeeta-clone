@@ -1,7 +1,7 @@
 import { Component, computed, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DoctorService } from '../services/doctor.service'; // استخدام الـ DoctorService الصحيح
-import { Doctor } from '../doctor'; // افترض إن فيه interface زي الكود التاني
+import { DoctorService } from '../services/doctor.service';
+import { Doctor } from '../doctor'; 
 import { RouterModule } from '@angular/router';
 import { ImageService } from '../shared/image.service';
 
@@ -31,7 +31,7 @@ export class DoctorsComponent {
   fetchDoctors() {
     this.doctorsService.getDoctors().subscribe(data => {
       this.doctors.set(data);
-      this.filteredDoctors.set(data); 
+      this.filteredDoctors.set(data);
     });
   }
 

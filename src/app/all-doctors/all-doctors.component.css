@@ -1,5 +1,6 @@
+
 .container {
-  max-width: 800px;
+  max-width: 1000px;
 }
 
 .doctor-card {
@@ -7,81 +8,185 @@
   border: 1px solid #e0e0e0;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 15px;
+  padding: 20px;
   text-align: left;
-  max-width: 600px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
 .card-content {
   display: flex;
-  align-items: flex-start; /* جعل اللوجو والمعلومات يبدوا من نفس المستوى العلوي */
+  align-items: flex-start;
 }
 
 .logo-container {
-  margin-right: 20px; /* مسافة بين اللوجو والمعلومات */
+  margin-right: 30px;
 }
 
 .clinic-logo {
-  width: 100px; /* تكبير اللوجو */
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
 }
 
+.doctor-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  gap: 30px;
+}
+
 .doctor-info {
-  flex: 1; /* جعل المعلومات تأخذ باقي المساحة */
+  flex: 1;
+  margin-right: 30px;
 }
 
 .doctor-name {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
-  margin-bottom: 5px;
-  color: #007bff; /* نفس اللون الأزرق اللي في الصورة */
+  margin-bottom: 8px;
+  color: #007bff;
 }
 
 .main-specialty {
-  font-size: 16px;
+  font-size: 18px;
   color: #555;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 .rating {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .stars {
   color: #ffd700;
-  font-size: 16px;
-  margin-right: 5px;
+  font-size: 18px;
+  margin-right: 8px;
 }
 
 .rating-text {
-  font-size: 12px;
+  font-size: 14px;
   color: #777;
 }
 
 .sub-specialty {
-  font-size: 14px;
+  font-size: 16px;
   color: #777;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .info-item {
   display: flex;
   align-items: center;
-  margin-bottom: 8px;
-  font-size: 14px;
-}
-
-.info-item i {
-  margin-right: 10px;
+  margin-bottom: 10px;
   font-size: 16px;
 }
 
-.placeholder-section {
-  height: 50px; /* مكان فاضي للمواعيد أو حاجات إضافية */
+.info-item i {
+  margin-right: 12px;
+  font-size: 18px;
+}
+
+.appointment-reservation {
+  flex: 1;
+  max-width: 400px;
+}
+
+.appointment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.appointment-header span {
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
+  background-color: #f0f4f8;
+  padding: 8px;
+  border-radius: 5px;
+  margin: 0 8px;
+  font-size: 16px;
+}
+
+.appointment-header .more-days {
+  background-color: #e6ecef;
+  color: #888;
+}
+
+.appointment-times {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.times-column {
+  flex: 1;
+  text-align: center;
+}
+
+.times-column p {
+  color: #888;
+  font-size: 14px;
+}
+
+.book-btn {
+  display: block;
+  width: 90%;
+  margin: 8px auto;
+  padding: 8px;
+  background-color: #82B6E1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px; 
+}
+
+.book-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.book-btn:hover:not(:disabled) {
+  background-color: #e63946;
+}
+
+.book-btn i {
+  margin-right: 8px;
+}
+
+.more-btn {
+  display: block;
+  width: 90%;
+  margin: 8px auto;
+  padding: 8px;
+  background-color: transparent;
+  color: #007bff;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.more-btn:hover {
+  text-decoration: underline;
+}
+
+.nav-arrow {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #007bff;
+}
+
+.nav-arrow:disabled {
+  color: #ccc;
+  cursor: not-allowed;
 }
 
 .pagination-controls {
@@ -89,6 +194,7 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
+  margin-bottom: 40px;
 }
 
 .btn {
