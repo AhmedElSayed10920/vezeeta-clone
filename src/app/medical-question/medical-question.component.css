@@ -1,0 +1,14 @@
+.card {
+    background-color: #ffffff;
+  }
+  
+  .btn-primary {
+    background-color: #e8f0fe;
+    color: #0d6efd;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #d0e2fc;
+  }
+  

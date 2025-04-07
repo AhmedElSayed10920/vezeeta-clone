@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 import { DoctorService } from '../services/doctor.service'; // استخدام الـ DoctorService الصحيح
 import { Doctor } from '../doctor'; // افترض إن فيه interface زي الكود التاني
 import { RouterModule } from '@angular/router';
+import { ImageService } from '../shared/image.service';
 
 @Component({
   selector: 'app-doctors',
-  imports: [CommonModule,RouterModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './doctors.component.html',
   styleUrl: './doctors.component.css'
 })
@@ -22,7 +23,7 @@ export class DoctorsComponent {
     }))
   );
 
-  constructor(private doctorsService: DoctorService) {
+  constructor(private doctorsService: DoctorService, public imageService: ImageService) {
     this.fetchDoctors();
     this.fetchSpecialties();
   }
@@ -30,12 +31,11 @@ export class DoctorsComponent {
   fetchDoctors() {
     this.doctorsService.getDoctors().subscribe(data => {
       this.doctors.set(data);
-      this.filteredDoctors.set(data); // بيستخدم البيانات من API الصحيح
+      this.filteredDoctors.set(data); 
     });
   }
 
   fetchSpecialties() {
-    // هنا هعمل افتراض إن التخصصات ممكن نجيبها من الـ doctors نفسها زي الكود التاني
     this.doctorsService.getDoctors().subscribe(data => {
       const uniqueSpecialties = Array.from(new Set(data.map(doc => doc.mainSpecialty).filter(s => s)));
       this.specialties.set(['All Specialties', ...uniqueSpecialties]);

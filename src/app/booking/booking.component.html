@@ -1,7 +1,7 @@
 
 <div
-  class="booking-box position-absolute top-50 start-50 translate-middle w-100 px-3"
-  style="z-index: 10; max-width: 1200px;"
+  class="booking-box position-absolute start-50 translate-middle w-100 px-3"
+  style="z-index: 1000; max-width: 1200px;top: 520px;"
 >
   <div class="container">
     <section class="container my-5">
@@ -20,7 +20,7 @@
                 <div class="row g-2 align-items-center">
                   <div class="col-md-4">
                     <select class="form-select" [(ngModel)]="selectedSpecialty">
-                      <option value="">Select a specialty</option>
+                      <option value="">Select a Specialty</option>
                       <option
                         *ngFor="let specialty of specialties"
                         [value]="specialty"
@@ -31,7 +31,7 @@
                   </div>
                   <div class="col-md-4">
                     <select class="form-select" [(ngModel)]="selectedCity">
-                      <option value="">Choose city</option>
+                      <option value="">Choose City</option>
                       <option *ngFor="let city of cities" [value]="city">
                         {{ city }}
                       </option>
@@ -39,7 +39,7 @@
                   </div>
                   <div class="col-md-4">
                     <select class="form-select" [(ngModel)]="selectedGovernorate">
-                      <option value="">Choose governorate</option>
+                      <option value="">Choose Governorate</option>
                       <option
                         *ngFor="let governorate of governorates"
                         [value]="governorate"
@@ -58,7 +58,7 @@
                       class="form-control"
                       name="name"
                       [(ngModel)]="doctorName"
-                      placeholder="OR Search by name"
+                      placeholder="Search by Name"
                     />
                   </div>
                   <div

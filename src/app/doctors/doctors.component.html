@@ -1,3 +1,4 @@
+<div class="bg-light py-5">
 <div class="container mt-5">
   <h2 class="mb-4 fw-bold">Featured Doctors</h2>
 
@@ -21,7 +22,7 @@
         [routerLink]="['doctorDetails', doctor.id]"
         style="cursor: pointer;"
       >
-        <img src="/images/1.jpg" class="doctor-img" alt="Doctor Image" />
+        <img [src]="imageService.images[doctor.id]" class="doctor-img" alt="Doctor Image" />
         <div class="doctor-info">
           <h5 class="doctor-name">{{ doctor.doctorName }}</h5>
           <p class="specialty">{{ doctor.mainSpecialty }}</p>
@@ -48,4 +49,5 @@
       Show More
     </button>
   </div>
+</div>
 </div>
