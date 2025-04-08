@@ -17,7 +17,7 @@ export class SignupComponent {
     name: '',
     email: '',
     phone: '',
-    gender: 'M',
+    gender: 'M', // القيمة الافتراضية
     birthDate: '',
     location: '',
     password: '',
@@ -31,11 +31,12 @@ export class SignupComponent {
   ) {}
 
   register() {
+    // تأكيد أن قيمة gender هي 'M' أو 'F' فقط
     if (this.user.gender !== 'M' && this.user.gender !== 'F') {
-      this.user.gender = 'M';
+      this.user.gender = 'M'; // تعيين القيمة الافتراضية إذا لم تكن صحيحة
     }
 
-    console.log('Sending user data:', this.user);
+    console.log('Sending user data:', this.user); // لتأكيد القيم المرسلة
 
     this.authService.register(this.user).subscribe({
       next: (response) => {
