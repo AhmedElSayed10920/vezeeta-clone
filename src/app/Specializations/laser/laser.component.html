@@ -1,6 +1,24 @@
 
-
-
 <app-navbar-offers></app-navbar-offers>
 
-<p>laser works!</p>
+<section class="container my-5">
+    <h2 class="mb-4">Laser</h2>
+  
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" *ngFor="let service of services">
+        <app-service-card
+          [image]="service.image"
+          [title]="service.title"
+          [discount]="service.discount"
+          [description]="service.description"
+          [rating]="service.rating"
+          [reviewCount]="service.reviewCount"
+          [bookedCount]="service.bookedCount"
+          [originalPrice]="service.originalPrice"
+          [discountPrice]="service.discountPrice"
+          [hasOffer]="service.originalPrice > service.discountPrice"
+        >
+        </app-service-card>
+      </div>
+    </div>
+  </section>

@@ -1,21 +1,9 @@
 import { Component } from '@angular/core';
 import { ServiceCardComponent } from '../service-card/service-card.component';
 import { CommonModule } from '@angular/common';
+import { Service } from '../../models/service';
 
-interface Service {
-  title: string;
-  description: string;
-  rating: number;
-  reviewCount: number;
-  bookedCount: number;
-  originalPrice: number;
-  discountPrice: number;
-  discount: number;
-  image: string;
-  id: number;
-  hasOffer?: boolean;
-  isNew?: boolean;
-}
+
 
 @Component({
   selector: 'app-the-most-requested',
