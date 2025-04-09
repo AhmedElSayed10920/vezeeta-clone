@@ -1,0 +1,34 @@
+<!-- Appointment Reservation Component Template -->
+<div class="appointment-reservation">
+  <div class="appointment-header">
+    <button class="nav-arrow" (click)="prevDay()" [disabled]="currentDayIndex === 0">❮</button>
+    <div class="appointment-times">
+      <div class="times-column" *ngFor="let day of getDisplayedDays()">
+        <div class="day-card">
+          <div class="day-header">{{ day.displayText }}</div>
+          <div class="time-slot">
+            <p *ngIf="getAppointmentsForDay(day) === 'No Available Appointments'; else showTime">
+              No Available Appointments
+            </p>
+            <ng-template #showTime>
+              <p *ngFor="let time of getAppointmentsForDay(day).split(',')">
+                {{ time.trim() }}
+              </p>
+            </ng-template>
+          </div>
+          <button
+            class="book-btn"
+            [ngClass]="{'disabled': getAppointmentsForDay(day) === 'No Available Appointments'}"
+            (click)="bookAppointment(getAppointmentsForDay(day), day.date)"
+            [disabled]="getAppointmentsForDay(day) === 'No Available Appointments'"
+          >
+            BOOK
+          </button>
+        </div>
+      </div>
+    </div>
+    <button class="nav-arrow" (click)="nextDay()" [disabled]="currentDayIndex >= displayedDays.length - 3">❯</button>
+  </div>
+  <p class="appointment-label">Appointment reservation</p>
+</div>
+
