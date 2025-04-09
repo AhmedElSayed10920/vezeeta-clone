@@ -1,7 +1,7 @@
 import { Component, computed, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DoctorService } from '../services/doctor.service';
-import { Doctor } from '../doctor'; 
+import { Doctor } from '../doctor';
 import { RouterModule } from '@angular/router';
 import { ImageService } from '../shared/image.service';
 
@@ -51,4 +51,7 @@ export class DoctorsComponent {
     );
   }
 
+  getDoctorImage(doctorId: number): string {
+    return this.imageService.getImagePath(doctorId.toString());
+  }
 }

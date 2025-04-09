@@ -11,15 +11,15 @@ export class DoctorService {
   private apiUrl = 'http://localhost:5267/api/Doctor/Doctors';
   private doctorByIdUrl = 'http://localhost:5267/api/Doctor';
 
-  
+
   private staticAvailability = {
-    Sat: ['7:00 PM', '7:30 PM', '8:00 PM', '8:30 PM'],
-    Sun: ['4:00 PM', '4:30 PM', '5:00 PM', '5:30 PM'],
-    Mon: ['7:00 PM', '7:30 PM', '8:00 PM', '8:30 PM'],
-    Tue: ['4:00 PM', '4:30 PM', '5:00 PM', '5:30 PM'],
-    Wed: ['7:00 PM', '7:30 PM', '8:00 PM', '8:30 PM'],
-    Thu: ['4:00 PM', '4:30 PM', '5:00 PM', '5:30 PM'],
-    Fri: ['7:00 PM', '7:30 PM', '8:00 PM', '8:30 PM']
+    Sat: ['10:00 AM','11:30 PM'],
+    Sun: ['10:00 AM','11:30 PM'],
+    Mon: ['10:00 AM','11:30 PM'],
+    Tue: ['10:00 AM','11:30 PM'],
+    Wed: ['10:00 AM','11:30 PM'],
+    Thu: ['10:00 AM','11:30 PM'],
+    Fri: ['10:00 AM','11:30 PM']
   };
 
   constructor(private http: HttpClient) {}

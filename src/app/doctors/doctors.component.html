@@ -22,7 +22,7 @@
         [routerLink]="['doctorDetails', doctor.id]"
         style="cursor: pointer;"
       >
-        <img [src]="imageService.images[doctor.id]" class="doctor-img" alt="Doctor Image" />
+        <img [src]="getDoctorImage(doctor.id)" class="doctor-img" alt="Doctor Image" />
         <div class="doctor-info">
           <h5 class="doctor-name">{{ doctor.doctorName }}</h5>
           <p class="specialty">{{ doctor.mainSpecialty }}</p>

@@ -1,4 +1,4 @@
-// This file is part of the Doctor Appointment System project.
+
 import { Component, OnInit, signal } from '@angular/core';
 import { ActivatedRoute, RouterModule, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -21,11 +21,9 @@ export class AllDoctorsComponent implements OnInit {
   visibleDoctors = signal<Doctor[]>([]);
 
   bookedAppointments: { [doctorId: number]: { [day: string]: string[] } } = {};
-  displayedAppointments: { [doctorId: number]: { [key: string]: number } } = {};
-
-
-  displayedDays: { dayName: string; date: string }[] = [];
-  currentDayIndex = 0;
+  displayedDays: { dayName: string; date: string; displayText: string }[] = [];
+  // Use an object to store currentDayIndex for each doctor
+  currentDayIndices: { [doctorId: number]: number } = {};
 
   constructor(
     private doctorsService: DoctorService,
@@ -42,18 +40,27 @@ export class AllDoctorsComponent implements OnInit {
     });
   }
 
-
   generateDisplayedDays(): void {
-    const today = new Date('2025-04-07'); 
+    const today = new Date(); // Use current date
     const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     this.displayedDays = [];
 
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 15; i++) { // Generate 15 days
       const date = new Date(today);
       date.setDate(today.getDate() + i);
       const dayName = daysOfWeek[date.getDay()];
-      const formattedDate = `${dayName} ${date.getDate().toString().padStart(2, '0')}/${(date.getMonth() + 1).toString().padStart(2, '0')}`;
-      this.displayedDays.push({ dayName, date: formattedDate });
+      const formattedDate = `${date.getDate().toString().padStart(2, '0')}/${(date.getMonth() + 1).toString().padStart(2, '0')}`;
+      let displayText = '';
+
+      if (i === 0) {
+        displayText = 'Today'; // Today
+      } else if (i === 1) {
+        displayText = 'Tomorrow'; // Tomorrow
+      } else {
+        displayText = `${dayName} ${formattedDate}`; // e.g., Thu 10/04
+      }
+
+      this.displayedDays.push({ dayName, date: formattedDate, displayText });
     }
   }
 
@@ -66,10 +73,9 @@ export class AllDoctorsComponent implements OnInit {
       }
       this.totalPages.set(Math.ceil(this.doctors.length / this.itemsPerPage));
       this.doctors.forEach(doctor => {
-        this.displayedAppointments[doctor.id] = {};
         this.bookedAppointments[doctor.id] = {};
+        this.currentDayIndices[doctor.id] = 0; // Initialize currentDayIndex for each doctor
         this.displayedDays.forEach(day => {
-          this.displayedAppointments[doctor.id][day.date] = 4;
           this.bookedAppointments[doctor.id][day.date] = [];
         });
       });
@@ -102,20 +108,6 @@ export class AllDoctorsComponent implements OnInit {
     return this.imageService.getImagePath(doctorId.toString());
   }
 
-  showMoreAppointments(doctorId: number, day: string): void {
-    if (this.displayedAppointments[doctorId]) {
-      this.displayedAppointments[doctorId][day] = (this.displayedAppointments[doctorId][day] || 4) + 4;
-    }
-  }
-
-  hasMoreAppointments(doctor: Doctor, day: string): boolean {
-    const dayObj = this.displayedDays.find(d => d.date === day);
-    if (!dayObj) return false;
-    const appointments = this.getAppointmentsForDay(doctor, dayObj.dayName);
-    const displayed = this.displayedAppointments[doctor.id]?.[day] || 4;
-    return appointments && appointments.length > displayed;
-  }
-
   bookAppointment(doctorId: number, time: string, day: string): void {
     if (!this.bookedAppointments[doctorId][day]) {
       this.bookedAppointments[doctorId][day] = [];
@@ -127,28 +119,40 @@ export class AllDoctorsComponent implements OnInit {
     });
   }
 
-  isBooked(doctorId: number, time: string, day: string): boolean {
-    return this.bookedAppointments[doctorId]?.[day]?.includes(time) || false;
-  }
-
-  prevDay(): void {
-    if (this.currentDayIndex > 0) {
-      this.currentDayIndex--;
+  prevDay(doctorId: number): void {
+    if (this.currentDayIndices[doctorId] > 0) {
+      this.currentDayIndices[doctorId]--;
     }
   }
 
-  nextDay(): void {
-    if (this.currentDayIndex < this.displayedDays.length - 3) {
-      this.currentDayIndex++;
+  nextDay(doctorId: number): void {
+    if (this.currentDayIndices[doctorId] < this.displayedDays.length - 3) {
+      this.currentDayIndices[doctorId]++;
     }
   }
 
-  getDisplayedDays(): { dayName: string; date: string }[] {
-    return this.displayedDays.slice(this.currentDayIndex, this.currentDayIndex + 3);
+  getDisplayedDays(doctorId: number): { dayName: string; date: string; displayText: string }[] {
+    const index = this.currentDayIndices[doctorId] || 0;
+    return this.displayedDays.slice(index, index + 3);
   }
 
-  getAppointmentsForDay(doctor: Doctor, dayName: string): string[] {
-    if (!doctor.availability) return [];
-    return doctor.availability[dayName] || [];
+  getAppointmentsForDay(doctor: Doctor, dayName: string, date: string): string {
+    const today = new Date();
+    const todayFormatted = `${today.getDate().toString().padStart(2, '0')}/${(today.getMonth() + 1).toString().padStart(2, '0')}`;
+    const todayIndex = this.displayedDays.findIndex(day => day.date === todayFormatted);
+    const currentDayIndex = this.displayedDays.findIndex(day => day.date === date);
+
+    // Check if the day is a Friday
+    if (dayName === 'Fri') {
+      return 'No Available Appointments';
+    }
+
+    // Check if the day is within the first 7 days from today
+    if (currentDayIndex >= todayIndex && currentDayIndex < todayIndex + 7) {
+      return '10:00 AM - 11:00 PM';
+    }
+
+    // For days before today or after the first 7 days
+    return 'No Available Appointments';
   }
 }
