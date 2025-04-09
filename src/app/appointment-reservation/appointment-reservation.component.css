@@ -1,0 +1,123 @@
+/* Appointment Reservation Component Styles */
+.appointment-reservation {
+  flex: 1;
+  max-width: 350px;
+}
+
+.appointment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.appointment-times {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.times-column {
+  flex: 1;
+  text-align: center;
+}
+
+.day-card {
+  background-color: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 8px;
+  width: 100px;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.day-header {
+  background-color: #007bff;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.time-slot {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.time-slot p {
+  font-size: 12px;
+  color: #555;
+  margin: 2px 0;
+  line-height: 1.2;
+}
+
+.book-btn {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  padding: 6px;
+  background-color: #e63946;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.book-btn.disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.book-btn:hover:not(.disabled) {
+  background-color: #d62828;
+}
+
+.nav-arrow {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #007bff;
+}
+
+.nav-arrow:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.appointment-label {
+  text-align: center;
+  font-size: 12px;
+  color: #777;
+  margin-top: 10px;
+}
+
+/* تنسيقات للاستجابة (Responsive) */
+@media (max-width: 768px) {
+  .appointment-reservation {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .appointment-header {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .day-card {
+    width: 90px;
+    min-height: 160px;
+  }
+}

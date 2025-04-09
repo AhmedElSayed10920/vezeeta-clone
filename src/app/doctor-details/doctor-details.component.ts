@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { DoctorService } from '../services/doctor.service';
 import { Doctor } from '../doctor';
 import { ImageService } from '../shared/image.service';
+import { AppointmentReservationComponent } from '../appointment-reservation/appointment-reservation.component';
 
 @Component({
   selector: 'app-doctor-details',
