@@ -1,0 +1,11 @@
+
+  .filter-section .bg-light:hover {
+    background-color: #e9ecef !important;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-check-label:hover {
+    color: #007bff !important;
+    cursor: pointer;
+  }
+

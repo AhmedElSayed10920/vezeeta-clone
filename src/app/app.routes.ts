@@ -5,6 +5,8 @@ import { SignupForDoctorComponent } from './signup-for-doctor/signup-for-doctor.
 import { ContactUSComponent } from './contact-us/contact-us.component';
 import { HomeComponent } from './home/home.component';
 import { SignupComponent } from './signup/signup.component';
+import { TestComponent } from './test/test.component';
+import { SearchResultComponent } from './search-result/search-result.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -13,5 +15,9 @@ export const routes: Routes = [
   { path: 'loginForDoctor', component: LoginForDoctorComponent },
   { path: 'signupForDoctor', component: SignupForDoctorComponent },
   { path: 'contactUS', component: ContactUSComponent },
+  // { path: 'test', component: TestComponent },
+  { path: 'search', component: SearchResultComponent },
+
+
   { path: '**', redirectTo: 'login', pathMatch: 'full' },
 ];
