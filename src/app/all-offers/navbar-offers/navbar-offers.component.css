@@ -1,0 +1,31 @@
+.active-link {
+    border-bottom: 2px solid red;
+    padding-bottom: 4px;
+}
+
+.nav-link {
+    
+    font-weight: 600;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+
+.nav-link.active {
+    text-decoration: underline red;
+}
+.nav-link.active:hover {
+    text-decoration: underline blue;
+}
+
+/* Enable dropdown on hover */
+.custom-dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+  
+  .dropdown-menu {
+    transition: all 0.3s ease-in-out;
+  }

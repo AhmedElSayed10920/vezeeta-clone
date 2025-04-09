@@ -1,0 +1,293 @@
+<!-- Bootstrap 5 Navbar with Mega Menu -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm border-bottom">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown position-static">
+                    <a class="nav-link dropdown-toggle text-primary text-decoration-none" routerLink="/hair"
+                        routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }" id="megaMenu"
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        ALL OFFERS
+                    </a>
+                    <div class="dropdown-menu w-100 mt-0 border-0 shadow rounded-0" aria-labelledby="megaMenu">
+                        <div class="d-flex">
+                            <div class="bg-light p-3" style="min-width: 200px">
+                                <a class="d-block text-dark fw-bold mb-2" routerLink="/dentalCare"
+                                    routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Dental
+                                    Care</a>
+                                <a class="d-block text-muted mb-1 text-decoration-none" routerLink="/laser"
+                                    routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Laser</a>
+
+                                <a class="d-block text-muted mb-1 text-decoration-none" routerLink="/hair"
+                                    routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Hair</a>
+                                <a class="d-block text-muted mb-1 text-decoration-none" routerLink="/skin"
+                                    routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Skin</a>
+                                <a class="d-block text-muted mb-1 text-decoration-none" routerLink="/beauty"
+                                    routerLinkActive="active-link"
+                                    [routerLinkActiveOptions]="{ exact: true }">Beauty</a>
+                                <a class="d-block text-muted mb-1 text-decoration-none" routerLink="/fitness"
+                                    routerLinkActive="active-link"
+                                    [routerLinkActiveOptions]="{ exact: true }">Fitness</a>
+                                <a class="d-block text-muted mb-1 text-decoration-none" routerLink="/scans"
+                                    routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Scans</a>
+                                <a class="d-block text-muted mb-1 text-decoration-none" routerLink="/kidney"
+                                    routerLinkActive="active-link"
+                                    [routerLinkActiveOptions]="{ exact: true }">Kidney</a>
+                                <a class="d-block text-muted mb-1 text-decoration-none" routerLink="/generalSurgery"
+                                    routerLinkActive="active-link text-decoration-none"
+                                    [routerLinkActiveOptions]="{ exact: true }">General Surgery</a>
+                            </div>
+                            <div class="p-3 flex-fill">
+                                <h6 class="fw-bold mb-3">Dental Care</h6>
+                                <div class="row">
+                                    <div class="col-6 col-md-4">
+                                        <a class="d-block text-dark mb-1 text-decoration-none" routerLink="/contact"
+                                            routerLinkActive="active-link"
+                                            [routerLinkActiveOptions]="{ exact: true }">Smile Makeover</a>
+                                        <a class="d-block text-dark mb-1 text-decoration-none" routerLink="/contact"
+                                            routerLinkActive="active-link"
+                                            [routerLinkActiveOptions]="{ exact: true }">Whitening</a>
+                                        <a class="d-block text-dark mb-1 text-decoration-none" routerLink="/contact"
+                                            routerLinkActive="active-link"
+                                            [routerLinkActiveOptions]="{ exact: true }">Implant</a>
+                                        <a class="d-block text-dark mb-1 text-decoration-none" routerLink="/contact"
+                                            routerLinkActive="active-link"
+                                            [routerLinkActiveOptions]="{ exact: true }">Crowns & Bridges</a>
+                                    </div>
+                                    <div class="col-6 col-md-4">
+                                        <a class="d-block text-dark mb-1 text-decoration-none" routerLink="/contact"
+                                            routerLinkActive="active-link"
+                                            [routerLinkActiveOptions]="{ exact: true }">RadioGraphy</a>
+                                        <a class="d-block text-dark mb-1 text-decoration-none" routerLink="/contact"
+                                            routerLinkActive="active-link"
+                                            [routerLinkActiveOptions]="{ exact: true }">Children</a>
+                                        <a class="d-block text-dark mb-1 text-decoration-none" routerLink="/contact"
+                                            routerLinkActive="active-link"
+                                            [routerLinkActiveOptions]="{ exact: true }">Braces</a>
+                                        <a class="d-block text-dark mb-1 text-decoration-none" routerLink="/contact"
+                                            routerLinkActive="active-link"
+                                            [routerLinkActiveOptions]="{ exact: true }">Dental Fillings</a>
+                                    </div>
+                                    <div class="col-6 col-md-4">
+                                        <a class="d-block text-dark mb-1 text-decoration-none" routerLink="/contact"
+                                            routerLinkActive="active-link"
+                                            [routerLinkActiveOptions]="{ exact: true }">Denture</a>
+                                        <a class="d-block text-dark mb-1 text-decoration-none" routerLink="/contact"
+                                            routerLinkActive="active-link"
+                                            [routerLinkActiveOptions]="{ exact: true }">Tooth Extraction</a>
+                                        <a class="d-block text-dark mb-1 text-decoration-none" routerLink="/contact"
+                                            routerLinkActive="active-link"
+                                            [routerLinkActiveOptions]="{ exact: true }">Other Dental Offers</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown custom-dropdown">
+                    <a class="nav-link" routerLink="/dentalCare" id="productsDropdown">
+                        Dental Care
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+                        <li>
+                            <a class="dropdown-item" routerLink="/allOffers">Smile Make Over</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="/allOffers">Whitening</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="/allOffers">Implant</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="/allOffers">Clowns & Bridges
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="/allOffers">RadioGraphy</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="/allOffers">Children</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="/allOffers">Braces</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="/allOffers">Dental Fillings</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="/allOffers">Denture</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="/allOffers">Tooth Extraction</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="/allOffers">Other Dental Offers</a>
+                        </li>
+                    </ul>
+                </li>
+
+           
+
+                <li class="nav-item dropdown custom-dropdown">
+                    <a class="nav-link" routerLink="/laser" routerLinkActive="active-link" id="productsDropdown">
+                        Laser
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+                        <li>
+                            <a class="dropdown-item" routerLink="/Laser/hairRemoval">Hair Removal</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown custom-dropdown">
+                    <a class="nav-link" routerLink="/hair" routerLinkActive="active-link" id="productsDropdown">
+                        Hair
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+                        <li>
+                            <a class="dropdown-item" routerLink="/hair/hairLossTreatment">Hair loss Treatment</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="/hair/hairTransplant">Hair Transplant</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown custom-dropdown">
+                    <a class="nav-link" routerLink="/skin" routerLinkActive="active-link" id="productsDropdown">
+                        Skin
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+                        <li>
+                            <a class="dropdown-item" routerLink="/skin/mesotherapy">Mesotherapy</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="/skin/skinGlow">Skin glow</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="/skin/skinPeeling">Skin peeling</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="/skin/acneScarsTreatment">Acne scars treatment</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="/skin/tattoos">Tattoos</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="/skin/stretchMarks">Stretch marks</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="/skin/skinWhitening">Skin whitening</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="/skin/faceChain">Face & Chain</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="/skin/skinCare">Skin Care</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown custom-dropdown">
+                    <a class="nav-link" routerLink="/beauty" routerLinkActive="active-link" id="productsDropdown">
+                        Beauty
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+                        <li>
+                            <a class="dropdown-item" routerLink="/beauty/cellulite">Cellulite</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="/beauty/stretchMarks">Stretch Marks</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="/beauty/faceChain">Face & Chain</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="/beauty/breast">Breast</a>
+                        </li>
+                        <li><a class="dropdown-item" routerLink="/beauty/lips">Lips</a></li>
+                        <li>
+                            <a class="dropdown-item" routerLink="/beauty/liposuction">Liposuction</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="/beauty/bodySculpting">Body Sculpting</a>
+                        </li>
+                        <li><a class="dropdown-item" routerLink="/beauty/butt">Butt</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown custom-dropdown">
+                    <a class="nav-link" routerLink="/fitness" routerLinkActive="active-link" id="productsDropdown">
+                        Fitness
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+                        <li>
+                            <a class="dropdown-item" routerLink="/fitness/stretchMarks">Stretch Marks</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="/fitness/weightLossSurgery">Weight Loss Surgery</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="/fitness/weightLoss">Weight Loss</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="/fitness/rehabilitation">Rehabilitation</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="/fitness/liposuction">Liposuction</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="/fitness/bodySculpting">Body Sculpting</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="/fitness/nutrition">Nutrition</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown custom-dropdown">
+                    <a class="nav-link" routerLink="/scans" routerLinkActive="active-link" id="productsDropdown">
+                        Scans
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+                        <li>
+                            <a class="dropdown-item" routerLink="/scans/ctScan">CT Scans</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown custom-dropdown">
+                    <a class="nav-link" routerLink="/kidney" routerLinkActive="active-link" id="productsDropdown">
+                        Kidney
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+                        <li>
+                            <a class="dropdown-item" routerLink="/kidney/kidneyDialysis">Kidney Dialysis</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown custom-dropdown">
+                    <a class="nav-link" routerLink="/generalSurgery" routerLinkActive="active-link"
+                        id="productsDropdown">
+                        General Surgery
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+                        <li>
+                            <a class="dropdown-item" routerLink="/generalSurgery/abdomen">Abdomen</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="/generalSurgery/oncologicalSurgery">Oncological
+                                Surgery</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="/generalSurgery/Endocrine Surgery">Endocrine
+                                Surgery</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
