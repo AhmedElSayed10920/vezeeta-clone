@@ -86,7 +86,7 @@ export const routes: Routes = [
   { path: 'mesotherapy', component: MesotherapyComponent },
   { path: 'skinGlow', component: SkinGlowComponent },
   { path: 'skinPeeling', component: SkinPeelingComponent },
-  { path: 'anceScarsTreatment', component: AcneScarsTreatmentComponent },
+  { path: 'acneScarsTreatment', component: AcneScarsTreatmentComponent },
   { path: 'tattoos', component: TattoosComponent },
   { path: 'skinWhitening', component: SkinWhiteningComponent },
 
