@@ -19,6 +19,8 @@ import { KidneyComponent } from './Specializations/kidney/kidney.component';
 import { LaserComponent } from './Specializations/laser/laser.component';
 import { ScansComponent } from './Specializations/scans/scans.component';
 import { SkinComponent } from './Specializations/skin/skin.component';
+import { AppointmentReservationComponent } from './appointment-reservation/appointment-reservation.component';
+import { OfferDetailsComponent } from './offer-details/offer-details.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -40,5 +42,7 @@ export const routes: Routes = [
   { path: 'allDoctors', component: AllDoctorsComponent },
   { path: 'doctors', component: DoctorsComponent },
   { path: 'doctorDetails/:id', component: DoctorDetailsComponent },
+  {path: 'appointmentReservation/:id', component: AppointmentReservationComponent},
+  {path: 'offerDetails/:id', component: OfferDetailsComponent},
   { path: '**', redirectTo: 'login', pathMatch: 'full' },
 ];
