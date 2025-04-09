@@ -11,6 +11,8 @@ export interface Doctor {
   city: string;
   governorate: string;
   street: string;
+  phone: string;
+  availability?: { [key: string]: string[] }; // Optional property for availability
 }
 
 

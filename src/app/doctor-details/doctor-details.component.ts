@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { DoctorService } from '../services/doctor.service';
 import { Doctor } from '../doctor';
+import { ImageService } from '../shared/image.service';
+
 @Component({
   selector: 'app-doctor-details',
   imports: [CommonModule],
@@ -14,7 +16,8 @@ export class DoctorDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private doctorsService: DoctorService
+    private doctorsService: DoctorService,
+    private imageService: ImageService
   ) {}
 
   ngOnInit(): void {
@@ -29,6 +32,13 @@ export class DoctorDetailsComponent implements OnInit {
         }
       });
     }
+  }
+
+  getDoctorImage(): string {
+    if (this.doctor && this.doctor.id) {
+      return this.imageService.getImagePath(this.doctor.id.toString());
+    }
+    return 'images/doctorImg/default.png'; // Return a default image if the doctor ID is not available
   }
 }
 
