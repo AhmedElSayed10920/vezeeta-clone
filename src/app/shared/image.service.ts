@@ -78,4 +78,8 @@ export class ImageService {
 
   };
   constructor() { }
+
+  getImagePath(doctorId: string): string {
+    return this.images[doctorId] || 'images/doctorImg/default.png'; // Return a default image if the ID is not found
+  }
 }
