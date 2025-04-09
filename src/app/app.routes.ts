@@ -55,6 +55,7 @@ import { KidneyDialysisComponent } from './Specializations/kidney/kidney-dialysi
 import { AbdomenComponent } from './Specializations/general-surgery/abdomen/abdomen.component';
 import { OncologicalComponent } from './Specializations/general-surgery/oncological/oncological.component';
 import { EndocrineSurgeryComponent } from './Specializations/general-surgery/endocrine-surgery/endocrine-surgery.component';
+import { SkinCareComponent } from './Specializations/skin/skin-care/skin-care.component';
 
 
 export const routes: Routes = [
@@ -89,6 +90,8 @@ export const routes: Routes = [
   { path: 'acneScarsTreatment', component: AcneScarsTreatmentComponent },
   { path: 'tattoos', component: TattoosComponent },
   { path: 'skinWhitening', component: SkinWhiteningComponent },
+  { path: 'skinCare', component: SkinCareComponent},
+
 
   { path: 'beauty', component: BeautyComponent },
   { path: 'cellulite', component: CelluliteComponent },
