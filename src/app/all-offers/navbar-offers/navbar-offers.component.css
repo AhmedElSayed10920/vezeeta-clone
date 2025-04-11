@@ -1,33 +1,31 @@
-.active-link {
+ .active-link {
     border-bottom: 2px solid red;
     padding-bottom: 4px;
 }
+
+
 
 .nav-link {
     
     font-weight: 600;
     text-decoration: none;
     padding: 10px 15px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition:white 0.3s ease, color 0.3s ease;
 }
 
 
-
-.nav-link.active {
-    text-decoration: underline red;
-}
-.nav-link.active:hover {
-    text-decoration: underline blue;
-}
-
-/* Enable dropdown on hover */
-.custom-dropdown:hover .dropdown-menu {
+  .nav-item.dropdown:hover > .dropdown-menu {
     display: block;
-    margin-top: 0;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease;
   }
   
   .dropdown-menu {
-    transition: all 0.3s ease-in-out;
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
   }
 
 
@@ -44,3 +42,34 @@
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
     padding: 1rem;
 }
+
+
+.hover-bg-gray:hover {
+  background-color: gray !important;
+  color: black !important;
+  transition: all 0.1s ease-in-out;
+  border-radius: 5px;
+
+}
+
+.hover-bg-white:hover {
+    background-color: white !important;
+    color: black !important;
+    transition: all 0.3s;
+    border-radius: 5px;
+    padding-left: 10px;
+
+  }
+  
+  .cursor-pointer1 {
+    cursor: pointer;
+  }
+
+  
+  .hover-bg-gray:hover {
+    background-color: #e2e6ea !important;
+    transition: all 0.1s ease-in-out;
+    border-radius: 5px;
+    color: black !important;
+    width:fit-content
+  }
