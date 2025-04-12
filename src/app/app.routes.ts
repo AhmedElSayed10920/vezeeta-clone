@@ -9,7 +9,6 @@ import { SignupComponent } from './signup/signup.component';
 import { AllDoctorsComponent } from './all-doctors/all-doctors.component';
 import { DoctorsComponent } from './doctors/doctors.component';
 import { DoctorDetailsComponent } from './doctor-details/doctor-details.component';
-import { SlidesComponent } from './all-offers/slides/slides.component';
 import { BeautyComponent } from './Specializations/beauty/beauty.component';
 import { DentalCareComponent } from './Specializations/dental-care/dental-care.component';
 import { FitnessComponent } from './Specializations/fitness/fitness.component';
@@ -19,6 +18,7 @@ import { KidneyComponent } from './Specializations/kidney/kidney.component';
 import { LaserComponent } from './Specializations/laser/laser.component';
 import { ScansComponent } from './Specializations/scans/scans.component';
 import { SkinComponent } from './Specializations/skin/skin.component';
+import { ChatAssistantComponent } from './chat-assistant/chat-assistant.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -40,5 +40,7 @@ export const routes: Routes = [
   { path: 'allDoctors', component: AllDoctorsComponent },
   { path: 'doctors', component: DoctorsComponent },
   { path: 'doctorDetails/:id', component: DoctorDetailsComponent },
+  { path: 'chatAssistant', component: ChatAssistantComponent },
+
   { path: '**', redirectTo: 'login', pathMatch: 'full' },
 ];

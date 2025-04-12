@@ -8,8 +8,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DoctorService {
-  private apiUrl = 'http://localhost:5267/api/Doctor/Doctors';
-  private doctorByIdUrl = 'http://localhost:5267/api/Doctor';
+  private apiUrl = 'https://localhost:7167/api/Doctor/Doctors';
+  private doctorByIdUrl = 'https://localhost:7167/api/Doctor';
 
 
   private staticAvailability = {
