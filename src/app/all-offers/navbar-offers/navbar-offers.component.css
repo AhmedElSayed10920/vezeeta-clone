@@ -29,3 +29,18 @@
   .dropdown-menu {
     transition: all 0.3s ease-in-out;
   }
+
+
+  /* يظهر الميجا منيو عند الهوفر */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; /* علشان يتجنب أي تأخير */
+}
+
+/* نضبط شكل العناصر */
+.dropdown-menu {
+    border-radius: 0.5rem;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+}

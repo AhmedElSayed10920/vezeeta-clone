@@ -11,7 +11,7 @@ import { Component, Input } from '@angular/core';
 export class ServiceCardComponent {
   @Input() id: number = 0;
   @Input() image: string = '';
-  @Input() discount: number = 0;
+  @Input() discount: number = 50;
   @Input() title: string = '';
   @Input() description: string = '';
   @Input() rating: number = 0;
