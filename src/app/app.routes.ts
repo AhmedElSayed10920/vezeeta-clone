@@ -58,8 +58,23 @@ import { EndocrineSurgeryComponent } from './Specializations/general-surgery/end
 import { SkinCareComponent } from './Specializations/skin/skin-care/skin-care.component';
 import { OfferDetailsComponent } from './offer-details/offer-details.component';
 import { OfferNotFoundComponent } from './offer-not-found/offer-not-found.component';
+import { ChatAssistantComponent } from './chat-assistant/chat-assistant.component';
+import { DoctorsListComponent } from './doctors-list/doctors-list.component';
+import { NoDoctorsComponent } from './no-doctors/no-doctors.component';
+import { BookingPageComponent } from './booking-page/booking-page.component';
+import { EndoscopesComponent } from './Specializations/gastro-im/endoscopes/endoscopes.component';
+import { GastroImComponent } from './Specializations/gastro-im/gastro-im.component';
+import { PsychiatryComponent } from './Specializations/psychiatry/psychiatry.component';
+import { GeneralPsychiatryServicesComponent } from './Specializations/psychiatry/general-psychiatry-services/general-psychiatry-services.component';
+import { ObGynComponent } from './Specializations/ob-gyn/ob-gyn.component';
+import { DeliveryComponent } from './Specializations/ob-gyn/delivery/delivery.component';
+
+
+
+
 export const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
 
   { path: 'allOffers', component: AllOffersComponent },
 
@@ -112,6 +127,10 @@ export const routes: Routes = [
   { path: 'scans', component: ScansComponent },
   { path: 'ctScan', component: CtScanComponent},
 
+  { path: 'obGyn', component: ObGynComponent },
+  { path: 'delivery', component: DeliveryComponent },
+
+
   { path: 'kidney', component: KidneyComponent },
   { path: 'kidneyDialysis', component: KidneyDialysisComponent },
 
@@ -119,6 +138,12 @@ export const routes: Routes = [
   { path: 'abdomen', component: AbdomenComponent},
   { path: 'oncologicalSurgery', component:OncologicalComponent },
   { path: 'endocrineSurgery', component: EndocrineSurgeryComponent },
+
+  { path: 'gastroIm', component: GastroImComponent },
+  { path: 'endoscopes', component:EndoscopesComponent},
+
+  { path: 'psychiatry', component:PsychiatryComponent },
+  { path: 'generalPsychiatryServices', component: GeneralPsychiatryServicesComponent},
 
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
@@ -130,5 +155,12 @@ export const routes: Routes = [
   { path: 'doctorDetails/:id', component: DoctorDetailsComponent },
   { path: 'offers/:id', component: OfferDetailsComponent },
   {path: 'offerNotFound', component: OfferNotFoundComponent},
+  { path: 'chatAssistant', component: ChatAssistantComponent },
+
+  { path: 'doctors-list', component: DoctorsListComponent },
+  { path: 'no-doctors', component: NoDoctorsComponent },
+  { path: 'bookingPage', component: BookingPageComponent },
+
+
   { path: '**', redirectTo: 'login', pathMatch: 'full' },
 ];

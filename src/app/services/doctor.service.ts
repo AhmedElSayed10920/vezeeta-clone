@@ -9,9 +9,12 @@ import { Offer } from '../offer';
   providedIn: 'root'
 })
 export class DoctorService {
-  private apiUrl = 'http://localhost:5267/api/Doctor/Doctors';
-  private doctorByIdUrl = 'http://localhost:5267/api/Doctor';
-  private apiOffersUrl = 'http://localhost:5267/api/Offers';
+
+
+  private apiUrl = 'https://localhost:7167/api/Doctor/Doctors';
+  private doctorByIdUrl = 'https://localhost:7167/api/Doctor';
+  private apiOffersUrl = 'https://localhost:7167/api/Offers';
+
 
 
 
@@ -68,7 +71,7 @@ export class DoctorService {
   //   return this.http.get<Offer>(`${this.offerByIdUrl}/${id}`);
   // }
 
-  
+
 }
 
 

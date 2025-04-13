@@ -12,6 +12,10 @@ import { CommonModule } from '@angular/common';
 export class AppointmentReservationComponent implements OnInit {
   @Input() doctor!: Doctor;
 
+
+
+
+
   displayedDays: { dayName: string; date: string; displayText: string }[] = [];
   currentDayIndex: number = 0;
   bookedAppointments: { [day: string]: string[] } = {};
@@ -29,6 +33,7 @@ export class AppointmentReservationComponent implements OnInit {
     const today = new Date();
     const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     this.displayedDays = [];
+
 
     for (let i = 0; i < 15; i++) {
       const date = new Date(today);
@@ -80,20 +85,19 @@ export class AppointmentReservationComponent implements OnInit {
     }
 
     if (currentDayIndex >= todayIndex && currentDayIndex < todayIndex + 7) {
-      return '10:00 AM - 11:00 PM';
+      return 'From 10:00 AM  to 11:00 PM';
     }
 
     return 'No Available Appointments';
   }
 
   bookAppointment(time: string, day: string): void {
-    if (!this.bookedAppointments[day]) {
-      this.bookedAppointments[day] = [];
-    }
-    this.bookedAppointments[day].push(time);
-    console.log(`Booked appointment for Doctor ${this.doctor.id} at ${time} on ${day}`);
-    this.router.navigate(['/booking-confirmation'], {
-      queryParams: { doctorId: this.doctor.id, time, day }
-    });
+    const bookingData = {
+      doctor: this.doctor,
+      time: time,
+      day: day
+    };
+
+    this.router.navigate(['/bookingPage'], { state: bookingData });
   }
 }

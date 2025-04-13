@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Doctor } from '../doctor';
 
 @Component({
   selector: 'app-booking-form',
@@ -8,12 +9,13 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './booking-form.component.css'
 })
 export class BookingFormComponent {
+  @Input() bookingInfo!: any;
   bookingData = {
     name: '',
     phone: '',
     email: ''
   };
-
+  
   // ده الفانكشن اللي بيتنادى لما الفورم يتبعت
   bookAppointment() {
     // هنا تقدر تضيف logic للـ API أو عرض رسالة نجاح
