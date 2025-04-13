@@ -56,21 +56,20 @@ import { AbdomenComponent } from './Specializations/general-surgery/abdomen/abdo
 import { OncologicalComponent } from './Specializations/general-surgery/oncological/oncological.component';
 import { EndocrineSurgeryComponent } from './Specializations/general-surgery/endocrine-surgery/endocrine-surgery.component';
 import { SkinCareComponent } from './Specializations/skin/skin-care/skin-care.component';
-<<<<<<< HEAD
 import { ChatAssistantComponent } from './chat-assistant/chat-assistant.component';
 import { DoctorsListComponent } from './doctors-list/doctors-list.component';
 import { NoDoctorsComponent } from './no-doctors/no-doctors.component';
 import { BookingPageComponent } from './booking-page/booking-page.component';
-=======
-import { ObGynComponent } from './Specializations/ob-gyn/ob-gyn.component';
-import { DeliveryComponent } from './Specializations/ob-gyn/delivery/delivery.component';
-import { GastroImComponent } from './Specializations/gastro-im/gastro-im.component';
 import { EndoscopesComponent } from './Specializations/gastro-im/endoscopes/endoscopes.component';
+import { GastroImComponent } from './Specializations/gastro-im/gastro-im.component';
 import { PsychiatryComponent } from './Specializations/psychiatry/psychiatry.component';
 import { GeneralPsychiatryServicesComponent } from './Specializations/psychiatry/general-psychiatry-services/general-psychiatry-services.component';
+import { ObGynComponent } from './Specializations/ob-gyn/ob-gyn.component';
+import { DeliveryComponent } from './Specializations/ob-gyn/delivery/delivery.component';
 
 
->>>>>>> Mahmoud_Abdo
+
+
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
