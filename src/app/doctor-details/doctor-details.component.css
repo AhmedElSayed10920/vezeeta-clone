@@ -83,7 +83,6 @@
   font-size: 16px;
 }
 
-/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
   .card-content {
     flex-direction: column;

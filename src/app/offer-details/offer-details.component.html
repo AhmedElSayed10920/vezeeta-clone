@@ -1,0 +1,52 @@
+<div class="outer-container">
+  <div class="offer-details-container">
+    <div class="main-image">
+      <img [src]="imageUrl" alt="Main Offer Image" />
+    </div>
+
+    <div class="doctor-details">
+      <div class="doctor-info">
+        <h3>Clinic Name</h3>
+        <p class="clinic-name">{{ offer?.clinicName || 'Best Clinic' }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="side-component" *ngIf="offer">
+    <div class="offer-info">
+      <h2>{{offer.title}}</h2>
+      <p class="offer-description">{{ offer?.description }}</p>
+      <div class="discount-section">
+        <span class="discount-percentage">{{ offer?.discountPercentage }}% خصم</span>
+      </div>
+      <div class="rating">
+        <span class="stars">★★★★★</span>
+        <span class="recently-added">Recently Added</span>
+      </div>
+      <div class="price-section">
+        <div class="price-details">
+          <span class="original-price">{{ offer?.originalPrice }} EGP</span>
+          <span class="final-price">{{ offer?.finalPrice }} EGP</span>
+          <span class="savings">save {{ (offer?.originalPrice ?? 0) - (offer?.finalPrice ?? 0) }} EGP</span>
+        </div>
+      </div>
+      <div class="stats">
+        <span class="stat-item"><span class="icon">🖱️</span> 7 Bookings</span>
+        <span class="stat-item"><span class="icon">👁️</span> 409 Views</span>
+        <span class="stat-item"><span class="icon">⏳</span> LIMITED TIME</span>
+      </div>
+    </div>
+
+    <hr class="horizontal-divider" />
+
+    <div class="appointment">
+      <app-appointment-reservation></app-appointment-reservation>
+    </div>
+
+    <hr class="horizontal-divider" />
+
+    <div class="map-placeholder">
+      <p>Map Placeholder</p>
+    </div>
+  </div>
+</div>

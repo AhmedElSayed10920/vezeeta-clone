@@ -56,8 +56,8 @@ import { AbdomenComponent } from './Specializations/general-surgery/abdomen/abdo
 import { OncologicalComponent } from './Specializations/general-surgery/oncological/oncological.component';
 import { EndocrineSurgeryComponent } from './Specializations/general-surgery/endocrine-surgery/endocrine-surgery.component';
 import { SkinCareComponent } from './Specializations/skin/skin-care/skin-care.component';
-
-
+import { OfferDetailsComponent } from './offer-details/offer-details.component';
+import { OfferNotFoundComponent } from './offer-not-found/offer-not-found.component';
 export const routes: Routes = [
   { path: '', component: HomeComponent },
 
@@ -75,7 +75,7 @@ export const routes: Routes = [
   { path: 'denture', component: DentureComponent },
   { path: 'toothExtraction', component: ToothExtractionComponent },
   { path: 'otherDentalOffers', component: OtherDentalOffersComponent },
- 
+
   { path: 'laser', component: LaserComponent },
   { path: 'hairRemoval', component: HairRemovalComponent },
 
@@ -108,7 +108,7 @@ export const routes: Routes = [
   { path: 'weightLoss', component: WeightLossComponent },
   { path: 'rehabilitation', component:RehabilitationComponent },
   { path: 'nutrition', component: NutritionComponent },
-  
+
   { path: 'scans', component: ScansComponent },
   { path: 'ctScan', component: CtScanComponent},
 
@@ -128,5 +128,7 @@ export const routes: Routes = [
   { path: 'allDoctors', component: AllDoctorsComponent },
   { path: 'doctors', component: DoctorsComponent },
   { path: 'doctorDetails/:id', component: DoctorDetailsComponent },
+  { path: 'offers/:id', component: OfferDetailsComponent },
+  {path: 'offerNotFound', component: OfferNotFoundComponent},
   { path: '**', redirectTo: 'login', pathMatch: 'full' },
 ];
