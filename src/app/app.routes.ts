@@ -56,11 +56,12 @@ import { AbdomenComponent } from './Specializations/general-surgery/abdomen/abdo
 import { OncologicalComponent } from './Specializations/general-surgery/oncological/oncological.component';
 import { EndocrineSurgeryComponent } from './Specializations/general-surgery/endocrine-surgery/endocrine-surgery.component';
 import { SkinCareComponent } from './Specializations/skin/skin-care/skin-care.component';
-
 import { ChatAssistantComponent } from './chat-assistant/chat-assistant.component';
-
+import { DoctorsListComponent } from './doctors-list/doctors-list.component';
+import { NoDoctorsComponent } from './no-doctors/no-doctors.component';
 export const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
 
   { path: 'allOffers', component: AllOffersComponent },
 
@@ -131,5 +132,8 @@ export const routes: Routes = [
   { path: 'doctorDetails/:id', component: DoctorDetailsComponent },
   { path: 'chatAssistant', component: ChatAssistantComponent },
 
+  { path: 'doctors-list', component: DoctorsListComponent },
+  { path: 'no-doctors', component: NoDoctorsComponent },
+  
   { path: '**', redirectTo: 'login', pathMatch: 'full' },
 ];

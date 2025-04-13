@@ -1,0 +1,49 @@
+<div class="container" style="height: 100%;">
+  <div *ngFor="let doctor of doctors" class="card">
+    <div class="card-content">
+      <div class="doctor-info">
+        <div class="logo-container">
+          <img [src]="getDoctorImage(doctor.id)" class="clinic-logo" alt="Clinic Logo" />
+        </div>
+        <div class="details">
+          <h5 class="doctor-name">{{ doctor.doctorName }}</h5>
+          <p class="main-specialty">{{ doctor.clinicName }} - {{ doctor.mainSpecialty }}</p>
+
+          <div class="rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-text">Overall Rating From 104 Visitors</span>
+          </div>
+
+          <p class="sub-specialty">{{ doctor.subSpecialty }}</p>
+
+          <div class="info-item">
+            <i class="fa-solid fa-tooth" style="color: #ff6347;"></i>
+            <span>{{ doctor.subSpecialty }}</span>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-location-dot" style="color: #519ed8;"></i>
+            <span>{{ doctor.city }}</span>&nbsp;-&nbsp;
+            <span>{{ doctor.street }}</span>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-money-bill" style="color: #32cd32;"></i>
+            <span>{{ doctor.fees }} EGP</span>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-clock" style="color: #4682b4;"></i>
+            <span>Waiting Time: 15 Minutes</span>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-phone" style="color: #ff6347;"></i>
+            <span>{{ doctor.phone }}</span>
+            <span class="rating-text">16676</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reservation">
+        <app-appointment-reservation></app-appointment-reservation>
+      </div>
+    </div>
+  </div>
+</div>

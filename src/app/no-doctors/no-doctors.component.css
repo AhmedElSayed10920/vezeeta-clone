@@ -1,0 +1,27 @@
+.no-doctors-page {
+    text-align: center;
+    margin-top: 50px;
+    font-family: 'Cairo', sans-serif;
+  }
+  
+  .no-doctors-page h2 {
+    color: #e63946;
+    font-size: 24px;
+  }
+  
+  .no-doctors-page p {
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+  }
+  
+  .no-doctors-page button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
