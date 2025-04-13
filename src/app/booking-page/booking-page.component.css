@@ -1,0 +1,111 @@
+.container {
+  padding: 40px 0;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card-content {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.doctor-info {
+  flex: 1 1 40%;
+  display: flex;
+  gap: 25px;
+  padding: 40px;
+}
+
+.logo-container {
+  flex-shrink: 0;
+}
+
+.clinic-logo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.details {
+  flex: 1;
+}
+
+.doctor-name {
+  font-size: 26px;
+  font-weight: 700;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.main-specialty,
+.sub-specialty {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.stars {
+  color: #ffd700;
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+.rating-text {
+  font-size: 14px;
+  color: #777;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.info-item i {
+  margin-right: 10px;
+  font-size: 18px;
+  color: #007bff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card-content {
+    flex-direction: column;
+  }
+
+  .doctor-info,
+  .bookingForm {
+    flex: 1 1 100%;
+  }
+
+  .clinic-logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .doctor-name {
+    font-size: 22px;
+  }
+
+  .main-specialty,
+  .sub-specialty,
+  .info-item {
+    font-size: 15px;
+  }
+}

@@ -59,6 +59,7 @@ import { SkinCareComponent } from './Specializations/skin/skin-care/skin-care.co
 import { ChatAssistantComponent } from './chat-assistant/chat-assistant.component';
 import { DoctorsListComponent } from './doctors-list/doctors-list.component';
 import { NoDoctorsComponent } from './no-doctors/no-doctors.component';
+import { BookingPageComponent } from './booking-page/booking-page.component';
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
@@ -134,6 +135,8 @@ export const routes: Routes = [
 
   { path: 'doctors-list', component: DoctorsListComponent },
   { path: 'no-doctors', component: NoDoctorsComponent },
+  { path: 'bookingPage', component: BookingPageComponent },
+
   
   { path: '**', redirectTo: 'login', pathMatch: 'full' },
 ];
