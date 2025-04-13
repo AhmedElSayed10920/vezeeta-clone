@@ -7,13 +7,14 @@
   <div class="container">
     <div class="row">
       <!-- Sidebar Filters -->
-      <div class="col-12 col-lg-3 mb-4 mb-lg-0">
+      <!-- <div class="col-12 col-lg-3 mb-4 mb-lg-0">
         <app-filters-sidebar (filtersChanged)="onFiltersChanged($event)"></app-filters-sidebar>
-      </div>
+      </div> -->
   
       <!-- Doctor List -->
       <div class="col-12 col-lg-9">
-        <app-doctor-list [filters]="selectedFilters"></app-doctor-list>
+        <app-all-doctors [filters]="selectedFilters"> </app-all-doctors>
+        <!-- <app-doctor-list [filters]="selectedFilters"></app-doctor-list> -->
       </div>
     </div>
   </div>

@@ -1,0 +1,23 @@
+.offer-card {
+    transition: transform 0.3s ease-in-out;
+}
+
+.offer-card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* تحسين شكل الأزرار */
+button {
+    z-index: 10;
+}
+
+/* تحسين عرض الكروت داخل الـ Slider */
+.row {
+    transition: transform 0.5s ease-in-out;
+}
+
+.light-gray {
+    color: rgb(0,0,0,.3);
+}
+/* تحسين شكل العناوين */        

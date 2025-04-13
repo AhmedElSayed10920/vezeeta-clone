@@ -1,0 +1,99 @@
+<!-- All Doctors Component Template -->
+<div class="container mt-5">
+  <h2 class="mb-4 fw-bold specialty-header">{{ specialty }}</h2>
+
+  <div class="row justify-content-center">
+    <div class="col-12 mb-4" *ngFor="let doctor of doctors">
+      <div class="doctor-card">
+        <div class="card-content">
+          <!-- Clinic Logo -->
+          <div class="logo-container">
+            <img [src]="getDoctorImage(doctor.id)" class="clinic-logo" alt="Clinic Logo" />
+          </div>
+
+          <!-- Doctor Info and Appointments -->
+          <div class="doctor-details">
+            <!-- Doctor Info -->
+            <div class="doctor-info">
+              <h5 class="doctor-name">{{ doctor.doctorName }} </h5>
+              <p class="main-specialty">{{ doctor.clinicName }} {{ doctor.mainSpecialty }}</p>
+              <div class="rating">
+                <span class="stars">★★★★★</span>
+                <span class="rating-text">Overall Rating From 104 Visitors</span>
+              </div>
+              <p class="sub-specialty">{{ doctor.subSpecialty }}</p>
+
+              <div class="info-item">
+                <i class="fa-solid fa-tooth" style="color: #ff6347;"></i>
+                <span>{{ doctor.subSpecialty }}</span>
+              </div>
+              <div class="info-item">
+                <i class="fa-solid fa-location-dot" style="color: #519ed8;"></i>
+                <span>{{ doctor.street }}</span>
+              </div>
+              <div class="info-item">
+                <i class="fa-solid fa-money-bill" style="color: #32cd32;"></i>
+                <span>{{ doctor.fees }} EGP</span>
+              </div>
+              <div class="info-item">
+                <i class="fa-solid fa-clock" style="color: #4682b4;"></i>
+                <span>Waiting Time: 15 Minutes</span>
+              </div>
+              <div class="info-item">
+                <i class="fa-solid fa-phone" style="color: #ff6347;"></i>
+                <span>{{ doctor.phone }}</span>
+                <span class="rating-text">16676</span>
+              </div>
+            </div>
+
+            <!-- Appointment Reservation Section -->
+            <div class="appointment-reservation">
+              <div class="appointment-header">
+                <button class="nav-arrow" (click)="prevDay(doctor.id)" [disabled]="currentDayIndices[doctor.id] === 0">❮</button>
+                <div class="appointment-times">
+                  <div class="times-column" *ngFor="let day of getDisplayedDays(doctor.id)">
+                    <div class="day-card">
+                      <div class="day-header">{{ day.displayText }}</div>
+                      <div class="time-slot">
+                        <p *ngIf="getAppointmentsForDay(doctor, day.dayName, day.date) === 'No Available Appointments'; else showTime">
+                          No Available Appointments
+                        </p>
+                        <ng-template #showTime>
+                          <p *ngFor="let time of getAppointmentsForDay(doctor, day.dayName, day.date).split(',')">{{ time.trim() }}</p>
+                        </ng-template>
+                      </div>
+                      <button
+                        class="book-btn"
+                        [ngClass]="{'disabled': getAppointmentsForDay(doctor, day.dayName, day.date) === 'No Available Appointments'}"
+                        (click)="bookAppointment(doctor.id, getAppointmentsForDay(doctor, day.dayName, day.date), day.date)"
+                        [disabled]="getAppointmentsForDay(doctor, day.dayName, day.date) === 'No Available Appointments'"
+                      >
+                        BOOK
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <button class="nav-arrow" (click)="nextDay(doctor.id)" [disabled]="currentDayIndices[doctor.id] >= displayedDays.length - 3">❯</button>
+              </div>
+              <p class="appointment-label">Appointment reservation</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="visibleDoctors().length === 0" class="text-center">
+    <p>No doctors found for this specialty.</p>
+  </div>
+
+  <div class="pagination-controls mt-4">
+    <button class="btn btn-secondary me-2" [disabled]="currentPage() === 1" (click)="prevPage()">
+      Previous
+    </button>
+    <span>Page {{ currentPage() }} of {{ totalPages() }}</span>
+    <button class="btn btn-secondary ms-2" [disabled]="currentPage() === totalPages()" (click)="nextPage()">
+      Next
+    </button>
+  </div>
+</div>

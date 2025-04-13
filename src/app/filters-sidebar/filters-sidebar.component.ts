@@ -5,37 +5,34 @@ import { from } from 'rxjs';
 
 // Define an interface for the filters to improve type safety
 export interface Filters {
-  title: {
+  title?: {
     professor: boolean;
     lecturer: boolean;
     consultant: boolean;
     specialist: boolean;
   };
-  subSpecialties: {
-    newBorn: boolean;
-    pediatricAllergy: boolean;
+  gender?: string;
+  
+  fees?: {
+    any: number;
+    lessThan50: number;
+    from50To100: number;
+    from100To200: number;
+    from200To300: number;
+    greaterThan300: number;
   };
-  gender: string;
-  availability: {
-    today: boolean;
-    tomorrow: boolean;
-  };
-  fees:{
-     any:number;
-    lessThan50:number;
-    from50To100:number;
-    from100To200:number;
-    from200To300:number;
-    greaterThan300:number;
-  }
+  // إضافة الخصائص المطلوبة
+  specialty?: string; // اختياري لأنه قد لا يتم تمريره دائمًا
+  city?: string;
+  governorate?: string;
+  name?: string;
 }
 
 // Define an interface for the sections to ensure type safety
 interface Sections {
   title: boolean;
-  subSpecialties: boolean;
+  // subSpecialties: boolean;
   gender: boolean;
-  availability: boolean;
   fees:boolean;
 }
 @Component({
@@ -48,9 +45,8 @@ export class FiltersSidebarComponent {
 // Object to track which sections are expanded/collapsed
 sections: Sections = {
   title: false,
-  subSpecialties: false,
+  // subSpecialties: false,
   gender: false,
-  availability: false,
   fees:false
 };
 
@@ -62,15 +58,12 @@ filters: Filters = {
     consultant: false,
     specialist: false,
   },
-  subSpecialties: {
-    newBorn: false,
-    pediatricAllergy: false,
-  },
+  // subSpecialties: {
+  //   newBorn: false,
+  //   pediatricAllergy: false,
+  // },
   gender: '',
-  availability: {
-    today: false,
-    tomorrow: false,
-  },
+ 
   fees:{
     any:0,
     lessThan50:0,
@@ -78,7 +71,12 @@ filters: Filters = {
     from100To200: 0,
     from200To300:0,
     greaterThan300:0,
-  }
+  },
+  // خصائص اختيارية بقيم افتراضية (لو احتجت تمررها لاحقًا بدون أخطاء)
+  specialty: '',
+  city: '',
+  governorate: '',
+  name: ''
 
 };
 

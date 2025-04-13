@@ -1,0 +1,41 @@
+<div class="container my-4">
+    <h2 class="fw-bold mb-4">Choose from top offers <a  routerLink="/allOffers" class="text-primary float-end fs-6 text-decoration-none" style="cursor: pointer;"  >All Offers &rsaquo;</a></h2>
+
+    <div class="position-relative">
+        <!-- Offer cards container -->
+        <div class="row flex-nowrap overflow-hidden" #carouselContainer>
+            <div *ngFor="let offer of visibleOffers" class="col-md-3 col-6">
+                <div class="card offer-card border-0 shadow-sm" (click)="goToDetails(offer.id)" style="cursor: pointer;">
+                    <div class="position-relative">
+                        <img src="{{ offer.image }}" class="card-img-top rounded-3" alt="{{ offer.title }}">
+                        <span class="badge bg-danger position-absolute top-0 start-0 m-2 px-2 py-1">
+                            {{ offer.discount }}% OFF
+                        </span>
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold">{{ offer.title }}</h5>
+                        <p class="mb-1">
+                            <span class="text-muted text-decoration-line-through me-2">{{ offer.originalPrice }} EGP</span>
+                            <span class="text-primary fw-bold">{{ offer.price }} EGP</span>
+                        </p>
+                        <p class="text-muted small">{{ offer.offersCount }} Offers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Left navigation button -->
+        <button class="btn btn-light border position-absolute start-0 top-50 translate-middle-y rounded-circle shadow-sm"
+                (click)="prevSlide()"
+                [disabled]="currentIndex === 0">
+            &#10094;
+        </button>
+
+        <!-- Right navigation button -->
+        <button class="btn btn-light border position-absolute end-0 top-50 translate-middle-y rounded-circle shadow-sm"
+                (click)="nextSlide()"
+                [disabled]="currentIndex + 4 >= offers.length">
+            &#10095;
+        </button>
+    </div>
+</div>
