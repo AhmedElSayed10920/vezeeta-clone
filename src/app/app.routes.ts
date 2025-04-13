@@ -56,7 +56,7 @@ import { AbdomenComponent } from './Specializations/general-surgery/abdomen/abdo
 import { OncologicalComponent } from './Specializations/general-surgery/oncological/oncological.component';
 import { EndocrineSurgeryComponent } from './Specializations/general-surgery/endocrine-surgery/endocrine-surgery.component';
 import { SkinCareComponent } from './Specializations/skin/skin-care/skin-care.component';
-
+import { MyProfileComponent } from './my-profile/my-profile.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -75,7 +75,7 @@ export const routes: Routes = [
   { path: 'denture', component: DentureComponent },
   { path: 'toothExtraction', component: ToothExtractionComponent },
   { path: 'otherDentalOffers', component: OtherDentalOffersComponent },
- 
+
   { path: 'laser', component: LaserComponent },
   { path: 'hairRemoval', component: HairRemovalComponent },
 
@@ -90,8 +90,7 @@ export const routes: Routes = [
   { path: 'acneScarsTreatment', component: AcneScarsTreatmentComponent },
   { path: 'tattoos', component: TattoosComponent },
   { path: 'skinWhitening', component: SkinWhiteningComponent },
-  { path: 'skinCare', component: SkinCareComponent},
-
+  { path: 'skinCare', component: SkinCareComponent },
 
   { path: 'beauty', component: BeautyComponent },
   { path: 'cellulite', component: CelluliteComponent },
@@ -99,25 +98,25 @@ export const routes: Routes = [
   { path: 'faceChin', component: FaceChinComponent },
   { path: 'breast', component: BreastComponent },
   { path: 'lips', component: LipsComponent },
-  { path: 'liposuction', component:LiposuctionComponent },
+  { path: 'liposuction', component: LiposuctionComponent },
   { path: 'bodySculpting', component: BodySculptingComponent },
   { path: 'butt', component: ButtComponent },
 
   { path: 'fitness', component: FitnessComponent },
   { path: 'weightLossSurgery', component: WeightLossSurgeryComponent },
   { path: 'weightLoss', component: WeightLossComponent },
-  { path: 'rehabilitation', component:RehabilitationComponent },
+  { path: 'rehabilitation', component: RehabilitationComponent },
   { path: 'nutrition', component: NutritionComponent },
-  
+
   { path: 'scans', component: ScansComponent },
-  { path: 'ctScan', component: CtScanComponent},
+  { path: 'ctScan', component: CtScanComponent },
 
   { path: 'kidney', component: KidneyComponent },
   { path: 'kidneyDialysis', component: KidneyDialysisComponent },
 
   { path: 'generalSurgery', component: GeneralSurgeryComponent },
-  { path: 'abdomen', component: AbdomenComponent},
-  { path: 'oncologicalSurgery', component:OncologicalComponent },
+  { path: 'abdomen', component: AbdomenComponent },
+  { path: 'oncologicalSurgery', component: OncologicalComponent },
   { path: 'endocrineSurgery', component: EndocrineSurgeryComponent },
 
   { path: 'login', component: LoginComponent },
@@ -125,6 +124,7 @@ export const routes: Routes = [
   { path: 'loginForDoctor', component: LoginForDoctorComponent },
   { path: 'signupForDoctor', component: SignupForDoctorComponent },
   { path: 'contactUS', component: ContactUSComponent },
+  { path: 'my-profile', component: MyProfileComponent },
   { path: 'allDoctors', component: AllDoctorsComponent },
   { path: 'doctors', component: DoctorsComponent },
   { path: 'doctorDetails/:id', component: DoctorDetailsComponent },

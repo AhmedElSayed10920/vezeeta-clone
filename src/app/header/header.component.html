@@ -3,8 +3,7 @@
   style="background-color: #0052ac"
 >
   <div class="container">
-    <!-- الشعار -->
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" routerLink="/">
       <img
         src="images/logo.png"
         alt="Logo"
@@ -12,7 +11,6 @@
       />
     </a>
 
-    <!-- زر القائمة للهاتف -->
     <button
       class="navbar-toggler"
       type="button"
@@ -25,37 +23,62 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- القائمة -->
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav d-flex align-items-center text-light">
+        <!-- لو مفيش username -->
+        <ng-container *ngIf="!username">
+          <li class="nav-item">
+            <a class="btn btn-outline-light fs-7 fw-bold" href="/signup"
+              >Sign Up</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light fs-7" href="/login">Login</a>
+          </li>
+        </ng-container>
+
+        <!-- لو في username -->
+        <ng-container *ngIf="username">
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle text-light fs-7"
+              href="#"
+              id="userDropdown"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              (click)="$event.preventDefault()"
+            >
+              {{ username }}
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li>
+                <a class="dropdown-item" href="/my-profile">My Profile</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/appointments"
+                  >My Appointments</a
+                >
+              </li>
+              <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
+            </ul>
+          </li>
+        </ng-container>
+
+        <!-- روابط عامة -->
         <li class="nav-item">
-          <a
-            href="#"
-            class="btn btn-outline-light fs-7 fw-bold"
-            style="font-size: 12px"
-            routerLink="/signup"
-            >Sign Up</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light fs-7" routerLink="/login">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light fs-7" routerLink="/loginForDoctor"
+          <a class="nav-link text-light fs-7" href="/loginForDoctor"
             >Vezeeta For Doctors</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light fs-7" routerLink="/contactUS"
-            >Contact Us</a
-          >
+          <a class="nav-link text-light fs-7" href="/contactUS">Contact Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light fs-7" routerLink="#">عربى</a>
+          <a class="nav-link text-light fs-7" routerLink="/">عربى</a>
         </li>
       </ul>
 
-      <!-- لغة البلد -->
+      <!-- Country Dropdown -->
       <div class="d-flex align-items-center ms-3">
         <div class="dropdown">
           <button
