@@ -1,18 +1,22 @@
 
+
+
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Service } from '../../models/service';
-import { NavbarOffersComponent } from '../../all-offers/navbar-offers/navbar-offers.component';
-import { ServiceCardComponent } from '../../all-offers/service-card/service-card.component';
+import { ServiceCardComponent } from '../../../all-offers/service-card/service-card.component';
+import { NavbarOffersComponent } from '../../../all-offers/navbar-offers/navbar-offers.component';
+import { Service } from '../../../models/service';
+
+
 
 @Component({
-  selector: 'app-scans',
+  selector:  'app-endoscopes',
   standalone: true,
   imports: [ServiceCardComponent, CommonModule, NavbarOffersComponent],
-  templateUrl: './scans.component.html',
-  styleUrl: './scans.component.css'
+  templateUrl: './endoscopes.component.html',
+  styleUrl: './endoscopes.component.css'
 })
-export class ScansComponent {
+export class EndoscopesComponent {
   services: Service[] = [
     {
       id: 1,
@@ -30,3 +34,5 @@ export class ScansComponent {
     
   ];
 }
+
+

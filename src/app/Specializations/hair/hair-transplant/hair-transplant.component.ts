@@ -19,13 +19,13 @@ export class HairTransplantComponent {
       discount: 40,
       image:
         'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250209103619748.png',
-      title: 'Scaling and Polishing',
-      description: '1 Session Scaling and Polishing',
+      title: 'Mesotherapy for hair fall treatment',
+      description: '1 Session Stem cells for Hair',
       rating: 5,
-      reviewCount: 200,
-      bookedCount: 1545,
-      originalPrice: 1600,
-      discountPrice: 800,
+      reviewCount: 0,
+      bookedCount: 0,
+      originalPrice: 1900,
+      discountPrice: 380,
     },
   ];
 }
