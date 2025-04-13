@@ -4,10 +4,14 @@ import { CommonModule } from '@angular/common';
 import { DoctorService } from '../services/doctor.service';
 import { ImageService } from '../shared/image.service';
 import { Offer } from '../offer';
+
+
+
 import { AppointmentReservationComponent } from '../appointment-reservation/appointment-reservation.component';
 
 @Component({
   selector: 'app-offer-details',
+
   standalone: true,
   imports: [CommonModule, RouterModule, AppointmentReservationComponent],
   templateUrl: './offer-details.component.html',
@@ -63,4 +67,5 @@ export class OfferDetailsComponent implements OnInit {
       }
     );
   }
+
 }
