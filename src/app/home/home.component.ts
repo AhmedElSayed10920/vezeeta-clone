@@ -7,9 +7,10 @@ import { BookSpecialtiesComponent } from "../book-specialties/book-specialties.c
 import { DownloadSectionComponent } from "../download-section/download-section.component";
 import { MedicalQuestionComponent } from '../medical-question/medical-question.component';
 
+
 @Component({
   selector: 'app-home',
-  imports: [HeroComponent, BookingComponent, DoctorsComponent, OfferListComponent, BookSpecialtiesComponent, DownloadSectionComponent,MedicalQuestionComponent,],
+  imports: [HeroComponent, BookingComponent, DoctorsComponent, OfferListComponent, BookSpecialtiesComponent, DownloadSectionComponent, MedicalQuestionComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
