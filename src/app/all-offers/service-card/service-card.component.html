@@ -6,7 +6,7 @@
                 {{ discount }}% OFF
             </span>
         </div>
-        <h5 class="card-title">{{ title }}</h5>
+        <h5 class="card-title text-primary">{{ title }}</h5>
         <p class="card-text light-gray">{{ description }}</p>
 
         <div class="d-flex align-items-center mb-2">
@@ -25,12 +25,12 @@
                 {{ originalPrice }} EGP
             </span>
             <span class="save-money" *ngIf="hasOffer">
-                Save {{ originalPrice - discountPrice }} EGP
+                Save {{discountPrice }} EGP
             </span>
         </div>
 
         <div class="d-flex justify-content-between align-items-center">
-            <p class="mt-2 text-primary fw-bold">{{ discountPrice }} EGP</p>
+            <p class="mt-2 text-primary fw-bold">{{originalPrice - discountPrice }} EGP</p>
             <button class="btn btn-primary">Book</button>
         </div>
     </div>

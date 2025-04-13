@@ -6,8 +6,8 @@
 
 
 .nav-link {
-    
-    font-weight: 600;
+    color:rgb(0, 0, 0,0.75) ;
+    font-weight: 700;
     text-decoration: none;
     padding: 10px 15px;
     transition:white 0.3s ease, color 0.3s ease;
@@ -66,6 +66,14 @@
   }
 
   
+  .hover-nav-bg-gray:active{
+
+    background-color: #e2e6ea !important;
+  
+    color: black !important;
+    width:fit-content
+  }
+
   .hover-bg-gray:hover {
     background-color: #e2e6ea !important;
     transition: all 0.1s ease-in-out;
@@ -73,3 +81,8 @@
     color: black !important;
     width:fit-content
   }
+
+
+ .bg-gray{
+  background-color: rgb(128, 128, 128,0.1);
+ }

@@ -56,6 +56,12 @@ import { AbdomenComponent } from './Specializations/general-surgery/abdomen/abdo
 import { OncologicalComponent } from './Specializations/general-surgery/oncological/oncological.component';
 import { EndocrineSurgeryComponent } from './Specializations/general-surgery/endocrine-surgery/endocrine-surgery.component';
 import { SkinCareComponent } from './Specializations/skin/skin-care/skin-care.component';
+import { ObGynComponent } from './Specializations/ob-gyn/ob-gyn.component';
+import { DeliveryComponent } from './Specializations/ob-gyn/delivery/delivery.component';
+import { GastroImComponent } from './Specializations/gastro-im/gastro-im.component';
+import { EndoscopesComponent } from './Specializations/gastro-im/endoscopes/endoscopes.component';
+import { PsychiatryComponent } from './Specializations/psychiatry/psychiatry.component';
+import { GeneralPsychiatryServicesComponent } from './Specializations/psychiatry/general-psychiatry-services/general-psychiatry-services.component';
 
 
 export const routes: Routes = [
@@ -112,6 +118,10 @@ export const routes: Routes = [
   { path: 'scans', component: ScansComponent },
   { path: 'ctScan', component: CtScanComponent},
 
+  { path: 'obGyn', component: ObGynComponent },
+  { path: 'delivery', component: DeliveryComponent },
+
+
   { path: 'kidney', component: KidneyComponent },
   { path: 'kidneyDialysis', component: KidneyDialysisComponent },
 
@@ -119,6 +129,12 @@ export const routes: Routes = [
   { path: 'abdomen', component: AbdomenComponent},
   { path: 'oncologicalSurgery', component:OncologicalComponent },
   { path: 'endocrineSurgery', component: EndocrineSurgeryComponent },
+
+  { path: 'gastroIm', component: GastroImComponent },
+  { path: 'endoscopes', component:EndoscopesComponent},
+
+  { path: 'psychiatry', component:PsychiatryComponent },
+  { path: 'generalPsychiatryServices', component: GeneralPsychiatryServicesComponent},
 
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
