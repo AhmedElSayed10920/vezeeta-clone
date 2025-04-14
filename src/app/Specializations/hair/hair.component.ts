@@ -1,4 +1,3 @@
-
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Service } from '../../models/service';
@@ -10,7 +9,7 @@ import { ServiceCardComponent } from '../../all-offers/service-card/service-card
   standalone: true,
   imports: [ServiceCardComponent, CommonModule, NavbarOffersComponent],
   templateUrl: './hair.component.html',
-  styleUrl: './hair.component.css'
+  styleUrl: './hair.component.css',
 })
 export class HairComponent {
   services: Service[] = [
@@ -26,6 +25,7 @@ export class HairComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
     },
     {
       id: 2,
@@ -39,6 +39,7 @@ export class HairComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
     },
     {
       id: 3,
@@ -52,6 +53,7 @@ export class HairComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 4,
@@ -65,7 +67,7 @@ export class HairComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
-    }
+      offersLink: `/offers/1`,
+    },
   ];
 }
-

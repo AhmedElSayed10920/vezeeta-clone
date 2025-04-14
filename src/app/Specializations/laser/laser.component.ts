@@ -25,6 +25,7 @@ export class LaserComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
     },
     {
       id: 2,
@@ -38,6 +39,7 @@ export class LaserComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
     },
     {
       id: 3,
@@ -51,6 +53,7 @@ export class LaserComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 4,
@@ -64,6 +67,7 @@ export class LaserComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
     },
     {
       id: 5,
@@ -77,6 +81,7 @@ export class LaserComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 6,
@@ -90,6 +95,7 @@ export class LaserComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 7,
@@ -103,6 +109,7 @@ export class LaserComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
     },
     {
       id: 8,
@@ -116,6 +123,7 @@ export class LaserComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
     },
     {
       id: 9,
@@ -129,6 +137,7 @@ export class LaserComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 10,
@@ -142,12 +151,13 @@ export class LaserComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
     },
     {
       id: 11,
       discount: 33,
       image:
-      'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230615112415868.png',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230615112415868.png',
       title: 'Zircon crown installation',
       description: '1 Crown Crown Installation',
       rating: 3.5,
@@ -155,12 +165,13 @@ export class LaserComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 12,
       discount: 20,
       image:
-      'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520200313010751764.png',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520200313010751764.png',
       title: 'Hollywood Smile with Diremposite Veneer',
       description: '1 Tooth Hollywood Smile with Direct Composite Veneer',
       rating: 4.55,
@@ -168,13 +179,14 @@ export class LaserComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
 
     {
       id: 13,
       discount: 40,
       image:
-      'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520200312230744297.png',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520200312230744297.png',
       title: 'Scaling and Polishing',
       description: '1 Session Scaling and Polishing',
       rating: 3.95,
@@ -182,12 +194,13 @@ export class LaserComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
     },
     {
       id: 14,
       discount: 50,
       image:
-      'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230613092055902.png',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230613092055902.png',
       title: 'Composite white filling',
       description: '1 Session Composite Filling',
       rating: 4.85,
@@ -195,12 +208,13 @@ export class LaserComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
     },
     {
       id: 15,
       discount: 20,
       image:
-      'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/laser_hair_removal/desktop.webp',
+        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/laser_hair_removal/desktop.webp',
       title: 'Laser teeth whitening',
       description: '1 Session Laser teeth whitening',
       rating: 4.05,
@@ -208,12 +222,13 @@ export class LaserComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 16,
       discount: 50,
       image:
-      'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230526131409014.png',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230526131409014.png',
       title: 'BPM crown installation',
       description: '1 Crown BFM crown installation',
       rating: 3.95,
@@ -221,6 +236,7 @@ export class LaserComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
     },
     {
       id: 17,
@@ -234,12 +250,13 @@ export class LaserComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 18,
       discount: 20,
       image:
-      'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230613090328354.png',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230613090328354.png',
       title: 'Hollywood Smile with Diremposite Veneer',
       description: '1 Tooth Hollywood Smile with Direct Composite Veneer',
       rating: 3.7,
@@ -247,12 +264,13 @@ export class LaserComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 19,
       discount: 40,
       image:
-      'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520200312230744297.png',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520200312230744297.png',
       title: 'Scaling and Polishing',
       description: '1 Session Scaling and Polishing',
       rating: 2.5,
@@ -260,6 +278,7 @@ export class LaserComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
     },
     {
       id: 20,
@@ -273,12 +292,13 @@ export class LaserComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
     },
     {
       id: 21,
       discount: 20,
       image:
-      'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230615112415868.png',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230615112415868.png',
       title: 'Laser teeth whitening',
       description: '1 Session Laser teeth whitening',
       rating: 3.5,
@@ -286,12 +306,13 @@ export class LaserComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 22,
       discount: 50,
       image:
-      'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520200313010751764.png',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520200313010751764.png',
       title: 'BPM crown installation',
       description: '1 Crown BFM crown installation',
       rating: 4.5,
@@ -299,12 +320,13 @@ export class LaserComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
     },
     {
       id: 23,
       discount: 33,
       image:
-      'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520200312230744297.png',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520200312230744297.png',
       title: 'Zircon crown installation',
       description: '1 Crown Crown Installation',
       rating: 5,
@@ -312,12 +334,13 @@ export class LaserComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 24,
       discount: 20,
       image:
-      'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230613092055902.png',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230613092055902.png',
       title: 'Hollywood Smile with Diremposite Veneer',
       description: '1 Tooth Hollywood Smile with Direct Composite Veneer',
       rating: 5,
@@ -325,12 +348,13 @@ export class LaserComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 25,
       discount: 40,
       image:
-      'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/laser_hair_removal/desktop.webp',
+        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/laser_hair_removal/desktop.webp',
       title: 'Scaling and Polishing',
       description: '1 Session Scaling and Polishing',
       rating: 5,
@@ -338,12 +362,13 @@ export class LaserComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
     },
     {
       id: 26,
       discount: 50,
       image:
-      'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230526131409014.png',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230526131409014.png',
       title: 'Composite white filling',
       description: '1 Session Composite Filling',
       rating: 5,
@@ -351,12 +376,13 @@ export class LaserComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
     },
     {
       id: 27,
       discount: 20,
       image:
-      'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230613090328354.png',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230613090328354.png',
       title: 'Laser teeth whitening',
       description: '1 Session Laser teeth whitening',
       rating: 5,
@@ -364,6 +390,7 @@ export class LaserComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 28,
@@ -377,6 +404,7 @@ export class LaserComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
     },
     {
       id: 29,
@@ -390,12 +418,13 @@ export class LaserComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 30,
       discount: 20,
       image:
-      'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520200312230744297.png',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520200312230744297.png',
       title: 'Hollywood Smile with Diremposite Veneer',
       description: '1 Tooth Hollywood Smile with Direct Composite Veneer',
       rating: 5,
@@ -403,12 +432,13 @@ export class LaserComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 31,
       discount: 40,
       image:
-      'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230615112415868.png',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230615112415868.png',
       title: 'Scaling and Polishing',
       description: '1 Session Scaling and Polishing',
       rating: 5,
@@ -416,12 +446,13 @@ export class LaserComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
     },
     {
       id: 32,
       discount: 50,
       image:
-      'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520200313010751764.png',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520200313010751764.png',
       title: 'Composite white filling',
       description: '1 Session Composite Filling',
       rating: 5,
@@ -429,12 +460,13 @@ export class LaserComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
     },
     {
       id: 33,
       discount: 20,
       image:
-      'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520200312230744297.png',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520200312230744297.png',
       title: 'Laser teeth whitening',
       description: '1 Session Laser teeth whitening',
       rating: 5,
@@ -442,12 +474,13 @@ export class LaserComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 34,
       discount: 50,
       image:
-      'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230613092055902.png',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230613092055902.png',
       title: 'BPM crown installation',
       description: '1 Crown BFM crown installation',
       rating: 5,
@@ -455,12 +488,13 @@ export class LaserComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
     },
     {
       id: 35,
       discount: 33,
       image:
-      'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/laser_hair_removal/desktop.webp',
+        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/laser_hair_removal/desktop.webp',
       title: 'Zircon crown installation',
       description: '1 Crown Crown Installation',
       rating: 5,
@@ -468,12 +502,13 @@ export class LaserComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 36,
       discount: 20,
       image:
-      'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230526131409014.png',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230526131409014.png',
       title: 'Hollywood Smile with Diremposite Veneer',
       description: '1 Tooth Hollywood Smile with Direct Composite Veneer',
       rating: 5,
@@ -481,11 +516,7 @@ export class LaserComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
   ];
-
-
-
-  
-
 }

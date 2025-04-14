@@ -26,6 +26,8 @@ export class TattoosComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
+
     },
   ];
 }

@@ -26,6 +26,8 @@ export class ScansComponent {
       bookedCount: 1545,
       originalPrice: 2000,
       discountPrice: 400,
+      offersLink: `/offers/1`,
+
     },
     
   ];

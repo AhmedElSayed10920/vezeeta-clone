@@ -25,6 +25,7 @@ export class HairRemovalComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
     },
     {
       id: 17,
@@ -38,6 +39,7 @@ export class HairRemovalComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 18,
@@ -51,6 +53,7 @@ export class HairRemovalComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 19,
@@ -64,6 +67,7 @@ export class HairRemovalComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
     },
     {
       id: 20,
@@ -77,6 +81,7 @@ export class HairRemovalComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
     },
     {
       id: 21,
@@ -90,6 +95,7 @@ export class HairRemovalComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 22,
@@ -103,6 +109,7 @@ export class HairRemovalComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
     },
     {
       id: 23,
@@ -116,6 +123,7 @@ export class HairRemovalComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 24,
@@ -129,6 +137,7 @@ export class HairRemovalComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 25,
@@ -142,6 +151,7 @@ export class HairRemovalComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
     },
     {
       id: 26,
@@ -155,6 +165,7 @@ export class HairRemovalComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
     },
     {
       id: 27,
@@ -168,6 +179,7 @@ export class HairRemovalComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 28,
@@ -181,6 +193,7 @@ export class HairRemovalComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
     },
     {
       id: 29,
@@ -194,6 +207,7 @@ export class HairRemovalComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 30,
@@ -207,6 +221,7 @@ export class HairRemovalComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 31,
@@ -220,6 +235,7 @@ export class HairRemovalComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
     },
     {
       id: 32,
@@ -233,6 +249,7 @@ export class HairRemovalComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
     },
     {
       id: 33,
@@ -246,6 +263,7 @@ export class HairRemovalComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 34,
@@ -259,6 +277,7 @@ export class HairRemovalComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
     },
     {
       id: 35,
@@ -272,6 +291,7 @@ export class HairRemovalComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 36,
@@ -285,6 +305,7 @@ export class HairRemovalComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 1,
@@ -298,6 +319,7 @@ export class HairRemovalComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
     },
     {
       id: 2,
@@ -311,6 +333,7 @@ export class HairRemovalComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
     },
     {
       id: 3,
@@ -324,6 +347,7 @@ export class HairRemovalComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 4,
@@ -337,6 +361,7 @@ export class HairRemovalComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
     },
     {
       id: 5,
@@ -350,6 +375,7 @@ export class HairRemovalComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 6,
@@ -363,6 +389,7 @@ export class HairRemovalComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 7,
@@ -376,6 +403,7 @@ export class HairRemovalComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
     },
     {
       id: 8,
@@ -389,6 +417,7 @@ export class HairRemovalComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
     },
     {
       id: 9,
@@ -402,6 +431,7 @@ export class HairRemovalComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 10,
@@ -415,6 +445,7 @@ export class HairRemovalComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
     },
     {
       id: 11,
@@ -428,6 +459,7 @@ export class HairRemovalComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 12,
@@ -441,6 +473,7 @@ export class HairRemovalComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
 
     {
@@ -455,6 +488,7 @@ export class HairRemovalComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
     },
     {
       id: 14,
@@ -468,6 +502,7 @@ export class HairRemovalComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
     },
     {
       id: 15,

@@ -3,8 +3,6 @@ import { ServiceCardComponent } from '../service-card/service-card.component';
 import { CommonModule } from '@angular/common';
 import { Service } from '../../models/service';
 
-
-
 @Component({
   selector: 'app-the-most-requested',
   standalone: true,
@@ -26,6 +24,7 @@ export class TheMostRequestedComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
     },
     {
       id: 2,
@@ -39,6 +38,7 @@ export class TheMostRequestedComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
     },
     {
       id: 3,
@@ -52,6 +52,7 @@ export class TheMostRequestedComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 4,
@@ -65,6 +66,7 @@ export class TheMostRequestedComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
     },
     {
       id: 5,
@@ -78,6 +80,7 @@ export class TheMostRequestedComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 6,
@@ -91,6 +94,7 @@ export class TheMostRequestedComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 7,
@@ -104,6 +108,7 @@ export class TheMostRequestedComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
     },
     {
       id: 8,
@@ -117,6 +122,7 @@ export class TheMostRequestedComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
     },
     {
       id: 9,
@@ -125,11 +131,12 @@ export class TheMostRequestedComponent {
         'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/metal_braces/desktop.webp',
       title: 'Laser teeth whitening',
       description: '1 Session Laser teeth whitening',
-      rating:3.5,
+      rating: 3.5,
       reviewCount: 12,
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 10,
@@ -143,6 +150,7 @@ export class TheMostRequestedComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
     },
     {
       id: 11,
@@ -156,6 +164,7 @@ export class TheMostRequestedComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 12,
@@ -169,6 +178,7 @@ export class TheMostRequestedComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
 
     {
@@ -183,6 +193,7 @@ export class TheMostRequestedComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
     },
     {
       id: 14,
@@ -196,6 +207,7 @@ export class TheMostRequestedComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
     },
     {
       id: 15,
@@ -209,6 +221,7 @@ export class TheMostRequestedComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 16,
@@ -222,6 +235,7 @@ export class TheMostRequestedComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
     },
     {
       id: 17,
@@ -235,6 +249,7 @@ export class TheMostRequestedComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 18,
@@ -248,6 +263,7 @@ export class TheMostRequestedComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 19,
@@ -261,6 +277,7 @@ export class TheMostRequestedComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
     },
     {
       id: 20,
@@ -274,6 +291,7 @@ export class TheMostRequestedComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
     },
     {
       id: 21,
@@ -287,6 +305,7 @@ export class TheMostRequestedComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 22,
@@ -300,6 +319,7 @@ export class TheMostRequestedComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
     },
     {
       id: 23,
@@ -313,6 +333,7 @@ export class TheMostRequestedComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 24,
@@ -326,6 +347,7 @@ export class TheMostRequestedComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 25,
@@ -339,6 +361,7 @@ export class TheMostRequestedComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
     },
     {
       id: 26,
@@ -352,6 +375,7 @@ export class TheMostRequestedComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
     },
     {
       id: 27,
@@ -365,6 +389,7 @@ export class TheMostRequestedComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 28,
@@ -378,6 +403,7 @@ export class TheMostRequestedComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
     },
     {
       id: 29,
@@ -391,6 +417,7 @@ export class TheMostRequestedComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 30,
@@ -404,6 +431,7 @@ export class TheMostRequestedComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 31,
@@ -417,6 +445,7 @@ export class TheMostRequestedComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
     },
     {
       id: 32,
@@ -430,6 +459,7 @@ export class TheMostRequestedComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
     },
     {
       id: 33,
@@ -443,6 +473,7 @@ export class TheMostRequestedComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 34,
@@ -456,6 +487,7 @@ export class TheMostRequestedComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
     },
     {
       id: 35,
@@ -469,6 +501,7 @@ export class TheMostRequestedComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 36,
@@ -482,6 +515,7 @@ export class TheMostRequestedComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
   ];
 }

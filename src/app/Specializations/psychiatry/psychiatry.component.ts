@@ -6,7 +6,7 @@ import { ServiceCardComponent } from '../../all-offers/service-card/service-card
 import { Service } from '../../models/service';
 
 @Component({
-  selector:  'app-psychiatry',
+  selector: 'app-psychiatry',
   standalone: true,
   imports: [ServiceCardComponent, CommonModule, NavbarOffersComponent],
   templateUrl: './psychiatry.component.html',
@@ -18,16 +18,18 @@ export class PsychiatryComponent {
       id: 1,
       discount: 20,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250308191348717.png',
-      title: 'CBCT',
-      description: '1 Scan Dental CT scan',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250115154607464.png',
+      title: 'Complete Course Psychoanalysis 24 sessions',
+      description: '1 Sessions Psychoanalysis session, Specialist',
       rating: 5,
       reviewCount: 200,
-      bookedCount: 1545,
-      originalPrice: 2000,
-      discountPrice: 400,
+      bookedCount: 20,
+      originalPrice: 50000,
+      discountPrice: 10000,
+      offersLink: `/offers/1`,
+
     },
-    
+
   ];
 }
 

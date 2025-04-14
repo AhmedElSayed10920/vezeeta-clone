@@ -5,23 +5,23 @@
         <!-- Offer cards container -->
         <div class="row flex-nowrap overflow-hidden" #carouselContainer>
             <div *ngFor="let offer of visibleOffers" class="col-md-3 col-6">
-                <div class="card offer-card border-0 shadow-sm" (click)="goToDetails(offer.id)"
+               <div class="card offer-card border-0 shadow-sm" (click)="goToDetails(offer.id)"
                     style="cursor: pointer;">
                     <div class="position-relative">
-                        <img src="{{ offer.image }}" class="card-img-top rounded-3" alt="{{ offer.title }}">
-                        <span class="badge bg-danger position-absolute top-0 start-0 m-2 px-2 py-1">
+                        <a class="text-decoration-none" routerLink="{{offer.offerLink}}"><img src="{{ offer.image }}" class="card-img-top rounded-3" alt="{{ offer.title }}"></a>
+                        <a class="text-decoration-none" routerLink="{{offer.offerLink}}"><span class="badge bg-danger position-absolute top-0 start-0 m-2 px-2 py-1">
                             {{ offer.discount }}% OFF
-                        </span>
+                        </span></a>
                     </div>
                     <div class="card-body text-center">
-                        <p class="card-title ">{{ offer.title }}</p>
-                        <p class="card-title light-gray">{{ offer.description }}</p>
+                        <a class="text-decoration-none" routerLink="{{offer.offerLink}}"><p class="card-title ">{{ offer.title }}</p></a>
+                        <a class="text-decoration-none" routerLink="{{offer.offerLink}}"><p class="card-title light-gray">{{ offer.description }}</p></a>
 
 
                         <p class="mb-1">
-                            <span class="text-decoration-line-through me-2 light-gray">{{ offer.originalPrice }}
-                                EGP</span>
-                            <span class="text-primary fw-bold">{{ offer.price }} EGP</span>
+                            <a class="text-decoration-none" routerLink="{{offer.offerLink}}"><span class="text-decoration-line-through me-2 light-gray">{{ offer.originalPrice }}
+                                EGP</span></a>
+                                <a class="text-decoration-none" routerLink="{{offer.offerLink}}"> <span class="text-primary fw-bold">{{ offer.price }} EGP</span></a>
                         </p>
                     </div>
                 </div>

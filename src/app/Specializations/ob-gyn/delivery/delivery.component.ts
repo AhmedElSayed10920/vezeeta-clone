@@ -1,5 +1,3 @@
-
-
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ServiceCardComponent } from '../../../all-offers/service-card/service-card.component';
@@ -7,11 +5,11 @@ import { NavbarOffersComponent } from '../../../all-offers/navbar-offers/navbar-
 import { Service } from '../../../models/service';
 
 @Component({
-  selector:  'app-delivery',
+  selector: 'app-delivery',
   standalone: true,
   imports: [ServiceCardComponent, CommonModule, NavbarOffersComponent],
   templateUrl: './delivery.component.html',
-  styleUrl: './delivery.component.css'
+  styleUrl: './delivery.component.css',
 })
 export class DeliveryComponent {
   services: Service[] = [
@@ -27,6 +25,7 @@ export class DeliveryComponent {
       bookedCount: 0,
       originalPrice: 5250,
       discountPrice: 1050,
+      offersLink: `/offers/1`,
     },
     {
       id: 2,
@@ -40,9 +39,7 @@ export class DeliveryComponent {
       bookedCount: 0,
       originalPrice: 6500,
       discountPrice: 1300,
+      offersLink: `/offers/1`,
     },
-    
   ];
 }
-
-

@@ -1,5 +1,3 @@
-
-
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarOffersComponent } from '../../all-offers/navbar-offers/navbar-offers.component';
@@ -7,11 +5,11 @@ import { ServiceCardComponent } from '../../all-offers/service-card/service-card
 import { Service } from '../../models/service';
 
 @Component({
-  selector:  'app-ob-gyn',
+  selector: 'app-ob-gyn',
   standalone: true,
   imports: [ServiceCardComponent, CommonModule, NavbarOffersComponent],
   templateUrl: './ob-gyn.component.html',
-  styleUrl: './ob-gyn.component.css'
+  styleUrl: './ob-gyn.component.css',
 })
 export class ObGynComponent {
   services: Service[] = [
@@ -27,6 +25,7 @@ export class ObGynComponent {
       bookedCount: 0,
       originalPrice: 5250,
       discountPrice: 1050,
+      offersLink: `/offers/1`,
     },
     {
       id: 2,
@@ -40,9 +39,7 @@ export class ObGynComponent {
       bookedCount: 0,
       originalPrice: 6500,
       discountPrice: 1300,
+      offersLink: `/offers/1`,
     },
-    
   ];
 }
-
-

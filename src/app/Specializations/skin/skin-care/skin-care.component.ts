@@ -1,5 +1,3 @@
-
-
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ServiceCardComponent } from '../../../all-offers/service-card/service-card.component';
@@ -7,11 +5,11 @@ import { NavbarOffersComponent } from '../../../all-offers/navbar-offers/navbar-
 import { Service } from '../../../models/service';
 
 @Component({
-  selector:'app-skin-care',
+  selector: 'app-skin-care',
   standalone: true,
   imports: [ServiceCardComponent, CommonModule, NavbarOffersComponent],
   templateUrl: './skin-care.component.html',
-  styleUrl: './skin-care.component.css'
+  styleUrl: './skin-care.component.css',
 })
 export class SkinCareComponent {
   services: Service[] = [
@@ -27,6 +25,7 @@ export class SkinCareComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
     },
     {
       id: 2,
@@ -40,6 +39,7 @@ export class SkinCareComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
     },
     {
       id: 3,
@@ -53,6 +53,7 @@ export class SkinCareComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 4,
@@ -66,6 +67,7 @@ export class SkinCareComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
     },
     {
       id: 5,
@@ -79,6 +81,7 @@ export class SkinCareComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 6,
@@ -92,6 +95,7 @@ export class SkinCareComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 7,
@@ -105,6 +109,7 @@ export class SkinCareComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
     },
     {
       id: 8,
@@ -118,6 +123,7 @@ export class SkinCareComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
     },
     {
       id: 9,
@@ -131,6 +137,7 @@ export class SkinCareComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 10,
@@ -144,6 +151,7 @@ export class SkinCareComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
     },
     {
       id: 11,
@@ -157,6 +165,7 @@ export class SkinCareComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 12,
@@ -170,6 +179,7 @@ export class SkinCareComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
 
     {
@@ -184,6 +194,7 @@ export class SkinCareComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
     },
     {
       id: 14,
@@ -197,6 +208,7 @@ export class SkinCareComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
     },
     {
       id: 15,
@@ -210,6 +222,7 @@ export class SkinCareComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 16,
@@ -223,6 +236,7 @@ export class SkinCareComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
     },
     {
       id: 17,
@@ -236,6 +250,7 @@ export class SkinCareComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 18,
@@ -249,6 +264,7 @@ export class SkinCareComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 19,
@@ -262,6 +278,7 @@ export class SkinCareComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
     },
     {
       id: 20,
@@ -275,6 +292,7 @@ export class SkinCareComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
     },
     {
       id: 21,
@@ -288,6 +306,7 @@ export class SkinCareComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 22,
@@ -301,6 +320,7 @@ export class SkinCareComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
     },
     {
       id: 23,
@@ -314,6 +334,7 @@ export class SkinCareComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 24,
@@ -327,6 +348,7 @@ export class SkinCareComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 25,
@@ -340,6 +362,7 @@ export class SkinCareComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
     },
     {
       id: 26,
@@ -353,6 +376,7 @@ export class SkinCareComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
     },
     {
       id: 27,
@@ -366,6 +390,7 @@ export class SkinCareComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 28,
@@ -379,6 +404,7 @@ export class SkinCareComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
     },
     {
       id: 29,
@@ -392,6 +418,7 @@ export class SkinCareComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 30,
@@ -405,6 +432,7 @@ export class SkinCareComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 31,
@@ -418,6 +446,7 @@ export class SkinCareComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
     },
     {
       id: 32,
@@ -431,6 +460,7 @@ export class SkinCareComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
     },
     {
       id: 33,
@@ -444,6 +474,7 @@ export class SkinCareComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 34,
@@ -457,6 +488,7 @@ export class SkinCareComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
     },
     {
       id: 35,
@@ -470,6 +502,7 @@ export class SkinCareComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 36,
@@ -483,8 +516,7 @@ export class SkinCareComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
   ];
 }
-
-

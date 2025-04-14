@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-service-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,RouterModule],
   templateUrl: './service-card.component.html',
   styleUrls: ['./service-card.component.css']
 })
@@ -20,4 +21,7 @@ export class ServiceCardComponent {
   @Input() originalPrice: number = 0;
   @Input() discountPrice: number = 0;
   @Input() hasOffer: boolean = false;
+  @Input() offersLink: string='';
+
+
 }

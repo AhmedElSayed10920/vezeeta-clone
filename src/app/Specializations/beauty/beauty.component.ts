@@ -1,5 +1,3 @@
-
-
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Service } from '../../models/service';
@@ -19,7 +17,7 @@ export class BeautyComponent {
       id: 1,
       discount: 40,
       image:
-        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/teeth_cleaning/desktop.webp',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240201225947885.png',
       title: 'Scaling and Polishing',
       description: '1 Session Scaling and Polishing',
       rating: 5,
@@ -27,12 +25,13 @@ export class BeautyComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
     },
     {
       id: 2,
       discount: 50,
       image:
-        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/facial_cleansing/desktop.webp',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520241126093019729.png',
       title: 'Composite white filling',
       description: '1 Session Composite Filling',
       rating: 4.5,
@@ -40,12 +39,13 @@ export class BeautyComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/2`,
     },
     {
       id: 3,
       discount: 20,
       image:
-        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/metal_braces/desktop.webp',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240129084212886.png',
       title: 'Laser teeth whitening',
       description: '1 Session Laser teeth whitening',
       rating: 3.5,
@@ -53,12 +53,13 @@ export class BeautyComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/3`,
     },
     {
       id: 4,
       discount: 50,
       image:
-        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/face_peeling/desktop.webp',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520241010164649496.png',
       title: 'BPM crown installation',
       description: '1 Crown BFM crown installation',
       rating: 3,
@@ -66,12 +67,13 @@ export class BeautyComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/4`,
     },
     {
       id: 5,
       discount: 33,
       image:
-        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/laser_hair_removal/desktop.webp',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250121115348302.png',
       title: 'Zircon crown installation',
       description: '1 Crown Crown Installation',
       rating: 5,
@@ -79,12 +81,13 @@ export class BeautyComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/5`,
     },
     {
       id: 6,
       discount: 20,
       image:
-        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/body_sculpting_and_fats_dissolving/desktop.webp',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/162352591320240103193053006.png',
       title: 'Hollywood Smile with Diremposite Veneer',
       description: '1 Tooth Hollywood Smile with Direct Composite Veneer',
       rating: 4.5,
@@ -92,12 +95,13 @@ export class BeautyComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/6`,
     },
     {
       id: 7,
       discount: 40,
       image:
-        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/teeth_cleaning/desktop.webp',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240103193531100.png',
       title: 'Scaling and Polishing',
       description: '1 Session Scaling and Polishing',
       rating: 4,
@@ -105,12 +109,13 @@ export class BeautyComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/7`,
     },
     {
       id: 8,
       discount: 50,
       image:
-        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/facial_cleansing/desktop.webp',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250225141615675.png',
       title: 'Composite white filling',
       description: '1 Session Composite Filling',
       rating: 4.5,
@@ -118,12 +123,13 @@ export class BeautyComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/8`,
     },
     {
       id: 9,
       discount: 20,
       image:
-        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/metal_braces/desktop.webp',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250318153448914.png',
       title: 'Laser teeth whitening',
       description: '1 Session Laser teeth whitening',
       rating: 3.5,
@@ -131,12 +137,13 @@ export class BeautyComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/9`,
     },
     {
       id: 10,
       discount: 50,
       image:
-        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/face_peeling/desktop.webp',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520200929133346644.png',
       title: 'BPM crown installation',
       description: '1 Crown BFM crown installation',
       rating: 5,
@@ -144,6 +151,7 @@ export class BeautyComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/10`,
     },
     {
       id: 11,
@@ -157,6 +165,7 @@ export class BeautyComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/11`,
     },
     {
       id: 12,
@@ -170,6 +179,7 @@ export class BeautyComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/12`,
     },
 
     {
@@ -184,6 +194,7 @@ export class BeautyComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/13`,
     },
     {
       id: 14,
@@ -197,6 +208,7 @@ export class BeautyComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/14`,
     },
     {
       id: 15,
@@ -210,6 +222,7 @@ export class BeautyComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/15`,
     },
     {
       id: 16,
@@ -223,6 +236,7 @@ export class BeautyComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/16`,
     },
     {
       id: 17,
@@ -236,6 +250,7 @@ export class BeautyComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/17`,
     },
     {
       id: 18,
@@ -249,6 +264,7 @@ export class BeautyComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/18`,
     },
     {
       id: 19,
@@ -262,6 +278,7 @@ export class BeautyComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/19`,
     },
     {
       id: 20,
@@ -275,6 +292,7 @@ export class BeautyComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/20`,
     },
     {
       id: 21,
@@ -288,6 +306,7 @@ export class BeautyComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 22,
@@ -301,6 +320,7 @@ export class BeautyComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/2`,
     },
     {
       id: 23,
@@ -314,6 +334,7 @@ export class BeautyComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/3`,
     },
     {
       id: 24,
@@ -327,6 +348,7 @@ export class BeautyComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/4`,
     },
     {
       id: 25,
@@ -340,6 +362,7 @@ export class BeautyComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/5`,
     },
     {
       id: 26,
@@ -353,6 +376,7 @@ export class BeautyComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/6`,
     },
     {
       id: 27,
@@ -366,6 +390,7 @@ export class BeautyComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/7`,
     },
     {
       id: 28,
@@ -379,6 +404,7 @@ export class BeautyComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/8`,
     },
     {
       id: 29,
@@ -392,6 +418,7 @@ export class BeautyComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/9`,
     },
     {
       id: 30,
@@ -405,6 +432,7 @@ export class BeautyComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/10`,
     },
     {
       id: 31,
@@ -418,6 +446,7 @@ export class BeautyComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/11`,
     },
     {
       id: 32,
@@ -431,6 +460,7 @@ export class BeautyComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/12`,
     },
     {
       id: 33,
@@ -444,6 +474,7 @@ export class BeautyComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/13`,
     },
     {
       id: 34,
@@ -470,6 +501,7 @@ export class BeautyComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/14`,
     },
     {
       id: 36,
@@ -483,8 +515,7 @@ export class BeautyComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/15`,
     },
   ];
 }
-
-

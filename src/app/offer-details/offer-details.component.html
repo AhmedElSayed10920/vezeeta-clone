@@ -16,9 +16,9 @@
   <div class="side-component" *ngIf="offer">
     <div class="offer-info">
       <h2>{{offer.title}}</h2>
-      <p class="offer-description">{{ offer?.description }}</p>
+      <p class="offer-description">{{ offer.description }}</p>
       <div class="discount-section">
-        <span class="discount-percentage">{{ offer?.discountPercentage }}% خصم</span>
+        <span class="discount-percentage">{{ offer.discountPercentage }}% خصم</span>
       </div>
       <div class="rating">
         <span class="stars">★★★★★</span>
@@ -26,9 +26,9 @@
       </div>
       <div class="price-section">
         <div class="price-details">
-          <span class="original-price">{{ offer?.originalPrice }} EGP</span>
-          <span class="final-price">{{ offer?.finalPrice }} EGP</span>
-          <span class="savings">save {{ (offer?.originalPrice ?? 0) - (offer?.finalPrice ?? 0) }} EGP</span>
+          <span class="original-price">{{ offer.originalPrice }} EGP</span>
+          <span class="final-price">{{ offer.finalPrice }} EGP</span>
+          <span class="savings">save {{ (offer.originalPrice ?? 0) - (offer.finalPrice ?? 0) }} EGP</span>
         </div>
       </div>
       <div class="stats">

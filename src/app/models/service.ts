@@ -1,5 +1,6 @@
 export interface Service {
 
+    id: number;
     title: string;
     description: string;
     rating: number;
@@ -9,7 +10,7 @@ export interface Service {
     discountPrice: number;
     discount: number;
     image: string;
-    id: number;
     hasOffer?: boolean;
     isNew?: boolean;
+    offersLink?:string;
 }

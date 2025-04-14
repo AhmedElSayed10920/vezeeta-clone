@@ -1,4 +1,3 @@
-
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ServiceCardComponent } from '../../../all-offers/service-card/service-card.component';
@@ -10,7 +9,7 @@ import { Service } from '../../../models/service';
   standalone: true,
   imports: [ServiceCardComponent, CommonModule, NavbarOffersComponent],
   templateUrl: './hair-loss-treatment.component.html',
-  styleUrl: './hair-loss-treatment.component.css'
+  styleUrl: './hair-loss-treatment.component.css',
 })
 export class HairLossTreatmentComponent {
   services: Service[] = [
@@ -26,6 +25,7 @@ export class HairLossTreatmentComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
     },
     {
       id: 2,
@@ -39,6 +39,7 @@ export class HairLossTreatmentComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
     },
     {
       id: 3,
@@ -52,6 +53,7 @@ export class HairLossTreatmentComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 4,
@@ -65,8 +67,7 @@ export class HairLossTreatmentComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
-    }
+      offersLink: `/offers/1`,
+    },
   ];
 }
-
-
