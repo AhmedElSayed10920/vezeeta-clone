@@ -1,0 +1,111 @@
+<div class="profile-card shadow">
+  <div class="card-header">Manage Profile</div>
+  <div class="card-body p-4">
+    <form #form="ngForm" (ngSubmit)="saveProfile()" novalidate>
+      <!-- Name -->
+      <div class="mb-3">
+        <label class="form-label"
+          >Your Name <span class="text-danger">*</span></label
+        >
+        <input
+          type="text"
+          class="form-control"
+          name="name"
+          [(ngModel)]="name"
+          required
+          pattern="^[A-Za-z ]{3,}$"
+          #nameField="ngModel"
+        />
+        <div class="text-danger" *ngIf="nameField.invalid && nameField.touched">
+          Name must be at least 3 English letters
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="mb-3">
+        <label class="form-label"
+          >Email Address <span class="text-danger">*</span></label
+        >
+        <input
+          type="email"
+          class="form-control"
+          name="email"
+          [(ngModel)]="email"
+          required
+          pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+          #emailField="ngModel"
+        />
+        <div
+          class="text-danger"
+          *ngIf="emailField.invalid && emailField.touched"
+        >
+          Please enter a valid email
+        </div>
+      </div>
+
+      <!-- Mobile -->
+      <div class="mb-3">
+        <label class="form-label"
+          >Mobile Number <span class="text-danger">*</span></label
+        >
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control"
+            name="mobile"
+            [(ngModel)]="mobile"
+            required
+            pattern="^(010|011|012|015)[0-9]{8}$"
+            #mobileField="ngModel"
+          />
+          <span class="input-group-text bg-white">
+            <img
+              src="https://flagcdn.com/w40/eg.png"
+              alt="EG"
+              style="width: 30px; height: 20px"
+            />
+          </span>
+        </div>
+        <div
+          class="text-danger"
+          *ngIf="mobileField.invalid && mobileField.touched"
+        >
+          Mobile must be 11 digits and start with 010 / 011 / 012 / 015
+        </div>
+      </div>
+
+      <!-- Birth Date -->
+      <div class="mb-3">
+        <label class="form-label">Birth Date</label>
+        <input
+          type="date"
+          class="form-control"
+          name="birthDate"
+          [(ngModel)]="birthDate"
+          [max]="maxDate"
+          #birthDateField="ngModel"
+        />
+        <div
+          class="text-danger"
+          *ngIf="birthDateField.touched && birthDate && isDateInvalid()"
+        >
+          Birth date cannot be in the future
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="button-group">
+        <button
+          type="submit"
+          class="btn btn-danger px-4"
+          [disabled]="form.invalid || isDateInvalid()"
+        >
+          SAVE
+        </button>
+        <button type="button" class="btn btn-light px-4" (click)="cancelEdit()">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -18,7 +18,6 @@ import { KidneyComponent } from './Specializations/kidney/kidney.component';
 import { LaserComponent } from './Specializations/laser/laser.component';
 import { ScansComponent } from './Specializations/scans/scans.component';
 import { SkinComponent } from './Specializations/skin/skin.component';
-
 import { SmileMakeoverComponent } from './Specializations/dental-care/smile-makeover/smile-makeover.component';
 import { WhiteningComponent } from './Specializations/dental-care/whitening/whitening.component';
 import { ImplantComponent } from './Specializations/dental-care/implant/implant.component';
@@ -69,13 +68,9 @@ import { PsychiatryComponent } from './Specializations/psychiatry/psychiatry.com
 import { GeneralPsychiatryServicesComponent } from './Specializations/psychiatry/general-psychiatry-services/general-psychiatry-services.component';
 import { ObGynComponent } from './Specializations/ob-gyn/ob-gyn.component';
 import { DeliveryComponent } from './Specializations/ob-gyn/delivery/delivery.component';
-
-
-
-
 import { AppointmentReservationComponent } from './appointment-reservation/appointment-reservation.component';
-
-
+import { SuccessReservationComponent } from './success-reservation/success-reservation.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -96,6 +91,7 @@ export const routes: Routes = [
   { path: 'toothExtraction', component: ToothExtractionComponent },
   { path: 'otherDentalOffers', component: OtherDentalOffersComponent },
 
+
   { path: 'laser', component: LaserComponent },
   { path: 'hairRemoval', component: HairRemovalComponent },
 
@@ -110,8 +106,7 @@ export const routes: Routes = [
   { path: 'acneScarsTreatment', component: AcneScarsTreatmentComponent },
   { path: 'tattoos', component: TattoosComponent },
   { path: 'skinWhitening', component: SkinWhiteningComponent },
-  { path: 'skinCare', component: SkinCareComponent},
-
+  { path: 'skinCare', component: SkinCareComponent },
 
   { path: 'beauty', component: BeautyComponent },
   { path: 'cellulite', component: CelluliteComponent },
@@ -119,18 +114,19 @@ export const routes: Routes = [
   { path: 'faceChin', component: FaceChinComponent },
   { path: 'breast', component: BreastComponent },
   { path: 'lips', component: LipsComponent },
-  { path: 'liposuction', component:LiposuctionComponent },
+  { path: 'liposuction', component: LiposuctionComponent },
   { path: 'bodySculpting', component: BodySculptingComponent },
   { path: 'butt', component: ButtComponent },
 
   { path: 'fitness', component: FitnessComponent },
   { path: 'weightLossSurgery', component: WeightLossSurgeryComponent },
   { path: 'weightLoss', component: WeightLossComponent },
-  { path: 'rehabilitation', component:RehabilitationComponent },
+  { path: 'rehabilitation', component: RehabilitationComponent },
   { path: 'nutrition', component: NutritionComponent },
 
+
   { path: 'scans', component: ScansComponent },
-  { path: 'ctScan', component: CtScanComponent},
+  { path: 'ctScan', component: CtScanComponent },
 
   { path: 'obGyn', component: ObGynComponent },
   { path: 'delivery', component: DeliveryComponent },
@@ -140,8 +136,8 @@ export const routes: Routes = [
   { path: 'kidneyDialysis', component: KidneyDialysisComponent },
 
   { path: 'generalSurgery', component: GeneralSurgeryComponent },
-  { path: 'abdomen', component: AbdomenComponent},
-  { path: 'oncologicalSurgery', component:OncologicalComponent },
+  { path: 'abdomen', component: AbdomenComponent },
+  { path: 'oncologicalSurgery', component: OncologicalComponent },
   { path: 'endocrineSurgery', component: EndocrineSurgeryComponent },
 
   { path: 'gastroIm', component: GastroImComponent },
@@ -155,6 +151,7 @@ export const routes: Routes = [
   { path: 'loginForDoctor', component: LoginForDoctorComponent },
   { path: 'signupForDoctor', component: SignupForDoctorComponent },
   { path: 'contactUS', component: ContactUSComponent },
+  { path: 'my-profile', component: MyProfileComponent },
   { path: 'allDoctors', component: AllDoctorsComponent },
   { path: 'doctors', component: DoctorsComponent },
   { path: 'doctorDetails/:id', component: DoctorDetailsComponent },
@@ -166,8 +163,7 @@ export const routes: Routes = [
   { path: 'doctors-list', component: DoctorsListComponent },
   { path: 'no-doctors', component: NoDoctorsComponent },
   { path: 'bookingPage', component: BookingPageComponent },
-
-
+  { path: 'SuccessReservation', component: SuccessReservationComponent },
 
   {path: 'appointmentReservation/:id', component: AppointmentReservationComponent},
   {path: 'offerDetails/:id', component: OfferDetailsComponent},
