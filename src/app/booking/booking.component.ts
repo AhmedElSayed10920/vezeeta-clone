@@ -38,7 +38,7 @@ export class BookingComponent {
       (response: any[]) => {
         this.doctors = response;
         console.log('Results after searching by doctor name', this.doctors);
-        this.router.navigate(['/doctors-list'], {
+        this.router.navigate(['/search'], {
           queryParams: {
             doctors: JSON.stringify(response),
           },
@@ -60,7 +60,7 @@ export class BookingComponent {
           console.log({
             response
           });
-          this.router.navigate(['/doctors-list'], {
+          this.router.navigate(['/search'], {
             queryParams: {
               doctors: JSON.stringify(response),
             },

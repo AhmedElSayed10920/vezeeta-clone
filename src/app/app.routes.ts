@@ -60,6 +60,7 @@ import { ChatAssistantComponent } from './chat-assistant/chat-assistant.componen
 import { DoctorsListComponent } from './doctors-list/doctors-list.component';
 import { NoDoctorsComponent } from './no-doctors/no-doctors.component';
 import { BookingPageComponent } from './booking-page/booking-page.component';
+import { SearchResultComponent } from './search-result/search-result.component';
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },

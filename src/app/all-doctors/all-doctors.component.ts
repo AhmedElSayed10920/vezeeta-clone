@@ -6,7 +6,7 @@ import { DoctorService } from '../services/doctor.service';
 import { Doctor } from '../doctor';
 import { ImageService } from '../shared/image.service';
 import { BookRequestService } from '../services/book-request.service';
-import { Filters } from '../filters-sidebar/filters-sidebar.component';
+import { Filters } from '../models/filters'; // Assuming you have a Filters model defined
 
 @Component({
   selector: 'app-all-doctors',
