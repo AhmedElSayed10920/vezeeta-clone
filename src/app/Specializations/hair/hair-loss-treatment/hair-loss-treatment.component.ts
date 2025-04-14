@@ -19,8 +19,8 @@ export class HairLossTreatmentComponent {
       discount: 40,
       image:
         'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250209103619748.png',
-      title: 'Scaling and Polishing',
-      description: '1 Session Scaling and Polishing',
+      title: 'Mesotherapy for hair fall treatment',
+      description: '1 Session Stem cells for Hair',
       rating: 5,
       reviewCount: 200,
       bookedCount: 1545,
@@ -32,8 +32,8 @@ export class HairLossTreatmentComponent {
       discount: 50,
       image:
         'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520200313144835045.png',
-      title: 'Composite white filling',
-      description: '1 Session Composite Filling',
+      title: 'German plasma for face',
+      description: '1 Session Plasma injection',
       rating: 4.5,
       reviewCount: 40,
       bookedCount: 570,
@@ -45,8 +45,8 @@ export class HairLossTreatmentComponent {
       discount: 20,
       image:
         'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520241126095602936.png',
-      title: 'Laser teeth whitening',
-      description: '1 Session Laser teeth whitening',
+      title: 'Hair fall & AGA treatment',
+      description: '4 Session Plasma hair injection',
       rating: 3.5,
       reviewCount: 12,
       bookedCount: 371,
@@ -58,8 +58,8 @@ export class HairLossTreatmentComponent {
       discount: 50,
       image:
         'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520241126095602936.png',
-      title: 'BPM crown installation',
-      description: '1 Crown BFM crown installation',
+      title: 'Hair PRP injection offer',
+      description: '1 Injection session Plasma injection',
       rating: 3,
       reviewCount: 0,
       bookedCount: 25,

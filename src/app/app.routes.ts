@@ -18,6 +18,7 @@ import { KidneyComponent } from './Specializations/kidney/kidney.component';
 import { LaserComponent } from './Specializations/laser/laser.component';
 import { ScansComponent } from './Specializations/scans/scans.component';
 import { SkinComponent } from './Specializations/skin/skin.component';
+
 import { SmileMakeoverComponent } from './Specializations/dental-care/smile-makeover/smile-makeover.component';
 import { WhiteningComponent } from './Specializations/dental-care/whitening/whitening.component';
 import { ImplantComponent } from './Specializations/dental-care/implant/implant.component';
@@ -56,10 +57,26 @@ import { AbdomenComponent } from './Specializations/general-surgery/abdomen/abdo
 import { OncologicalComponent } from './Specializations/general-surgery/oncological/oncological.component';
 import { EndocrineSurgeryComponent } from './Specializations/general-surgery/endocrine-surgery/endocrine-surgery.component';
 import { SkinCareComponent } from './Specializations/skin/skin-care/skin-care.component';
+import { OfferDetailsComponent } from './offer-details/offer-details.component';
+import { OfferNotFoundComponent } from './offer-not-found/offer-not-found.component';
 import { ChatAssistantComponent } from './chat-assistant/chat-assistant.component';
 import { DoctorsListComponent } from './doctors-list/doctors-list.component';
 import { NoDoctorsComponent } from './no-doctors/no-doctors.component';
 import { BookingPageComponent } from './booking-page/booking-page.component';
+import { EndoscopesComponent } from './Specializations/gastro-im/endoscopes/endoscopes.component';
+import { GastroImComponent } from './Specializations/gastro-im/gastro-im.component';
+import { PsychiatryComponent } from './Specializations/psychiatry/psychiatry.component';
+import { GeneralPsychiatryServicesComponent } from './Specializations/psychiatry/general-psychiatry-services/general-psychiatry-services.component';
+import { ObGynComponent } from './Specializations/ob-gyn/ob-gyn.component';
+import { DeliveryComponent } from './Specializations/ob-gyn/delivery/delivery.component';
+
+
+
+
+import { AppointmentReservationComponent } from './appointment-reservation/appointment-reservation.component';
+
+
+
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
@@ -78,7 +95,7 @@ export const routes: Routes = [
   { path: 'denture', component: DentureComponent },
   { path: 'toothExtraction', component: ToothExtractionComponent },
   { path: 'otherDentalOffers', component: OtherDentalOffersComponent },
- 
+
   { path: 'laser', component: LaserComponent },
   { path: 'hairRemoval', component: HairRemovalComponent },
 
@@ -111,9 +128,13 @@ export const routes: Routes = [
   { path: 'weightLoss', component: WeightLossComponent },
   { path: 'rehabilitation', component:RehabilitationComponent },
   { path: 'nutrition', component: NutritionComponent },
-  
+
   { path: 'scans', component: ScansComponent },
   { path: 'ctScan', component: CtScanComponent},
+
+  { path: 'obGyn', component: ObGynComponent },
+  { path: 'delivery', component: DeliveryComponent },
+
 
   { path: 'kidney', component: KidneyComponent },
   { path: 'kidneyDialysis', component: KidneyDialysisComponent },
@@ -123,6 +144,12 @@ export const routes: Routes = [
   { path: 'oncologicalSurgery', component:OncologicalComponent },
   { path: 'endocrineSurgery', component: EndocrineSurgeryComponent },
 
+  { path: 'gastroIm', component: GastroImComponent },
+  { path: 'endoscopes', component:EndoscopesComponent},
+
+  { path: 'psychiatry', component:PsychiatryComponent },
+  { path: 'generalPsychiatryServices', component: GeneralPsychiatryServicesComponent},
+
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'loginForDoctor', component: LoginForDoctorComponent },
@@ -131,12 +158,19 @@ export const routes: Routes = [
   { path: 'allDoctors', component: AllDoctorsComponent },
   { path: 'doctors', component: DoctorsComponent },
   { path: 'doctorDetails/:id', component: DoctorDetailsComponent },
+
+  { path: 'offers/:id', component: OfferDetailsComponent },
+  {path: 'offerNotFound', component: OfferNotFoundComponent},
   { path: 'chatAssistant', component: ChatAssistantComponent },
 
   { path: 'doctors-list', component: DoctorsListComponent },
   { path: 'no-doctors', component: NoDoctorsComponent },
   { path: 'bookingPage', component: BookingPageComponent },
 
-  
+
+
+  {path: 'appointmentReservation/:id', component: AppointmentReservationComponent},
+  {path: 'offerDetails/:id', component: OfferDetailsComponent},
+
   { path: '**', redirectTo: 'login', pathMatch: 'full' },
 ];
