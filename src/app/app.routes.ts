@@ -18,7 +18,6 @@ import { KidneyComponent } from './Specializations/kidney/kidney.component';
 import { LaserComponent } from './Specializations/laser/laser.component';
 import { ScansComponent } from './Specializations/scans/scans.component';
 import { SkinComponent } from './Specializations/skin/skin.component';
-
 import { SmileMakeoverComponent } from './Specializations/dental-care/smile-makeover/smile-makeover.component';
 import { WhiteningComponent } from './Specializations/dental-care/whitening/whitening.component';
 import { ImplantComponent } from './Specializations/dental-care/implant/implant.component';
@@ -69,12 +68,8 @@ import { PsychiatryComponent } from './Specializations/psychiatry/psychiatry.com
 import { GeneralPsychiatryServicesComponent } from './Specializations/psychiatry/general-psychiatry-services/general-psychiatry-services.component';
 import { ObGynComponent } from './Specializations/ob-gyn/ob-gyn.component';
 import { DeliveryComponent } from './Specializations/ob-gyn/delivery/delivery.component';
-
-
-
-
 import { AppointmentReservationComponent } from './appointment-reservation/appointment-reservation.component';
-
+import { SuccessReservationComponent } from './success-reservation/success-reservation.component';
 
 
 export const routes: Routes = [
@@ -166,8 +161,7 @@ export const routes: Routes = [
   { path: 'doctors-list', component: DoctorsListComponent },
   { path: 'no-doctors', component: NoDoctorsComponent },
   { path: 'bookingPage', component: BookingPageComponent },
-
-
+  { path: 'SuccessReservation', component: SuccessReservationComponent },
 
   {path: 'appointmentReservation/:id', component: AppointmentReservationComponent},
   {path: 'offerDetails/:id', component: OfferDetailsComponent},

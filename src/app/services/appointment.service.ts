@@ -6,9 +6,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AppointmentService {
-  private apiUrl = 'https://localhost:7167/api/Appointments';
+  private apointmentUrl = 'https://localhost:7167/api/Appointments';
+  private newPatient = 'https://localhost:7167/api/Patient/register';
 
-  constructor(private http: HttpClient) {}
+
+  constructor(private http: HttpClient) { }
 
   bookAppointment(payload: {
     adate: string,
@@ -17,6 +19,10 @@ export class AppointmentService {
     cid: number,
     did: number
   }): Observable<any> {
-    return this.http.post(this.apiUrl, payload);
+    return this.http.post(this.apointmentUrl, payload);
   }
+  createPatient(patientData: any) {
+    return this.http.post<any>(this.newPatient, patientData);
+  }
+
 }
