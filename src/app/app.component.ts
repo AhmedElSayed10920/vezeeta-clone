@@ -7,11 +7,10 @@ import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, RouterModule],
+  standalone: true,
+  imports: [RouterOutlet, HeaderComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  standalone: true,
-
 })
 export class AppComponent {
 
@@ -22,7 +21,7 @@ export class AppComponent {
         .subscribe(() => {
           window.scrollTo({
             top: 0,
-            behavior: 'auto' 
+            behavior: 'auto'
           });
         });
     }
