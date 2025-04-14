@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
+import { AppointmentService } from '../services/appointment.service';
 import { FormsModule } from '@angular/forms';
-import { Doctor } from '../doctor';
+
 
 @Component({
   selector: 'app-booking-form',
@@ -10,21 +11,38 @@ import { Doctor } from '../doctor';
 })
 export class BookingFormComponent {
   @Input() bookingInfo!: any;
+  selectedDate: string = ''; //  "2025-4-15"
+  selectedTime: string = ''; //  "14:00:00"
+  constructor(private appointmentService: AppointmentService) {}
+
   bookingData = {
     name: '',
     phone: '',
     email: ''
   };
   
-  // ده الفانكشن اللي بيتنادى لما الفورم يتبعت
   bookAppointment() {
-    // هنا تقدر تضيف logic للـ API أو عرض رسالة نجاح
-    console.log('Booking submitted:', this.bookingData);
+    const payload = {
+      adate: this.selectedDate,
+      atime: this.selectedTime,
+      pid: 105, // ده رقم الـ patient – بدّله باللي عندك
+      cid: this.bookingInfo?.doctor?.clinicId,
+      did: this.bookingInfo?.doctor?.id
+    };
 
-    alert(`تم الحجز بنجاح لـ ${this.bookingData.name}`);
+    console.log("Booking payload:", payload);
 
-    // تقدر هنا تمسح الداتا أو تنقل المستخدم لصفحة تانية
-    this.bookingData = { name: '', phone: '', email: '' };
+    this.appointmentService.bookAppointment(payload).subscribe({
+      next: (res) => {
+        alert("Booking Successful🎉");
+        console.log(res);
+      },
+      error: (err) => {
+        alert("Failed to Book❌");
+        console.error(err);
+      }
+    });
   }
 
 }
+
