@@ -1,7 +1,5 @@
 <div class="chat-container">
-  <div class="chat-header">
-    Vezeeta Smart Medical Assistant
-  </div>
+  <div class="chat-header">Vezeeta Smart Medical Assistant</div>
 
   <div class="chat-messages">
     <div *ngFor="let msg of messages" [ngClass]="msg.sender">
@@ -10,9 +8,41 @@
   </div>
 
   <div class="chat-input">
-    <input [(ngModel)]="userInput" (keyup.enter)="sendMessage()"
-      placeholder="Describe your symptoms or use the mic..." />
-    <button (click)="startListening()" title="Voice input" class="mic-btn">🎤</button>
+    <input
+      [(ngModel)]="userInput"
+      (keyup.enter)="sendMessage()"
+      placeholder="Describe your symptoms or use the mic..."
+    />
+
+    <!-- زر الميكروفون مع التأثيرات -->
+    <button
+      (click)="startListening()"
+      title="Voice input"
+      class="mic-btn"
+      [class.recording]="isRecording"
+    >
+      🎤
+    </button>
+
+    <!-- رسالة جاري التسجيل -->
+    <div *ngIf="isRecording" class="recording-message">جاري التسجيل...</div>
+
     <button (click)="sendMessage()" class="send-btn">Send</button>
+  </div>
+
+  <!-- إضافة أزرار لتغيير اللغة -->
+  <div class="language-selector">
+    <button
+      (click)="changeLanguage('ar-SA')"
+      [ngClass]="{ active: language === 'ar-SA' }"
+    >
+      العربية
+    </button>
+    <button
+      (click)="changeLanguage('en-US')"
+      [ngClass]="{ active: language === 'en-US' }"
+    >
+      English
+    </button>
   </div>
 </div>
