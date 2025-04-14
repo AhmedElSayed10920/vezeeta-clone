@@ -26,6 +26,12 @@ export class BookRequestService {
   searchByName(name: string) {
     let params = new HttpParams().set('name', name);
   
+    return this.http.get<any[]>(this.baseUrlByName, { params });
+  }
+
+  searchByName(name: string) {
+    let params = new HttpParams().set('name', name);
+  
     return this.http.get<any[]>(this.baseUrlByName, { params });
   }
 }

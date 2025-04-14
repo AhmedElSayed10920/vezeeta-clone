@@ -8,7 +8,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DoctorService {
-  private apiUrl = 'https://localhost:7167/api/Doctor/search';
+  private apiUrl = 'https://localhost:7167/api/Doctor/Doctors';
   private doctorByIdUrl = 'https://localhost:7167/api/Doctor';
 
 

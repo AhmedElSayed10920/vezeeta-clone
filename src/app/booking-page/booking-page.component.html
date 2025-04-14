@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="card">
+    <div class="card-content">
+      <div class="doctor-info">
+        <div class="logo-container">
+          <img [src]="getDoctorImage(bookingInfo.doctor.id)" class="clinic-logo" alt="Clinic Logo" />
+        </div>
+        <div class="details">
+          <h5 class="doctor-name">{{ bookingInfo.doctor.doctorName }}</h5>
+          <p class="main-specialty">{{ bookingInfo.doctor.clinicName }} - {{ bookingInfo.doctor.mainSpecialty }}</p>
+
+          <div class="rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-text">Overall Rating From 104 Visitors</span>
+          </div>
+
+          <p class="sub-specialty">{{ bookingInfo.doctor.subSpecialty }}</p>
+
+          <div class="info-item">
+            <i class="fa-solid fa-tooth"></i>
+            <span>{{ bookingInfo.doctor.subSpecialty }}</span>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>{{ bookingInfo.doctor.city }} - {{ bookingInfo.doctor.street }}</span>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-money-bill"></i>
+            <span>{{ bookingInfo.doctor.fees }} EGP</span>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-clock"></i>
+            <span>Waiting Time: 15 Minutes</span>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>{{ bookingInfo.doctor.phone }}</span>
+            <span class="rating-text">16676</span>
+          </div>
+        </div>
+      </div>
+      <app-booking-form [bookingInfo]="bookingInfo"></app-booking-form>
+    </div>
+  </div>
+</div>

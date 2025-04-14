@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-medical-question',
@@ -7,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './medical-question.component.css'
 })
 export class MedicalQuestionComponent {
-
+  constructor(private router: Router) { };
+  goToChatAssistant() {
+    this.router.navigate(['/chatAssistant']);
+  }
 }
