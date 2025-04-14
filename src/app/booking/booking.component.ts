@@ -1,8 +1,9 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { BookRequestService } from '../services/book-request.service';
 import { FormsModule, NgModel } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
+import { DoctorService } from '../services/doctor.service';
 
 @Component({
   selector: 'app-booking',
@@ -13,7 +14,8 @@ import { CommonModule } from '@angular/common';
 })
 export class BookingComponent {
   bookService = inject(BookRequestService);
-
+  doctorService = inject(DoctorService);
+  router = inject(Router);
   doctors: any[] = [];
   specialties: string[] = [];
   cities: string[] = [];
@@ -31,69 +33,90 @@ export class BookingComponent {
       this.searchByFilters();
     }
   }
-  //search by doctor name
   searchDoctorName() {
-    console.log('Searching by doctor name', this.doctorName);
-    this.bookService.getBookingData().subscribe(
+    this.bookService.searchByName(this.doctorName).subscribe(
       (response: any[]) => {
-        this.doctors = response.filter((doc) =>
-          doc.doctorName.toLowerCase().includes(this.doctorName.toLowerCase())
-        );
+        this.doctors = response;
         console.log('Results after searching by doctor name', this.doctors);
+        this.router.navigate(['/doctors-list'], {
+          queryParams: {
+            doctors: JSON.stringify(response),
+          },
+        });
       },
       (error) => {
-        console.error('Error fetching data when getting doctor name', error);
+        if (error.status === 404) {
+          this.router.navigate(['/no-doctors']);
+        }
       }
     );
   }
-  //search by filters: specialty, city, governorate
   searchByFilters() {
-    console.log('search for doctor', {
-      specialty: this.selectedSpecialty,
-      city: this.selectedCity,
-      governorate: this.selectedGovernorate,
-    });
-    //get new data based on the inputs from the API
     this.bookService
-      .getBookingData(
-        this.selectedSpecialty,
-        this.selectedCity,
-        this.selectedGovernorate
-      )
+      .getBookingData(this.selectedSpecialty, this.selectedGovernorate , this.selectedCity, )
       .subscribe(
         (response: any[]) => {
-          this.doctors = response.filter((doc) =>
-            this.doctorName
-              ? doc.doctorName
-                  .toLowerCase()
-                  .includes(this.doctorName.toLowerCase())
-              : true
-          );
-          this.doctors = this.doctors.filter(
-            (doc) =>
-              (this.selectedSpecialty
-                ? doc.mainSpecialty === this.selectedSpecialty
-                : true) &&
-              (this.selectedCity ? doc.city === this.selectedCity : true) &&
-              (this.selectedGovernorate
-                ? doc.governorate.trim() === this.selectedGovernorate.trim()
-                : true)
-          );
-
-          console.log('Results after search', this.doctors);
+          console.log({
+            response
+          });
+          this.router.navigate(['/doctors-list'], {
+            queryParams: {
+              doctors: JSON.stringify(response),
+            },
+          });
         },
         (error) => {
-          console.error('error at getting data', error);
+          if (error.status === 404) {
+            this.router.navigate(['/no-doctors']);
+          }
         }
       );
   }
+  // searchByFilters() {
+  //   console.log('search for doctor', {
+  //     specialty: this.selectedSpecialty,
+  //     city: this.selectedCity,
+  //     governorate: this.selectedGovernorate,
+  //   });
+  //   //get new data based on the inputs from the API
+  //   this.bookService
+  //     .getBookingData(
+  //       this.selectedSpecialty,
+  //       this.selectedCity,
+  //       this.selectedGovernorate
+  //     )
+  //     .subscribe(
+  //       (response: any[]) => {
+  //         this.doctors = response.filter((doc) =>
+  //           this.doctorName
+  //             ? doc.doctorName
+  //                 .toLowerCase()
+  //                 .includes(this.doctorName.toLowerCase())
+  //             : true
+  //         );
+  //         this.doctors = this.doctors.filter(
+  //           (doc) =>
+  //             (this.selectedSpecialty
+  //               ? doc.mainSpecialty === this.selectedSpecialty
+  //               : true) &&
+  //             (this.selectedCity ? doc.city === this.selectedCity : true) &&
+  //             (this.selectedGovernorate
+  //               ? doc.governorate.trim() === this.selectedGovernorate.trim()
+  //               : true)
+  //         );
+
+  //         console.log('Results after search', this.doctors);
+  //       },
+  //       (error) => {
+  //         console.error('error at getting data', error);
+  //       }
+  //     );
+  // }
   //get data from the API
   ngOnInit() {
-    this.bookService.getBookingData().subscribe(
+    this.doctorService.getDoctors().subscribe(
       (response: any[]) => {
-        // response is an array
         this.doctors = response;
-        //extract data without repetition and specify the type to string[]
         this.specialties = Array.from(
           new Set(response.map((doc) => doc.mainSpecialty as string))
         );

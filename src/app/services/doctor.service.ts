@@ -3,13 +3,20 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Doctor } from '../doctor';
 import { HttpClient } from '@angular/common/http';
+import { Offer } from '../offer';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DoctorService {
+
+
   private apiUrl = 'https://localhost:7167/api/Doctor/Doctors';
   private doctorByIdUrl = 'https://localhost:7167/api/Doctor';
+  private apiOffersUrl = 'https://localhost:7167/api/Offers';
+
+
+
 
   private staticAvailability = {
     Sat: ['10:00 AM', '11:30 PM'],
@@ -20,6 +27,8 @@ export class DoctorService {
     Thu: ['10:00 AM', '11:30 PM'],
     Fri: ['10:00 AM', '11:30 PM'],
   };
+
+
 
   constructor(private http: HttpClient) {}
 
@@ -56,4 +65,15 @@ export class DoctorService {
       })
     );
   }
+
+  getOffers(): Observable<Offer[]> {
+    return this.http.get<Offer[]>(this.apiOffersUrl);
+  }
+  // getOfferById(id: number): Observable<Offer> {
+  //   return this.http.get<Offer>(`${this.offerByIdUrl}/${id}`);
+  // }
+
+
 }
+
+

@@ -6,23 +6,26 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class BookRequestService {
-  private baseUrl = 'https://localhost:7167/api/Doctor/Doctors';
-
+  private baseUrlBySpeciality = 'https://localhost:7167/api/Doctor/search';
+  private baseUrlByName = 'https://localhost:7167/api/Doctor';
   constructor(private http: HttpClient) {}
-
   getBookingData(
-    specialty: string = '',
+    speciality: string = '',
     city: string = '',
     governorate: string = '',
-    name: string = ''
   ): Observable<any> {
     let params = new HttpParams();
 
-    if (specialty) params = params.set('specialty', specialty);
+    if (speciality) params = params.set('speciality', speciality);
     if (city) params = params.set('city', city);
     if (governorate) params = params.set('governorate', governorate);
-    if (name) params = params.set('name', name);
 
-    return this.http.get(this.baseUrl, { params });
+    return this.http.get(this.baseUrlBySpeciality, { params });
+  }
+
+  searchByName(name: string) {
+    let params = new HttpParams().set('name', name);
+
+    return this.http.get<any[]>(this.baseUrlByName, { params });
   }
 }

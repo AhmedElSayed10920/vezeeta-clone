@@ -1,24 +1,28 @@
-/* Appointment Reservation Component Styles */
 .appointment-reservation {
   flex: 1;
-  max-width: 350px;
+  max-width: 100%;
 }
 
 .appointment-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+  overflow: hidden;
 }
 
 .appointment-times {
   display: flex;
-  justify-content: space-between;
   gap: 8px;
+  justify-content: center;
+  flex: 1;
+  max-width: 300px;
+  overflow: hidden;
 }
 
 .times-column {
-  flex: 1;
+  flex: 0 0 auto;
   text-align: center;
 }
 
@@ -26,19 +30,20 @@
   background-color: #f8f9fa;
   border: 1px solid #e0e0e0;
   border-radius: 5px;
-  padding: 8px;
-  width: 100px;
+  width: 90px;
   min-height: 180px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .day-header {
   background-color: #007bff;
   color: white;
   padding: 5px;
-  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   font-weight: bold;
   font-size: 12px;
   margin-bottom: 10px;
@@ -54,21 +59,23 @@
 }
 
 .time-slot p {
-  font-size: 12px;
+  font-size: 11px;
   color: #555;
   margin: 2px 0;
   line-height: 1.2;
+  padding: 4px;
 }
 
 .book-btn {
   display: block;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   padding: 6px;
   background-color: #e63946;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   cursor: pointer;
   font-size: 12px;
 }
@@ -85,9 +92,10 @@
 .nav-arrow {
   background: none;
   border: none;
-  font-size: 18px;
+  font-size: 20px;
   cursor: pointer;
   color: #007bff;
+  padding: 0 5px;
 }
 
 .nav-arrow:disabled {
@@ -102,22 +110,38 @@
   margin-top: 10px;
 }
 
-/* تنسيقات للاستجابة (Responsive) */
+/* Responsive for small screens */
 @media (max-width: 768px) {
   .appointment-reservation {
-    max-width: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
   }
 
   .appointment-header {
-    width: 100%;
-    max-width: 320px;
+    flex-wrap: nowrap;
+    gap: 4px;
+  }
+
+  .appointment-times {
+    max-width: 270px;
   }
 
   .day-card {
-    width: 90px;
+    width: 75px;
     min-height: 160px;
+  }
+
+  .time-slot p {
+    font-size: 10px;
+  }
+
+  .book-btn {
+    font-size: 11px;
+    padding: 5px;
+  }
+
+  .nav-arrow { 
+    font-size: 12px;
   }
 }

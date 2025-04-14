@@ -1,0 +1,18 @@
+<div class="chat-container">
+  <div class="chat-header">
+    Vezeeta Smart Medical Assistant
+  </div>
+
+  <div class="chat-messages">
+    <div *ngFor="let msg of messages" [ngClass]="msg.sender">
+      <div class="message">{{ msg.text }}</div>
+    </div>
+  </div>
+
+  <div class="chat-input">
+    <input [(ngModel)]="userInput" (keyup.enter)="sendMessage()"
+      placeholder="Describe your symptoms or use the mic..." />
+    <button (click)="startListening()" title="Voice input" class="mic-btn">🎤</button>
+    <button (click)="sendMessage()" class="send-btn">Send</button>
+  </div>
+</div>
