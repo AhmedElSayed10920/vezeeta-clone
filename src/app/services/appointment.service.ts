@@ -24,5 +24,8 @@ export class AppointmentService {
   createPatient(patientData: any) {
     return this.http.post<any>(this.newPatient, patientData);
   }
+  getAppointmentsByPatientId(pid: number): Observable<any> {
+    return this.http.get(`${this.apointmentUrl}/patient/${pid}`);
+  }
 
 }

@@ -38,7 +38,7 @@
                 </tr>
                 <tr>
                     <td>Booking date</td>
-                    <td>{{bookingData?.booking?.date}} . From 08:00 PM to 11:30 PM Appointment reservation</td>
+                    <td>{{bookingData?.booking?.date}} . From 11:00 AM to 11:00 PM Appointment reservation</td>
                 </tr>
                 <tr>
                     <td>Doctor Name</td>
@@ -57,7 +57,7 @@
             </table>
         </div>
 
-        <a href="#" class="footer-btn">My Appointments</a>
+        <a (click)="goToMyAppointments()" class="footer-btn">My Appointments</a>
     </div>
     <div class="text-center" style="font-size: small; padding: 20px;">
         <p>Thank you for using Vezeeta, We wish you a speedy recovery</p>

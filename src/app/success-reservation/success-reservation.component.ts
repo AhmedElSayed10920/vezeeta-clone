@@ -14,4 +14,13 @@ export class SuccessReservationComponent {
     const nav = this.router.getCurrentNavigation();
     this.bookingData = nav?.extras?.state;
   }
+  goToMyAppointments() {
+    const token = localStorage.getItem('token');
+  
+    if (token) {
+      this.router.navigate(['/MyAppointments']);
+    } else {
+      this.router.navigate(['/login']);
+    }
+  }
 }
