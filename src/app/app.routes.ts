@@ -71,10 +71,14 @@ import { DeliveryComponent } from './Specializations/ob-gyn/delivery/delivery.co
 import { AppointmentReservationComponent } from './appointment-reservation/appointment-reservation.component';
 import { SuccessReservationComponent } from './success-reservation/success-reservation.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
+import { SearchResultComponent } from './search-result/search-result.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'search', component: SearchResultComponent },
+
+
 
   { path: 'allOffers', component: AllOffersComponent },
 

@@ -38,20 +38,20 @@ export class DoctorsListComponent {
   //   }
   // }
 
-  loadDoctors(filters: Filters) {
-    this.loading = true;
-    this.doctorService.getDoctorsWithFilters(this.filters).subscribe({
-      next: (doctors) => {
-        this.doctors = doctors;
-        this.loading = false;
-        this.updateUrlWithFilters();
-      },
-      error: (err) => {
-        console.error('Error loading doctors:', err);
-        this.loading = false;
-      }
-    });
-  }
+  // loadDoctors(filters: Filters) {
+  //   this.loading = true;
+  //   this.doctorService.getDoctorsWithFilters(this.filters).subscribe({
+  //     next: (doctors) => {
+  //       this.doctors = doctors;
+  //       this.loading = false;
+  //       this.updateUrlWithFilters();
+  //     },
+  //     error: (err) => {
+  //       console.error('Error loading doctors:', err);
+  //       this.loading = false;
+  //     }
+  //   });
+  // }
 
   private updateUrlWithFilters() {
     this.router.navigate([], {
@@ -74,15 +74,16 @@ export class DoctorsListComponent {
     this.route.queryParams.subscribe(params => {
       if (params['doctors']) {
         this.doctors = JSON.parse(params['doctors']);
-      } else {
-        this.loadDoctors({});
       }
+      //  else {
+      //   this.loadDoctors({});
+      // }
     });
   }
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['filters'] && !changes['filters'].firstChange) {
-      this.loadDoctors(this.filters);
+      // this.loadDoctors(this.filters);
     }
   }
 
