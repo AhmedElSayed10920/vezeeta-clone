@@ -1,15 +1,13 @@
 import { Component, inject } from '@angular/core';
-import { BookingComponent } from '../booking/booking.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { BookRequestService } from '../services/book-request.service';
 import { DoctorService } from '../services/doctor.service';
 import { Router } from '@angular/router';
-import { DoctorsListComponent } from '../doctors-list/doctors-list.component';
 
 @Component({
   selector: 'app-search-header',
-  imports: [BookingComponent,CommonModule,FormsModule,DoctorsListComponent],
+  imports: [CommonModule,FormsModule,],
   templateUrl: './search-header.component.html',
   styleUrl: './search-header.component.css'
 })
@@ -75,29 +73,6 @@ export class SearchHeaderComponent {
           }
         );
     }
-  //get data from the API
-  // ngOnInit() {
-  //   this.bookService.getBookingData().subscribe(
-  //     (response: any[]) => {
-  //       // response is an array
-  //       this.doctors = response;
-  //       //extract data without repetition and specify the type to string[]
-  //       this.specialties = Array.from(
-  //         new Set(response.map((doc) => doc.mainSpecialty as string))
-  //       );
-  //       this.cities = Array.from(
-  //         new Set(response.map((doc) => doc.city as string))
-  //       );
-  //       this.governorates = Array.from(
-  //         new Set(response.map((doc) => doc.governorate as string))
-  //       );
-  //     },
-
-  //     (error) => {
-  //       console.error('error fetching data', error);
-  //     }
-  //   );
-  // }
   ngOnInit() {
     this.doctorService.getDoctors().subscribe(
       (response: any[]) => {
