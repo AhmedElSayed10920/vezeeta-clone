@@ -1,0 +1,55 @@
+<!-- booking-form-simple.component.html -->
+<div class="container py-4">
+  <form (ngSubmit)="submitForm()" #form="ngForm" class="px-4">
+    <div class="mb-3">
+      <label class="form-label">Full Name</label>
+      <input type="text" id="name" name="name" class="form-control" [(ngModel)]="name" placeholder="Your Name" required>
+      <div *ngIf="formSubmitted && !name" class="text-danger mt-1">
+        Name is required
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Phone Number</label>
+      <div class="input-group">
+        <input type="tel" id="phone" name="phone" class="form-control" [(ngModel)]="phone" placeholder="Your Phone" required>
+        <span class="input-group-text">
+          <img src="https://flagcdn.com/w40/eg.png" width="20" alt="EG Flag">
+        </span>
+      </div>
+      <div *ngIf="formSubmitted && !phone" class="text-danger mt-1">
+        Phone number is required
+      </div>
+      <div *ngIf="formSubmitted && phone && !isPhoneValid()" class="text-danger mt-1">
+        Please enter a valid 11-digit phone number
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Booking Date</label>
+      <input type="date" id="bookingDate" name="bookingDate" class="form-control" [(ngModel)]="bookingDate" [min]="today" required>
+      <div *ngIf="formSubmitted && !bookingDate" class="text-danger mt-1">
+        Booking date is required
+      </div>
+      <div *ngIf="formSubmitted && bookingDate && !isDateValid()" class="text-danger mt-1">
+        Please select a date today or in the future
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Booking Time</label>
+      <input type="time" id="bookingTime" name="bookingTime" class="form-control" [(ngModel)]="bookingTime" min="11:00" max="23:00" required>
+      <div *ngIf="formSubmitted && !bookingTime" class="text-danger mt-1">
+        Booking time is required
+      </div>
+      <div *ngIf="formSubmitted && bookingTime && !isTimeValid()" class="text-danger mt-1">
+        Please select a time between 11:00 AM and 11:00 PM
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-between pb-4">
+      <button type="submit" class="btn btn-danger w-50 me-2">Book</button>
+      <button type="button" (click)="cancel()" class="btn btn-outline-secondary w-50">Cancel</button>
+    </div>
+  </form>
+</div>
