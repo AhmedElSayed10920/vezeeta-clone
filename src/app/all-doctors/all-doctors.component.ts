@@ -5,12 +5,13 @@ import { CommonModule } from '@angular/common';
 import { DoctorService } from '../services/doctor.service';
 import { Doctor } from '../doctor';
 import { ImageService } from '../shared/image.service';
+import { AppointmentReservationComponent } from "../appointment-reservation/appointment-reservation.component";
 import { BookRequestService } from '../services/book-request.service';
-import { Filters } from '../models/filters'; // Assuming you have a Filters model defined
+import { Filters } from '../models/filters';
 
 @Component({
   selector: 'app-all-doctors',
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, AppointmentReservationComponent],
   templateUrl: './all-doctors.component.html',
   styleUrl: './all-doctors.component.css'
 })
@@ -101,112 +102,6 @@ export class AllDoctorsComponent implements OnInit, OnChanges {
   }
   
 
-  // fetchDoctorsBasedOnFilters(): void {
-  //   // this.loading = true;
-  //   // const { specialty, city, governorate, name } = this.filters;
-
-  //   // this.doctorsService
-  //   //   .getDoctorsByFilters(specialty || '', city || '', governorate || '', name || '')
-  //   //   .subscribe({
-  //   //     next: (data) => {
-  //   //       this.doctors = data;
-  //   //       this.loading = false;
-  //   //     },
-  //   //     error: (err) => {
-  //   //       console.error('Error fetching doctors:', err);
-  //   //       this.loading = false;
-  //   //     },
-  //   //   });
-  //   const { specialty, city, governorate, name } = this.filters;
-
-  //   this.specialty = specialty || 'All Specialties';
-  //   console.log('filters received in AllDoctorsComponent', this.filters);
-
-
-  //   // استخدام BookRequestService لجلب البيانات بناءً على الفلاتر
-  //   this.bookService.getBookingData(specialty, city, governorate).subscribe(
-  //     (response: any[]) => {
-  //       console.log('API raw response:', response); // أضف هذا السطر
-
-  //       let filteredDoctors = response;
-
-  //       // تصفية حسب اسم الطبيب إذا تم إدخاله
-  //       if (name) {
-  //         filteredDoctors = filteredDoctors.filter((doc) =>
-  //           doc.doctorName.toLowerCase().includes(name.toLowerCase())
-  //         );
-  //       }
-
-  //       this.doctors = filteredDoctors;
-  //       this.totalPages.set(Math.ceil(this.doctors.length / this.itemsPerPage));
-
-  //       // تهيئة الحجوزات والأيام لكل طبيب
-  //       this.doctors.forEach(doctor => {
-  //         this.bookedAppointments[doctor.id] = {};
-  //         this.currentDayIndices[doctor.id] = 0;
-  //         this.displayedDays.forEach(day => {
-  //           this.bookedAppointments[doctor.id][day.date] = [];
-  //         });
-  //       });
-
-  //       this.updateVisibleDoctors();
-  //     },
-  //     error => {
-  //       console.error('Error fetching filtered doctors', error);
-  //     }
-  //   );
-  // }
-  // ngOnChanges() {
-  //   this.fetchDoctorsBasedOnFilters();
-  // }
-  
-
-  // ngOnInit(): void {
-  //   this.generateDisplayedDays();
-
-  //   this.route.queryParams.subscribe(params => {
-  //     console.log('Query params received:', params);
-
-  //     const { specialty, city, governorate, name } = params;
-
-  //     // استخدم BookRequestService لجلب البيانات بناءً على الفلاتر
-  //     this.bookService.getBookingData(specialty, city, governorate).subscribe(
-  //       (response: any[]) => {
-  //         let filteredDoctors = response;
-
-  //         if (name) {
-  //           filteredDoctors = filteredDoctors.filter((doc) =>
-  //             doc.doctorName.toLowerCase().includes(name.toLowerCase())
-  //           );
-  //         }
-
-  //         this.doctors = filteredDoctors;
-  //         this.totalPages.set(Math.ceil(this.doctors.length / this.itemsPerPage));
-
-  //         this.doctors.forEach(doctor => {
-  //           this.bookedAppointments[doctor.id] = {};
-  //           this.currentDayIndices[doctor.id] = 0;
-  //           this.displayedDays.forEach(day => {
-  //             this.bookedAppointments[doctor.id][day.date] = [];
-  //           });
-  //         });
-
-  //         this.updateVisibleDoctors();
-  //       },
-  //       error => {
-  //         console.error('Error fetching filtered doctors', error);
-  //       }
-  //     );
-  //   });
-  // }
-
-  // ngOnInit(): void {
-  //   this.generateDisplayedDays();
-  //   this.route.queryParams.subscribe(params => {
-  //     this.specialty = params['specialty'] || 'All Specialties';
-  //     this.fetchDoctors();
-  //   });
-  // }
 
   generateDisplayedDays(): void {
     const today = new Date(); // Use current date
@@ -282,7 +177,7 @@ export class AllDoctorsComponent implements OnInit, OnChanges {
     }
     this.bookedAppointments[doctorId][day].push(time);
     console.log(`Booked appointment for Doctor ${doctorId} at ${time} on ${day}`);
-    this.router.navigate(['/booking-confirmation'], {
+    this.router.navigate(['/bookingPage'], {
       queryParams: { doctorId, time, day }
     });
   }

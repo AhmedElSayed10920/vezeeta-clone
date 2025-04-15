@@ -25,4 +25,8 @@ export class HeaderComponent implements OnInit {
     this.tokenService.clearUsername();
     this.router.navigate(['/login']);
   }
+
+  goHome() {
+    this.router.navigate(['/home']);
+  }
 }
