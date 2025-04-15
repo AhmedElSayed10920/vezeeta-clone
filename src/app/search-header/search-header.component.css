@@ -1,0 +1,49 @@
+.text-container {
+  /* Default padding to match the container's padding on small screens */
+  padding-left: 15px; /* Matches Bootstrap's container padding on small screens */
+}
+
+.text-header {
+  max-width: 90%;
+}
+
+/* Medium screens (tablets) */
+@media (min-width: 768px) {
+  .text-container {
+    padding-left: 5%; /* Adjust for larger screens */
+  }
+
+  .text-header {
+    max-width: 70%;
+  }
+}
+
+/* Large screens (desktops) */
+@media (min-width: 992px) {
+  .text-container {
+    padding-left: calc((100% - 960px) / 2); /* Matches Bootstrap's container width for lg screens */
+  }
+
+  .text-header {
+    max-width: 60%;
+  }
+}
+
+/* Extra large screens */
+@media (min-width: 1200px) {
+  .text-container {
+    padding-left: calc((100% - 1140px) / 2); /* Matches Bootstrap's container width for xl screens */
+  }
+
+  .text-header {
+    max-width: 50%;
+  }
+}
+
+/* Small screens (mobile) */
+@media (max-width: 576px) {
+  .text-header {
+    font-size: 0.9rem !important;
+  }
+}
+

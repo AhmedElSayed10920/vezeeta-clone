@@ -1,13 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AppointmentService } from '../services/appointment.service';
 import { FormsModule } from '@angular/forms';
-import { Location } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { Router } from '@angular/router';
 
 
 @Component({
   selector: 'app-booking-form',
-  imports: [FormsModule],
+  imports: [FormsModule,CommonModule],
   templateUrl: './booking-form.component.html',
   styleUrl: './booking-form.component.css'
 })

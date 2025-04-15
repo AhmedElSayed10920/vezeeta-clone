@@ -25,7 +25,7 @@ export class HairLossTreatmentComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/4`,
     },
     {
       id: 2,
@@ -39,7 +39,7 @@ export class HairLossTreatmentComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/18`,
     },
     {
       id: 3,
@@ -53,13 +53,13 @@ export class HairLossTreatmentComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/19`,
     },
     {
       id: 4,
       discount: 50,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520241126095602936.png',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250121115348302.png',
       title: 'Hair PRP injection offer',
       description: '1 Injection session Plasma injection',
       rating: 3,
@@ -67,7 +67,7 @@ export class HairLossTreatmentComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/20`,
     },
   ];
 }
