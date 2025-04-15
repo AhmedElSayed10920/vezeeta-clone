@@ -29,6 +29,12 @@ export class LoginComponent {
         console.log('✅ Response:', res);
         if (res.token) {
           localStorage.setItem('token', res.token);
+          localStorage.setItem('user', JSON.stringify({
+            id: res.patient.pid,
+            name: res.patient.pname,
+            phone: res.patient.pphone,
+            email: res.patient.pemail
+          }));
           localStorage.setItem('username', res.patient.pname);
           console.log('🔑 Token Saved!');
 

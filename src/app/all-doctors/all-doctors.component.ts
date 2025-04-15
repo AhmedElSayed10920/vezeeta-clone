@@ -1,19 +1,24 @@
 
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, inject, Input, OnChanges, OnInit, signal, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, RouterModule, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { DoctorService } from '../services/doctor.service';
 import { Doctor } from '../doctor';
 import { ImageService } from '../shared/image.service';
+import { AppointmentReservationComponent } from "../appointment-reservation/appointment-reservation.component";
+import { BookRequestService } from '../services/book-request.service';
+import { Filters } from '../models/filters';
 
 @Component({
   selector: 'app-all-doctors',
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, AppointmentReservationComponent],
   templateUrl: './all-doctors.component.html',
   styleUrl: './all-doctors.component.css'
 })
-export class AllDoctorsComponent implements OnInit {
-  doctors: Doctor[] = [];
+export class AllDoctorsComponent implements OnInit, OnChanges {
+  @Input() filters!: Filters;
+  loading = false;
+
   specialty: string = '';
   currentPage = signal<number>(1);
   itemsPerPage = 10;
@@ -27,18 +32,76 @@ export class AllDoctorsComponent implements OnInit {
 
   constructor(
     private doctorsService: DoctorService,
-    private route: ActivatedRoute,
+    // private route: ActivatedRoute,
+    private bookService : BookRequestService,
     private imageService: ImageService,
     private router: Router
   ) {}
 
+  route = inject(ActivatedRoute);
+  doctors: any[] = [];
+
+ 
   ngOnInit(): void {
+    this.route.queryParams.subscribe((params) => {
+      this.doctors = JSON.parse(params['doctors']);
+    });
+    const nav = this.router.getCurrentNavigation();
+  this.doctors = nav?.extras?.state?.['filteredData'] || [];
+    
     this.generateDisplayedDays();
-    this.route.queryParams.subscribe(params => {
-      this.specialty = params['specialty'] || 'All Specialties';
-      this.fetchDoctors();
-    });
+
+    // جلب البيانات بناءً على الفلاتر الواردة من @Input()
+    this.fetchDoctorsBasedOnFilters();
   }
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['filters']) {
+      console.log('Filters changed in AllDoctorsComponent:', this.filters);
+      this.fetchDoctorsBasedOnFilters();
+    }
+  }
+
+  fetchDoctorsBasedOnFilters(): void {
+    const { specialty, city, governorate, name } = this.filters;
+  
+    this.bookService.getBookingData(specialty, city, governorate).subscribe(
+      (response: any[]) => {
+        let filteredDoctors = response;
+  
+        if (specialty) {
+          filteredDoctors = filteredDoctors.filter(doc =>
+            doc.specialty?.toLowerCase().includes(specialty.toLowerCase())
+          );
+        }
+  
+        if (city) {
+          filteredDoctors = filteredDoctors.filter(doc =>
+            doc.city?.toLowerCase().includes(city.toLowerCase())
+          );
+        }
+  
+        if (governorate) {
+          filteredDoctors = filteredDoctors.filter(doc =>
+            doc.governorate?.toLowerCase().includes(governorate.toLowerCase())
+          );
+        }
+  
+        if (name) {
+          filteredDoctors = filteredDoctors.filter(doc =>
+            doc.doctorName?.toLowerCase().includes(name.toLowerCase())
+          );
+        }
+  
+        this.doctors = filteredDoctors;
+        this.updateVisibleDoctors();
+      },
+      error => {
+        console.error('Error fetching filtered doctors', error);
+      }
+    );
+  }
+  
+
 
   generateDisplayedDays(): void {
     const today = new Date(); // Use current date
@@ -114,7 +177,7 @@ export class AllDoctorsComponent implements OnInit {
     }
     this.bookedAppointments[doctorId][day].push(time);
     console.log(`Booked appointment for Doctor ${doctorId} at ${time} on ${day}`);
-    this.router.navigate(['/booking-confirmation'], {
+    this.router.navigate(['/bookingPage'], {
       queryParams: { doctorId, time, day }
     });
   }

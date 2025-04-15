@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthRegisterService {
-  private apiUrl = 'https://localhost:7167/api/Patient/register'; // تأكد من صحة الرابط
+  private apiUrl = 'http://localhost:5267/api/Doctor/Doctors'; // تأكد من صحة الرابط
 
   constructor(private http: HttpClient) {}
 

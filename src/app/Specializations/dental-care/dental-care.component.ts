@@ -27,7 +27,7 @@ export class DentalCareComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 600,
-      offersLink: `/offers/47`,
+      offersLink: `/offers/2`,
 
     },
     {
@@ -42,7 +42,7 @@ export class DentalCareComponent {
       bookedCount: 3,
       originalPrice: 40000,
       discountPrice: 20000,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/2`,
 
     },
     {
@@ -57,7 +57,7 @@ export class DentalCareComponent {
       bookedCount: 3,
       originalPrice: 2000,
       discountPrice: 400,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/2`,
 
     },
     {
@@ -87,7 +87,7 @@ export class DentalCareComponent {
       bookedCount: 0,
       originalPrice: 5500,
       discountPrice: 1100,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/2`,
 
     },
     {

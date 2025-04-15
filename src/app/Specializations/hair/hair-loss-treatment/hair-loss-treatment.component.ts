@@ -25,7 +25,7 @@ export class HairLossTreatmentComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
-      offersLink: `/offers/9`,
+      offersLink: `/offers/4`,
     },
     {
       id: 2,
@@ -39,7 +39,7 @@ export class HairLossTreatmentComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
-      offersLink: `/offers/10`,
+      offersLink: `/offers/18`,
     },
     {
       id: 3,
@@ -53,7 +53,7 @@ export class HairLossTreatmentComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
-      offersLink: `/offers/11`,
+      offersLink: `/offers/19`,
     },
     {
       id: 4,
@@ -67,7 +67,7 @@ export class HairLossTreatmentComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
-      offersLink: `/offers/30`,
+      offersLink: `/offers/20`,
     },
   ];
 }
