@@ -25,7 +25,7 @@ export class LaserComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/7`,
     },
     {
       id: 2,
@@ -39,7 +39,7 @@ export class LaserComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/7`,
     },
     {
       id: 3,
@@ -67,7 +67,7 @@ export class LaserComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/7`,
     },
     {
       id: 5,
@@ -81,7 +81,7 @@ export class LaserComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/7`,
     },
     {
       id: 6,
@@ -95,7 +95,7 @@ export class LaserComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/7`,
     },
     {
       id: 7,
@@ -109,7 +109,7 @@ export class LaserComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/7`,
     },
     {
       id: 8,
@@ -123,7 +123,7 @@ export class LaserComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/7`,
     },
     {
       id: 9,
@@ -151,7 +151,7 @@ export class LaserComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/7`,
     },
     {
       id: 11,
@@ -165,7 +165,7 @@ export class LaserComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/7`,
     },
     {
       id: 12,
@@ -179,7 +179,7 @@ export class LaserComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/7`,
     },
 
     {
@@ -194,7 +194,7 @@ export class LaserComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/7`,
     },
     {
       id: 14,
@@ -208,7 +208,7 @@ export class LaserComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/7`,
     },
     {
       id: 15,
@@ -222,7 +222,7 @@ export class LaserComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/7`,
     },
     {
       id: 16,
@@ -236,7 +236,7 @@ export class LaserComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/7`,
     },
     {
       id: 17,
@@ -250,7 +250,7 @@ export class LaserComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/7`,
     },
     {
       id: 18,
@@ -264,7 +264,7 @@ export class LaserComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/7`,
     },
     {
       id: 19,
@@ -278,7 +278,7 @@ export class LaserComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/7`,
     },
     {
       id: 20,
@@ -292,7 +292,7 @@ export class LaserComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/7`,
     },
     {
       id: 21,
@@ -306,7 +306,7 @@ export class LaserComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/7`,
     },
     {
       id: 22,
@@ -320,7 +320,7 @@ export class LaserComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/7`,
     },
     {
       id: 23,
@@ -334,7 +334,7 @@ export class LaserComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/7`,
     },
     {
       id: 24,
@@ -348,7 +348,7 @@ export class LaserComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/7`,
     },
     {
       id: 25,
@@ -362,7 +362,7 @@ export class LaserComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/7`,
     },
     {
       id: 26,
@@ -376,7 +376,7 @@ export class LaserComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/7`,
     },
     {
       id: 27,
@@ -390,7 +390,7 @@ export class LaserComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/7`,
     },
     {
       id: 28,
@@ -404,7 +404,7 @@ export class LaserComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/7`,
     },
     {
       id: 29,
@@ -418,7 +418,7 @@ export class LaserComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/7`,
     },
     {
       id: 30,
@@ -432,7 +432,7 @@ export class LaserComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/7`,
     },
     {
       id: 31,
@@ -446,7 +446,7 @@ export class LaserComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/7`,
     },
     {
       id: 32,
@@ -460,7 +460,7 @@ export class LaserComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/7`,
     },
     {
       id: 33,
@@ -474,7 +474,7 @@ export class LaserComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/7`,
     },
     {
       id: 34,
@@ -488,7 +488,7 @@ export class LaserComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/7`,
     },
     {
       id: 35,
@@ -502,7 +502,7 @@ export class LaserComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/7`,
     },
     {
       id: 36,
@@ -516,7 +516,7 @@ export class LaserComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/7`,
     },
   ];
 }

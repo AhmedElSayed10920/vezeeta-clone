@@ -27,7 +27,7 @@ export class DentalCareComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 600,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/47`,
 
     },
     {

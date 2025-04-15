@@ -26,7 +26,7 @@ export class HairTransplantComponent {
       bookedCount: 0,
       originalPrice: 1900,
       discountPrice: 380,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/9`,
 
     },
   ];
