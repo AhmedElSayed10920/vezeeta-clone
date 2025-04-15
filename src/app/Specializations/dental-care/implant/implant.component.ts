@@ -27,6 +27,8 @@ export class ImplantComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 2,
@@ -40,6 +42,8 @@ export class ImplantComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 3,
@@ -53,6 +57,8 @@ export class ImplantComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 4,
@@ -66,6 +72,8 @@ export class ImplantComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 5,
@@ -79,6 +87,8 @@ export class ImplantComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 6,
@@ -92,6 +102,8 @@ export class ImplantComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 7,
@@ -105,6 +117,8 @@ export class ImplantComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 8,
@@ -118,6 +132,8 @@ export class ImplantComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 9,
@@ -131,6 +147,8 @@ export class ImplantComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 10,
@@ -144,6 +162,8 @@ export class ImplantComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 11,
@@ -157,6 +177,8 @@ export class ImplantComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 12,
@@ -170,6 +192,8 @@ export class ImplantComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
 
     {
@@ -184,6 +208,8 @@ export class ImplantComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 14,
@@ -197,6 +223,8 @@ export class ImplantComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 15,
@@ -210,6 +238,8 @@ export class ImplantComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 16,
@@ -223,6 +253,8 @@ export class ImplantComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 17,
@@ -236,6 +268,8 @@ export class ImplantComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 18,
@@ -249,6 +283,8 @@ export class ImplantComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 19,
@@ -262,6 +298,8 @@ export class ImplantComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 20,
@@ -275,6 +313,8 @@ export class ImplantComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 21,
@@ -288,6 +328,8 @@ export class ImplantComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 22,
@@ -301,6 +343,8 @@ export class ImplantComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 23,
@@ -314,6 +358,8 @@ export class ImplantComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 24,
@@ -327,6 +373,8 @@ export class ImplantComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 25,
@@ -340,6 +388,8 @@ export class ImplantComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 26,
@@ -353,6 +403,8 @@ export class ImplantComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 27,
@@ -366,6 +418,8 @@ export class ImplantComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 28,
@@ -379,6 +433,8 @@ export class ImplantComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 29,
@@ -392,6 +448,8 @@ export class ImplantComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 30,
@@ -405,6 +463,8 @@ export class ImplantComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 31,
@@ -418,6 +478,8 @@ export class ImplantComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 32,
@@ -431,6 +493,8 @@ export class ImplantComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 33,
@@ -444,6 +508,8 @@ export class ImplantComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 34,
@@ -457,6 +523,8 @@ export class ImplantComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 35,
@@ -470,6 +538,8 @@ export class ImplantComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 36,
@@ -483,6 +553,8 @@ export class ImplantComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
   ];
 }

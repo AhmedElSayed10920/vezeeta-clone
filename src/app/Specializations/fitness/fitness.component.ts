@@ -18,7 +18,7 @@ export class FitnessComponent {
       id: 1,
       discount: 40,
       image:
-        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/teeth_cleaning/desktop.webp',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240129090552428.png',
       title: 'Scaling and Polishing',
       description: '1 Session Scaling and Polishing',
       rating: 5,
@@ -26,12 +26,14 @@ export class FitnessComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 2,
       discount: 50,
       image:
-        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/facial_cleansing/desktop.webp',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240129090931877.png',
       title: 'Composite white filling',
       description: '1 Session Composite Filling',
       rating: 4.5,
@@ -39,12 +41,14 @@ export class FitnessComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 3,
       discount: 20,
       image:
-        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/metal_braces/desktop.webp',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520241222181903402.png',
       title: 'Laser teeth whitening',
       description: '1 Session Laser teeth whitening',
       rating: 3.5,
@@ -52,12 +56,14 @@ export class FitnessComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 4,
       discount: 50,
       image:
-        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/face_peeling/desktop.webp',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240710085747347.png',
       title: 'BPM crown installation',
       description: '1 Crown BFM crown installation',
       rating: 3,
@@ -65,12 +71,14 @@ export class FitnessComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 5,
       discount: 33,
       image:
-        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/laser_hair_removal/desktop.webp',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240611073301674.png',
       title: 'Zircon crown installation',
       description: '1 Crown Crown Installation',
       rating: 5,
@@ -78,12 +86,14 @@ export class FitnessComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 6,
       discount: 20,
       image:
-        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/body_sculpting_and_fats_dissolving/desktop.webp',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520241013014146711.png',
       title: 'Hollywood Smile with Diremposite Veneer',
       description: '1 Tooth Hollywood Smile with Direct Composite Veneer',
       rating: 4.5,
@@ -91,12 +101,14 @@ export class FitnessComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 7,
       discount: 40,
       image:
-        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/teeth_cleaning/desktop.webp',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520241021152108828.png',
       title: 'Scaling and Polishing',
       description: '1 Session Scaling and Polishing',
       rating: 4,
@@ -104,12 +116,14 @@ export class FitnessComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 8,
       discount: 50,
       image:
-        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/facial_cleansing/desktop.webp',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520200929132655493.png',
       title: 'Composite white filling',
       description: '1 Session Composite Filling',
       rating: 4.5,
@@ -117,12 +131,14 @@ export class FitnessComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 9,
       discount: 20,
       image:
-        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/metal_braces/desktop.webp',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240607155735040.png',
       title: 'Laser teeth whitening',
       description: '1 Session Laser teeth whitening',
       rating: 3.5,
@@ -130,12 +146,14 @@ export class FitnessComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 10,
       discount: 50,
       image:
-        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/face_peeling/desktop.webp',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240607144929663.png',
       title: 'BPM crown installation',
       description: '1 Crown BFM crown installation',
       rating: 5,
@@ -143,12 +161,14 @@ export class FitnessComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 11,
       discount: 33,
       image:
-        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/laser_hair_removal/desktop.webp',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240607144335480.png',
       title: 'Zircon crown installation',
       description: '1 Crown Crown Installation',
       rating: 3.5,
@@ -156,12 +176,14 @@ export class FitnessComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 12,
       discount: 20,
       image:
-        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/body_sculpting_and_fats_dissolving/desktop.webp',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240212195725157.png',
       title: 'Hollywood Smile with Diremposite Veneer',
       description: '1 Tooth Hollywood Smile with Direct Composite Veneer',
       rating: 4.55,
@@ -169,6 +191,8 @@ export class FitnessComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
 
     {
@@ -183,6 +207,8 @@ export class FitnessComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 14,
@@ -196,6 +222,8 @@ export class FitnessComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 15,
@@ -209,6 +237,8 @@ export class FitnessComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 16,
@@ -222,6 +252,8 @@ export class FitnessComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 17,
@@ -235,6 +267,8 @@ export class FitnessComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 18,
@@ -248,6 +282,8 @@ export class FitnessComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 19,
@@ -261,6 +297,8 @@ export class FitnessComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 20,
@@ -274,6 +312,8 @@ export class FitnessComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 21,
@@ -287,6 +327,8 @@ export class FitnessComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 22,
@@ -300,6 +342,8 @@ export class FitnessComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 23,
@@ -313,6 +357,8 @@ export class FitnessComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 24,
@@ -326,6 +372,8 @@ export class FitnessComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 25,
@@ -339,6 +387,8 @@ export class FitnessComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 26,
@@ -352,6 +402,8 @@ export class FitnessComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 27,
@@ -365,6 +417,8 @@ export class FitnessComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 28,
@@ -378,6 +432,8 @@ export class FitnessComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 29,
@@ -391,6 +447,8 @@ export class FitnessComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 30,
@@ -404,6 +462,8 @@ export class FitnessComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 31,
@@ -417,6 +477,8 @@ export class FitnessComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 32,
@@ -430,6 +492,8 @@ export class FitnessComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 33,
@@ -443,6 +507,8 @@ export class FitnessComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 34,
@@ -456,6 +522,8 @@ export class FitnessComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 35,
@@ -469,6 +537,8 @@ export class FitnessComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 36,
@@ -482,6 +552,8 @@ export class FitnessComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
   ];
 }

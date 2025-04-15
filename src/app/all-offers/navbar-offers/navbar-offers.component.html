@@ -1,83 +1,264 @@
 <!-- Bootstrap 5 Navbar with Mega Menu -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm border-bottom">
     <div class="container-fluid">
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item dropdown position-static">
-                    <a class="nav-link dropdown-toggle text-primary text-decoration-none" routerLink="/allOffers"
-                        routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }" id="megaMenu"
-                        role="button"  aria-expanded="false">
-                        ALL OFFERS
+        <div class="collapse navbar-collapse" [class.show]="!isNavbarCollapsed" id="navbarContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
+                <!-- Mega Menu Dropdown -->
+                <li class="nav-item dropdown mega-menu position-static">
+                    <a class="nav-link text-primary cursor-pointer1" id="allOffersDropdown"
+                        (click)="toggleMegaMenu($event)" [class.show]="isMegaMenuOpen">
+                        ALL OFFERS <i class="fa-solid fa-caret-down ms-1"></i>
                     </a>
-                    <div class="dropdown-menu w-100 mt-0 border-0 shadow rounded-0" aria-labelledby="megaMenu">
-                        <div class="d-flex">
-                            <div class="bg-light p-3" style="min-width: 200px">
-                                <a class="d-block text-dark fw-bold mb-2" routerLink="/dentalCare"
-                                    routerLinkActive="active-link">Dental
+                    <div class="dropdown-menu w-100 mt-0 border-0 shadow rounded-0 mega-menu-container"
+                        [class.show]="isMegaMenuOpen" (mouseleave)="onMegaMenuLeave()">
+                        <div class="container-fluid d-flex mega-menu-content">
+                            <!-- Categories Column -->
+                            <div class="category-column p-3">
+                                <a class="category-link" [class.active]="activeSubmenu === 'dental-care'"
+                                    (mouseenter)="showSubmenu('dental-care')" routerLink="/dentalCare"
+                                    routerLinkActive="active-link"><i class="fa-regular fa-face-grimace me-2"></i>Dental
                                     Care</a>
-                                <a class="d-block text-muted mb-1 text-decoration-none" routerLink="/laser"
-                                    routerLinkActive="active-link">Laser</a>
+                                <a class="category-link" [class.active]="activeSubmenu === 'laser'"
+                                    (mouseenter)="showSubmenu('laser')" routerLink="/laser"
+                                    routerLinkActive="active-link">
+                                    <i class="bi bi-brightness-high me-2"></i>Laser</a>
+                                <a class="category-link" [class.active]="activeSubmenu === 'hair'"
+                                    (mouseenter)="showSubmenu('hair')" routerLink="/hair"
+                                    routerLinkActive="active-link">
+                                    <i class="bi bi-scissors me-2"></i>Hair
+                                </a>
+                                <a class="category-link" [class.active]="activeSubmenu === 'skin'"
+                                    (mouseenter)="showSubmenu('skin')" routerLink="/skin"
+                                    routerLinkActive="active-link">
+                                    <i class="bi bi-droplet me-2"></i> Skin
+                                </a>
+                                <a class="category-link" [class.active]="activeSubmenu === 'beauty'"
+                                    (mouseenter)="showSubmenu('beauty')" routerLink="/beauty"
+                                    routerLinkActive="active-link">
+                                    <i class="bi bi-flower1 me-2"></i> Beauty
+                                </a>
+                                <a class="category-link" [class.active]="activeSubmenu === 'fitness'"
+                                    (mouseenter)="showSubmenu('fitness')" routerLink="/fitness"
+                                    routerLinkActive="active-link">
+                                    <i class="bi bi-activity me-2"></i> Fitness
+                                </a>
+                                <a class="category-link" [class.active]="activeSubmenu === 'scans'"
+                                    (mouseenter)="showSubmenu('scans')" routerLink="/scans"
+                                    routerLinkActive="active-link">
+                                    <i class="bi bi-camera me-2"></i> Scans
+                                </a>
 
-                                <a class="d-block text-muted mb-1 text-decoration-none" routerLink="/hair"
-                                    routerLinkActive="active-link">Hair</a>
-                                <a class="d-block text-muted mb-1 text-decoration-none" routerLink="/skin"
-                                    routerLinkActive="active-link" >Skin</a>
-                                <a class="d-block text-muted mb-1 text-decoration-none" routerLink="/beauty"
-                                    routerLinkActive="active-link"
-                                    [routerLinkActiveOptions]="{ exact: true }">Beauty</a>
-                                <a class="d-block text-muted mb-1 text-decoration-none" routerLink="/fitness"
-                                    routerLinkActive="active-link"
-                                    >Fitness</a>
-                                <a class="d-block text-muted mb-1 text-decoration-none" routerLink="/scans"
-                                    routerLinkActive="active-link" >Scans</a>
-                                <a class="d-block text-muted mb-1 text-decoration-none" routerLink="/kidney"
-                                    routerLinkActive="active-link"
-                                  >Kidney</a>
-                                <a class="d-block text-muted mb-1 text-decoration-none" routerLink="/generalSurgery"
-                                    routerLinkActive="active-link"
-                                    >General Surgery</a>
+                                <a class="category-link" [class.active]="activeSubmenu === 'obgyn'"
+                                    (mouseenter)="showSubmenu('obgyn')" routerLink="/obGyn"
+                                    routerLinkActive="active-link">
+                                    <i class="fa-solid fa-person-pregnant me-2"></i> OB-GYN</a>
+
+                                <a class="category-link" [class.active]="activeSubmenu === 'kidney'"
+                                    (mouseenter)="showSubmenu('kidney')" routerLink="/kidney"
+                                    routerLinkActive="active-link">
+                                    <i class="bi bi-heart-pulse me-2"></i>Kidney
+                                </a>
+                                <a class="category-link" [class.active]="activeSubmenu === 'surgery'"
+                                    (mouseenter)="showSubmenu('surgery')" routerLink="/generalSurgery"
+                                    routerLinkActive="active-link">
+                                    <i class="bi bi-clipboard-pulse me-2"></i>General Surgery
+                                </a>
+                                <a class="category-link" [class.active]="activeSubmenu === 'gastro'"
+                                    (mouseenter)="showSubmenu('gastro')" routerLink="/gastroIm"
+                                    routerLinkActive="active-link">
+                                    <i class="fa-regular fa-face-sad-tear me-2"></i>Gastro-IM</a>
+                                <a class="category-link" [class.active]="activeSubmenu === 'psychiatry1'"
+                                    (mouseenter)="showSubmenu('psychiatry1')" routerLink="/psychiatry"
+                                    routerLinkActive="active-link">
+                                    <i class="fa-solid fa-square-person-confined me-2"></i>Psychiatry</a>
                             </div>
-                            <div class="p-3 flex-fill">
-                                <h6 class="fw-bold mb-3">Dental Care</h6>
+
+                            <!-- Subcategories Sections -->
+                            <div class="submenu-section p-3 flex-fill" *ngIf="activeSubmenu === 'dental-care'">
+                                <h6 class="submenu-title ms-4 cursor-pointer1">Dental Care</h6>
+                                <hr class="ms-4" />
                                 <div class="row">
                                     <div class="col-6 col-md-4">
-                                        <a class="d-block text-dark mb-1 text-decoration-none" routerLink="/contact"
-                                            routerLinkActive="active-link"
-                                            >Smile Makeover</a>
-                                        <a class="d-block text-dark mb-1 text-decoration-none" routerLink="/contact"
-                                            routerLinkActive="active-link"
-                                            >Whitening</a>
-                                        <a class="d-block text-dark mb-1 text-decoration-none" routerLink="/contact"
-                                            routerLinkActive="active-link"
-                                            >Implant</a>
-                                        <a class="d-block text-dark mb-1 text-decoration-none" routerLink="/contact"
-                                            routerLinkActive="active-link"
-                                            >Crowns & Bridges</a>
+                                        <a class="dropdown-item" routerLink="/smileMakeOver">
+                                            Smile Makeover
+                                        </a>
+                                        <a class="dropdown-item" routerLink="/whitening">Whitening</a>
+                                        <a class="dropdown-item" routerLink="/implant"> Implant </a>
+                                        <a class="dropdown-item" routerLink="/crownsBridges">
+                                            Crowns & Bridges
+                                        </a>
+                                        <a class="dropdown-item" routerLink="/radioGraphy">
+                                            RadioGraphy
+                                        </a>
+                                        <a class="dropdown-item" routerLink="/children">Children
+                                        </a>
+                                        <a class="dropdown-item" routerLink="/braces">Braces </a>
+                                        <a class="dropdown-item" routerLink="/dentalFillings">Dental Fillings
+                                        </a>
+                                        <a class="dropdown-item" routerLink="/denture">Denture </a>
+                                        <a class="dropdown-item" routerLink="/toothExtraction">Tooth Extraction
+                                        </a>
+
+                                        <a class="dropdown-item" routerLink="/otherDentalOffers">Other Dental Offers
+                                        </a>
                                     </div>
+                                </div>
+                            </div>
+
+                            <!-- Other Submenus -->
+                            <!-- Laser Submenu -->
+                            <div class="submenu-section p-3 flex-fill" *ngIf="activeSubmenu === 'laser'">
+                                <h6 class="submenu-title ms-4 cursor-pointer1">Laser</h6>
+                                <hr class="ms-4" />
+                                <div class="row">
                                     <div class="col-6 col-md-4">
-                                        <a class="d-block text-dark mb-1 text-decoration-none" routerLink="/contact"
-                                            routerLinkActive="active-link"
-                                            >RadioGraphy</a>
-                                        <a class="d-block text-dark mb-1 text-decoration-none" routerLink="/contact"
-                                            routerLinkActive="active-link"
-                                            >Children</a>
-                                        <a class="d-block text-dark mb-1 text-decoration-none" routerLink="/contact"
-                                            routerLinkActive="active-link"
-                                           >Braces</a>
-                                        <a class="d-block text-dark mb-1 text-decoration-none" routerLink="/contact"
-                                            routerLinkActive="active-link"
-                                          >Dental Fillings</a>
+                                        <a class="dropdown-item" routerLink="/hairRemoval">Hair Removal
+                                        </a>
                                     </div>
+                                </div>
+                            </div>
+
+                            <!-- Hair Submenu -->
+                            <div class="submenu-section p-3 flex-fill" *ngIf="activeSubmenu === 'hair'">
+                                <h6 class="submenu-title ms-4 cursor-pointer1">Hair</h6>
+                                <hr class="ms-4" />
+                                <div class="row">
                                     <div class="col-6 col-md-4">
-                                        <a class="d-block text-dark mb-1 text-decoration-none" routerLink="/contact"
-                                            routerLinkActive="active-link"
-                                            >Denture</a>
-                                        <a class="d-block text-dark mb-1 text-decoration-none" routerLink="/contact"
-                                            routerLinkActive="active-link"
-                                            >Tooth Extraction</a>
-                                        <a class="d-block text-dark mb-1 text-decoration-none" routerLink="/contact"
-                                            routerLinkActive="active-link"
-                                            >Other Dental Offers</a>
+                                        <a class="dropdown-item" routerLink="/hairLossTreatment">Hair loss Treatment
+                                        </a>
+                                        <a class="dropdown-item" routerLink="/hairTransplant">Hair Transplant
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Skin Submenu -->
+                            <div class="submenu-section p-3 flex-fill" *ngIf="activeSubmenu === 'skin'">
+                                <h6 class="submenu-title ms-4 cursor-pointer1">Skin</h6>
+                                <hr class="ms-4" />
+                                <div class="row">
+                                    <div class="col-6 col-md-4">
+                                        <a class="dropdown-item" routerLink="/mesotherapy">Mesotherapy
+                                        </a>
+                                        <a class="dropdown-item" routerLink="/skinGlow">Skin glow
+                                        </a>
+                                        <a class="dropdown-item" routerLink="/skinPeeling">Skin peeling
+                                        </a>
+                                        <a class="dropdown-item" routerLink="/acneScarsTreatment">Acne scars treatment
+                                        </a>
+                                        <a class="dropdown-item" routerLink="/tattoos">Tattoos </a>
+                                        <a class="dropdown-item" routerLink="/stretchMarks">Stretch marks
+                                        </a>
+                                        <a class="dropdown-item" routerLink="/skinWhitening">Skin whitening
+                                        </a>
+                                        <a class="dropdown-item" routerLink="/faceChin">Face & Chin
+                                        </a>
+                                        <a class="dropdown-item" routerLink="/skinCare">Skin Care
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Beauty Submenu -->
+                            <div class="submenu-section p-3 flex-fill" *ngIf="activeSubmenu === 'beauty'">
+                                <h6 class="submenu-title ms-4 cursor-pointer1">Beauty</h6>
+                                <hr class="ms-4" />
+                                <div class="row">
+                                    <div class="col-6 col-md-4">
+                                        <a class="dropdown-item" routerLink="/cellulite">Cellulite</a>
+                                        <a class="dropdown-item" routerLink="/stretchMarks">Stretch Marks</a>
+                                        <a class="dropdown-item" routerLink="/faceChin">Face & Chin</a>
+                                        <a class="dropdown-item" routerLink="/breast">Breast</a>
+                                        <a class="dropdown-item" routerLink="/lips">Lips</a>
+                                        <a class="dropdown-item" routerLink="/liposuction">Liposuction</a>
+                                        <a class="dropdown-item" routerLink="/bodySculpting">Body Sculpting</a>
+                                        <a class="dropdown-item" routerLink="/butt">Butt</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Fitness Submenu -->
+                            <div class="submenu-section p-3 flex-fill" *ngIf="activeSubmenu === 'fitness'">
+                                <h6 class="submenu-title ms-4 cursor-pointer1">Fitness</h6>
+                                <hr class="ms-4" />
+                                <div class="row">
+                                    <div class="col-6 col-md-4">
+                                        <a class="dropdown-item" routerLink="/stretchMarks">Stretch Marks</a>
+                                        <a class="dropdown-item" routerLink="/weightLossSurgery">Weight Loss Surgery</a>
+                                        <a class="dropdown-item" routerLink="/weightLoss">Weight Loss</a>
+                                        <a class="dropdown-item" routerLink="/rehabilitation">Rehabilitation</a>
+                                        <a class="dropdown-item" routerLink="/liposuction">Liposuction</a>
+                                        <a class="dropdown-item" routerLink="/bodySculpting">Body Sculpting</a>
+                                        <a class="dropdown-item" routerLink="/nutrition">Nutrition</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Scans Submenu -->
+                            <div class="submenu-section p-3 flex-fill" *ngIf="activeSubmenu === 'scans'">
+                                <h6 class="submenu-title ms-4 cursor-pointer1">Scans</h6>
+                                <hr class="ms-4" />
+                                <div class="row">
+                                    <div class="col-6 col-md-4">
+                                        <a class="dropdown-item" routerLink="/ctScan">CT Scans</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- OB-GYN Submenu -->
+                            <div class="submenu-section p-3 flex-fill" *ngIf="activeSubmenu === 'obgyn'">
+                                <h6 class="submenu-title ms-4 cursor-pointer1">OB-GYN</h6>
+                                <hr class="ms-4" />
+                                <div class="row">
+                                    <div class="col-6 col-md-4">
+                                        <a class="dropdown-item" routerLink="/delivery">Delivery</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Kidney Submenu -->
+                            <div class="submenu-section p-3 flex-fill" *ngIf="activeSubmenu === 'kidney'">
+                                <h6 class="submenu-title ms-4 cursor-pointer1">Kidney</h6>
+                                <hr class="ms-4" />
+                                <div class="row">
+                                    <div class="col-6 col-md-4">
+                                        <a class="dropdown-item" routerLink="/kidneyDialysis">Kidney Dialysis</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- General Surgery Submenu -->
+                            <div class="submenu-section p-3 flex-fill" *ngIf="activeSubmenu === 'surgery'">
+                                <h6 class="submenu-title ms-4 cursor-pointer1">
+                                    General Surgery
+                                </h6>
+                                <hr class="ms-4" />
+                                <div class="row">
+                                    <a class="dropdown-item" routerLink="/abdomen">Abdomen</a>
+                                    <a class="dropdown-item" routerLink="/oncologicalSurgery">Oncological Surgery</a>
+                                    <a class="dropdown-item" routerLink="/endocrineSurgery">Endocrine Surgery</a>
+                                </div>
+                            </div>
+
+                            <!-- Gastro-IM Submenu -->
+                            <div class="submenu-section p-3 flex-fill" *ngIf="activeSubmenu === 'gastro'">
+                                <h6 class="submenu-title ms-4 cursor-pointer1">Gastro-IM</h6>
+                                <hr class="ms-4" />
+                                <div class="row">
+                                    <div class="col-6 col-md-4">
+                                        <a class="dropdown-item" routerLink="/endoscopes">Endoscopes</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Psychiatry Submenu -->
+                            <div class="submenu-section p-3 flex-fill" *ngIf="activeSubmenu === 'psychiatry1'">
+                                <h6 class="submenu-title ms-4 cursor-pointer1">Psychiatry</h6>
+                                <hr class="ms-4" />
+                                <div class="row">
+                                    <div class="col-6 col-md-4">
+                                        <a class="dropdown-item" routerLink="/generalPsychiatryServices">General
+                                            Psychiatry Services</a>
                                     </div>
                                 </div>
                             </div>
@@ -85,212 +266,17 @@
                     </div>
                 </li>
 
+                <!-- Regular Menu Items -->
 
-
-
-
-
-
-
-                <li class="nav-item dropdown custom-dropdown">
-                    <a class="nav-link" routerLink="/dentalCare" id="productsDropdown">
-                        Dental Care
+                <li class="nav-item dropdown ms-4" *ngFor="let item of menuItems">
+                    <a class="nav-link" [routerLink]="item.link" routerLinkActive="active-link" [id]="item.id">
+                        {{ item.title }}
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="productsDropdown">
-                        <li>
-                            <a class="dropdown-item" routerLink="/smileMakeOver">Smile Makeover</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" routerLink="/whitening">Whitening</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" routerLink="/implant">Implant</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" routerLink="/crownsBridges">Crowns & Bridges
+                    <ul class="dropdown-menu" [attr.aria-labelledby]="item.id">
+                        <li *ngFor="let subItem of item.subItems">
+                            <a class="dropdown-item" [routerLink]="subItem.link">
+                                {{ subItem.title }}
                             </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" routerLink="/radioGraphy">RadioGraphy</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" routerLink="/children">Children</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" routerLink="/braces">Braces</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" routerLink="/dentalFillings">Dental Fillings</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" routerLink="/denture">Denture</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" routerLink="/toothExtraction">Tooth Extraction</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" routerLink="/otherDentalOffers">Other Dental Offers</a>
-                        </li>
-                    </ul>
-                </li>
-
-           
-
-                <li class="nav-item dropdown custom-dropdown">
-                    <a class="nav-link" routerLink="/laser" routerLinkActive="active-link" id="productsDropdown">
-                        Laser
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="productsDropdown">
-                        <li>
-                            <a class="dropdown-item" routerLink="/hairRemoval">Hair Removal</a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="nav-item dropdown custom-dropdown">
-                    <a class="nav-link" routerLink="/hair" routerLinkActive="active-link" id="productsDropdown">
-                        Hair
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="productsDropdown">
-                        <li>
-                            <a class="dropdown-item" routerLink="/hairLossTreatment">Hair loss Treatment</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" routerLink="/hairTransplant">Hair Transplant</a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="nav-item dropdown custom-dropdown">
-                    <a class="nav-link" routerLink="/skin" routerLinkActive="active-link" id="productsDropdown">
-                        Skin
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="productsDropdown">
-                        <li>
-                            <a class="dropdown-item" routerLink="/mesotherapy">Mesotherapy</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" routerLink="/skinGlow">Skin glow</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" routerLink="/skinPeeling">Skin peeling</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" routerLink="/acneScarsTreatment">Acne scars treatment</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" routerLink="/tattoos">Tattoos</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" routerLink="/stretchMarks">Stretch marks</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" routerLink="/skinWhitening">Skin whitening</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" routerLink="/faceChin">Face & Chin</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" routerLink="/skinCare">Skin Care</a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="nav-item dropdown custom-dropdown">
-                    <a class="nav-link" routerLink="/beauty" routerLinkActive="active-link" id="productsDropdown">
-                        Beauty
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="productsDropdown">
-                        <li>
-                            <a class="dropdown-item" routerLink="/cellulite">Cellulite</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" routerLink="/stretchMarks">Stretch Marks</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" routerLink="/faceChin">Face & Chin</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" routerLink="/breast">Breast</a>
-                        </li>
-                        <li><a class="dropdown-item" routerLink="/lips">Lips</a></li>
-                        <li>
-                            <a class="dropdown-item" routerLink="/liposuction">Liposuction</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" routerLink="/bodySculpting">Body Sculpting</a>
-                        </li>
-                        <li><a class="dropdown-item" routerLink="/butt">Butt</a></li>
-                    </ul>
-                </li>
-
-                <li class="nav-item dropdown custom-dropdown">
-                    <a class="nav-link" routerLink="/fitness" routerLinkActive="active-link" id="productsDropdown">
-                        Fitness
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="productsDropdown">
-                        <li>
-                            <a class="dropdown-item" routerLink="/stretchMarks">Stretch Marks</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" routerLink="/weightLossSurgery">Weight Loss Surgery</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" routerLink="/weightLoss">Weight Loss</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" routerLink="/rehabilitation">Rehabilitation</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" routerLink="/liposuction">Liposuction</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" routerLink="/bodySculpting">Body Sculpting</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" routerLink="/nutrition">Nutrition</a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="nav-item dropdown custom-dropdown">
-                    <a class="nav-link" routerLink="/scans" routerLinkActive="active-link" id="productsDropdown">
-                        Scans
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="productsDropdown">
-                        <li>
-                            <a class="dropdown-item" routerLink="/ctScan">CT Scans</a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="nav-item dropdown custom-dropdown">
-                    <a class="nav-link" routerLink="/kidney" routerLinkActive="active-link" id="productsDropdown">
-                        Kidney
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="productsDropdown">
-                        <li>
-                            <a class="dropdown-item" routerLink="/kidneyDialysis">Kidney Dialysis</a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="nav-item dropdown custom-dropdown">
-                    <a class="nav-link" routerLink="/generalSurgery" routerLinkActive="active-link"
-                        id="productsDropdown">
-                        General Surgery
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="productsDropdown">
-                        <li>
-                            <a class="dropdown-item" routerLink="/abdomen">Abdomen</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" routerLink="/oncologicalSurgery">Oncological
-                                Surgery</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" routerLink="/endocrineSurgery">Endocrine
-                                Surgery</a>
                         </li>
                     </ul>
                 </li>

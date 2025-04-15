@@ -25,6 +25,8 @@ export class WhiteningComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 2,
@@ -38,6 +40,8 @@ export class WhiteningComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 3,
@@ -51,6 +55,8 @@ export class WhiteningComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 4,
@@ -64,6 +70,8 @@ export class WhiteningComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 5,
@@ -77,6 +85,8 @@ export class WhiteningComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 6,
@@ -90,6 +100,8 @@ export class WhiteningComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 7,
@@ -103,6 +115,8 @@ export class WhiteningComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 8,
@@ -116,12 +130,14 @@ export class WhiteningComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 9,
       discount: 20,
       image:
-      'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240718072628020.png',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240718072628020.png',
       title: 'Laser teeth whitening',
       description: '1 Session Laser teeth whitening',
       rating: 3.5,
@@ -129,12 +145,14 @@ export class WhiteningComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 10,
       discount: 50,
       image:
-      'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250219223049885.png',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250219223049885.png',
       title: 'BPM crown installation',
       description: '1 Crown BFM crown installation',
       rating: 5,
@@ -142,12 +160,14 @@ export class WhiteningComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 11,
       discount: 33,
       image:
-      'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520191117102438757.png',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520191117102438757.png',
       title: 'Zircon crown installation',
       description: '1 Crown Crown Installation',
       rating: 3.5,
@@ -155,12 +175,14 @@ export class WhiteningComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
     {
       id: 12,
       discount: 20,
       image:
-      'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240704110947949.png',
+        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240704110947949.png',
       title: 'Hollywood Smile with Diremposite Veneer',
       description: '1 Tooth Hollywood Smile with Direct Composite Veneer',
       rating: 4.55,
@@ -168,6 +190,8 @@ export class WhiteningComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
+
     },
 
   ];

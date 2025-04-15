@@ -1,0 +1,180 @@
+.outer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px;
+  direction: ltr;
+  position: relative;
+  gap: 10px;
+  padding-left: 100px;
+}
+
+.offer-details-container {
+  flex: 1;
+  max-width: 65%;
+  text-align: left;
+}
+
+.main-image img {
+  width: 100%;
+  max-width: 900px; /* Increased for a larger image */
+  height: auto;
+  border-radius: 8px;
+}
+
+.side-component {
+  flex: 1;
+  max-width: 35%;
+  padding: 10px;
+  text-align: left;
+}
+
+.side-component h2 {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.side-component p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.rating span {
+  font-size: 14px;
+}
+
+.recently-added {
+  color: #007bff;
+  font-size: 14px;
+}
+
+.device {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.price-section {
+  margin-bottom: 15px;
+}
+
+.price-section strong {
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.price-details {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 16px;
+}
+
+.final-price {
+  font-size: 25px;
+  font-weight: bold;
+  color: #000;
+}
+
+.savings {
+  color: #28a745;
+  font-size: 14px;
+}
+
+.stats {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.stat-item {
+  font-size: 16px;
+  color: #555;
+  display: flex;
+  align-items: center;
+}
+
+.stat-item .icon {
+  margin-right: 5px;
+  color: #888;
+}
+
+.stars {
+  color: #ffd700;
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+.appointment {
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.horizontal-divider {
+  border: 0;
+  height: 1px;
+  background-color: #ccc;
+  margin: 20px 0;
+}
+
+.doctor-details {
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.doctor-info .clinic-name {
+  margin: 5px 0;
+  font-size: 20px;
+  color: #555;
+}
+
+.map-placeholder {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f2f2f2;
+  text-align: center;
+  color: #888;
+  border: 1px dashed #ccc;
+  border-radius: 5px;
+}
+
+
+.offer-description {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.discount-section {
+  margin-bottom: 15px;
+}
+
+.discount-percentage {
+  font-size: 20px;
+  font-weight: bold;
+  color: #d32f2f; /* Red to highlight discount */
+  background-color: #ffebee; /* Light red background */
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+}

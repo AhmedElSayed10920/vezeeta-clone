@@ -73,46 +73,6 @@ export class BookingComponent {
         }
       );
   }
-  // searchByFilters() {
-  //   console.log('search for doctor', {
-  //     specialty: this.selectedSpecialty,
-  //     city: this.selectedCity,
-  //     governorate: this.selectedGovernorate,
-  //   });
-  //   //get new data based on the inputs from the API
-  //   this.bookService
-  //     .getBookingData(
-  //       this.selectedSpecialty,
-  //       this.selectedCity,
-  //       this.selectedGovernorate
-  //     )
-  //     .subscribe(
-  //       (response: any[]) => {
-  //         this.doctors = response.filter((doc) =>
-  //           this.doctorName
-  //             ? doc.doctorName
-  //                 .toLowerCase()
-  //                 .includes(this.doctorName.toLowerCase())
-  //             : true
-  //         );
-  //         this.doctors = this.doctors.filter(
-  //           (doc) =>
-  //             (this.selectedSpecialty
-  //               ? doc.mainSpecialty === this.selectedSpecialty
-  //               : true) &&
-  //             (this.selectedCity ? doc.city === this.selectedCity : true) &&
-  //             (this.selectedGovernorate
-  //               ? doc.governorate.trim() === this.selectedGovernorate.trim()
-  //               : true)
-  //         );
-
-  //         console.log('Results after search', this.doctors);
-  //       },
-  //       (error) => {
-  //         console.error('error at getting data', error);
-  //       }
-  //     );
-  // }
   //get data from the API
   ngOnInit() {
     this.doctorService.getDoctors().subscribe(

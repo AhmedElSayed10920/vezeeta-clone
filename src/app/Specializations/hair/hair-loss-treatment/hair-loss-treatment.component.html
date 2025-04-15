@@ -11,11 +11,13 @@
         [discount]="service.discount"
         [description]="service.description"
         [rating]="service.rating"
-        [reviewCount]="service.reviewCount"
-        [bookedCount]="service.bookedCount"
+        [reviewCount]="service.reviewCount||0"
+        [bookedCount]="service.bookedCount||0"
         [originalPrice]="service.originalPrice"
         [discountPrice]="service.discountPrice"
         [hasOffer]="service.originalPrice > service.discountPrice"
+        [id]="service.id"
+      [offersLink]="service.offersLink || ''"
       >
       </app-service-card>
     </div>

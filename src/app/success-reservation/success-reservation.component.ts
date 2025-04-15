@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-success-reservation',
@@ -7,5 +8,19 @@ import { Component } from '@angular/core';
   styleUrl: './success-reservation.component.css'
 })
 export class SuccessReservationComponent {
+  bookingData: any;
 
+  constructor(private router: Router) {
+    const nav = this.router.getCurrentNavigation();
+    this.bookingData = nav?.extras?.state;
+  }
+  goToMyAppointments() {
+    const token = localStorage.getItem('token');
+  
+    if (token) {
+      this.router.navigate(['/MyAppointments']);
+    } else {
+      this.router.navigate(['/login']);
+    }
+  }
 }

@@ -7,57 +7,57 @@
         <div class="content">
             <div class="info">
                 <i class="fa-regular fa-envelope text-primary"></i>
-                <span class="info-text">We notified Doctor Essam Moasaad of your booking</span>
+                <span class="info-text">We notified {{bookingData?.doctor?.doctorName}} of your booking</span>
             </div>
-            
+
             <div class="info">
                 <i class="fa-solid fa-money-bill-wave text-primary"></i>
                 <span class="info-text">
-                    Examination Fees: 1500 EGP
+                    Examination Fees: {{bookingData?.doctor?.fees}} EGP
                     <span class="highlight-box">Vezeeta Points: 1,500</span>
                 </span>
             </div>
-            
+
             <div class="info">
                 <i class="fa-solid fa-phone text-primary"></i>
                 <span class="info-text">
-                    Clinic number: <a href="tel:01155440708" class="link">01155440708</a>
+                    Clinic number: <a href="tel:01155440708" class="link">{{bookingData?.booking?.clinicNumber}}</a>
                 </span>
             </div>
-            
+
             <div class="info">
                 <i class="fa-solid fa-calendar-days text-primary"></i>
                 <span class="info-text">Booking details</span>
             </div>
-            
+
 
             <table class="details-table">
                 <tr>
                     <td>Patient name</td>
-                    <td>ibrahem</td>
+                    <td>{{bookingData?.patient?.name}}</td>
                 </tr>
                 <tr>
                     <td>Booking date</td>
-                    <td>Today . From 08:00 PM to 11:30 PM Appointment reservation</td>
+                    <td>{{bookingData?.booking?.date}} . From 11:00 AM to 11:00 PM Appointment reservation</td>
                 </tr>
                 <tr>
                     <td>Doctor Name</td>
-                    <td>Doctor Essam Moasaad</td>
+                    <td>{{bookingData?.doctor?.doctorName}}</td>
                 </tr>
                 <tr>
                     <td>Waiting Time</td>
-                    <td>51 Minutes</td>
+                    <td>30 Minutes</td>
                 </tr>
                 <tr>
                     <td>Clinic address</td>
-                    <td>28 Othman Ebn Affan - floor 4 - Ismaelia Square - Roma Building
+                    <td>{{bookingData?.doctor?.city}} - {{bookingData?.doctor?.street}}
                         <a href="#" class="link" style="margin-left: 10px;">View on Maps</a>
                     </td>
                 </tr>
             </table>
         </div>
 
-        <a href="#" class="footer-btn">My Appointments</a>
+        <a (click)="goToMyAppointments()" class="footer-btn">My Appointments</a>
     </div>
     <div class="text-center" style="font-size: small; padding: 20px;">
         <p>Thank you for using Vezeeta, We wish you a speedy recovery</p>

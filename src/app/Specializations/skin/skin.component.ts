@@ -1,4 +1,3 @@
-
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Service } from '../../models/service';
@@ -10,7 +9,7 @@ import { ServiceCardComponent } from '../../all-offers/service-card/service-card
   standalone: true,
   imports: [ServiceCardComponent, CommonModule, NavbarOffersComponent],
   templateUrl: './skin.component.html',
-  styleUrl: './skin.component.css'
+  styleUrl: './skin.component.css',
 })
 export class SkinComponent {
   services: Service[] = [
@@ -26,6 +25,7 @@ export class SkinComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
     },
     {
       id: 2,
@@ -39,6 +39,7 @@ export class SkinComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
     },
     {
       id: 3,
@@ -52,6 +53,7 @@ export class SkinComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 4,
@@ -65,6 +67,7 @@ export class SkinComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
     },
     {
       id: 5,
@@ -78,6 +81,7 @@ export class SkinComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 6,
@@ -91,6 +95,7 @@ export class SkinComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 7,
@@ -104,6 +109,7 @@ export class SkinComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
     },
     {
       id: 1,
@@ -117,6 +123,7 @@ export class SkinComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
     },
     {
       id: 2,
@@ -130,6 +137,7 @@ export class SkinComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
     },
     {
       id: 3,
@@ -143,6 +151,7 @@ export class SkinComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 4,
@@ -156,6 +165,7 @@ export class SkinComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
     },
     {
       id: 5,
@@ -169,6 +179,7 @@ export class SkinComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 6,
@@ -182,6 +193,7 @@ export class SkinComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 7,
@@ -195,6 +207,7 @@ export class SkinComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
     },
     {
       id: 24,
@@ -208,6 +221,7 @@ export class SkinComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 1,
@@ -221,6 +235,7 @@ export class SkinComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
     },
     {
       id: 2,
@@ -234,6 +249,7 @@ export class SkinComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
     },
     {
       id: 3,
@@ -247,6 +263,7 @@ export class SkinComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 4,
@@ -260,6 +277,7 @@ export class SkinComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
     },
     {
       id: 5,
@@ -273,6 +291,7 @@ export class SkinComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 6,
@@ -286,6 +305,7 @@ export class SkinComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 7,
@@ -299,6 +319,7 @@ export class SkinComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
     },
     {
       id: 1,
@@ -312,6 +333,7 @@ export class SkinComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
     },
     {
       id: 2,
@@ -325,6 +347,7 @@ export class SkinComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
+      offersLink: `/offers/1`,
     },
     {
       id: 3,
@@ -338,6 +361,7 @@ export class SkinComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 4,
@@ -351,6 +375,7 @@ export class SkinComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
+      offersLink: `/offers/1`,
     },
     {
       id: 5,
@@ -364,6 +389,7 @@ export class SkinComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 6,
@@ -377,6 +403,7 @@ export class SkinComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
+      offersLink: `/offers/1`,
     },
     {
       id: 7,
@@ -390,8 +417,7 @@ export class SkinComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
+      offersLink: `/offers/1`,
     },
   ];
 }
-
-
