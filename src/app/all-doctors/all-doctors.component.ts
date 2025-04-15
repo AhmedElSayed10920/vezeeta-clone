@@ -5,10 +5,11 @@ import { CommonModule } from '@angular/common';
 import { DoctorService } from '../services/doctor.service';
 import { Doctor } from '../doctor';
 import { ImageService } from '../shared/image.service';
+import { AppointmentReservationComponent } from "../appointment-reservation/appointment-reservation.component";
 
 @Component({
   selector: 'app-all-doctors',
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, AppointmentReservationComponent],
   templateUrl: './all-doctors.component.html',
   styleUrl: './all-doctors.component.css'
 })
@@ -114,7 +115,7 @@ export class AllDoctorsComponent implements OnInit {
     }
     this.bookedAppointments[doctorId][day].push(time);
     console.log(`Booked appointment for Doctor ${doctorId} at ${time} on ${day}`);
-    this.router.navigate(['/booking-confirmation'], {
+    this.router.navigate(['/bookingPage'], {
       queryParams: { doctorId, time, day }
     });
   }

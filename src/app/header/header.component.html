@@ -3,7 +3,7 @@
   style="background-color: #0052ac"
 >
   <div class="container">
-    <a class="navbar-brand" routerLink="/">
+    <a class="navbar-brand" (click)="goHome()" style="cursor: pointer">
       <img
         src="images/logo.png"
         alt="Logo"
@@ -55,7 +55,7 @@
                 <a class="dropdown-item" href="/my-profile">My Profile</a>
               </li>
               <li>
-                <a class="dropdown-item" href="/appointments"
+                <a class="dropdown-item" href="/myAppointment"
                   >My Appointments</a
                 >
               </li>

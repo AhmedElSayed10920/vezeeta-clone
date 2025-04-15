@@ -18,7 +18,7 @@ export class SuccessReservationComponent {
     const token = localStorage.getItem('token');
   
     if (token) {
-      this.router.navigate(['/MyAppointments']);
+      this.router.navigate(['/myAppointment']);
     } else {
       this.router.navigate(['/login']);
     }

@@ -31,25 +31,62 @@
     <p style="font-weight: bold;font-size: 18px; margin: 0;padding: 0;">Enter Your Info.</p>
     <small>{{bookingInfo.day}} - {{bookingInfo.time}}</small>
   </div>
-  <form (ngSubmit)="bookAppointment()" #bookingForm="ngForm" class="px-4">
+  <form #bookingForm="ngForm" class="px-4">
     <div class="mb-3">
       <label class="form-label">Name</label>
-      <input type="text" name="name" [(ngModel)]="bookingData.name" class="form-control" placeholder="Your Name" required>
+      <input 
+      type="text" 
+      name="name" 
+      [(ngModel)]="bookingData.name" 
+      class="form-control" 
+      placeholder="Your Name" 
+      required
+      minlength="3"
+      #name="ngModel"
+      >
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="text-danger mt-1">
+        <small *ngIf="name.errors?.['required']">Name is required.</small>
+        <small *ngIf="name.errors?.['minlength']">Name must be at least 3 characters long.</small>
+      </div>
     </div>
 
     <div class="mb-3">
       <label class="form-label">Phone</label>
       <div class="input-group">
-        <input type="tel" name="phone" [(ngModel)]="bookingData.phone" class="form-control" placeholder="Your Phone" required>
+        <input 
+        type="tel" 
+        name="phone" 
+        [(ngModel)]="bookingData.phone" 
+        class="form-control" 
+        placeholder="Your Phone" 
+        required
+        pattern="^(010|011|012|015)[0-9]{8}$"
+        #phone="ngModel"
+        >
         <span class="input-group-text">
           <img src="https://flagcdn.com/w40/eg.png" width="20" alt="EG Flag">
         </span>
+      </div>
+      <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="text-danger mt-1">
+        <small *ngIf="phone.errors?.['required']">Phone number is required.</small>
+        <small *ngIf="phone.errors?.['pattern']">Enter a valid Egyptian phone number.</small>
       </div>
     </div>
 
     <div class="mb-3">
       <label class="form-label">Email Address (Optional)</label>
-      <input type="email" name="email" [(ngModel)]="bookingData.email" class="form-control" placeholder="Email Address">
+      <input 
+      type="email" 
+      name="email" 
+      [(ngModel)]="bookingData.email" 
+      class="form-control" 
+      placeholder="Email Address"
+      email
+      #email="ngModel"
+      >
+      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger mt-1">
+        <small *ngIf="email.errors?.['email']">Please enter a valid email.</small>
+      </div>
     </div>
 
 

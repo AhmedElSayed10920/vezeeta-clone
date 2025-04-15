@@ -71,6 +71,7 @@ import { DeliveryComponent } from './Specializations/ob-gyn/delivery/delivery.co
 import { AppointmentReservationComponent } from './appointment-reservation/appointment-reservation.component';
 import { SuccessReservationComponent } from './success-reservation/success-reservation.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
+import { MyAppointmentComponent } from './my-appointment/my-appointment.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -164,6 +165,8 @@ export const routes: Routes = [
   { path: 'no-doctors', component: NoDoctorsComponent },
   { path: 'bookingPage', component: BookingPageComponent },
   { path: 'SuccessReservation', component: SuccessReservationComponent },
+  { path: 'myAppointment', component: MyAppointmentComponent },
+
 
   {path: 'appointmentReservation/:id', component: AppointmentReservationComponent},
   {path: 'offerDetails/:id', component: OfferDetailsComponent},
