@@ -43,6 +43,52 @@ export class DoctorService {
     );
   }
 
+  // جلب الأطباء باستخدام الفلاتر
+  // getDoctorsByFilters(
+  //   specialty: string,
+  //   city: string,
+  //   governorate: string,
+  //   // name: string
+  // ): Observable<Doctor[]> {
+  //   let params = new HttpParams();
+
+  //   if (specialty) params = params.set('specialty', specialty);
+  //   if (city) params = params.set('city', city);
+  //   if (governorate) params = params.set('governorate', governorate);
+  //   // if (name) params = params.set('name', name);
+
+  //   return this.http.get<Doctor[]>(this.apiUrl, { params }).pipe(
+  //     map((doctors: Doctor[]) => {
+  //       return doctors.map((doctor) => ({
+  //         ...doctor,
+  //         availability: this.staticAvailability,
+  //       }));
+  //     })
+  //   );
+  // }
+  // في DoctorService
+// getDoctorsWithFilters(filters: Filters): Observable<Doctor[]> {
+//   let params = new HttpParams();
+
+//   if (filters.specialty) params = params.set('specialty', filters.specialty);
+//   if (filters.city) params = params.set('city', filters.city);
+//   if (filters.governorate) params = params.set('governorate', filters.governorate);
+//   if (filters.subSpecialty) params = params.set('subSpecialty', filters.subSpecialty);
+//   if (filters.gender) params = params.set('gender', filters.gender);
+//   if (filters.insurance) params = params.set('insurance', filters.insurance);
+//   if (filters.maxFees) params = params.set('maxFees', filters.maxFees.toString());
+
+//   return this.http.get<Doctor[]>(this.apiUrl, { params }).pipe(
+//     map((doctors: Doctor[]) => {
+//       return doctors.map(doctor => ({
+//         ...doctor,
+//         availability: this.staticAvailability
+//       }));
+//     })
+//   );
+// }
+
+
   getDoctorById(id: number): Observable<Doctor> {
     return this.http.get<Doctor>(`${this.doctorByIdUrl}/${id}`).pipe(
       map((doctor: Doctor) => {
