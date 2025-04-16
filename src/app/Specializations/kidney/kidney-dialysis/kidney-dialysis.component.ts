@@ -28,7 +28,7 @@ export class KidneyDialysisComponent {
       bookedCount:0,
       originalPrice: 3000,
       discountPrice: 600,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/10`,
 
     },  ];
 }

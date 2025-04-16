@@ -1,0 +1,64 @@
+<!-- success-reservation-offer.component.html -->
+<div class="bg-light pt-5">
+  <div class="booking-card">
+    <div class="header">
+      <img src="https://img.icons8.com/color/96/000000/checkmark--v1.png" alt="Success">
+      <h2>Your booking was successfully submitted</h2>
+    </div>
+    <div class="content">
+      <div class="info">
+        <i class="fa-regular fa-envelope text-primary"></i>
+        <span class="info-text">We notified {{ doctorName }} of your booking</span>
+      </div>
+
+      <div class="info">
+        <i class="fa-solid fa-money-bill-wave text-primary"></i>
+        <span class="info-text">
+          Examination Fees: {{ offer?.finalPrice }} EGP
+          <span class="highlight-box">Vezeeta Points: 1,500</span>
+        </span>
+      </div>
+
+      <div class="info">
+        <i class="fa-solid fa-phone text-primary"></i>
+        <span class="info-text">
+          Clinic number: <a href="tel:0709231228" class="link">0709231228</a>
+        </span>
+      </div>
+
+      <div class="info">
+        <i class="fa-solid fa-calendar-days text-primary"></i>
+        <span class="info-text">Booking details</span>
+      </div>
+
+      <table class="details-table">
+        <tr>
+          <td>Patient name</td>
+          <td>{{ name }}</td>
+        </tr>
+        <tr>
+          <td>Booking date</td>
+          <td>{{ bookingDate }} . From {{ bookingTime }} to {{ calculateEndTime(bookingTime) }} Appointment reservation</td>
+        </tr>
+        <tr>
+          <td>Doctor Name</td>
+          <td>{{ doctorName }}</td>
+        </tr>
+        <tr>
+          <td>Waiting Time</td>
+          <td>{{ waitingTime }}</td>
+        </tr>
+        <tr>
+          <td>Clinic address</td>
+          <td>{{ clinicAddress }} <a href="#" class="link" style="margin-left: 10px;">View on Maps</a></td>
+        </tr>
+      </table>
+    </div>
+
+    <a (click)="goToMyAppointments()" class="footer-btn">My Appointments</a>
+  </div>
+  <div class="text-center" style="font-size: small; padding: 20px;">
+    <p>Thank you for using Vezeeta, We wish you a speedy recovery</p>
+    <p>If you have any inquiry please call <i class="fa-solid fa-phone" style="color: red;"></i> 16576</p>
+  </div>
+</div>

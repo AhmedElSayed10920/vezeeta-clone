@@ -85,26 +85,34 @@ export class ImageService {
 
 
   public imgs: { [key: string]: string } = {
-    "1": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240808112857341.png",
-  "2": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520190611133713351.png",
-  "3": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250308112520326.png",
-  "4": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250405130829254.png",
-  "5": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240516111420583.png",
-  "6": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240704110947949.png",
-  "7": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250209103619748.png",
-  "8": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520200313144835045.png",
-  "9": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520241126095602936.png",
-  "10": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230615112415868.png",
-  "11": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520200313010751764.png",
-  "12": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520200312230744297.png",
-  "13": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230613092055902.png",
-  "14": "https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/laser_hair_removal/desktop.webp",
-  "15": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230526131409014.png",
-  "16": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230613090328354.png",
-  "17": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250208222826691.png",
-  "18": "https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/metal_braces/desktop.webp",
-  "19": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250409120005454.png",
-  "20": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250308191348717.png"
+ 
+  "1": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240808112857341.png",
+  "2": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240516111420583.png",
+  "3": "https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/metal_braces/desktop.webp",
+  "4": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250209103619748.png",
+  "5": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250409120005454.png",
+  "6": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250409113349381.png",
+  "7": "https://voffers.s3-eu-west-1.amazonaws.com/Images/375x180/32546716520241013021327921.png",
+  "8": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230613115550518.png",
+  "9": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250225125111530.png",
+  "10": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250406142618773.png",
+  "11": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240129084212886.png",
+  "12": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240710085747347.png",
+  "13": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250207135913372.png",
+  "14": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250308191348717.png",
+  "15": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520241231204542818.png",
+  "16": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520241222185302596.png",
+  "17": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250115154607464.png",
+  "18": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520200313144835045.png",
+  "19": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520241126095602936.png",
+  "20": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250121115348302.png",
+
+
+
+
+
+
+
   };
 
 

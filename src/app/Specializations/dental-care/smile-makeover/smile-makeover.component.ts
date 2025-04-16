@@ -39,7 +39,7 @@ export class SmileMakeoverComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/2`,
 
     },
     {
@@ -54,7 +54,7 @@ export class SmileMakeoverComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/3`,
 
     },
     {
@@ -83,7 +83,7 @@ export class SmileMakeoverComponent {
       bookedCount: 15,
       originalPrice: 2000,
       discountPrice: 1600,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/2`,
 
     },
     {
@@ -113,7 +113,7 @@ export class SmileMakeoverComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/2`,
 
     },
     {
@@ -157,7 +157,7 @@ export class SmileMakeoverComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/3`,
 
     },
     {
@@ -187,7 +187,7 @@ export class SmileMakeoverComponent {
       bookedCount: 8,
       originalPrice: 2000,
       discountPrice: 1600,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/2`,
 
     },
 

@@ -26,7 +26,7 @@ export class PsychiatryComponent {
       bookedCount: 20,
       originalPrice: 50000,
       discountPrice: 10000,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/17`,
 
     },
 
