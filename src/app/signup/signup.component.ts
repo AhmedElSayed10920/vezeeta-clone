@@ -5,6 +5,9 @@ import { Component } from '@angular/core';
 import { AuthRegisterService } from '../services/auth-register.service';
 import { Router } from '@angular/router';
 
+declare var window: any;
+declare var grecaptcha: any;
+
 @Component({
   selector: 'app-signup',
   standalone: true,
@@ -22,6 +25,12 @@ export class SignupComponent {
     location: '',
     password: '',
   };
+  captchaToken: string = '';
+  showCaptcha: boolean = true;
+
+  onCaptchaResolved(token: string) {
+    this.captchaToken = token;
+  }
 
   errorMessage: string = '';
   maxDate: string = '';
@@ -51,6 +60,12 @@ export class SignupComponent {
   }
 
   register() {
+
+    if (!this.captchaToken) {
+      alert('Please verify the reCAPTCHA.');
+      return;
+    }
+
     if (this.user.gender !== 'M' && this.user.gender !== 'F') {
       this.user.gender = 'M';
     }
@@ -62,7 +77,7 @@ export class SignupComponent {
 
     console.log('Sending user data:', this.user);
 
-    this.authService.register(this.user).subscribe({
+    this.authService.register(this.user, this.captchaToken).subscribe({
       next: (response) => {
         console.log('Registration successful:', response);
         alert('Registration successful!');
@@ -73,5 +88,25 @@ export class SignupComponent {
         console.error('Registration error:', err);
       },
     });
+  }
+  ngOnInit() {
+    window.onRecaptchaSuccess = (token: string) => {
+      this.onCaptchaResolved(token);
+    };
+  }
+  ngAfterViewInit() {
+    if (this.showCaptcha) {
+      setTimeout(() => {
+        const recaptchaEl = document.querySelector('.g-recaptcha');
+        if (recaptchaEl) {
+          grecaptcha.render(recaptchaEl, {
+            sitekey: '6Ld7XBorAAAAANMQY-FKhCQ1xGhD-QsJuPmFczMD',
+            callback: (token: string) => {
+              this.onCaptchaResolved(token);
+            },
+          });
+        }
+      }, 500);
+    }
   }
 }

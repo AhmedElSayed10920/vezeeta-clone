@@ -30,26 +30,27 @@
       <!-- Specialty -->
       <div class="col-12 col-md-3">
         <select class="form-select" [(ngModel)]="selectedSpecialty">
-          <option value="">Select a specialty</option>
+          <option value="">Choose Specialty</option>
           <option *ngFor="let specialty of specialties" [value]="specialty">{{ specialty }}</option>
+        </select>
+      </div>
+
+       <!-- governorate -->
+       <div class="col-12 col-md-3">
+        <select class="form-select" [(ngModel)]="selectedGovernorate">
+          <option value="">Choose Governorate</option>
+          <option *ngFor="let governorate of governorates" [value]="governorate">{{ governorate }}</option>
         </select>
       </div>
 
       <!-- City -->
       <div class="col-12 col-md-3">
         <select class="form-select" [(ngModel)]="selectedCity">
-          <option value="">Select a city</option>
+          <option value="">Choose City</option>
           <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
         </select>
       </div>
 
-      <!-- Area -->
-      <div class="col-12 col-md-3">
-        <select class="form-select" [(ngModel)]="selectedGovernorate">
-          <option value="">Select an area</option>
-          <option *ngFor="let governorate of governorates" [value]="governorate">{{ governorate }}</option>
-        </select>
-      </div>
 
       <!-- Search by doctor name -->
       <div class="col-12 col-md-2">
@@ -57,7 +58,7 @@
           type="text"
           class="form-control"
           [(ngModel)]="doctorName"
-          placeholder="OR search by doctor name"
+          placeholder="Search by Doctor Name"
         />
       </div>
 

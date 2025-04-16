@@ -151,12 +151,12 @@
             <input
               type="password"
               class="form-control"
-              placeholder="At least 6 characters"
+              placeholder="At least 8 characters"
               [(ngModel)]="user.password"
               name="password"
               #password="ngModel"
               required
-              pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$"
+              pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$"
             />
             <div
               class="invalid-feedback d-block ms-4"
@@ -164,7 +164,7 @@
                 password.invalid && (password.touched || signupForm.submitted)
               "
             >
-              Password must be at least 6 characters, include an uppercase &
+              Password must be at least 8 characters, include an uppercase &
               lowercase letters
             </div>
           </div>
@@ -176,11 +176,18 @@
             >Terms Of Use</a
           >
         </p>
-
+        <div *ngIf="showCaptcha" style="margin: 3px auto;" >
+          <div
+            class="g-recaptcha"
+            data-sitekey="6Ld7XBorAAAAANMQY-FKhCQ1xGhD-QsJuPmFczMD"
+            data-callback="onRecaptchaSuccess">
+          </div>
+        </div>
+        
         <button type="submit" class="btn btn-danger w-30">JOIN NOW</button>
       </form>
     </div>
-
+    
     <div class="card-footer text-center">
       Already Registered in Vezeeta?
       <a href="./login" class="signup-link fw-bold">Login</a>
