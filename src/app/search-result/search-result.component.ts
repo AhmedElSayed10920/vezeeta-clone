@@ -1,35 +1,22 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FiltersSidebarComponent } from '../filters-sidebar/filters-sidebar.component';
 import { SearchHeaderComponent } from '../search-header/search-header.component';
-import { ActivatedRoute } from '@angular/router';
 import { DoctorsListComponent } from '../doctors-list/doctors-list.component';
 import { Filters } from '../models/filters';
 
 @Component({
   selector: 'app-search-result',
-  imports: [SearchHeaderComponent,DoctorsListComponent,FiltersSidebarComponent],
+  standalone: true,
+  imports: [SearchHeaderComponent, DoctorsListComponent, FiltersSidebarComponent],
   templateUrl: './search-result.component.html',
-  styleUrl: './search-result.component.css'
+  styleUrls: ['./search-result.component.css']
 })
-
-// export class SearchResultComponent {
- 
-// filters: any = {};
-
-// onFiltersChanged(updatedFilters: any) {
-//   this.filters = updatedFilters;
-//   console.log('Updated filters:', this.filters);
-// }
-
-// }
 export class SearchResultComponent {
-  filters: Filters = {};
+  filters: Filters = {};  // Start with an empty filter object
 
-  onFiltersChanged(updatedFilters: Filters) {
-    this.filters = updatedFilters;
-    console.log('Updated filters:', this.filters);
+  // This function will be called when filters change from the sidebar
+  onFiltersChanged(filters: Filters) {
+    console.log('Received filters:', filters);
+    this.filters = filters;  // Update the filters with the received data
   }
 }
-
-
-
