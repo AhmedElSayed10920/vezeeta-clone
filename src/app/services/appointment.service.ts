@@ -17,7 +17,8 @@ export class AppointmentService {
     atime: string,
     pid: number,
     cid: number,
-    did: number
+    did: number,
+    captchaToken: string
   }): Observable<any> {
     return this.http.post(this.apointmentUrl, payload);
   }
