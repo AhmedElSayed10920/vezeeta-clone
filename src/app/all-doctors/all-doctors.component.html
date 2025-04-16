@@ -3,7 +3,7 @@
   <h2 class="mb-4 fw-bold specialty-header">{{ specialty }}</h2>
 
   <div class="row justify-content-center">
-    <div class="col-12 mb-4" *ngFor="let doctor of doctors">
+      <div class="col-12 mb-4" *ngFor="let doctor of visibleDoctors()">
       <div class="doctor-card">
         <div class="card-content">
           <!-- Clinic Logo -->

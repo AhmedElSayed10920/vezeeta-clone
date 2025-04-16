@@ -41,19 +41,36 @@ export class AllDoctorsComponent implements OnInit, OnChanges {
   route = inject(ActivatedRoute);
   doctors: any[] = [];
 
- 
-  ngOnInit(): void {
-    this.route.queryParams.subscribe((params) => {
-      this.doctors = JSON.parse(params['doctors']);
-    });
+ngOnInit(): void {
+  this.route.queryParams.subscribe((params) => {
+    console.log('Query Params:', params);
+
+    if (!this.filters) {
+      this.filters = {
+        specialty: '',
+        city: '',
+        governorate: '',
+        name: ''
+      };
+    }
+
+
+    if (params['specialty']) {
+      this.filters.specialty = params['specialty'];
+      this.specialty = params['specialty'];
+      console.log('Specialty from query:', this.specialty);
+    }
+
     const nav = this.router.getCurrentNavigation();
-  this.doctors = nav?.extras?.state?.['filteredData'] || [];
-    
+    this.doctors = nav?.extras?.state?.['filteredData'] || [];
+
     this.generateDisplayedDays();
 
-    // جلب البيانات بناءً على الفلاتر الواردة من @Input()
     this.fetchDoctorsBasedOnFilters();
-  }
+  });
+}
+
+
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['filters']) {
       console.log('Filters changed in AllDoctorsComponent:', this.filters);
@@ -61,38 +78,87 @@ export class AllDoctorsComponent implements OnInit, OnChanges {
     }
   }
 
+
+  // fetchDoctorsBasedOnFilters(): void {
+  //   const { specialty, city, governorate, name } = this.filters;
+
+  //   this.bookService.getBookingData(specialty, city, governorate).subscribe(
+  //     (response: any[]) => {
+  //       console.log('Raw response from bookService:', response); // Debugging line
+  //       let filteredDoctors = response;
+
+  //       // Only apply the specialty filter if the specialty is not "All Specialties"
+  //       if (specialty && specialty.toLowerCase() !== 'all specialties') {
+  //         filteredDoctors = filteredDoctors.filter(doc =>
+  //           doc.mainSpecialty?.toLowerCase().includes(specialty.toLowerCase())
+  //         );
+  //       }
+
+  //       console.log('Filtered by specialty:', filteredDoctors);
+
+  //       if (city) {
+  //         filteredDoctors = filteredDoctors.filter(doc =>
+  //           doc.city?.toLowerCase().includes(city.toLowerCase())
+  //         );
+  //       }
+
+  //       if (governorate) {
+  //         filteredDoctors = filteredDoctors.filter(doc =>
+  //           doc.governorate?.toLowerCase().includes(governorate.toLowerCase())
+  //         );
+  //       }
+
+  //       if (name) {
+  //         filteredDoctors = filteredDoctors.filter(doc =>
+  //           doc.doctorName?.toLowerCase().includes(name.toLowerCase())
+  //         );
+  //       }
+
+  //       this.doctors = filteredDoctors;
+  //       this.updateVisibleDoctors();
+  //     },
+  //     error => {
+  //       console.error('Error fetching filtered doctors', error);
+  //     }
+  //   );
+  // }
+
   fetchDoctorsBasedOnFilters(): void {
     const { specialty, city, governorate, name } = this.filters;
-  
+
     this.bookService.getBookingData(specialty, city, governorate).subscribe(
       (response: any[]) => {
+        console.log('Raw response from bookService:', response);
         let filteredDoctors = response;
-  
-        if (specialty) {
+
+        if (specialty && specialty.toLowerCase() !== 'all specialties') {
           filteredDoctors = filteredDoctors.filter(doc =>
-            doc.specialty?.toLowerCase().includes(specialty.toLowerCase())
+            doc.mainSpecialty?.toLowerCase().includes(specialty.toLowerCase())
           );
         }
-  
+
+        console.log('Filtered by specialty:', filteredDoctors);
+
         if (city) {
           filteredDoctors = filteredDoctors.filter(doc =>
             doc.city?.toLowerCase().includes(city.toLowerCase())
           );
         }
-  
+
         if (governorate) {
           filteredDoctors = filteredDoctors.filter(doc =>
             doc.governorate?.toLowerCase().includes(governorate.toLowerCase())
           );
         }
-  
+
         if (name) {
           filteredDoctors = filteredDoctors.filter(doc =>
             doc.doctorName?.toLowerCase().includes(name.toLowerCase())
           );
         }
-  
+
         this.doctors = filteredDoctors;
+        this.totalPages.set(Math.ceil(this.doctors.length / this.itemsPerPage)); // أضف السطر ده
         this.updateVisibleDoctors();
       },
       error => {
@@ -100,7 +166,6 @@ export class AllDoctorsComponent implements OnInit, OnChanges {
       }
     );
   }
-  
 
 
   generateDisplayedDays(): void {
