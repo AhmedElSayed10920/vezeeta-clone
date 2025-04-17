@@ -67,7 +67,7 @@ export class SkinGlowComponent {
       bookedCount: 25,
       originalPrice: 2000,
       discountPrice: 1400,
-      offersLink: `/offers/11`,
+      offersLink: `/offers/18`,
     },
     {
       id: 5,
@@ -123,7 +123,7 @@ export class SkinGlowComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
-      offersLink: `/offers/9`,
+      offersLink: `/offers/18`,
     },
     {
       id: 9,
@@ -137,7 +137,7 @@ export class SkinGlowComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
-      offersLink: `/offers/11`,
+      offersLink: `/offers/18`,
     },
   ];
 }
