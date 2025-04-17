@@ -26,7 +26,7 @@ export class LipsComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
-      offersLink: `/offers/2`,
+      offersLink: `/offers/9`,
 
     },
     {
@@ -41,7 +41,7 @@ export class LipsComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
-      offersLink: `/offers/2`,
+      offersLink: `/offers/9`,
 
     },
   ];

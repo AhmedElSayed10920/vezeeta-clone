@@ -39,7 +39,7 @@ export class AcneScarsTreatmentComponent {
       bookedCount: 570,
       originalPrice: 1600,
       discountPrice: 900,
-      offersLink: `/offers/9`,
+      offersLink: `/offers/18`,
     },
     {
       id: 3,
@@ -53,7 +53,7 @@ export class AcneScarsTreatmentComponent {
       bookedCount: 371,
       originalPrice: 2000,
       discountPrice: 1600,
-      offersLink: `/offers/11`,
+      offersLink: `/offers/18`,
     },
     {
       id: 4,

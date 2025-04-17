@@ -25,7 +25,7 @@ export class SkinCareComponent {
       bookedCount: 1545,
       originalPrice: 1600,
       discountPrice: 800,
-      offersLink: `/offers/11`,
+      offersLink: `/offers/18`,
     },
   ];
 }

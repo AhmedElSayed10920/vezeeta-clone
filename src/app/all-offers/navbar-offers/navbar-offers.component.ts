@@ -56,7 +56,6 @@ export class NavbarOffersComponent {
       subItems: [
         { title: 'Mesotherapy', link: '/mesotherapy' },
         { title: 'Skin Glow', link: '/skinGlow' },
-        { title: 'Implant', link: '/implant' },
         { title: 'Skin Peeling', link: '/skinPeeling' },
         { title: 'Acne Scars Treatment', link: '/acneScarsTreatment' },
         { title: 'Tattoos', link: '/tattoos' },
@@ -116,7 +115,7 @@ export class NavbarOffersComponent {
       link: '/kidney',
       id: 'kidneyDropdown',
       subItems: [
-        { title: 'Dialysis', link: '/kidneyDialysis' },
+        { title: 'Kidney Dialysis', link: '/kidneyDialysis' },
       ]
     },
     // {
