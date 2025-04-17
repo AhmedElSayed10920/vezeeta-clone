@@ -71,6 +71,7 @@ import { DeliveryComponent } from './Specializations/ob-gyn/delivery/delivery.co
 import { AppointmentReservationComponent } from './appointment-reservation/appointment-reservation.component';
 import { SuccessReservationComponent } from './success-reservation/success-reservation.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
+import { VerifyOtpComponent } from './verify-otp-component/verify-otp.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -90,7 +91,6 @@ export const routes: Routes = [
   { path: 'denture', component: DentureComponent },
   { path: 'toothExtraction', component: ToothExtractionComponent },
   { path: 'otherDentalOffers', component: OtherDentalOffersComponent },
-
 
   { path: 'laser', component: LaserComponent },
   { path: 'hairRemoval', component: HairRemovalComponent },
@@ -124,13 +124,11 @@ export const routes: Routes = [
   { path: 'rehabilitation', component: RehabilitationComponent },
   { path: 'nutrition', component: NutritionComponent },
 
-
   { path: 'scans', component: ScansComponent },
   { path: 'ctScan', component: CtScanComponent },
 
   { path: 'obGyn', component: ObGynComponent },
   { path: 'delivery', component: DeliveryComponent },
-
 
   { path: 'kidney', component: KidneyComponent },
   { path: 'kidneyDialysis', component: KidneyDialysisComponent },
@@ -141,23 +139,33 @@ export const routes: Routes = [
   { path: 'endocrineSurgery', component: EndocrineSurgeryComponent },
 
   { path: 'gastroIm', component: GastroImComponent },
-  { path: 'endoscopes', component:EndoscopesComponent},
+  { path: 'endoscopes', component: EndoscopesComponent },
 
-  { path: 'psychiatry', component:PsychiatryComponent },
-  { path: 'generalPsychiatryServices', component: GeneralPsychiatryServicesComponent},
+  { path: 'psychiatry', component: PsychiatryComponent },
+  {
+    path: 'generalPsychiatryServices',
+    component: GeneralPsychiatryServicesComponent,
+  },
 
-  { path: 'login', component: LoginComponent },
+  // { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'loginForDoctor', component: LoginForDoctorComponent },
   { path: 'signupForDoctor', component: SignupForDoctorComponent },
   { path: 'contactUS', component: ContactUSComponent },
   { path: 'my-profile', component: MyProfileComponent },
   { path: 'allDoctors', component: AllDoctorsComponent },
+  { path: 'verify-otp', component: VerifyOtpComponent },
+  {
+    path: 'login',
+    loadComponent: () =>
+      import('./login/login.component').then((m) => m.LoginComponent),
+  },
+
   { path: 'doctors', component: DoctorsComponent },
   { path: 'doctorDetails/:id', component: DoctorDetailsComponent },
 
   { path: 'offers/:id', component: OfferDetailsComponent },
-  {path: 'offerNotFound', component: OfferNotFoundComponent},
+  { path: 'offerNotFound', component: OfferNotFoundComponent },
   { path: 'chatAssistant', component: ChatAssistantComponent },
 
   { path: 'doctors-list', component: DoctorsListComponent },
@@ -165,8 +173,11 @@ export const routes: Routes = [
   { path: 'bookingPage', component: BookingPageComponent },
   { path: 'SuccessReservation', component: SuccessReservationComponent },
 
-  {path: 'appointmentReservation/:id', component: AppointmentReservationComponent},
-  {path: 'offerDetails/:id', component: OfferDetailsComponent},
+  {
+    path: 'appointmentReservation/:id',
+    component: AppointmentReservationComponent,
+  },
+  { path: 'offerDetails/:id', component: OfferDetailsComponent },
 
   { path: '**', redirectTo: 'login', pathMatch: 'full' },
 ];
