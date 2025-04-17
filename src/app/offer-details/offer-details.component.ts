@@ -4,16 +4,13 @@ import { CommonModule } from '@angular/common';
 import { DoctorService } from '../services/doctor.service';
 import { ImageService } from '../shared/image.service';
 import { Offer } from '../offer';
-
-
-
-import { AppointmentReservationComponent } from '../appointment-reservation/appointment-reservation.component';
+import { BookingFormSimpleComponent } from '../booking-form-simple/booking-form-simple.component';
 
 @Component({
   selector: 'app-offer-details',
 
   standalone: true,
-  imports: [CommonModule, RouterModule, AppointmentReservationComponent],
+  imports: [CommonModule, RouterModule, BookingFormSimpleComponent],
   templateUrl: './offer-details.component.html',
   styleUrls: ['./offer-details.component.css']
 })

@@ -23,19 +23,23 @@ export class BookRequestService {
 
   constructor(private http: HttpClient) {}
 
+
   getBookingData(
     speciality: string = '',
     city: string = '',
-    governorate: string = '',
+    governorate: string = ''
   ): Observable<any> {
     let params = new HttpParams();
 
-    if (speciality) params = params.set('speciality', speciality);
+    if (speciality && speciality.toLowerCase() !== 'all specialties') {
+      params = params.set('speciality', speciality);
+    }
     if (city) params = params.set('city', city);
     if (governorate) params = params.set('governorate', governorate);
 
     return this.http.get(this.baseUrlBySpeciality, { params });
   }
+
 
   searchByName(name: string) {
     let params = new HttpParams().set('name', name);
