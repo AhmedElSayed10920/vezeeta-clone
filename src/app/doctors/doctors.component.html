@@ -1,53 +1,43 @@
 <div class="bg-light py-5">
-<div class="container mt-5">
-  <h2 class="mb-4 fw-bold">Featured Doctors</h2>
+  <div class="container mt-5">
+    <h2 class="mb-4 fw-bold">Featured Doctors</h2>
 
-  <!-- Specialties Filter Buttons -->
-  <div class="specialties-container">
-    <button
-      *ngFor="let spec of specialties()"
-      (click)="filterDoctors(spec)"
-      [class.active]="selectedSpecialty() === spec"
-    >
-      {{ spec }}
-    </button>
-  </div>
+    <!-- Specialties Filter Buttons -->
+    <div class="specialties-container">
+      <button *ngFor="let spec of specialties()" (click)="filterDoctors(spec)"
+        [class.active]="selectedSpecialty() === spec">
+        {{ spec }}
+      </button>
+    </div>
 
-<!-- Doctors Cards -->
-  <div class="doctors-container">
-    <div class="doctors-wrapper">
-      <div
-        class="doctor-card"
-        *ngFor="let doctor of filteredDoctors()"
-        [routerLink]="['doctorDetails', doctor.id]"
-        style="cursor: pointer;"
-      >
-        <img [src]="getDoctorImage(doctor.id)" class="doctor-img" alt="Doctor Image" />
-        <div class="doctor-info">
-          <h5 class="doctor-name">{{ doctor.doctorName }}</h5>
-          <p class="specialty">{{ doctor.mainSpecialty }}</p>
-          <p class="location">
-            <i class="fa-solid fa-location-dot" style="color: #519ed8;"></i>
-            {{ doctor.street }}, {{ doctor.city }}
-          </p>
+    <!-- Doctors Cards -->
+    <div class="doctors-container">
+      <div class="doctors-wrapper">
+        <div class="doctor-card" *ngFor="let doctor of filteredDoctors()" [routerLink]="['doctorDetails', doctor.id]"
+          style="cursor: pointer;">
+          <img [src]="getDoctorImage(doctor.id)" class="doctor-img" alt="Doctor Image" />
+          <div class="doctor-info">
+            <h5 class="doctor-name">{{ doctor.doctorName }}</h5>
+            <p class="specialty">{{ doctor.mainSpecialty }}</p>
+            <p class="location">
+              <i class="fa-solid fa-location-dot" style="color: #519ed8;"></i>
+              {{ doctor.street }}, {{ doctor.city }}
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Pagination Dots -->
-  <div class="pagination-dots">
-    <span
-      *ngFor="let dot of paginationDots()"
-      [class.active]="dot.active"
-    ></span>
-  </div>
+    <!-- Pagination Dots -->
+    <div class="pagination-dots">
+      <span *ngFor="let dot of paginationDots()" [class.active]="dot.active"></span>
+    </div>
 
-  <!-- Show More Button -->
-  <div class="text-end mt-3">
-    <button class="btn btn-primary" [routerLink]="['allDoctors']" [queryParams]="{ specialty: selectedSpecialty() }">
-      Show More
-    </button>
+    <!-- Show More Button -->
+    <div class="text-end mt-3">
+      <button class="btn btn-primary" [routerLink]="['/allDoctors']" [queryParams]="{ specialty: selectedSpecialty() }">
+        Show More
+      </button>
+    </div>
   </div>
-</div>
 </div>

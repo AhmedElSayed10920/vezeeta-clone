@@ -25,7 +25,7 @@ export class ObGynComponent {
       bookedCount: 0,
       originalPrice: 5250,
       discountPrice: 1050,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/5`,
     },
     {
       id: 2,
@@ -39,7 +39,7 @@ export class ObGynComponent {
       bookedCount: 0,
       originalPrice: 6500,
       discountPrice: 1300,
-      offersLink: `/offers/1`,
+      offersLink: `/offers/6`,
     },
   ];
 }

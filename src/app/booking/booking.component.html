@@ -31,14 +31,6 @@
                     </select>
                   </div>
                   <div class="col-md-4">
-                    <select class="form-select" [(ngModel)]="selectedCity">
-                      <option value="">Choose City</option>
-                      <option *ngFor="let city of cities" [value]="city">
-                        {{ city }}
-                      </option>
-                    </select>
-                  </div>
-                  <div class="col-md-4">
                     <select class="form-select" [(ngModel)]="selectedGovernorate">
                       <option value="">Choose Governorate</option>
                       <option
@@ -46,6 +38,14 @@
                         [value]="governorate"
                       >
                         {{ governorate }}
+                      </option>
+                    </select>
+                  </div>
+                  <div class="col-md-4">
+                    <select class="form-select" [(ngModel)]="selectedCity">
+                      <option value="">Choose City</option>
+                      <option *ngFor="let city of cities" [value]="city">
+                        {{ city }}
                       </option>
                     </select>
                   </div>
@@ -59,7 +59,7 @@
                       class="form-control"
                       name="name"
                       [(ngModel)]="doctorName"
-                      placeholder="Search by Name"
+                      placeholder="Search by Doctor Name"
                     />
                   </div>
                   <div

@@ -28,9 +28,13 @@ export class AuthRegisterService {
 
   constructor(private http: HttpClient) {}
 
-  register(user: any): Observable<any> {
+  register(user: any, captchaToken: string): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    return this.http.post(this.apiUrl, user, { headers });
+    const body = {
+      ...user,
+      captchaToken
+    };
+    return this.http.post(this.apiUrl, body, { headers });
   }
 
   checkEmailExists(email: string): Observable<boolean> {

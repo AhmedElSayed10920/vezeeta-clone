@@ -22,7 +22,12 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
+    localStorage.clear(); 
     this.tokenService.clearUsername();
-    this.router.navigate(['/login']);
+    this.router.navigate(['/home']);
+  }
+
+  goHome() {
+    this.router.navigate(['/home']);
   }
 }

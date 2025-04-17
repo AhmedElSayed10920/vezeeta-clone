@@ -1,0 +1,71 @@
+<div
+  class="position-relative text-white w-100"
+  style="
+    background-image: url('https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-138/images/search-header-background-en.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 30vh;
+    min-height: 220px;
+  "
+>
+  <div
+    class="position-absolute w-100 h-100 d-flex flex-column justify-content-center align-items-start text-start text-container"
+    style="color: #6f7072;"
+  >
+    <p class="mb-1 fs-6 text-header">
+      Book online or call
+      <a href="tel:16676" class="text-danger fw-semibold text-decoration-none">16676</a>
+    </p>
+    <p class="mb-4 fs-6 text-header">
+      15000 Doctors - 9000 Professors and Consultants - More than 40 Specialties
+    </p>
+  </div>
+</div>
+
+<!-- Filters Section  -->
+<div class="container" style="margin-top: -70px;">
+  <div class="bg-light p-3 rounded shadow-sm position-relative z-3">
+    <div class="row g-2 align-items-center">
+      <!-- Specialty -->
+      <div class="col-12 col-md-3">
+        <select class="form-select" [(ngModel)]="selectedSpecialty">
+          <option value="">Choose Specialty</option>
+          <option *ngFor="let specialty of specialties" [value]="specialty">{{ specialty }}</option>
+        </select>
+      </div>
+
+       <!-- governorate -->
+       <div class="col-12 col-md-3">
+        <select class="form-select" [(ngModel)]="selectedGovernorate">
+          <option value="">Choose Governorate</option>
+          <option *ngFor="let governorate of governorates" [value]="governorate">{{ governorate }}</option>
+        </select>
+      </div>
+
+      <!-- City -->
+      <div class="col-12 col-md-3">
+        <select class="form-select" [(ngModel)]="selectedCity">
+          <option value="">Choose City</option>
+          <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+        </select>
+      </div>
+
+
+      <!-- Search by doctor name -->
+      <div class="col-12 col-md-2">
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="doctorName"
+          placeholder="Search by Doctor Name"
+        />
+      </div>
+
+      <!-- Search button -->
+      <div class="col-12 col-md-1 d-grid">
+        <button class="btn btn-danger w-100" (click)="search()">Search</button>
+      </div>
+    </div>
+  </div>
+</div>

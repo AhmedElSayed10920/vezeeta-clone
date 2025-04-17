@@ -17,15 +17,23 @@ export class AppointmentService {
     atime: string,
     pid: number,
     cid: number,
-    did: number
+    did: number,
+    captchaToken: string
   }): Observable<any> {
     return this.http.post(this.apointmentUrl, payload);
   }
+  
   createPatient(patientData: any) {
     return this.http.post<any>(this.newPatient, patientData);
   }
+
   getAppointmentsByPatientId(pid: number): Observable<any> {
     return this.http.get(`${this.apointmentUrl}/patient/${pid}`);
+  }
+
+  deleteAppointment(id: number): Observable<any> {
+    const url = `${this.apointmentUrl}/${id}`;
+    return this.http.delete(url);
   }
 
 }
