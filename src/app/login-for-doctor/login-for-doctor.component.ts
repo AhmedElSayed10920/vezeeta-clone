@@ -1,39 +1,34 @@
-import { Component, signal } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  Validators,
-  ReactiveFormsModule,
-} from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LoginDoctorService } from '../services/login-doctor.service';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login-for-doctor',
   standalone: true,
   templateUrl: './login-for-doctor.component.html',
   styleUrls: ['./login-for-doctor.component.css'],
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [CommonModule, ReactiveFormsModule],
 })
 export class LoginForDoctorComponent {
   loginForm: FormGroup;
-  showPassword = signal(false);
+  showPassword: boolean = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private loginDoctorService: LoginDoctorService,
+    private router: Router
+  ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(6),
-          Validators.pattern('^(?=.*[a-z])(?=.*[A-Z]).{6,}$'),
-        ],
-      ],
+      password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
 
   togglePasswordVisibility() {
-    this.showPassword.set(!this.showPassword());
+    this.showPassword = !this.showPassword;
   }
 
   onSubmit() {
@@ -41,6 +36,24 @@ export class LoginForDoctorComponent {
       this.loginForm.markAllAsTouched();
       return;
     }
-    console.log('✅ Login Successful:', this.loginForm.value);
+
+    const loginData = this.loginForm.value;
+
+    this.loginDoctorService.loginDoctor(loginData).subscribe(
+      (response) => {
+        console.log('Login successful:', response);
+
+        localStorage.setItem('doctorId', response.DoctorId);
+        localStorage.setItem('doctorName', response.DoctorName);
+
+        alert('Login successful! Welcome  🧑‍⚕️🥼👩‍⚕️');
+
+        this.router.navigate(['/home']);
+      },
+      (error) => {
+        console.error('Login failed:', error);
+        alert('Invalid email or password.');
+      }
+    );
   }
 }

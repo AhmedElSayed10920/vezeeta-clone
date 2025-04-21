@@ -56,3 +56,13 @@ button.btn-primary:hover {
     transform: translateX(0px);
   }
 }
+
+
+
+.error-border {
+  border: 3px solid #dc3545 !important;
+}
+
+.success-border {
+  border: 5px solid #28a745 !important;
+}
