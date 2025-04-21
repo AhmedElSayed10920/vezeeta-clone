@@ -1,4 +1,3 @@
-
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
@@ -58,9 +57,7 @@ export class SignupComponent {
     today.setHours(0, 0, 0, 0);
     return selected > today;
   }
-
   register() {
-
     if (!this.captchaToken) {
       alert('Please verify the reCAPTCHA.');
       return;
@@ -80,8 +77,12 @@ export class SignupComponent {
     this.authService.register(this.user, this.captchaToken).subscribe({
       next: (response) => {
         console.log('Registration successful:', response);
-        alert('Registration successful!');
-        this.router.navigate(['/login']);
+        alert('Registration successful! Please check your email for the OTP.');
+
+        // ✅ تخزين الإيميل مؤقتًا علشان نستخدمه في صفحة OTP
+        this.router.navigate(['/verify-otp'], {
+          state: { email: this.user.email },
+        });
       },
       error: (err) => {
         this.errorMessage = 'Registration failed. Please try again.';
