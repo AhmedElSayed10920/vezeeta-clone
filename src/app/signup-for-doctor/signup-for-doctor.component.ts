@@ -1,206 +1,77 @@
-////////import { Component } from '@angular/core';
-////////import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-////////import { CommonModule } from '@angular/common';
-////////import { RouterModule } from '@angular/router';
-
-////////@Component({
-////////  selector: 'app-signup-for-doctor',
-////////  standalone: true,
-////////  imports: [CommonModule, ReactiveFormsModule, RouterModule],
-////////  templateUrl: './signup-for-doctor.component.html',
-////////  styleUrl: './signup-for-doctor.component.css'
-////////})
-////////export class SignupForDoctorComponent {
-////////  signupForm: FormGroup;
-
-////////  constructor(private fb: FormBuilder) {
-////////    this.signupForm = this.fb.group({
-////////      firstName: ['', Validators.required],
-////////      lastName: ['', Validators.required],
-////////      mobileNumber: ['', [Validators.required, Validators.pattern('^01[0-2,5]+{8}$')]],
-////////      specialty: ['', Validators.required],
-////////      email: ['', [Validators.required, Validators.email]],
-////////      password: ['', [Validators.required, Validators.minLength(6)]]
-////////    });
-////////  }
-
-////////  onSubmit() {
-////////    if (this.signupForm.valid) {
-////////      console.log('Form Submitted', this.signupForm.value);
-////////    }
-////////  }
-////////}
-//////import { Component } from '@angular/core';
-//////import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-//////import { CommonModule } from '@angular/common';
-//////import { RouterModule } from '@angular/router';
-
-//////@Component({
-//////  selector: 'app-signup-for-doctor',
-//////  standalone: true,
-//////  imports: [CommonModule, ReactiveFormsModule, RouterModule],
-//////  templateUrl: './signup-for-doctor.component.html',
-//////  styleUrl: './signup-for-doctor.component.css'
-//////})
-//////export class SignupForDoctorComponent {
-//////  signupForm: FormGroup;
-
-//////  constructor(private fb: FormBuilder) {
-//////    this.signupForm = this.fb.group({
-//////      firstName: ['', [Validators.required]],
-//////      lastName: ['', [Validators.required]],
-//////      mobileNumber: ['', [Validators.required, Validators.pattern(/^01[0-2,5][0-9]{8}$/)]],
-//////      specialty: ['', Validators.required],
-//////      email: ['', [Validators.required, Validators.email]],
-//////      password: ['', [Validators.required, Validators.minLength(6)]]
-//////    });
-//////  }
-
-//////  onSubmit() {
-//////    if (this.signupForm.valid) {
-//////      console.log('Form Submitted', this.signupForm.value);
-//////    } else {
-//////      this.signupForm.markAllAsTouched(); // لتفعيل رسائل الخطأ إذا لم يملأ المستخدم البيانات
-//////    }
-//////  }
-
-//////  isInvalid(controlName: string): boolean {
-//////    const control = this.signupForm.get(controlName);
-//////    return control?.invalid && control?.touched ? true : false;
-//////  }
-//////}
-////import { Component } from '@angular/core';
-////import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-////import { CommonModule } from '@angular/common';
-////import { RouterModule } from '@angular/router';
-
-////@Component({
-////  selector: 'app-signup-for-doctor',
-////  standalone: true,
-////  imports: [CommonModule, ReactiveFormsModule, RouterModule],
-////  templateUrl: './signup-for-doctor.component.html',
-////  styleUrl: './signup-for-doctor.component.css'
-////})
-////export class SignupForDoctorComponent {
-////  signupForm: FormGroup;
-////  profileImage: string | ArrayBuffer | null = null;
-
-////  constructor(private fb: FormBuilder) {
-////    this.signupForm = this.fb.group({
-////      firstName: ['', [Validators.required, Validators.minLength(3), Validators.pattern(/^[A-Za-z]+$/)]],
-////      lastName: ['', [Validators.required, Validators.minLength(3), Validators.pattern(/^[A-Za-z]+$/)]],
-////      mobileNumber: ['', [Validators.required, Validators.pattern(/^01[0-2,5][0-9]{8}$/)]],
-////      specialty: ['', Validators.required],
-////      email: ['', [Validators.required, Validators.email]],
-////      password: ['', [Validators.required, Validators.minLength(6)]]
-////    });
-////  }
-
-////  onSubmit() {
-////    if (this.signupForm.valid) {
-////      console.log('Form Submitted', this.signupForm.value);
-////    } else {
-////      this.signupForm.markAllAsTouched();
-////    }
-////  }
-
-////  isInvalid(controlName: string): boolean {
-////    const control = this.signupForm.get(controlName);
-////    return control?.invalid && control?.touched ? true : false;
-////  }
-
-////  onFileSelected(event: any) {
-////    const file = event.target.files[0];
-////    if (file) {
-////      const reader = new FileReader();
-////      reader.onload = (e) => {
-////        this.profileImage = e.target?.result;
-////      };
-////      reader.readAsDataURL(file);
-////    }
-////  }
-////}
-//import { Component } from '@angular/core';
-//import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-//import { CommonModule } from '@angular/common';
-//import { RouterModule } from '@angular/router';
-
-//@Component({
-//  selector: 'app-signup-for-doctor',
-//  standalone: true,
-//  imports: [CommonModule, ReactiveFormsModule, RouterModule],
-//  templateUrl: './signup-for-doctor.component.html',
-//  styleUrl: './signup-for-doctor.component.css'
-//})
-//export class SignupForDoctorComponent {
-//  signupForm: FormGroup;
-//  profileImage: string | ArrayBuffer | null = null;
-
-//  constructor(private fb: FormBuilder) {
-//    this.signupForm = this.fb.group({
-//      firstName: ['', [Validators.required, Validators.minLength(3), Validators.pattern(/^[A-Za-z]+$/)]],
-//      lastName: ['', [Validators.required, Validators.minLength(3), Validators.pattern(/^[A-Za-z]+$/)]],
-//      mobileNumber: ['', [Validators.required, Validators.pattern(/^01[0-2,5][0-9]{8}$/)]],
-//      specialty: ['', Validators.required],
-//      email: ['', [Validators.required, Validators.email]],
-//      password: ['', [Validators.required, Validators.minLength(6)]]
-//    });
-//  }
-
-//  onSubmit() {
-//    if (this.signupForm.valid) {
-//      console.log('Form Submitted', this.signupForm.value);
-//    } else {
-//      this.signupForm.markAllAsTouched();
-//    }
-//  }
-
-//  isInvalid(controlName: string): boolean {
-//    const control = this.signupForm.get(controlName);
-//    return control?.invalid && control?.touched ? true : false;
-//  }
-
-//  onFileSelected(event: any) {
-//    const file = event.target.files[0];
-//    if (file) {
-//      const reader = new FileReader();
-//      reader.onload = (e) => {
-//        this.profileImage = e.target?.result ?? null; // ✅ الحل هنا
-//      };
-//      reader.readAsDataURL(file);
-//    }
-//  }
-//}
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  ReactiveFormsModule,
+} from '@angular/forms'; // تأكد من استيراد ReactiveFormsModule
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router'; // إضافة Router للتوجيه
+import { RegisterDoctorService } from '../services/register-doctor.service';
 
 @Component({
   selector: 'app-signup-for-doctor',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule], // تأكد من أن ReactiveFormsModule موجود هنا
   templateUrl: './signup-for-doctor.component.html',
-  styleUrl: './signup-for-doctor.component.css'
+  styleUrls: ['./signup-for-doctor.component.css'],
 })
 export class SignupForDoctorComponent {
   signupForm: FormGroup;
   profileImage: string | ArrayBuffer | null = null;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private registerDoctorService: RegisterDoctorService,
+    private router: Router
+  ) {
     this.signupForm = this.fb.group({
-      firstName: ['', [Validators.required, Validators.minLength(3), Validators.pattern(/^[A-Za-z]+$/)]],
-      lastName: ['', [Validators.required, Validators.minLength(3), Validators.pattern(/^[A-Za-z]+$/)]],
-      mobileNumber: ['', [Validators.required, Validators.pattern(/^(010|011|012|015)[0-9]{8}$/)]],
+      FullName: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(3),
+          Validators.pattern(/^[A-Za-z\s]+$/),
+        ],
+      ],
+      mobileNumber: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern(/^(010|011|012|015)[0-9]{8}$/),
+        ],
+      ],
       specialty: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
 
   onSubmit() {
     if (this.signupForm.valid) {
-      console.log('Form Submitted', this.signupForm.value);
+      const doctorData = {
+        dName: this.signupForm.value.FullName,
+        dGender: 'M',
+        dDegree: 'Ph.D. in Medicine',
+        dProfileImage: this.profileImage ?? '',
+        sid: 1,
+        dFees: 500,
+        subSID: 5,
+        mobileNumber: this.signupForm.value.mobileNumber,
+        email: this.signupForm.value.email,
+        password: this.signupForm.value.password,
+        dSpecialization: this.signupForm.value.specialty,
+      };
+
+      this.registerDoctorService.registerDoctor(doctorData).subscribe(
+        (response) => {
+          console.log('Doctor created successfully', response);
+          this.router.navigate(['/loginForDoctor']);
+        },
+        (error) => {
+          console.error('Error:', error);
+        }
+      );
     } else {
       this.signupForm.markAllAsTouched();
     }

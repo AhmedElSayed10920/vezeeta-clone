@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
+import { ContactService } from '../services/contact.service';
 import { CommonModule } from '@angular/common';
-import { FormsModule, NgForm } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-contactUS',
+  selector: 'app-contact-us',
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './contact-us.component.html',
-  styleUrls: ['./contact-us.component.css']
+  styleUrls: ['./contact-us.component.css'],
 })
 export class ContactUSComponent {
   name: string = '';
@@ -16,31 +17,36 @@ export class ContactUSComponent {
   comments: string = '';
   submitted: boolean = false;
 
-  submitForm(contactForm: NgForm) {
-    this.submitted = true;
+  constructor(private contactService: ContactService) {}
 
-    if (contactForm.invalid) {
-      console.log('❌ Form has errors!');
-      return;
+  submitForm(contactForm: any) {
+    if (contactForm.valid) {
+      const contactData = {
+        name: this.name,
+        mobile: this.mobile,
+        email: this.email,
+        comments: this.comments,
+      };
+
+      // تأكد من أن اسم الميثود صحيح
+      this.contactService.submitContactForm(contactData).subscribe(
+        (response: any) => {
+          // تأكد من نوع البيانات هنا
+          console.log('Form submitted successfully!', response);
+          this.submitted = true;
+        },
+        (error: any) => {
+          // تأكد من نوع البيانات هنا
+          console.log('Error submitting form:', error);
+        }
+      );
     }
-
-    console.log('✅ Form Submitted!', {
-      name: this.name,
-      mobile: this.mobile,
-      email: this.email,
-      comments: this.comments
-    });
   }
 
-  validateName(event: Event) {
-    const inputElement = event.target as HTMLInputElement;
-    if (inputElement) {
-      const inputValue = inputElement.value;
-      const englishPattern = /^[A-Za-z\s]*$/; // فقط الحروف الإنجليزية والمسافات
-
-      if (!englishPattern.test(inputValue)) {
-        this.name = inputValue.replace(/[^A-Za-z\s]/g, ''); // إزالة الأحرف غير الإنجليزية
-      }
+  validateName(event: any) {
+    const regex = /^[A-Za-z\s]{3,}$/;
+    if (!regex.test(event.target.value)) {
+      console.log('Invalid name format');
     }
   }
 }
