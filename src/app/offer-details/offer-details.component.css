@@ -157,7 +157,6 @@
   border-radius: 5px;
 }
 
-
 .offer-description {
   font-size: 16px;
   color: #333;
@@ -177,4 +176,58 @@
   padding: 5px 10px;
   border-radius: 5px;
   display: inline-block;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .outer-container {
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .offer-details-container,
+  .side-component {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .main-image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .price-details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .rating {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .side-component h2 {
+    font-size: 20px;
+  }
+
+  .offer-description,
+  .stat-item,
+  .savings,
+  .original-price,
+  .final-price {
+    font-size: 14px;
+  }
+
+  .discount-percentage {
+    font-size: 18px;
+    padding: 4px 8px;
+  }
 }

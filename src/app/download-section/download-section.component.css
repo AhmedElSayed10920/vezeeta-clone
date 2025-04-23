@@ -32,7 +32,12 @@
       right: 0;
       text-align: center !important;
     }
-  
+    .dva{
+      font-size: 20px;
+    }
+    .downloadtext{
+      display: none;
+    }
     .download-buttons {
       justify-content: center !important;
     }

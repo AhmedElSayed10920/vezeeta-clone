@@ -45,5 +45,12 @@
   .text-header {
     font-size: 0.9rem !important;
   }
+  .bgphoto{
+    display: none;
+  }
+  .Filterscontainer{
+    top: 100px;
+    margin-top: 0;
+  }
 }
 
