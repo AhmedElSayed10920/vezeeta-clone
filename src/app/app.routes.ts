@@ -75,12 +75,8 @@ import { BookingFormSimpleComponent } from './booking-form-simple/booking-form-s
 import { SuccessReservationOfferComponent } from './success-reservation-offer/success-reservation-offer.component';
 import { SearchResultComponent } from './search-result/search-result.component';
 import { MyAppointmentComponent } from './my-appointment/my-appointment.component';
-
-<<<<<<< HEAD
-=======
 import { VerifyOtpComponent } from './verify-otp-component/verify-otp.component';
 
->>>>>>> bd5308e8700e5de343b725e78d617fa77a27c434
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
@@ -164,6 +160,7 @@ export const routes: Routes = [
   { path: 'my-profile', component: MyProfileComponent },
   { path: 'allDoctors', component: AllDoctorsComponent },
   { path: 'verify-otp', component: VerifyOtpComponent },
+
   {
     path: 'login',
     loadComponent: () =>

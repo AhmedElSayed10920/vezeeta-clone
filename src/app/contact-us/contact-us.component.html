@@ -22,7 +22,7 @@
               *ngIf="nameInput.invalid && nameInput.touched"
               class="text-danger"
             >
-              Name is required and must be at least 3 characters long.
+              Name is required En and must be at least 3 characters long.
             </div>
           </div>
 
@@ -82,11 +82,12 @@
             </div>
           </div>
 
-          <button type="submit" class="btn btn-primary">Submit</button>
-
-          <div *ngIf="submitted" class="mt-3 text-success">
-            <p>Your form has been submitted successfully!</p>
-          </div>
+          <button
+            type="submit"
+            class="btn btn-primary mt-2 mt-md-3 d-block mx-auto"
+          >
+            Submit
+          </button>
         </form>
       </div>
 
