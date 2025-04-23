@@ -17,3 +17,13 @@
     font-style: italic;
     color: #666;
   }
+
+  @media (max-width: 576px) {
+    .filter{
+      display: none;
+    }
+
+    .search-header-wrapper{
+      top: 100px;
+    }
+  }

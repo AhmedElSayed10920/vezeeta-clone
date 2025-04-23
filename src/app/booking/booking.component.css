@@ -1,0 +1,28 @@
+.booking-box {
+    z-index: 1000;
+    max-width: 1200px;
+    top: 520px;
+    position: absolute;
+}
+
+@media (max-width: 1200px) {
+    .booking-box {
+        z-index: 0;
+        top: 90px;
+        position: relative;
+        padding: 0 0;
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .booking-box {
+        z-index: 0;
+        top: 180px;
+        position: relative;
+        padding: 0 0;
+        margin-bottom: 0;
+    }
+}
+
+

@@ -1,3 +1,16 @@
 img {
-    opacity: 0.8; /* 50% شفافية */
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    display: none;
   }
+
+} 
+@media (max-width:1300px) {
+  .hero {
+    display: none;
+  }
+
+} 
