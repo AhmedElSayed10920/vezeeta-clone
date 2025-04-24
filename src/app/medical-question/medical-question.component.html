@@ -6,9 +6,17 @@
         <p class="card-text text-muted">
           Submit your medical question and receive an answer from our AI Assistant
         </p>
-        <button class="btn btn-primary btn-lg px-4" (click)="goToChatAssistant()">Ask now</button>
+        <button class="btn btn-primary btn-lg px-4" (click)="isChatOpen = true">Ask now</button>
       </div>
     </div>
   </div>
 
 </div>
+<!-- Floating chat toggle button for Chat gpt -->
+<button class="chat-toggle-btn" (click)="toggleChatAi()">
+  💬
+</button>
+<app-chat-assistant *ngIf="isChatOpen" class="chat-popup" (closePopup)="isChatOpen = false"></app-chat-assistant>
+<app-chat-ai *ngIf="isChatAiOpen" (close)="isChatAiOpen = false"></app-chat-ai>
+
+
