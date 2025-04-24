@@ -3,6 +3,7 @@ import { TokenUpdateService } from '../services/token-update.service';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-my-profile',
@@ -61,7 +62,12 @@ export class MyProfileComponent implements OnInit {
 
   saveProfile(): void {
     if (this.isDateInvalid()) {
-      alert('Please select a valid birth date.');
+      Swal.fire({
+        icon: 'error',
+        title: 'Invalid Birth Date',
+        text: 'Please select a valid birth date.',
+        confirmButtonColor: '#d33',
+      });
       return;
     }
 
@@ -80,21 +86,44 @@ export class MyProfileComponent implements OnInit {
       })
       .subscribe({
         next: (response) => {
-          alert('Profile updated successfully!');
-          const userData = {
-            sub: this.email,
-            pname: this.name,
-            pphone: this.mobile,
-            pbirthDate: this.birthDate,
-          };
-          const newToken = this.createNewToken(userData);
-          localStorage.setItem('token', newToken);
-          this.tokenUpdateService.setUsername(this.name);
-          this.loadUserDataFromToken();
+          Swal.fire({
+            icon: 'success',
+            title: 'Profile Updated',
+            text: 'Your profile has been updated successfully!',
+            confirmButtonColor: '#3085d6',
+          }).then((result) => {
+            if (result.isConfirmed) {
+              // تحديث الاسم في localStorage
+              const userData = {
+                sub: this.email,
+                pname: this.name,
+                pphone: this.mobile,
+                pbirthDate: this.birthDate,
+              };
+              const newToken = this.createNewToken(userData);
+              localStorage.setItem('token', newToken);
+              this.tokenUpdateService.setUsername(this.name);
+
+              // تحديث الاسم في الهيدر مباشرة
+              this.loadUserDataFromToken();
+
+              // يمكنك إضافة أي كود لتحديث الهيدر هنا إذا كنت تستخدمه في مكان آخر
+              // على سبيل المثال إذا كان لديك هيدر في component منفصل:
+              const headerName = document.getElementById('header-name');
+              if (headerName) {
+                headerName.textContent = this.name;
+              }
+            }
+          });
         },
         error: (error) => {
           console.error('Error updating profile', error);
-          alert('Error updating profile');
+          Swal.fire({
+            icon: 'error',
+            title: 'Profile Update Failed',
+            text: 'There was an error updating your profile. Please try again later.',
+            confirmButtonColor: '#d33',
+          });
         },
       });
   }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ContactService } from '../services/contact.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-contact-us',
@@ -15,7 +16,6 @@ export class ContactUSComponent {
   mobile: string = '';
   email: string = '';
   comments: string = '';
-  submitted: boolean = false;
 
   constructor(private contactService: ContactService) {}
 
@@ -28,19 +28,35 @@ export class ContactUSComponent {
         comments: this.comments,
       };
 
-      // تأكد من أن اسم الميثود صحيح
       this.contactService.submitContactForm(contactData).subscribe(
         (response: any) => {
-          // تأكد من نوع البيانات هنا
-          console.log('Form submitted successfully!', response);
-          this.submitted = true;
+          Swal.fire({
+            icon: 'success',
+            title: 'Message Sent',
+            text: 'Your message has been sent successfully!',
+            confirmButtonColor: '#3085d6',
+          }).then(() => {
+            this.resetForm();
+            contactForm.resetForm(); // Reset Angular form state
+          });
         },
         (error: any) => {
-          // تأكد من نوع البيانات هنا
-          console.log('Error submitting form:', error);
+          Swal.fire({
+            icon: 'error',
+            title: 'Submission Failed',
+            text: 'There was an error submitting the form. Please try again later.',
+            confirmButtonColor: '#d33',
+          });
         }
       );
     }
+  }
+
+  resetForm() {
+    this.name = '';
+    this.mobile = '';
+    this.email = '';
+    this.comments = '';
   }
 
   validateName(event: any) {

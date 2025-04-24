@@ -4,15 +4,16 @@ import {
   FormGroup,
   Validators,
   ReactiveFormsModule,
-} from '@angular/forms'; // تأكد من استيراد ReactiveFormsModule
+} from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Router } from '@angular/router'; // إضافة Router للتوجيه
+import { RouterModule, Router } from '@angular/router';
 import { RegisterDoctorService } from '../services/register-doctor.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-signup-for-doctor',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterModule], // تأكد من أن ReactiveFormsModule موجود هنا
+  imports: [CommonModule, ReactiveFormsModule, RouterModule],
   templateUrl: './signup-for-doctor.component.html',
   styleUrls: ['./signup-for-doctor.component.css'],
 })
@@ -65,15 +66,30 @@ export class SignupForDoctorComponent {
 
       this.registerDoctorService.registerDoctor(doctorData).subscribe(
         (response) => {
-          console.log('Doctor created successfully', response);
-          this.router.navigate(['/loginForDoctor']);
+          Swal.fire({
+            icon: 'success',
+            title: 'Registration Successful!',
+            text: 'Your account has been created. You will now be redirected to the login page.',
+            confirmButtonText: 'OK',
+          }).then(() => {
+            this.router.navigate(['/loginForDoctor']);
+          });
         },
         (error) => {
-          console.error('Error:', error);
+          Swal.fire({
+            icon: 'error',
+            title: 'Registration Failed!',
+            text: 'An error occurred while creating your account. Please try again.',
+          });
         }
       );
     } else {
       this.signupForm.markAllAsTouched();
+      Swal.fire({
+        icon: 'warning',
+        title: 'Invalid Form',
+        text: 'Please fill out all fields correctly before submitting.',
+      });
     }
   }
 

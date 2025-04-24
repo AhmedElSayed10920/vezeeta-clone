@@ -2,19 +2,22 @@ import { Component, OnInit } from '@angular/core';
 import { AppointmentService } from '../services/appointment.service';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-my-appointments',
   imports: [CommonModule],
   templateUrl: './my-appointment.component.html',
-  styleUrls: ['./my-appointment.component.css']
+  styleUrls: ['./my-appointment.component.css'],
 })
 export class MyAppointmentComponent implements OnInit {
-
   appointments: any[] = [];
   patientId: number | null = null;
 
-  constructor(private appointmentService: AppointmentService, private router: Router) { }
+  constructor(
+    private appointmentService: AppointmentService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     const token = localStorage.getItem('token');
@@ -32,7 +35,6 @@ export class MyAppointmentComponent implements OnInit {
     }
   }
 
-
   getAppointments(patientId: number) {
     this.appointmentService.getAppointmentsByPatientId(patientId!).subscribe({
       next: (appointments) => {
@@ -40,10 +42,15 @@ export class MyAppointmentComponent implements OnInit {
       },
       error: (err) => {
         console.error('Error loading appointments', err);
-      }
+        Swal.fire({
+          icon: 'error',
+          title: 'Failed to load appointments',
+          text: 'There was an error loading your appointments. Please try again later.',
+          confirmButtonColor: '#d33',
+        });
+      },
     });
   }
-
 
   getPatientIdFromToken(): number | null {
     const token = localStorage.getItem('token');
@@ -53,31 +60,50 @@ export class MyAppointmentComponent implements OnInit {
       const payload = JSON.parse(atob(token.split('.')[1]));
       console.log('Decoded Token Payload:', payload);
       return payload.PatientId || payload.pid || null;
-      // return 105;
     } catch (error) {
       console.error('Invalid token format:', error);
       return null;
     }
   }
 
-
   cancelAppointment(id: number): void {
-    this.appointmentService.deleteAppointment(id).subscribe({
-      next: (response) => {
-        console.log('Response:', response);
-        alert(response.message);
-        this.getAppointments(this.patientId!); 
-      },
-      error: (error) => {
-        console.error('Error:', error);
-        alert('Failed to cancel appointment');
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'Do you want to cancel this appointment?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, cancel it!',
+      cancelButtonText: 'No, keep it',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.appointmentService.deleteAppointment(id).subscribe({
+          next: (response) => {
+            console.log('Response:', response);
+            Swal.fire({
+              icon: 'success',
+              title: 'Appointment Cancelled',
+              text: response.message,
+              confirmButtonColor: '#3085d6',
+            });
+            this.getAppointments(this.patientId!);
+          },
+          error: (error) => {
+            console.error('Error:', error);
+            Swal.fire({
+              icon: 'error',
+              title: 'Failed to cancel appointment',
+              text: 'There was an error canceling your appointment. Please try again later.',
+              confirmButtonColor: '#d33',
+            });
+          },
+        });
       }
     });
   }
 
-
   goToDoctorsPage() {
     this.router.navigate(['/allDoctors']);
   }
-
 }

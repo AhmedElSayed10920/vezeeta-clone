@@ -77,7 +77,6 @@ import { SearchResultComponent } from './search-result/search-result.component';
 import { MyAppointmentComponent } from './my-appointment/my-appointment.component';
 import { VerifyOtpComponent } from './verify-otp-component/verify-otp.component';
 
-
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
@@ -161,6 +160,7 @@ export const routes: Routes = [
   { path: 'my-profile', component: MyProfileComponent },
   { path: 'allDoctors', component: AllDoctorsComponent },
   { path: 'verify-otp', component: VerifyOtpComponent },
+
   {
     path: 'login',
     loadComponent: () =>
