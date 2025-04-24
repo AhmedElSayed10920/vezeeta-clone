@@ -76,6 +76,8 @@ import { SuccessReservationOfferComponent } from './success-reservation-offer/su
 import { SearchResultComponent } from './search-result/search-result.component';
 import { MyAppointmentComponent } from './my-appointment/my-appointment.component';
 import { VerifyOtpComponent } from './verify-otp-component/verify-otp.component';
+import { ChatAIComponent } from './components/chat-ai/chat-ai.component';
+// import { BotAiComponent } from './components/bot-ai/bot-ai.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -160,7 +162,7 @@ export const routes: Routes = [
   { path: 'my-profile', component: MyProfileComponent },
   { path: 'allDoctors', component: AllDoctorsComponent },
   { path: 'verify-otp', component: VerifyOtpComponent },
-
+  { path: 'app-chat-ai', component: ChatAIComponent },
   {
     path: 'login',
     loadComponent: () =>
