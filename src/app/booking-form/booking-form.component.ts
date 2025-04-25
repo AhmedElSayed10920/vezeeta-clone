@@ -306,7 +306,7 @@ export class BookingFormComponent implements OnInit {
         const grecaptcha = (window as any).grecaptcha;
         if (grecaptcha) {
           grecaptcha.render(document.querySelector('.g-recaptcha'), {
-            sitekey: '6Ld7XBorAAAAANMQY-FKhCQ1xGhD-QsJuPmFczMD',
+            sitekey: '6LdZKSMrAAAAAFULdVojKK1gt52rhCKu-7YYuQNL',
             callback: 'onCaptchaSuccess',
             'expired-callback': 'onCaptchaExpired',
           });

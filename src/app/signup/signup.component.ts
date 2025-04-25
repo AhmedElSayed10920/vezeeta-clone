@@ -211,7 +211,7 @@ export class SignupComponent {
         const recaptchaEl = document.querySelector('.g-recaptcha');
         if (recaptchaEl) {
           grecaptcha.render(recaptchaEl, {
-            sitekey: '6Ld7XBorAAAAANMQY-FKhCQ1xGhD-QsJuPmFczMD',
+            sitekey: '6LdZKSMrAAAAAFULdVojKK1gt52rhCKu-7YYuQNL',
             callback: (token: string) => {
               this.onCaptchaResolved(token);
             },
