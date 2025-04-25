@@ -1,5 +1,8 @@
 <div class="chat-container">
-  <div class="chat-header">Vezeeta Smart Medical Assistant</div>
+  <button class="close-btn" (click)="close()" aria-label="Close chat">
+    <span class="close-icon">&times;</span>
+  </button>
+  <div class="chat-header">MedicalCare Smart Medical Assistant</div>
 
   <div class="chat-messages">
     <div *ngFor="let msg of messages" [ngClass]="msg.sender">
@@ -14,7 +17,6 @@
       placeholder="Describe your symptoms or use the mic..."
     />
 
-    <!-- زر الميكروفون مع التأثيرات -->
     <button
       (click)="startListening()"
       title="Voice input"
@@ -24,13 +26,11 @@
       🎤
     </button>
 
-    <!-- رسالة جاري التسجيل -->
     <div *ngIf="isRecording" class="recording-message">جاري التسجيل...</div>
 
     <button (click)="sendMessage()" class="send-btn">Send</button>
   </div>
 
-  <!-- إضافة أزرار لتغيير اللغة -->
   <div class="language-selector">
     <button
       (click)="changeLanguage('ar-SA')"
