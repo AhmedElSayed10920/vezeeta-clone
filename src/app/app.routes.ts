@@ -75,6 +75,7 @@ import{ BookingFormSimpleComponent } from './booking-form-simple/booking-form-si
 import { SuccessReservationOfferComponent } from './success-reservation-offer/success-reservation-offer.component';
 import { SearchResultComponent } from './search-result/search-result.component';
 import { MyAppointmentComponent } from './my-appointment/my-appointment.component';
+import { PaymentComponent } from './payment/payment.component';
 
 
 export const routes: Routes = [
@@ -177,5 +178,6 @@ export const routes: Routes = [
   {path: 'offerDetails/:id', component: OfferDetailsComponent},
   {path: 'bookingFormSimple', component: BookingFormSimpleComponent},
   { path: 'offer-success', component: SuccessReservationOfferComponent },
+  {path: 'payment', component: PaymentComponent},
   { path: '**', redirectTo: 'login', pathMatch: 'full' },
 ];

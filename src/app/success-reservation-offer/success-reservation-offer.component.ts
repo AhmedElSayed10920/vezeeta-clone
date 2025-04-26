@@ -51,12 +51,17 @@ export class SuccessReservationOfferComponent {
     return `${endHours}:${formattedMinutes} ${ampm}`;
   }
 
+  // goToMyAppointments() {
+  //   const token = localStorage.getItem('token');
+  //   if (token) {
+  //     this.router.navigate(['/MyAppointments']);
+  //   } else {
+  //     this.router.navigate(['/login']);
+  //   }
+  // }
   goToMyAppointments() {
-    const token = localStorage.getItem('token');
-    if (token) {
-      this.router.navigate(['/MyAppointments']);
-    } else {
-      this.router.navigate(['/login']);
-    }
-  }
+
+  this.router.navigate(['/MyAppointments']);
+
+}
 }
