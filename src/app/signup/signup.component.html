@@ -23,7 +23,7 @@
             <input
               type="text"
               class="form-control"
-              placeholder="First name and Last name"
+              placeholder="Enter your name"
               [(ngModel)]="user.name"
               name="name"
               #name="ngModel"
@@ -66,9 +66,9 @@
         </div>
 
         <div class="mb-3 row">
-          <label class="col-md-4 col-form-label"
-            >Email Address <span class="text-danger">*</span></label
-          >
+          <label class="col-md-4 col-form-label">
+            Email Address <span class="text-danger">*</span>
+          </label>
           <div class="col-md-8">
             <input
               type="email"
@@ -78,6 +78,7 @@
               name="email"
               #email="ngModel"
               required
+              pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
             />
             <div
               class="invalid-feedback d-block ms-4"
@@ -176,18 +177,31 @@
             >Terms Of Use</a
           >
         </p>
-        <div *ngIf="showCaptcha" style="margin: 3px auto;" >
+        <div *ngIf="showCaptcha" style="margin: 3px auto">
           <div
             class="g-recaptcha"
-            data-sitekey="6Ld7XBorAAAAANMQY-FKhCQ1xGhD-QsJuPmFczMD"
-            data-callback="onRecaptchaSuccess">
-          </div>
+            data-sitekey="6LdZKSMrAAAAAFULdVojKK1gt52rhCKu-7YYuQNL"
+            data-callback="onRecaptchaSuccess"
+          ></div>
         </div>
-        
-        <button type="submit" class="btn btn-danger w-30">JOIN NOW</button>
+
+        <!-- <button type="submit" class="btn btn-danger w-30">JOIN NOW</button> -->
+        <button
+          type="submit"
+          class="btn btn-danger w-30"
+          [disabled]="isLoading"
+        >
+          <span *ngIf="!isLoading">JOIN NOW</span>
+          <span
+            *ngIf="isLoading"
+            class="d-flex align-items-center justify-content-center"
+          >
+            <span class="custom-spinner me-2"></span> Sending...
+          </span>
+        </button>
       </form>
     </div>
-    
+
     <div class="card-footer text-center">
       Already Registered in Vezeeta?
       <a href="./login" class="signup-link fw-bold">Login</a>

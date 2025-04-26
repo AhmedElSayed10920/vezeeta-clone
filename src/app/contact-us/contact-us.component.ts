@@ -1,46 +1,68 @@
 import { Component } from '@angular/core';
+import { ContactService } from '../services/contact.service';
 import { CommonModule } from '@angular/common';
-import { FormsModule, NgForm } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-contactUS',
+  selector: 'app-contact-us',
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './contact-us.component.html',
-  styleUrls: ['./contact-us.component.css']
+  styleUrls: ['./contact-us.component.css'],
 })
 export class ContactUSComponent {
   name: string = '';
   mobile: string = '';
   email: string = '';
   comments: string = '';
-  submitted: boolean = false;
 
-  submitForm(contactForm: NgForm) {
-    this.submitted = true;
+  constructor(private contactService: ContactService) {}
 
-    if (contactForm.invalid) {
-      console.log('❌ Form has errors!');
-      return;
+  submitForm(contactForm: any) {
+    if (contactForm.valid) {
+      const contactData = {
+        name: this.name,
+        mobile: this.mobile,
+        email: this.email,
+        comments: this.comments,
+      };
+
+      this.contactService.submitContactForm(contactData).subscribe(
+        (response: any) => {
+          Swal.fire({
+            icon: 'success',
+            title: 'Message Sent',
+            text: 'Your message has been sent successfully!',
+            confirmButtonColor: '#3085d6',
+          }).then(() => {
+            this.resetForm();
+            contactForm.resetForm(); // Reset Angular form state
+          });
+        },
+        (error: any) => {
+          Swal.fire({
+            icon: 'error',
+            title: 'Submission Failed',
+            text: 'There was an error submitting the form. Please try again later.',
+            confirmButtonColor: '#d33',
+          });
+        }
+      );
     }
-
-    console.log('✅ Form Submitted!', {
-      name: this.name,
-      mobile: this.mobile,
-      email: this.email,
-      comments: this.comments
-    });
   }
 
-  validateName(event: Event) {
-    const inputElement = event.target as HTMLInputElement;
-    if (inputElement) {
-      const inputValue = inputElement.value;
-      const englishPattern = /^[A-Za-z\s]*$/; // فقط الحروف الإنجليزية والمسافات
+  resetForm() {
+    this.name = '';
+    this.mobile = '';
+    this.email = '';
+    this.comments = '';
+  }
 
-      if (!englishPattern.test(inputValue)) {
-        this.name = inputValue.replace(/[^A-Za-z\s]/g, ''); // إزالة الأحرف غير الإنجليزية
-      }
+  validateName(event: any) {
+    const regex = /^[A-Za-z\s]{3,}$/;
+    if (!regex.test(event.target.value)) {
+      console.log('Invalid name format');
     }
   }
 }

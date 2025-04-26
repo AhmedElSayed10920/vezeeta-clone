@@ -1,0 +1,46 @@
+.chat-popup-container {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 350px;
+  max-height: 80vh;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 99999; /* خليها تطفو فوق كل العناصر */
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+
+.chat-body {
+  flex: 1;
+  overflow-y: auto;
+  background-color: #fff;
+  padding-right: 5px;
+  scroll-behavior: smooth;
+}
+
+.user-msg,
+.bot-msg {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 15px;
+  max-width: 80%;
+  word-wrap: break-word;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.user-msg {
+  background-color: #007bff;
+  color: #fff;
+  margin-left: auto;
+}
+
+.bot-msg {
+  background-color: #e4e6eb;
+  color: #000;
+  margin-right: auto;
+}

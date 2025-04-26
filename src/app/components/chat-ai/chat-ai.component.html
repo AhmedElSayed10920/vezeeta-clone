@@ -1,0 +1,30 @@
+<div class="chat-popup-container animate__animated animate__fadeInUp" *ngIf="isVisible">
+  <div class="chat-header d-flex justify-content-between align-items-center px-3 py-2 text-white bg-primary">
+    <span>MedicalCare Chat AI</span>
+    <button type="button" class="btn-close btn-close-white" aria-label="Close" (click)="closeChat()"></button>
+  </div>
+
+  <div class="chat-body px-3 py-2" id="chat-body" #scrollContainer>
+    <div *ngFor="let msg of chatHistory" class="mb-2">
+      <div [ngClass]="msg.role === 'user' ? 'text-end' : 'text-start'">
+        <span [ngClass]="msg.role === 'user' ? 'user-msg' : 'assistant-msg'">
+          {{ msg.content }}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="chat-input px-3 py-2 border-top">
+    <div class="input-group">
+      <input
+        [(ngModel)]="input"
+        (keyup.enter)="handleEnterKey($event)"
+        class="form-control"
+        placeholder="اكتب سؤالك هنا..."
+      />
+      <button class="btn btn-primary" (click)="sendMessage()">إرسال</button>
+    </div>
+  </div>
+</div>
+
+

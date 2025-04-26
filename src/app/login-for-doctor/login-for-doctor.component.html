@@ -3,7 +3,6 @@
     <h2 class="text-center mb-4">Welcome Back!</h2>
 
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <!-- Email Input -->
       <div class="mb-3">
         <label for="email" class="form-label">Email*</label>
         <div class="input-group">
@@ -32,7 +31,7 @@
         <div class="input-group">
           <span class="input-group-text"><i class="fas fa-lock"></i></span>
           <input
-            [type]="showPassword() ? 'text' : 'password'"
+            [type]="showPassword ? 'text' : 'password'"
             class="form-control"
             id="password"
             placeholder="Enter your password"
@@ -45,7 +44,7 @@
           >
             <i
               class="fas"
-              [ngClass]="showPassword() ? 'fa-eye-slash' : 'fa-eye'"
+              [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"
             ></i>
           </span>
         </div>
@@ -69,11 +68,7 @@
         <a href="#" class="text-decoration-none">Forgot your password?</a>
         <p class="mt-2">
           Don't have an account?
-          <a
-            href="/signupForDoctor"
-            class="text-decoration-none"
-            >Sign up</a
-          >
+          <a href="/signupForDoctor" class="text-decoration-none">Sign up</a>
         </p>
       </div>
     </form>
