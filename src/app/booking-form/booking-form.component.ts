@@ -19,6 +19,7 @@ export class BookingFormComponent implements OnInit {
   isLoggedIn: boolean = false;
 
   captchaToken: string | null = null;
+
   showCaptcha: boolean = false;
 
   bookingData = {
@@ -165,8 +166,8 @@ export class BookingFormComponent implements OnInit {
         error: (err) => {
           Swal.fire({
             icon: 'error',
-            title: 'Error Creating Patient',
-            text: 'Something went wrong while registering the patient.',
+            title: 'Registration Failed',
+            text: 'Go to SignUp Page to register first!',
           });
           console.error(err);
         },
@@ -189,7 +190,7 @@ export class BookingFormComponent implements OnInit {
 
     const payload = {
       adate: this.formatDate(this.selectedDate),
-      atime: '14:00:00',
+      atime: '23:59:59',
       pid: pid,
       cid: matchedClinic.id,
       did: this.bookingInfo?.doctor?.id,
@@ -245,4 +246,5 @@ export class BookingFormComponent implements OnInit {
   onCancel() {
     this.location.back();
   }
+  
 }
