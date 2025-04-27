@@ -1,14 +1,13 @@
-
-import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
+import { Component, QueryList, ViewChildren, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { OtpService } from '../services/otp.service';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import Swal from 'sweetalert2'; // استيراد SweetAlert2
+import { CommonModule } from '@angular/common'; // إضافة CommonModule
 
 @Component({
   selector: 'app-verify-otp',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule], // إضافة CommonModule هنا
   templateUrl: './verify-otp.component.html',
   styleUrls: ['./verify-otp.component.css'],
 })
@@ -17,6 +16,7 @@ export class VerifyOtpComponent {
   email: string = '';
   errorMessage: string = '';
   success: boolean = false;
+  isOtpVerified: boolean = false;
 
   @ViewChildren('otp0, otp1, otp2, otp3, otp4, otp5')
   otpInputs!: QueryList<ElementRef>;
@@ -38,15 +38,33 @@ export class VerifyOtpComponent {
     this.otpService.verifyOtp(this.email, otp).subscribe({
       next: () => {
         this.success = true;
+        this.isOtpVerified = true;
         this.errorMessage = '';
         this.triggerAnimation('success-border');
-        setTimeout(() => {
-          this.router.navigate(['/login']);
-        }, 1500);
+        Swal.fire({
+          icon: 'success',
+          title: '✅ OTP Verified Successfully!',
+          text: 'Your OTP has been verified.',
+          confirmButtonText: 'OK',
+        }).then(() => {
+          localStorage.setItem('otpVerified', 'true');
+          setTimeout(() => {
+            this.router.navigate(['/login']);
+          }, 1000);
+        });
       },
       error: () => {
         this.errorMessage = 'OTP verification failed. Please try again.';
         this.triggerAnimation('error-border');
+        this.isOtpVerified = false;
+        localStorage.removeItem('otpVerified');
+
+        Swal.fire({
+          icon: 'error',
+          title: '❌ OTP Verification Failed',
+          text: 'Please check your OTP and try again.',
+          confirmButtonText: 'Retry',
+        });
 
         setTimeout(() => {
           this.otpDigits = ['', '', '', '', '', ''];
@@ -101,6 +119,7 @@ export class VerifyOtpComponent {
       event.preventDefault();
     }
   }
+
   onPaste(event: ClipboardEvent) {
     event.preventDefault();
     const data = event.clipboardData?.getData('text') || '';
@@ -117,6 +136,4 @@ export class VerifyOtpComponent {
     const next = this.otpInputs.toArray()[digits.length];
     next?.nativeElement.focus();
   }
-
-
 }
