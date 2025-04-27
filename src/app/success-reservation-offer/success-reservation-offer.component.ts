@@ -61,7 +61,7 @@ export class SuccessReservationOfferComponent {
   // }
   goToMyAppointments() {
 
-  this.router.navigate(['/MyAppointments']);
+  this.router.navigate(['/payment']);
 
 }
 }

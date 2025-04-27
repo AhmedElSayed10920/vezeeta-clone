@@ -77,6 +77,7 @@ import { SearchResultComponent } from './search-result/search-result.component';
 import { MyAppointmentComponent } from './my-appointment/my-appointment.component';
 import { VerifyOtpComponent } from './verify-otp-component/verify-otp.component';
 import { ChatAIComponent } from './components/chat-ai/chat-ai.component';
+import { PaymentComponent } from './payment/payment.component';
 // import { BotAiComponent } from './components/bot-ai/bot-ai.component';import { PaymentComponent } from './payment/payment.component';
 
 
