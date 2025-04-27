@@ -57,7 +57,14 @@
             </table>
         </div>
 
-        <a (click)="goToMyAppointments()" class="footer-btn">My Appointments</a>
+        <!-- <a (click)="goToMyAppointments()" class="footer-btn">My Appointments</a>
+        <a (click)="goToMyPayment()" class="footer-btn">Pay Now</a> -->
+
+        <div class="footer-btns">
+          <a (click)="goToMyAppointments()" class="footer-btn btn-appointments">My Appointments</a>
+          <a (click)="goToMyPayment()" class="footer-btn btn-payment">Pay Now</a>
+        </div>
+        
     </div>
     <div class="text-center" style="font-size: small; padding: 20px;">
         <p>Thank you for using HealthCare, We wish you a speedy recovery</p>
