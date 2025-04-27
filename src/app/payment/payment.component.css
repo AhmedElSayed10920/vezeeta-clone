@@ -1,0 +1,14 @@
+/* Stripe Card Element Styling */
+#card-element.custom-card-element {
+  height: 45px;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+}
+
+/* Optional: improve spacing */
+.card {
+  border-radius: 12px;
+}

@@ -1,144 +1,162 @@
 .booking-card {
-    max-width: 650px;
-    margin: auto;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    margin-bottom: 20px;
+  max-width: 650px;
+  margin: auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 20px;
 }
 
 .header {
-    text-align: center;
-    padding: 30px 20px;
-    border-bottom: 1px solid #eee;
+  text-align: center;
+  padding: 30px 20px;
+  border-bottom: 1px solid #eee;
 }
 
 .header img {
-    height: 110px;
-    margin-bottom: 10px;
+  height: 110px;
+  margin-bottom: 10px;
 }
 
 .header h2 {
-    margin: 10px 0 0;
-    color: #2e7d32;
-    font-size: 1.2rem;
+  margin: 10px 0 0;
+  color: #2e7d32;
+  font-size: 1.2rem;
 }
 
 .content {
-    padding: 20px;
+  padding: 20px;
 }
 
 .info {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 15px;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
 }
 
 .info i {
-    font-size: 20px;
-    min-width: 24px;
-    color: #2563eb;
+  font-size: 20px;
+  min-width: 24px;
+  color: #2563eb;
 }
 
 .info-text {
-    font-size: 15px;
-    color: #333;
-    flex: 1;
+  font-size: 15px;
+  color: #333;
+  flex: 1;
 }
 
 .highlight-box {
-    background: #e8f5e9;
-    color: #2e7d32;
-    padding: 6px 10px;
-    border-radius: 6px;
-    font-weight: bold;
-    display: inline-block;
-    margin-left: 10px;
-    margin-top: 5px;
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  display: inline-block;
+  margin-left: 10px;
+  margin-top: 5px;
 }
 
 .link {
-    color: #2563eb;
-    text-decoration: none;
-    font-weight: 500;
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
 }
 
 .link:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
-
 .details-table {
-    width: 100%;
-    margin-top: 10px;
-    border-collapse: collapse;
+  width: 100%;
+  margin-top: 10px;
+  border-collapse: collapse;
 }
 
 .details-table tr td {
-    padding: 10px 5px;
-    border-top: 1px solid #ddd;
-    font-size: 15px;
+  padding: 10px 5px;
+  border-top: 1px solid #ddd;
+  font-size: 15px;
 }
 
 .details-table tr td:first-child {
-    font-weight: bold;
-    color: #555;
-    width: 40%;
+  font-weight: bold;
+  color: #555;
+  width: 40%;
+}
+
+.footer-btns {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  background-color: #fff;
 }
 
 .footer-btn {
-    display: block;
-    width: 100%;
-    padding: 12px;
-    background-color: #2563eb;
-    color: #fff;
-    font-size: 16px;
-    text-align: center;
-    border: none;
-    border-radius: 0 0 10px 10px;
-    cursor: pointer;
-    text-decoration: none;
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  text-align: center;
+  border: none;
+  border-radius: 0 0 10px 10px;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-.footer-btn:hover {
-    background-color: #1e3a8a;
+.btn-appointments {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+.btn-appointments:hover {
+  background-color: #1e3a8a;
+}
+
+.btn-payment {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.btn-payment:hover {
+  background-color: #a71d2a; 
 }
 
 /* 🌐 Responsive Design */
 @media (max-width: 576px) {
-    .booking-card{
-        margin: 10px;
-    }
-    .header h2 {
-        font-size: 1rem;
-    }
+  .booking-card {
+      margin: 10px;
+  }
 
-    .info {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+  .header h2 {
+      font-size: 1rem;
+  }
 
-    .details-table tr td {
-        font-size: 14px;
-        display: block;
-        width: 100%;
-        padding: 8px 0;
-    }
+  .info {
+      flex-direction: column;
+      align-items: flex-start;
+  }
 
-    .details-table tr td:first-child {
-        width: 100%;
-        font-weight: bold;
-        margin-bottom: 5px;
-    }
+  .details-table tr td {
+      font-size: 14px;
+      display: block;
+      width: 100%;
+      padding: 8px 0;
+  }
 
-    .highlight-box {
-        margin-left: 0;
-    }
+  .details-table tr td:first-child {
+      width: 100%;
+      font-weight: bold;
+      margin-bottom: 5px;
+  }
 
-    .footer-btn {
-        font-size: 15px;
-    }
+  .highlight-box {
+      margin-left: 0;
+  }
+
+  .footer-btns {
+      flex-direction: column;
+  }
 }

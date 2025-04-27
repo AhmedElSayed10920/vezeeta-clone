@@ -16,11 +16,14 @@ export class SuccessReservationComponent {
   }
   goToMyAppointments() {
     const token = localStorage.getItem('token');
-  
+
     if (token) {
       this.router.navigate(['/myAppointment']);
     } else {
       this.router.navigate(['/login']);
     }
+  }
+  goToMyPayment(){
+    this.router.navigate(['/payment']);
   }
 }
