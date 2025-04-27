@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { StripeService } from '../stripe.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { of } from 'rxjs';
 @Component({
   selector: 'app-payment',
   imports: [CommonModule, FormsModule],
@@ -14,10 +16,23 @@ export class PaymentComponent implements OnInit {
   isLoading: boolean = false;
   amount: number = 0;
 
+  bookingData: any;
+  offer: any;
+
   constructor(
     private http: HttpClient,
-    private stripeService: StripeService
-  ) {}
+    private stripeService: StripeService,
+    private router: Router
+  ) {
+    const nav = this.router.getCurrentNavigation();
+    this.bookingData = nav?.extras?.state;
+    this.offer = nav?.extras?.state;
+    if (this.bookingData?.doctor?.fees) {
+      this.amount = this.bookingData.doctor.fees;
+    }else{
+      this.amount = this.offer?.finalPrice;
+    }
+  }
 
   ngOnInit() {
     this.stripeService.initializeCardElement('#card-element');

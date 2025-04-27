@@ -23,7 +23,8 @@ export class SuccessReservationComponent {
       this.router.navigate(['/login']);
     }
   }
-  goToMyPayment(){
-    this.router.navigate(['/payment']);
+  goToMyPayment() {
+    this.router.navigate(['/payment'], { state: this.bookingData });
   }
+  
 }
