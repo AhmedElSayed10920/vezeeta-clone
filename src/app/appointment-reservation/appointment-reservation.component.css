@@ -46,25 +46,18 @@
   border-top-right-radius: 5px;
   font-weight: bold;
   font-size: 12px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
-.time-slot {
+/* .time-slot {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10px;
-}
+  /* margin-bottom: 10px; 
+} */
 
-.time-slot p {
-  font-size: 11px;
-  color: #555;
-  margin: 2px 0;
-  line-height: 1.2;
-  padding: 4px;
-}
 
 .book-btn {
   display: block;
@@ -78,6 +71,7 @@
   border-bottom-right-radius: 5px;
   cursor: pointer;
   font-size: 12px;
+  margin-top: 5px;
 }
 
 .book-btn.disabled {
@@ -144,4 +138,41 @@
   .nav-arrow { 
     font-size: 12px;
   }
+}
+
+.time-slot-scroll {
+  max-height: 190px; 
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0 5px;
+
+  /* إخفاء Scrollbar في Chrome, Edge, Safari */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.time-btn {
+  padding: 6px 12px;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: small;
+}
+
+.time-btn:hover {
+  background-color: #d0f0d0;
+}
+
+.time-slot-scroll::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+.time-btn.booked {
+  text-decoration: line-through;
+  color: #999;
+  background-color: #eee;
+  cursor: not-allowed;
 }
