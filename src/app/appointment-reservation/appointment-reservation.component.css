@@ -170,6 +170,7 @@
 .time-slot-scroll::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Edge */
 }
+
 .time-btn.booked {
   text-decoration: line-through;
   color: #999;
