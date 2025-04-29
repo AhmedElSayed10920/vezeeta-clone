@@ -135,13 +135,13 @@
     padding: 5px;
   }
 
-  .nav-arrow { 
+  .nav-arrow {
     font-size: 12px;
   }
 }
 
 .time-slot-scroll {
-  max-height: 190px; 
+  max-height: 190px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -149,8 +149,10 @@
   padding: 0 5px;
 
   /* إخفاء Scrollbar في Chrome, Edge, Safari */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE 10+ */
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE 10+ */
 }
 
 .time-btn {
@@ -168,7 +170,18 @@
 }
 
 .time-slot-scroll::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Edge */
+  display: none;
+  /* Chrome, Safari, Edge */
+}
+.disabled-day {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.time-btn.booked.strikethrough {
+  text-decoration: line-through;
+  color: gray;
+  pointer-events: none;
 }
 
 .time-btn.booked {

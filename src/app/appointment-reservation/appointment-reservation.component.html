@@ -4,18 +4,20 @@
     <button class="nav-arrow" (click)="prevDay()" [disabled]="currentDayIndex === 0">❮</button>
     <div class="appointment-times">
       <div class="times-column" *ngFor="let day of getDisplayedDays()">
-        <div class="day-card">
+        <div class="day-card" [ngClass]="{ 'disabled-day': hasPatientBookedOnDate(day.date) }">
           <div class="day-header">{{ day.displayText }}</div>
 
 
-          <ng-container *ngIf="getAppointmentsForDay(day).length > 0; else noAppointments" >
+          <ng-container *ngIf="getAppointmentsForDay(day).length > 0; else noAppointments">
             <div class="time-slot-scroll" #timeSlotScroll>
               <button *ngFor="let time of getAppointmentsForDay(day)" class="time-btn"
                 [class.booked]="isBooked(day.date, time) || isPast(day.date, time)"
-                (click)="bookAppointment(time, day.date)"
-                [disabled]="isBooked(day.date, time) || isPast(day.date, time)">
+                [class.strikethrough]="isBooked(day.date, time)"
+                [disabled]="hasPatientBookedOnDate(day.date) || isBooked(day.date, time) || isPast(day.date, time)"
+                (click)="bookAppointment(time, day.date)">
                 {{ time }}
               </button>
+
             </div>
           </ng-container>
 
@@ -25,11 +27,10 @@
           </ng-template>
 
 
-          <button class="book-btn" [ngClass]="{'disabled': getAppointmentsForDay(day).length === 0}"
-            (click)="bookAppointment(getAppointmentsForDay(day)[0], day.date)"
-            [disabled]="getAppointmentsForDay(day).length === 0">
+          <button class="book-btn" [disabled]="!selectedTime || !selectedDate" (click)="confirmBooking()">
             BOOK
           </button>
+
         </div>
       </div>
     </div>

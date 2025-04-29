@@ -229,7 +229,8 @@ export class BookingFormComponent implements OnInit {
         Swal.fire({
           icon: 'error',
           title: 'Booking Failed',
-          text: 'Failed to book appointment. Please try again.',
+          text: err.error || 'There was an error booking your appointment. Please try again later.',
+          confirmButtonText: 'OK',
         });
         console.error(err);
       },
