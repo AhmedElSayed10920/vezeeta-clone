@@ -12,7 +12,7 @@
         <h3 class="doctor-name">{{ appointment.doctorName }}</h3>
         <p><strong>Clinic:</strong> {{ appointment.clinicName }}</p>
         <p><strong>Date:</strong> {{ appointment.date | date: 'fullDate' }}</p>
-        <p><strong>Time:</strong> {{ appointment.time }}</p>
+        <p><strong>Time:</strong> {{ convertTimeToDate(appointment.time) | date: 'hh:mm a'}}</p>
         <p><strong>Patient:</strong> {{ appointment.patientName }}</p>
       </div>
       <button class="cancel-btn" (click)="cancelAppointment(appointment.appointmentId)">Cancel</button>

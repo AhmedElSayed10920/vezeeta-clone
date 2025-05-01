@@ -190,7 +190,7 @@ export class BookingFormComponent implements OnInit {
 
     const payload = {
       adate: this.formatDate(this.selectedDate),
-      atime: '23:59:59',
+      atime: this.formatTime(this.bookingInfo?.time),
       pid: pid,
       cid: matchedClinic.id,
       did: this.bookingInfo?.doctor?.id,
@@ -229,7 +229,8 @@ export class BookingFormComponent implements OnInit {
         Swal.fire({
           icon: 'error',
           title: 'Booking Failed',
-          text: 'Failed to book appointment. Please try again.',
+          text: err.error || 'There was an error booking your appointment. Please try again later.',
+          confirmButtonText: 'OK',
         });
         console.error(err);
       },
@@ -243,6 +244,21 @@ export class BookingFormComponent implements OnInit {
     return `2025-${month}-${day}`;
   }
 
+  formatTime(time: string): string {
+    const timeParts = time.match(/(\d+):(\d+)\s?(AM|PM)/i);
+    if (!timeParts) return '00:00:00';
+  
+    let hours = parseInt(timeParts[1], 10);
+    const minutes = parseInt(timeParts[2], 10);
+    const period = timeParts[3].toUpperCase();
+  
+    if (period === 'PM' && hours !== 12) hours += 12;
+    if (period === 'AM' && hours === 12) hours = 0;
+  
+    const hh = hours.toString().padStart(2, '0');
+    const mm = minutes.toString().padStart(2, '0');
+    return `${hh}:${mm}:00`;
+  }
   onCancel() {
     this.location.back();
   }

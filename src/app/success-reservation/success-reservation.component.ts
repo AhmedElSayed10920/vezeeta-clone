@@ -1,9 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-success-reservation',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './success-reservation.component.html',
   styleUrl: './success-reservation.component.css'
 })
@@ -26,5 +27,13 @@ export class SuccessReservationComponent {
   goToMyPayment() {
     this.router.navigate(['/payment'], { state: this.bookingData });
   }
+
+  convertTimeToDate(timeString: string): Date {
+    const [hours, minutes, seconds] = timeString.split(':').map(Number);
+    const date = new Date();
+    date.setHours(hours, minutes, seconds || 0, 0);
+    return date;
+  }
+  
   
 }
