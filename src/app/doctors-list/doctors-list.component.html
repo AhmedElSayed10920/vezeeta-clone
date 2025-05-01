@@ -1,5 +1,5 @@
 <div class="container">
-  <div *ngFor="let doctor of filteredDoctors" class="card">
+  <div *ngFor="let doctor of paginatedDoctors" class="card">
     <div class="card-content">
       <div class="doctor-info">
         <div class="logo-container">
@@ -46,5 +46,12 @@
       </div>
     </div>
   </div>
+  <div class="pagination">
+    <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+    <span>Page {{ currentPage }} of {{ totalPages }}</span>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+  </div>
+  
+  
 </div>
 
