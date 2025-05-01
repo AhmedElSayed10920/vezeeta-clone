@@ -9,11 +9,7 @@
           <h5 class="doctor-name">{{ doctor.doctorName }}</h5>
           <p class="main-specialty">{{ doctor.clinicName }} - {{ doctor.mainSpecialty }}</p>
 
-          <div class="rating">
-            <span class="stars">★★★★★</span>
-            <span class="rating-text">Overall Rating From 104 Visitors</span>
-          </div>
-
+          
           <p class="sub-specialty">{{ doctor.subSpecialty }}</p>
 
           <div class="info-item">
@@ -22,17 +18,13 @@
           </div>
           <div class="info-item">
             <i class="fa-solid fa-location-dot" style="color: #519ed8;"></i>
-            <span>{{ doctor.city }}</span>&nbsp;-&nbsp;
-            <span>{{ doctor.street }}</span>
+            <span>{{ doctor.city }} - {{ doctor.street }}</span>
           </div>
           <div class="info-item">
             <i class="fa-solid fa-money-bill" style="color: #32cd32;"></i>
             <span>{{ doctor.fees }} EGP</span>
           </div>
-          <div class="info-item">
-            <i class="fa-solid fa-clock" style="color: #4682b4;"></i>
-            <span>Waiting Time: 15 Minutes</span>
-          </div>
+  
           <div class="info-item">
             <i class="fa-solid fa-phone" style="color: #ff6347;"></i>
             <span>{{ doctor.phone }}</span>

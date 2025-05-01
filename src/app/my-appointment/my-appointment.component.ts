@@ -106,4 +106,11 @@ export class MyAppointmentComponent implements OnInit {
   goToDoctorsPage() {
     this.router.navigate(['/allDoctors']);
   }
+
+  convertTimeToDate(timeString: string): Date {
+    const [hours, minutes, seconds] = timeString.split(':').map(Number);
+    const date = new Date();
+    date.setHours(hours, minutes, seconds || 0, 0);
+    return date;
+  }
 }
