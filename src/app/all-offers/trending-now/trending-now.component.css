@@ -21,3 +21,9 @@ button {
     color: rgb(0,0,0,.3);
 }
 /* تحسين شكل العناوين */        
+
+img{
+    height:200px;
+    width: 100%;
+    
+}

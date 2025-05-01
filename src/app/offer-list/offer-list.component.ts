@@ -13,88 +13,99 @@ import { RouterModule } from '@angular/router';
 export class OfferListComponent {
   offers = [
     {
-      id: 1,
-      title: 'Teeth Cleaning',
-      SpecializationLink: '/whitening',
+      id: 4,
+      title: 'Face Peeling',
+      SpecializationLink: '/offers/25',
       originalPrice: 1000,
-      price: 600,
-      discount: 40,
+      price: 750,
+      discount: 25,
       image:
-        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/teeth_cleaning/desktop.webp',
-      offersCount: 160,
+      '/images/offerImage/25.png',
+      offersCount: 4,
+    },
+    {
+      id: 5,
+      title: 'Legs Laser Hair Removal',
+      SpecializationLink: '/offers/21',
+      originalPrice: 2000,
+      price: 1600,
+      discount: 20,
+      image:
+      '/images/offerImage/21.png',
+      offersCount: 2,
+    },
+    {
+      id: 6,
+      title: 'Injection For Lipolysis',
+      SpecializationLink: '/offers/51',
+      originalPrice: 2000,
+      price: 1000,
+      discount: 50,
+      image:
+      '/images/offerImage/45.png',
+      offersCount: 13,
+    },
+    {
+      id: 9,
+      title: 'Composite white filling',
+      SpecializationLink: '/offers/13',
+      originalPrice: 1600,
+      price: 800,
+      discount: 50,
+      image: '/images/offerImage/13.png',
+      offersCount: 20,
     },
     {
       id: 2,
-      title: 'Facial Cleansing',
-      SpecializationLink: '/laser',
-      originalPrice: 800,
-      price: 400,
-      discount: 50,
+      title: 'Laser hair removal Face',
+      SpecializationLink: '/offers/24',
+      originalPrice: 1900,
+      price: 1520,
+      discount: 20,
       image:
-        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/facial_cleansing/desktop.webp',
-      offersCount: 68,
+        '/images/offerImage/24.png',
+      offersCount: 6,
     },
     {
       id: 3,
       title: 'Metal Braces',
-      SpecializationLink: '/dentalCare',
-      originalPrice: 15000,
-      price: 12000,
+      SpecializationLink: '/offers/14',
+      originalPrice: 1600,
+      price: 1280,
       discount: 20,
       image:
-        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/metal_braces/desktop.webp',
-      offersCount: 10,
-    },
-    {
-      id: 4,
-      title: 'Face Peeling',
-      SpecializationLink: '/skinPeeling',
-      originalPrice: 500,
-      price: 250,
-      discount: 50,
-      image:
-        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/face_peeling/desktop.webp',
-      offersCount: 10,
-    },
-    {
-      id: 5,
-      title: 'Hair Removal',
-      SpecializationLink: '/hairRemoval',
-      originalPrice: 1200,
-      price: 800,
-      discount: 33,
-      image:
-        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/laser_hair_removal/desktop.webp',
-      offersCount: 50,
-    },
-    {
-      id: 6,
-      title: 'Skin Whitening',
-      SpecializationLink: '/skin',
-      originalPrice: 2500,
-      price: 2000,
-      discount: 20,
-      image:
-        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/body_sculpting_and_fats_dissolving/desktop.webp',
-      offersCount: 30,
+        '/images/offerImage/14.png',
+      offersCount: 4,
     },
     {
       id: 7,
-      title: 'Acne Treatment',
-      SpecializationLink: '/acneScarsTreatment',
-      originalPrice: 1800,
-      price: 1500,
-      discount: 16,
+      title: 'cold peeling to face',
+      SpecializationLink: '/offers/35',
+      originalPrice: 3000,
+      price: 2400,
+      discount: 20,
       image:
-        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/vision_correction/desktop.webp',
-      offersCount: 25,
+        '/images/offerImage/35.png',
+      offersCount: 5,
     },
+    {
+      id: 8,
+      title: 'Resistant scar treatment',
+      SpecializationLink: '/offers/36',
+      originalPrice: 6000,
+      price: 3000,
+      discount: 50,
+      image:
+        '/images/offerImage/36.png',
+      offersCount: 15,
+    },
+
   ];
 
   currentIndex = 0;
   visibleOffers = this.offers.slice(0, 4);
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.updateVisibleOffers();

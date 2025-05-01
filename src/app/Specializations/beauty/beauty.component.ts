@@ -15,171 +15,225 @@ export class BeautyComponent {
   services: Service[] = [
     {
       id: 1,
-      discount: 40,
+      discount: 20,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240201225947885.png',
-      title: 'Scaling and Polishing',
-      description: '1 Session Scaling and Polishing',
+        '/images/offerImage/37.png',
+      title: 'Face lift using radiofrequency waves using hyaluronic acid',
+      description: '2 Session Radio frequency body lifting',
       rating: 5,
       reviewCount: 200,
       bookedCount: 1545,
-      originalPrice: 1600,
-      discountPrice: 800,
-      offersLink: `/offers/18`,
+      originalPrice: 1400,
+      discountPrice: 280,
+      offersLink: `/offers/37`,
     },
     {
       id: 2,
-      discount: 50,
+      discount: 25,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520241126093019729.png',
-      title: 'Composite white filling',
-      description: '1 Session Composite Filling',
+        '/images/offerImage/38.png',
+      title: '2+1 session skin rejuvenation for Brighter skin & less scars',
+      description: '3 Session Mesotherapy for face',
       rating: 4.5,
       reviewCount: 40,
       bookedCount: 570,
-      originalPrice: 1600,
-      discountPrice: 900,
-      offersLink: `/offers/18`,
+      originalPrice: 2400,
+      discountPrice: 600,
+      offersLink: `/offers/38`,
     },
     {
       id: 3,
-      discount: 20,
+      discount: 50,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240129084212886.png',
-      title: 'Laser teeth whitening',
-      description: '1 Session Laser teeth whitening',
+        '/images/offerImage/39.png',
+      title: 'Face lift',
+      description: '1 Session Double chin removal',
       rating: 3.5,
       reviewCount: 12,
       bookedCount: 371,
-      originalPrice: 2000,
-      discountPrice: 1600,
-      offersLink: `/offers/11`,
+      originalPrice: 80000,
+      discountPrice: 40000,
+      offersLink: `/offers/39`,
     },
     {
       id: 4,
-      discount: 50,
+      discount: 20,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520241010164649496.png',
-      title: 'BPM crown installation',
-      description: '1 Crown BFM crown installation',
+        '/images/offerImage/32.png',
+      title: 'Face lifting by hifu',
+      description: '1 Session Face tightening with Hifu',
       rating: 3,
       reviewCount: 0,
       bookedCount: 25,
-      originalPrice: 2000,
-      discountPrice: 1400,
-      offersLink: `/offers/18`,
+      originalPrice: 4500,
+      discountPrice: 900,
+      offersLink: `/offers/32`,
     },
     {
-      id: 5,
-      discount: 33,
+      id: 4,
+      discount: 20,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250121115348302.png',
-      title: 'Zircon crown installation',
-      description: '1 Crown Crown Installation',
-      rating: 5,
-      reviewCount: 3,
-      bookedCount: 15,
-      originalPrice: 2000,
-      discountPrice: 1600,
-      offersLink: `/offers/20`,
+        '/images/offerImage/28.png',
+      title: 'Healthy hair',
+      description: '1 session Mesotherapy for hair',
+      rating: 3,
+      reviewCount: 0,
+      bookedCount: 25,
+      originalPrice: 1500,
+      discountPrice: 300,
+      offersLink: `/offers/28`,
     },
     {
       id: 6,
-      discount: 20,
+      discount: 50,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/162352591320240103193053006.png',
-      title: 'Hollywood Smile with Diremposite Veneer',
-      description: '1 Tooth Hollywood Smile with Direct Composite Veneer',
+        '/images/offerImage/40.png',
+      title: 'Liposuction Discount fifty percent',
+      description: '1 Session Liposuction',
       rating: 4.5,
       reviewCount: 0,
       bookedCount: 8,
-      originalPrice: 2000,
-      discountPrice: 1600,
-      offersLink: `/offers/13`,
+      originalPrice: 60000,
+      discountPrice: 30000,
+      offersLink: `/offers/40`,
     },
     {
       id: 7,
-      discount: 40,
+      discount: 50,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240103193531100.png',
-      title: 'Scaling and Polishing',
-      description: '1 Session Scaling and Polishing',
+        '/images/offerImage/41.png',
+      title: 'Brasilian butt',
+      description: '1 Session Butt augmentation',
       rating: 4,
       reviewCount: 200,
       bookedCount: 1545,
-      originalPrice: 1600,
-      discountPrice: 800,
-      offersLink: `/offers/9`,
+      originalPrice: 60000,
+      discountPrice: 30000,
+      offersLink: `/offers/47`,
     },
     {
       id: 8,
-      discount: 50,
+      discount: 30,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250225141615675.png',
-      title: 'Composite white filling',
-      description: '1 Session Composite Filling',
+        '/images/offerImage/42.png',
+      title: 'Botox for removing wrinkles of forehead and around eyes',
+      description: '1 Session Botox',
       rating: 4.5,
       reviewCount: 40,
       bookedCount: 570,
-      originalPrice: 1600,
-      discountPrice: 900,
-      offersLink: `/offers/18`,
+      originalPrice: 5000,
+      discountPrice: 1500,
+      offersLink: `/offers/48`,
     },
     {
       id: 9,
       discount: 20,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250318153448914.png',
-      title: 'Laser teeth whitening',
-      description: '1 Session Laser teeth whitening',
+        '/images/offerImage/43.png',
+      title: 'New attractive beautiful lips french Stylage filler',
+      description: '1 Injection session Lip fillers',
       rating: 3.5,
       reviewCount: 12,
       bookedCount: 371,
-      originalPrice: 2000,
+      originalPrice: 8000,
       discountPrice: 1600,
-      offersLink: `/offers/2`,
+      offersLink: `/offers/49`,
     },
     {
       id: 10,
-      discount: 50,
+      discount: 20,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520200929133346644.png',
-      title: 'BPM crown installation',
-      description: '1 Crown BFM crown installation',
+        '/images/offerImage/44.png',
+      title: 'Carboxy - Injection For Lipolysis',
+      description: '4 Injection session Lipodissolve',
       rating: 5,
       reviewCount: 0,
       bookedCount: 25,
-      originalPrice: 2000,
-      discountPrice: 1400,
-      offersLink: `/offers/13`,
+      originalPrice: 1200,
+      discountPrice: 240,
+      offersLink: `/offers/50`,
     },
     {
-      id: 11,
-      discount: 33,
+      id: 21,
+      discount: 20,
       image:
-        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/laser_hair_removal/desktop.webp',
-      title: 'Zircon crown installation',
-      description: '1 Crown Crown Installation',
-      rating: 3.5,
+        '/images/offerImage/21.png',
+      title: 'Laser Hair Removal Of Half Legs',
+      description: '1 Session Legs Laser Hair Removal',
+      rating: 5,
       reviewCount: 3,
       bookedCount: 15,
       originalPrice: 2000,
-      discountPrice: 1600,
-      offersLink: `/offers/4`,
+      discountPrice: 400,
+      offersLink: `/offers/21`,
     },
     {
       id: 12,
-      discount: 20,
+      discount: 50,
       image:
-        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/body_sculpting_and_fats_dissolving/desktop.webp',
-      title: 'Hollywood Smile with Diremposite Veneer',
-      description: '1 Tooth Hollywood Smile with Direct Composite Veneer',
+        '/images/offerImage/45.png',
+        title: 'Carboxy - Injection For Lipolysis',
+        description: '4 Injection session Lipodissolve',
       rating: 4.55,
       reviewCount: 0,
       bookedCount: 8,
       originalPrice: 2000,
-      discountPrice: 1600,
-      offersLink: `/offers/13`,
+      discountPrice: 1000,
+      offersLink: `/offers/51`,
     },
   ];
+  currentPage = 1;
+  itemsPerPage = 6;
+  
+  getNumberArray(length: number): number[] {
+    return Array.from({length}, (_, i) => i + 1);
+  }
+
+//test 
+  viewData(){
+    console.log(this.totalPages);
+    console.log(this.services.length);
+  }
+  ngOnInit() {
+    this.viewData();
+  }
+// end of test
+
+  get totalPages(): number {
+   
+    return Math.ceil(this.services.length / this.itemsPerPage);
+  }
+
+  // get paginatedServices(): Service[] {
+  //   const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+  //   return this.services.slice(startIndex, startIndex + this.itemsPerPage);
+  // }
+  get paginatedServices(): Service[] {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    console.log(`Displaying items ${startIndex} to ${endIndex}`);
+    return this.services.slice(startIndex, endIndex);
 }
+
+  goToPage(page: number): void {
+    if (page >= 1 && page <= this.totalPages) {
+      this.currentPage = page;
+    }
+  }
+
+  nextPage(): void {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+    }
+  }
+
+  prevPage(): void {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+    }
+  }
+}
+
+
+
+

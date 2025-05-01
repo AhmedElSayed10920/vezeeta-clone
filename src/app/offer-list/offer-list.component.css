@@ -16,3 +16,8 @@ button {
 .row {
     transition: transform 0.5s ease-in-out;
 }
+
+img{
+    height: 200px;
+    width:100%;
+}

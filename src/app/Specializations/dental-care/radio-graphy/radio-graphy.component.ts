@@ -17,35 +17,73 @@ export class RadioGraphyComponent {
   services: Service[] = [
     {
       id: 1,
-      discount: 40,
+      discount: 20,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520231029131052754.png',
-      title: 'Scaling and Polishing',
-      description: '1 Session Scaling and Polishing',
+        '/images/offerImage/57.png',
+      title: 'CBCT',
+      description: '1 Scan Dental CT scan',
       rating: 5,
       reviewCount: 200,
       bookedCount: 1545,
-      originalPrice: 1600,
-      discountPrice: 800,
-      offersLink: `/offers/14`,
-
-    },
-    {
-      id: 2,
-      discount: 50,
-      image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250308191348717.png',
-      title: 'Composite white filling',
-      description: '1 Session Composite Filling',
-      rating: 4.5,
-      reviewCount: 40,
-      bookedCount: 570,
-      originalPrice: 1600,
-      discountPrice: 900,
-      offersLink: `/offers/14`,
+      originalPrice: 2000,
+      discountPrice: 400,
+      offersLink: `/offers/63`,
 
     },
   ];
+  currentPage = 1;
+  itemsPerPage = 6;
+  
+  getNumberArray(length: number): number[] {
+    return Array.from({length}, (_, i) => i + 1);
+  }
+
+//test 
+  viewData(){
+    console.log(this.totalPages);
+    console.log(this.services.length);
+  }
+  ngOnInit() {
+    this.viewData();
+  }
+// end of test
+
+  get totalPages(): number {
+   
+    return Math.ceil(this.services.length / this.itemsPerPage);
+  }
+
+  // get paginatedServices(): Service[] {
+  //   const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+  //   return this.services.slice(startIndex, startIndex + this.itemsPerPage);
+  // }
+  get paginatedServices(): Service[] {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    console.log(`Displaying items ${startIndex} to ${endIndex}`);
+    return this.services.slice(startIndex, endIndex);
 }
+
+  goToPage(page: number): void {
+    if (page >= 1 && page <= this.totalPages) {
+      this.currentPage = page;
+    }
+  }
+
+  nextPage(): void {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+    }
+  }
+
+  prevPage(): void {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+    }
+  }
+}
+
+
+
 
 
