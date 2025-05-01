@@ -14,185 +14,162 @@ import { Service } from '../../../models/service';
 export class WhiteningComponent {
   services: Service[] = [
     {
-      id: 1,
-      discount: 40,
-      image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250219223049885.png',
-      title: 'Scaling and Polishing',
-      description: '1 Session Scaling and Polishing',
-      rating: 5,
-      reviewCount: 200,
-      bookedCount: 1545,
-      originalPrice: 1600,
-      discountPrice: 800,
-      offersLink: `/offers/1`,
-
-    },
-    {
-      id: 2,
+      id: 12,
       discount: 50,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520231029125936205.png',
-      title: 'Composite white filling',
-      description: '1 Session Composite Filling',
-      rating: 4.5,
-      reviewCount: 40,
-      bookedCount: 570,
-      originalPrice: 1600,
-      discountPrice: 900,
-      offersLink: `/offers/1`,
-
-    },
-    {
-      id: 3,
-      discount: 20,
-      image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520220816111844171.png',
-      title: 'Laser teeth whitening',
-      description: '1 Session Laser teeth whitening',
-      rating: 3.5,
-      reviewCount: 12,
-      bookedCount: 371,
-      originalPrice: 2000,
-      discountPrice: 1600,
-      offersLink: `/offers/1`,
-
-    },
-    {
-      id: 4,
-      discount: 50,
-      image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230522234142495.png',
+        '/images/offerImage/12.png',
       title: 'BPM crown installation',
       description: '1 Crown BFM crown installation',
-      rating: 3,
+      rating: 5,
       reviewCount: 0,
       bookedCount: 25,
       originalPrice: 2000,
-      discountPrice: 1400,
-      offersLink: `/offers/1`,
+      discountPrice: 1000,
+      offersLink: `/offers/12`,
 
     },
     {
-      id: 5,
-      discount: 33,
-      image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240718072628020.png',
-      title: 'Zircon crown installation',
-      description: '1 Crown Crown Installation',
-      rating: 5,
-      reviewCount: 3,
-      bookedCount: 15,
-      originalPrice: 2000,
-      discountPrice: 1600,
-      offersLink: `/offers/1`,
-
-    },
-    {
-      id: 6,
+      id: 11,
       discount: 20,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240704110947949.png',
-      title: 'Hollywood Smile with Diremposite Veneer',
-      description: '1 Tooth Hollywood Smile with Direct Composite Veneer',
-      rating: 4.5,
-      reviewCount: 0,
-      bookedCount: 8,
-      originalPrice: 2000,
-      discountPrice: 1600,
-      offersLink: `/offers/1`,
-
-    },
-    {
-      id: 7,
-      discount: 40,
-      image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520191117102438757.png',
-      title: 'Scaling and Polishing',
-      description: '1 Session Scaling and Polishing',
-      rating: 4,
-      reviewCount: 200,
-      bookedCount: 1545,
-      originalPrice: 1600,
-      discountPrice: 800,
-      offersLink: `/offers/1`,
-
-    },
-    {
-      id: 8,
-      discount: 50,
-      image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520231029125936205.png',
-      title: 'Composite white filling',
-      description: '1 Session Composite Filling',
-      rating: 4.5,
-      reviewCount: 40,
-      bookedCount: 570,
-      originalPrice: 1600,
-      discountPrice: 900,
-      offersLink: `/offers/1`,
-
-    },
-    {
-      id: 9,
-      discount: 20,
-      image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240718072628020.png',
+        '/images/offerImage/11.png',
       title: 'Laser teeth whitening',
       description: '1 Session Laser teeth whitening',
       rating: 3.5,
       reviewCount: 12,
       bookedCount: 371,
       originalPrice: 2000,
-      discountPrice: 1600,
-      offersLink: `/offers/1`,
+      discountPrice: 400,
+      offersLink: `/offers/11`,
 
     },
     {
       id: 10,
       discount: 50,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250219223049885.png',
-      title: 'BPM crown installation',
-      description: '1 Crown BFM crown installation',
-      rating: 5,
-      reviewCount: 0,
-      bookedCount: 25,
-      originalPrice: 2000,
-      discountPrice: 1400,
-      offersLink: `/offers/1`,
+        '/images/offerImage/10.png',
+      title: 'Composite white filling',
+      description: '1 Session Composite Filling',
+      rating: 4.5,
+      reviewCount: 40,
+      bookedCount: 570,
+      originalPrice: 1600,
+      discountPrice: 800,
+      offersLink: `/offers/10`,
 
     },
     {
-      id: 11,
-      discount: 33,
+      id: 7,
+      discount: 40,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520191117102438757.png',
-      title: 'Zircon crown installation',
-      description: '1 Crown Crown Installation',
-      rating: 3.5,
-      reviewCount: 3,
-      bookedCount: 15,
-      originalPrice: 2000,
-      discountPrice: 1600,
-      offersLink: `/offers/1`,
+        '/images/offerImage/7.png',
+      title: 'Scaling and Polishing',
+      description: '1 Session Scaling and Polishing',
+      rating: 5,
+      reviewCount: 200,
+      bookedCount: 1545,
+      originalPrice: 1600,
+      discountPrice: 640,
+      offersLink: `/offers/7`,
 
     },
     {
-      id: 12,
+      id: 8,
       discount: 20,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240704110947949.png',
+        '/images/offerImage/8.png',
       title: 'Hollywood Smile with Diremposite Veneer',
       description: '1 Tooth Hollywood Smile with Direct Composite Veneer',
-      rating: 4.55,
+      rating: 4.5,
       reviewCount: 0,
       bookedCount: 8,
       originalPrice: 2000,
-      discountPrice: 1600,
-      offersLink: `/offers/1`,
+      discountPrice: 400,
+      offersLink: `/offers/8`,
 
     },
+    {
+      id: 3,
+      discount: 50,
+      image:
+        '/images/offerImage/3.png',
+      title: 'Gingvectomy by laser',
+      description: '1 Session Gum cuts with laser without pain',
+      rating: 5,
+      reviewCount: 40,
+      bookedCount: 3,
+      originalPrice: 2000,
+      discountPrice: 1000,
+      offersLink: `/offers/3`,
 
+    },
+    {
+      id: 2,
+      discount: 40,
+      image:
+        '/images/offerImage/2.png',
+      title: 'Hollywood Smile with Veneers',
+      description: '10 Tooth Hollywood Smile with Veneers',
+      rating: 5,
+      reviewCount: 5,
+      bookedCount: 3,
+      originalPrice: 4000,
+      discountPrice: 1600,
+      offersLink: `/offers/2`,
+
+    },
   ];
+  currentPage = 1;
+  itemsPerPage = 6;
+  
+  getNumberArray(length: number): number[] {
+    return Array.from({length}, (_, i) => i + 1);
+  }
+
+//test 
+  viewData(){
+    console.log(this.totalPages);
+    console.log(this.services.length);
+  }
+  ngOnInit() {
+    this.viewData();
+  }
+// end of test
+
+  get totalPages(): number {
+   
+    return Math.ceil(this.services.length / this.itemsPerPage);
+  }
+
+  // get paginatedServices(): Service[] {
+  //   const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+  //   return this.services.slice(startIndex, startIndex + this.itemsPerPage);
+  // }
+  get paginatedServices(): Service[] {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    console.log(`Displaying items ${startIndex} to ${endIndex}`);
+    return this.services.slice(startIndex, endIndex);
 }
+
+  goToPage(page: number): void {
+    if (page >= 1 && page <= this.totalPages) {
+      this.currentPage = page;
+    }
+  }
+
+  nextPage(): void {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+    }
+  }
+
+  prevPage(): void {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+    }
+  }
+}
+
+
+

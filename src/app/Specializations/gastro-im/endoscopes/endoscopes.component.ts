@@ -19,70 +19,25 @@ import { Service } from '../../../models/service';
 export class EndoscopesComponent {
   services: Service[] = [
     {
-      id: 1,
-      discount: 20,
-      image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250406110705541.png',
-      title: 'CBCT',
-      description: '1 Scan Dental CT scan',
-      rating: 5,
-      reviewCount: 200,
-      bookedCount: 1545,
-      originalPrice: 2000,
-      discountPrice: 400,
-      offersLink: `/offers/16`,
-
-    },
-    {
-      id: 2,
-      discount: 20,
-      image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520241231210003109.png',
-      title: 'CBCT',
-      description: '1 Scan Dental CT scan',
-      rating: 5,
-      reviewCount: 200,
-      bookedCount: 1545,
-      originalPrice: 2000,
-      discountPrice: 400,
-      offersLink: `/offers/16`,
-
-    },
-    {
-      id: 3,
-      discount: 20,
-      image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520241231210003109.png',
-      title: 'CBCT',
-      description: '1 Scan Dental CT scan',
-      rating: 5,
-      reviewCount: 200,
-      bookedCount: 1545,
-      originalPrice: 2000,
-      discountPrice: 400,
-      offersLink: `/offers/16`,
-
-    },
-    {
       id: 4,
       discount: 20,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250406110204949.png',
-      title: 'CBCT',
-      description: '1 Scan Dental CT scan',
+        '/images/offerImage/67.png',
+      title: 'Argon laser app of LES for treatment Gastric reflux ARMA',
+      description: '1 Operation Endoscopic Vein Ligation',
       rating: 5,
       reviewCount: 200,
       bookedCount: 1545,
-      originalPrice: 2000,
-      discountPrice: 400,
-      offersLink: `/offers/15`,
+      originalPrice: 16250,
+      discountPrice: 3250,
+      offersLink: `/offers/73`,
 
     },
     {
       id: 5,
       discount: 20,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520241231210626761.png',
+        '/images/offerImage/68.png',
       title: 'CBCT',
       description: '1 Scan Dental CT scan',
       rating: 5,
@@ -90,57 +45,95 @@ export class EndoscopesComponent {
       bookedCount: 1545,
       originalPrice: 2000,
       discountPrice: 400,
-      offersLink: `/offers/16`,
+      offersLink: `/offers/74`,
 
     },
     {
       id: 6,
-      discount: 20,
+      discount: 30,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520241231204542818.png',
-      title: 'CBCT',
-      description: '1 Scan Dental CT scan',
+        '/images/offerImage/69.png',
+      title: 'Intragastric balloon  russian  insertion for weight loss',
+      description: '1 Operation Intragastric balloon (Bariatric)',
       rating: 5,
       reviewCount: 200,
       bookedCount: 1545,
-      originalPrice: 2000,
-      discountPrice: 400,
-      offersLink: `/offers/15`,
+      originalPrice: 20000,
+      discountPrice: 6000,
+      offersLink: `/offers/75`,
 
     },
     {
       id: 7,
       discount: 20,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520241222185917733.png',
-      title: 'CBCT',
-      description: '1 Scan Dental CT scan',
+        '/images/offerImage/70.png',
+      title: 'Ercp',
+      description: '1 Operation ERCP With Plastic Stent',
       rating: 5,
       reviewCount: 200,
       bookedCount: 1545,
-      originalPrice: 2000,
-      discountPrice: 400,
-      offersLink: `/offers/16`,
-
-    },
-    {
-      id: 8,
-      discount: 20,
-      image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520241222185302596.png',
-      title: 'CBCT',
-      description: '1 Scan Dental CT scan',
-      rating: 5,
-      reviewCount: 200,
-      bookedCount: 1545,
-      originalPrice: 2000,
-      discountPrice: 400,
-      offersLink: `/offers/16`,
-
+      originalPrice: 22000,
+      discountPrice: 4400,
+      offersLink: `/offers/76`,
     },
 
 
   ];
+  currentPage = 1;
+  itemsPerPage = 6;
+  
+  getNumberArray(length: number): number[] {
+    return Array.from({length}, (_, i) => i + 1);
+  }
+
+//test 
+  viewData(){
+    console.log(this.totalPages);
+    console.log(this.services.length);
+  }
+  ngOnInit() {
+    this.viewData();
+  }
+// end of test
+
+  get totalPages(): number {
+   
+    return Math.ceil(this.services.length / this.itemsPerPage);
+  }
+
+  // get paginatedServices(): Service[] {
+  //   const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+  //   return this.services.slice(startIndex, startIndex + this.itemsPerPage);
+  // }
+  get paginatedServices(): Service[] {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    console.log(`Displaying items ${startIndex} to ${endIndex}`);
+    return this.services.slice(startIndex, endIndex);
 }
+
+  goToPage(page: number): void {
+    if (page >= 1 && page <= this.totalPages) {
+      this.currentPage = page;
+    }
+  }
+
+  nextPage(): void {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+    }
+  }
+
+  prevPage(): void {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+    }
+  }
+}
+
+
+
+
 
 

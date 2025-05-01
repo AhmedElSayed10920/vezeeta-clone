@@ -14,50 +14,44 @@ export class BookSpecialtiesComponent implements OnInit {
     {
       id: 1,
       title: 'Skin',
-      image: 'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-138/images/specialties/dermatology/eg/desktop.webp',
+      image: '/images/offerImage/75.png',
       specialistName:'/skin'
     },
     {
       id: 2,
       title: 'Teeth',
-      image: 'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-138/images/specialties/dentistry/eg/desktop.webp',
+      image: '/images/offerImage/76.png',
       specialistName:'/dentalCare'
     },
     {
       id: 3,
       title: 'Mental, Emotional or Behavioral Disorders',
-      image: 'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-138/images/specialties/psychiatry/eg/desktop.webp',
+      image: '/images/offerImage/77.png',
       specialistName:'/psychiatry'
     },
     {
       id: 4,
       title: 'Child',
-      image: 'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-138/images/specialties/pediatrics-and-new-born/eg/desktop.webp',
+      image: '/images/offerImage/78.png',
       specialistName:'/children'
     },
     {
       id: 5,
       title: 'Brain & Nerves',
-      image: 'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-138/images/specialties/neurology/eg/desktop.webp',
+      image: '/images/offerImage/79.png',
       specialistName:'/scans'
     },
     {
       id: 6,
       title: 'Bones',
-      image: 'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-138/images/specialties/orthopedics/eg/desktop.webp',
-      specialistName:'/laser'
+      image: '/images/offerImage/80.png',
+      specialistName:'/rehabilitation'
     },
     {
       id: 7,
       title: 'Gynecology and Infertility',
-      image: 'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-138/images/specialties/gynaecology-and-infertility/eg/desktop.webp',
-      specialistName:'/beauty'
-    },
-    {
-      id: 8,
-      title: 'Ear, Nose and Throat',
-      image: 'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-138/images/specialties/ear-nose-and-throat/eg/desktop.webp',
-      specialistName:'/children'
+      image: '/images/offerImage/81.png',
+      specialistName:'/obGyn'
     },
   ];
 

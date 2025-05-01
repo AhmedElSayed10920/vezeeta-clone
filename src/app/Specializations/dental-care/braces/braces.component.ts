@@ -15,51 +15,76 @@ import { Service } from '../../../models/service';
 export class BracesComponent {
   services: Service[] = [
     {
-      id: 1,
-      discount: 40,
-      image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520210228170658822.png',
-      title: 'Scaling and Polishing',
-      description: '1 Session Scaling and Polishing',
-      rating: 5,
-      reviewCount: 200,
-      bookedCount: 1545,
-      originalPrice: 1600,
-      discountPrice: 800,
-      offersLink: `/offers/3`,
-
-    },
-    {
-      id: 2,
-      discount: 50,
-      image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520200904013255925.png',
-      title: 'Composite white filling',
-      description: '1 Session Composite Filling',
-      rating: 4.5,
-      reviewCount: 40,
-      bookedCount: 570,
-      originalPrice: 1600,
-      discountPrice: 900,
-      offersLink: `/offers/3`,
-
-    },
-    {
-      id: 3,
+      id: 14,
       discount: 20,
       image:
-        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/metal_braces/desktop.webp',
+        '/images/offerImage/14.png',
       title: 'Laser teeth whitening',
       description: '1 Session Laser teeth whitening',
       rating: 3.5,
       reviewCount: 12,
       bookedCount: 371,
       originalPrice: 2000,
-      discountPrice: 1600,
-      offersLink: `/offers/3`,
+      discountPrice: 400,
+      offersLink: `/offers/14`,
+
     },
     
   ];
+  currentPage = 1;
+  itemsPerPage = 6;
+  
+  getNumberArray(length: number): number[] {
+    return Array.from({length}, (_, i) => i + 1);
+  }
+
+//test 
+  viewData(){
+    console.log(this.totalPages);
+    console.log(this.services.length);
+  }
+  ngOnInit() {
+    this.viewData();
+  }
+// end of test
+
+  get totalPages(): number {
+   
+    return Math.ceil(this.services.length / this.itemsPerPage);
+  }
+
+  // get paginatedServices(): Service[] {
+  //   const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+  //   return this.services.slice(startIndex, startIndex + this.itemsPerPage);
+  // }
+  get paginatedServices(): Service[] {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    console.log(`Displaying items ${startIndex} to ${endIndex}`);
+    return this.services.slice(startIndex, endIndex);
 }
+
+  goToPage(page: number): void {
+    if (page >= 1 && page <= this.totalPages) {
+      this.currentPage = page;
+    }
+  }
+
+  nextPage(): void {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+    }
+  }
+
+  prevPage(): void {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+    }
+  }
+}
+
+
+
+
 
 

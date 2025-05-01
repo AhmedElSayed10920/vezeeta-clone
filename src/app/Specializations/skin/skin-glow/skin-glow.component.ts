@@ -15,129 +15,85 @@ export class SkinGlowComponent {
   services: Service[] = [
     {
       id: 1,
-      discount: 40,
+      discount: 20,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250319075600966.png',
-      title: 'Scaling and Polishing',
-      description: '1 Session Scaling and Polishing',
+        '/images/offerImage/29.png',
+      title: '20% off for more glowy &healthy skin with New RRS techniques',
+      description: '1 Session Stem cells skin care',
       rating: 5,
       reviewCount: 200,
       bookedCount: 1545,
-      originalPrice: 1600,
-      discountPrice: 800,
-      offersLink: `/offers/20`,
-    },
-    {
-      id: 2,
-      discount: 50,
-      image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520241013021327921.png',
-      title: 'Composite white filling',
-      description: '1 Session Composite Filling',
-      rating: 4.5,
-      reviewCount: 40,
-      bookedCount: 570,
-      originalPrice: 1600,
-      discountPrice: 900,
-      offersLink: `/offers/7`,
-    },
-    {
-      id: 3,
-      discount: 20,
-      image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520241013032443165.png',
-      title: 'Laser teeth whitening',
-      description: '1 Session Laser teeth whitening',
-      rating: 3.5,
-      reviewCount: 12,
-      bookedCount: 371,
-      originalPrice: 2000,
-      discountPrice: 1600,
-      offersLink: `/offers/8`,
-    },
-    {
-      id: 4,
-      discount: 50,
-      image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520241010164649496.png',
-      title: 'BPM crown installation',
-      description: '1 Crown BFM crown installation',
-      rating: 3,
-      reviewCount: 0,
-      bookedCount: 25,
-      originalPrice: 2000,
-      discountPrice: 1400,
-      offersLink: `/offers/18`,
-    },
-    {
-      id: 5,
-      discount: 33,
-      image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520200313144835045.png',
-      title: 'Zircon crown installation',
-      description: '1 Crown Crown Installation',
-      rating: 5,
-      reviewCount: 3,
-      bookedCount: 15,
-      originalPrice: 2000,
-      discountPrice: 1600,
-      offersLink: `/offers/18`,
+      originalPrice: 6000,
+      discountPrice: 1200,
+      offersLink: `/offers/29`,
     },
     {
       id: 6,
-      discount: 20,
+      discount: 33,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250225125111530.png',
-      title: 'Hollywood Smile with Diremposite Veneer',
-      description: '1 Tooth Hollywood Smile with Direct Composite Veneer',
+        '/images/offerImage/33.png',
+      title: 'Skin booster for whitening, glow and skin rejuvenation',
+      description: '1 Session Stem cells skin care',
       rating: 4.5,
       reviewCount: 0,
       bookedCount: 8,
-      originalPrice: 2000,
-      discountPrice: 1600,
-      offersLink: `/offers/9`,
-    },
-    {
-      id: 7,
-      discount: 40,
-      image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230613115550518.png',
-      title: 'Scaling and Polishing',
-      description: '1 Session Scaling and Polishing',
-      rating: 4,
-      reviewCount: 200,
-      bookedCount: 1545,
-      originalPrice: 1600,
-      discountPrice: 800,
-      offersLink: `/offers/8`,
-    },
-    {
-      id: 8,
-      discount: 40,
-      image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240727233245530.png',
-      title: 'Scaling and Polishing',
-      description: '1 Session Scaling and Polishing',
-      rating: 5,
-      reviewCount: 200,
-      bookedCount: 1545,
-      originalPrice: 1600,
-      discountPrice: 800,
-      offersLink: `/offers/18`,
-    },
-    {
-      id: 9,
-      discount: 50,
-      image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250121114228375.png',
-      title: 'Composite white filling',
-      description: '1 Session Composite Filling',
-      rating: 4.5,
-      reviewCount: 40,
-      bookedCount: 570,
-      originalPrice: 1600,
-      discountPrice: 900,
-      offersLink: `/offers/18`,
+      originalPrice: 1200,
+      discountPrice: 396,
+      offersLink: `/offers/33`,
     },
   ];
+  currentPage = 1;
+  itemsPerPage = 6;
+  
+  getNumberArray(length: number): number[] {
+    return Array.from({length}, (_, i) => i + 1);
+  }
+
+//test 
+  viewData(){
+    console.log(this.totalPages);
+    console.log(this.services.length);
+  }
+  ngOnInit() {
+    this.viewData();
+  }
+// end of test
+
+  get totalPages(): number {
+   
+    return Math.ceil(this.services.length / this.itemsPerPage);
+  }
+
+  // get paginatedServices(): Service[] {
+  //   const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+  //   return this.services.slice(startIndex, startIndex + this.itemsPerPage);
+  // }
+  get paginatedServices(): Service[] {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    console.log(`Displaying items ${startIndex} to ${endIndex}`);
+    return this.services.slice(startIndex, endIndex);
 }
+
+  goToPage(page: number): void {
+    if (page >= 1 && page <= this.totalPages) {
+      this.currentPage = page;
+    }
+  }
+
+  nextPage(): void {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+    }
+  }
+
+  prevPage(): void {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+    }
+  }
+}
+
+
+
+
