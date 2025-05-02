@@ -18,11 +18,12 @@ export class AppointmentService {
     pid: number,
     cid: number,
     did: number,
-    captchaToken: string
+    captchaToken: string,
+
   }): Observable<any> {
     return this.http.post(this.apointmentUrl, payload);
   }
-  
+
   createPatient(patientData: any) {
     return this.http.post<any>(this.newPatient, patientData);
   }
@@ -35,5 +36,12 @@ export class AppointmentService {
     const url = `${this.apointmentUrl}/${id}`;
     return this.http.delete(url);
   }
+/////////////////////////////////////
+  refundPayment(paymentIntentId: string) {
+    return this.http.post<any>('https://localhost:7167/api/payment/refund', {
+      paymentIntentId
+    });
+  }
+//////////////////////////////////////
 
 }

@@ -195,6 +195,8 @@ export class BookingFormComponent implements OnInit {
       cid: matchedClinic.id,
       did: this.bookingInfo?.doctor?.id,
       captchaToken: this.captchaToken!,
+      // ///////////////////
+      paymentIntentId: this.bookingInfo?.paymentIntentId
     };
 
     this.appointmentService.bookAppointment(payload).subscribe({
@@ -205,6 +207,7 @@ export class BookingFormComponent implements OnInit {
             time: payload.atime,
             clinicId: payload.cid,
             clinicNumber: matchedClinic.phone,
+
           },
           doctor: this.bookingInfo?.doctor,
           patient: {
@@ -229,10 +232,12 @@ export class BookingFormComponent implements OnInit {
         Swal.fire({
           icon: 'error',
           title: 'Booking Failed',
-          text: err.error || 'There was an error booking your appointment. Please try again later.',
+           text: err.error || 'There was an error booking your appointment. Please try again later.',
+
           confirmButtonText: 'OK',
         });
         console.error(err);
+
       },
     });
   }
@@ -247,14 +252,14 @@ export class BookingFormComponent implements OnInit {
   formatTime(time: string): string {
     const timeParts = time.match(/(\d+):(\d+)\s?(AM|PM)/i);
     if (!timeParts) return '00:00:00';
-  
+
     let hours = parseInt(timeParts[1], 10);
     const minutes = parseInt(timeParts[2], 10);
     const period = timeParts[3].toUpperCase();
-  
+
     if (period === 'PM' && hours !== 12) hours += 12;
     if (period === 'AM' && hours === 12) hours = 0;
-  
+
     const hh = hours.toString().padStart(2, '0');
     const mm = minutes.toString().padStart(2, '0');
     return `${hh}:${mm}:00`;
@@ -262,5 +267,5 @@ export class BookingFormComponent implements OnInit {
   onCancel() {
     this.location.back();
   }
-  
+
 }
