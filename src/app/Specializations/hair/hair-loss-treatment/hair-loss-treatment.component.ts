@@ -15,59 +15,113 @@ export class HairLossTreatmentComponent {
   services: Service[] = [
     {
       id: 1,
-      discount: 40,
+      discount: 20,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250209103619748.png',
+        '/images/offerImage/24.png',
       title: 'Mesotherapy for hair fall treatment',
       description: '1 Session Stem cells for Hair',
       rating: 5,
       reviewCount: 200,
       bookedCount: 1545,
-      originalPrice: 1600,
-      discountPrice: 800,
-      offersLink: `/offers/4`,
+      originalPrice: 1900,
+      discountPrice: 380,
+      offersLink: `/offers/24`,
     },
     {
       id: 2,
-      discount: 50,
+      discount: 57,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520200313144835045.png',
+        '/images/offerImage/26.png',
       title: 'German plasma for face',
       description: '1 Session Plasma injection',
       rating: 4.5,
       reviewCount: 40,
       bookedCount: 570,
-      originalPrice: 1600,
-      discountPrice: 900,
-      offersLink: `/offers/18`,
+      originalPrice: 2000,
+      discountPrice: 1140,
+      offersLink: `/offers/26`,
     },
     {
       id: 3,
-      discount: 20,
+      discount: 25,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520241126095602936.png',
+        '/images/offerImage/27.png',
       title: 'Hair fall & AGA treatment',
       description: '4 Session Plasma hair injection',
       rating: 3.5,
       reviewCount: 12,
       bookedCount: 371,
-      originalPrice: 2000,
-      discountPrice: 1600,
-      offersLink: `/offers/19`,
+      originalPrice: 4000,
+      discountPrice: 1000,
+      offersLink: `/offers/27`,
     },
     {
       id: 4,
-      discount: 50,
+      discount: 20,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250121115348302.png',
-      title: 'Hair PRP injection offer',
-      description: '1 Injection session Plasma injection',
+        '/images/offerImage/28.png',
+      title: 'Healthy hair',
+      description: '1 session Mesotherapy for hair',
       rating: 3,
       reviewCount: 0,
       bookedCount: 25,
-      originalPrice: 2000,
-      discountPrice: 1400,
-      offersLink: `/offers/20`,
+      originalPrice: 1500,
+      discountPrice: 300,
+      offersLink: `/offers/28`,
     },
   ];
+  currentPage = 1;
+  itemsPerPage = 6;
+  
+  getNumberArray(length: number): number[] {
+    return Array.from({length}, (_, i) => i + 1);
+  }
+
+//test 
+  viewData(){
+    console.log(this.totalPages);
+    console.log(this.services.length);
+  }
+  ngOnInit() {
+    this.viewData();
+  }
+// end of test
+
+  get totalPages(): number {
+   
+    return Math.ceil(this.services.length / this.itemsPerPage);
+  }
+
+  // get paginatedServices(): Service[] {
+  //   const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+  //   return this.services.slice(startIndex, startIndex + this.itemsPerPage);
+  // }
+  get paginatedServices(): Service[] {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    console.log(`Displaying items ${startIndex} to ${endIndex}`);
+    return this.services.slice(startIndex, endIndex);
 }
+
+  goToPage(page: number): void {
+    if (page >= 1 && page <= this.totalPages) {
+      this.currentPage = page;
+    }
+  }
+
+  nextPage(): void {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+    }
+  }
+
+  prevPage(): void {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+    }
+  }
+}
+
+
+
+

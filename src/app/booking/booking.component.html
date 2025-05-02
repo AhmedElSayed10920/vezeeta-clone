@@ -24,7 +24,7 @@
                     </select>
                   </div>
                   <div class="col-md-4">
-                    <select class="form-select" [(ngModel)]="selectedGovernorate">
+                    <select class="form-select" [(ngModel)]="selectedGovernorate" (change)="onGovernorateChange()">
                       <option value="">Choose Governorate</option>
                       <option *ngFor="let governorate of governorates" [value]="governorate">
                         {{ governorate }}
@@ -34,7 +34,7 @@
                   <div class="col-md-4">
                     <select class="form-select" [(ngModel)]="selectedCity">
                       <option value="">Choose City</option>
-                      <option *ngFor="let city of cities" [value]="city">
+                      <option *ngFor="let city of filteredCities" [value]="city">
                         {{ city }}
                       </option>
                     </select>

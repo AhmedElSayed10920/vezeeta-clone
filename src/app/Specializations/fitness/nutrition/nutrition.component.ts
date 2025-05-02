@@ -15,21 +15,75 @@ import { Service } from '../../../models/service';
 export class NutritionComponent {
   services: Service[] = [
     {
-      id: 1,
-      discount: 40,
+      id: 6,
+      discount: 20,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520241013014146711.png',
-      title: 'Scaling and Polishing',
-      description: '1 Session Scaling and Polishing',
-      rating: 5,
-      reviewCount: 200,
-      bookedCount: 1545,
-      originalPrice: 1600,
-      discountPrice: 800,
-      offersLink: `/offers/13`,
+        '/images/offerImage/51.png',
+      title: 'Body composition with diet',
+      description: '1 Session Diet plan',
+      rating: 4.5,
+      reviewCount: 0,
+      bookedCount: 8,
+      originalPrice: 2000,
+      discountPrice: 400,
+      offersLink: `/offers/57`,
 
     },
   ];
+  currentPage = 1;
+  itemsPerPage = 6;
+
+  getNumberArray(length: number): number[] {
+    return Array.from({ length }, (_, i) => i + 1);
+  }
+
+  //test 
+  viewData() {
+    console.log(this.totalPages);
+    console.log(this.services.length);
+  }
+  ngOnInit() {
+    this.viewData();
+  }
+  // end of test
+
+  get totalPages(): number {
+
+    return Math.ceil(this.services.length / this.itemsPerPage);
+  }
+
+  // get paginatedServices(): Service[] {
+  //   const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+  //   return this.services.slice(startIndex, startIndex + this.itemsPerPage);
+  // }
+  get paginatedServices(): Service[] {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    console.log(`Displaying items ${startIndex} to ${endIndex}`);
+    return this.services.slice(startIndex, endIndex);
+  }
+
+  goToPage(page: number): void {
+    if (page >= 1 && page <= this.totalPages) {
+      this.currentPage = page;
+    }
+  }
+
+  nextPage(): void {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+    }
+  }
+
+  prevPage(): void {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+    }
+  }
 }
+
+
+
+
 
 

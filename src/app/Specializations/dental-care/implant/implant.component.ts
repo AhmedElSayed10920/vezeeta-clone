@@ -16,35 +16,75 @@ export class ImplantComponent {
 
   services: Service[] = [
     {
-      id: 1,
-      discount: 40,
+      id: 16,
+      discount: 33,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250227112015261.png',
-      title: 'Scaling and Polishing',
-      description: '1 Session Scaling and Polishing',
-      rating: 5,
-      reviewCount: 200,
-      bookedCount: 1545,
-      originalPrice: 1600,
-      discountPrice: 800,
-      offersLink: `/offers/1`,
+        '/images/offerImage/16.png',
+      title: 'Silver diamond',
+      description: '1 Tooth Silver diamond installation',
+      rating: 3.5,
+      reviewCount: 3,
+      bookedCount: 15,
+      originalPrice: 2000,
+      discountPrice: 660,
+      offersLink: `/offers/16`,
 
     },
-    {
-      id: 2,
-      discount: 50,
-      image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520220228200059027.png',
-      title: 'Composite white filling',
-      description: '1 Session Composite Filling',
-      rating: 4.5,
-      reviewCount: 40,
-      bookedCount: 570,
-      originalPrice: 1600,
-      discountPrice: 900,
-      offersLink: `/offers/2`,
-    },
   ];
+  currentPage = 1;
+  itemsPerPage = 6;
+  
+  getNumberArray(length: number): number[] {
+    return Array.from({length}, (_, i) => i + 1);
+  }
+
+//test 
+  viewData(){
+    console.log(this.totalPages);
+    console.log(this.services.length);
+  }
+  ngOnInit() {
+    this.viewData();
+  }
+// end of test
+
+  get totalPages(): number {
+   
+    return Math.ceil(this.services.length / this.itemsPerPage);
+  }
+
+  // get paginatedServices(): Service[] {
+  //   const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+  //   return this.services.slice(startIndex, startIndex + this.itemsPerPage);
+  // }
+  get paginatedServices(): Service[] {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    console.log(`Displaying items ${startIndex} to ${endIndex}`);
+    return this.services.slice(startIndex, endIndex);
 }
+
+  goToPage(page: number): void {
+    if (page >= 1 && page <= this.totalPages) {
+      this.currentPage = page;
+    }
+  }
+
+  nextPage(): void {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+    }
+  }
+
+  prevPage(): void {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+    }
+  }
+}
+
+
+
+
 
 

@@ -41,7 +41,6 @@ import { SkinWhiteningComponent } from './Specializations/skin/skin-whitening/sk
 import { CelluliteComponent } from './Specializations/beauty/cellulite/cellulite.component';
 import { StretchMarksComponent } from './Specializations/beauty/stretch-marks/stretch-marks.component';
 import { FaceChinComponent } from './Specializations/beauty/face-chin/face-chin.component';
-import { BreastComponent } from './Specializations/beauty/breast/breast.component';
 import { LipsComponent } from './Specializations/beauty/lips/lips.component';
 import { LiposuctionComponent } from './Specializations/beauty/liposuction/liposuction.component';
 import { BodySculptingComponent } from './Specializations/beauty/body-sculpting/body-sculpting.component';
@@ -121,7 +120,6 @@ export const routes: Routes = [
   { path: 'cellulite', component: CelluliteComponent },
   { path: 'stretchMarks', component: StretchMarksComponent },
   { path: 'faceChin', component: FaceChinComponent },
-  { path: 'breast', component: BreastComponent },
   { path: 'lips', component: LipsComponent },
   { path: 'liposuction', component: LiposuctionComponent },
   { path: 'bodySculpting', component: BodySculptingComponent },
