@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { DoctorService } from '../services/doctor.service';
-import { Doctor } from '../doctor';
+import { Doctor } from '../models/doctor'; 
 import { ImageService } from '../shared/image.service';
 import { AppointmentReservationComponent } from '../appointment-reservation/appointment-reservation.component';
 
@@ -35,11 +35,12 @@ export class DoctorDetailsComponent implements OnInit {
     }
   }
 
-  getDoctorImage(): string {
-    if (this.doctor && this.doctor.id) {
-      return this.imageService.getImagePath(this.doctor.id.toString());
+  getDoctorImage(doctorId: number, doctor: Doctor): string {
+    if (doctor.image?.includes('ma7moudsayed-001-site1')) {
+      return this.imageService.getImagePath(doctorId.toString());
+    } else {
+      return doctor.image!;
     }
-    return 'images/doctorImg/default.png'; // Return a default image if the doctor ID is not available
   }
 }
 

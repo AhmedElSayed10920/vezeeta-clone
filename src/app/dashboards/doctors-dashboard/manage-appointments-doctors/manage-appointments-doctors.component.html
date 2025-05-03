@@ -1,0 +1,57 @@
+<div class="m-3 text-center">
+    <h2>My Working Hours</h2>
+    <mat-tab-group>
+        <mat-tab label="Add Working Hours">
+            <mat-accordion class="m-2">
+                <mat-expansion-panel *ngFor="let day of upcomingDays">
+                    <mat-expansion-panel-header>
+                        {{ day.date | date: 'fullDate' }}
+                    </mat-expansion-panel-header>
+
+                    <mat-form-field appearance="outline" class="m-2">
+                        <mat-label>From</mat-label>
+                        <input matInput type="time" [(ngModel)]="day.startTime" style="padding:5px 15px;" />
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="m-2">
+                        <mat-label>To</mat-label>
+                        <input matInput type="time" [(ngModel)]="day.endTime" style="padding:5px 15px;" />
+                    </mat-form-field>
+
+                    <button mat-raised-button class="custom-save-btn" (click)="saveDay(day)">
+                        Save
+                    </button>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </mat-tab>
+        <mat-tab label="View & Edit Working Hours">
+            <div *ngIf="workingHours.length > 0" class="m-2">
+                <mat-accordion>
+                    <mat-expansion-panel *ngFor="let hour of workingHours">
+                        <mat-expansion-panel-header>
+                            {{ hour.dayOfWeek | date: 'fullDate' }}
+                        </mat-expansion-panel-header>
+
+                        <mat-form-field appearance="outline" class="m-2 p-2">
+                            <mat-label>From</mat-label>
+                            <input matInput type="time" [(ngModel)]="hour.startTime" style="padding:5px 15px;"/>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="m-2 p-2">
+                            <mat-label>To</mat-label>
+                            <input matInput type="time" [(ngModel)]="hour.endTime" style="padding:5px 15px;"/>
+                        </mat-form-field>
+
+                        <button mat-raised-button class="custom-save-btn" (click)="saveUpdatedHour(hour)">
+                            Save Changes
+                        </button>
+                        <button mat-raised-button class="custom-delete-btn" (click)="hour.id !== undefined && deleteHour(hour.id)">Delete</button>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+            <div *ngIf="workingHours?.length === 0" class="m-2">
+                <p>No working hours available yet.</p>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</div>

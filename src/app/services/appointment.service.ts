@@ -31,6 +31,10 @@ export class AppointmentService {
     return this.http.get(`${this.apointmentUrl}/patient/${pid}`);
   }
 
+  getAppointmentsByDoctor(did: number): Observable<any> {
+    return this.http.get(`${this.apointmentUrl}/doctor/${did}`);
+  }
+
   deleteAppointment(id: number): Observable<any> {
     const url = `${this.apointmentUrl}/${id}`;
     return this.http.delete(url);

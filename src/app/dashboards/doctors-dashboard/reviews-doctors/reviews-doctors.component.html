@@ -1,0 +1,41 @@
+<div class="review-container">
+    <div *ngIf="reviews.length > 0; else noReviews">
+      <div *ngFor="let review of reviews" class="review-card m-3 p-3 shadow-sm border rounded bg-light">
+        <h3 class="reviewer-name mb-2">{{ review.patientName }}</h3>
+        <div class="rating-section mb-2">
+          <span class="fw-bold">Rating:</span>
+          <div class="stars d-inline ms-2">
+            <mat-icon *ngFor="let star of [1,2,3,4,5]" [ngClass]="{'filled': star <= review.rating}" class="me-1">
+              star
+            </mat-icon>
+          </div>
+        </div>
+        <div class="comment-section">
+          <span class="fw-bold">Comment:</span>
+          <p class="mb-0">{{ review.comment }}</p>
+        </div>
+      </div>
+    </div>
+  
+    <ng-template #noReviews>
+      <div class="alert alert-info text-center mt-4">
+        There are no ratings or comments yet.
+      </div>
+    </ng-template>
+  </div>
+  <nav *ngIf="totalPages > 1" class="text-center mt-3">
+    <ul class="pagination justify-content-center">
+      <li class="page-item" [class.disabled]="currentPage === 1">
+        <button class="page-link" (click)="changePage(currentPage - 1)">‹</button>
+      </li>
+      <li 
+        class="page-item" 
+        *ngFor="let page of [].constructor(totalPages); let i = index" 
+        [class.active]="currentPage === i + 1">
+        <button class="page-link" (click)="changePage(i + 1)">{{ i + 1 }}</button>
+      </li>
+      <li class="page-item" [class.disabled]="currentPage === totalPages">
+        <button class="page-link" (click)="changePage(currentPage + 1)">›</button>
+      </li>
+    </ul>
+  </nav>

@@ -1,69 +1,70 @@
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0052ac">
   <div class="container">
+    <!-- Logo -->
     <a class="navbar-brand" (click)="goHome()" style="cursor: pointer">
       <img src="images/newlogo.png" alt="Logo" style="width: 40px; height: 40px" />
       <span class="fs-5 fw-bold text-light ms-3">Health<span class="fs-5 fw-bold text-danger">Care</span></span>
     </a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav d-flex align-items-center text-light">
-        <!-- لو مفيش username -->
-        <ng-container *ngIf="!username">
-          <li class="nav-item">
-            <a class="btn btn-outline-light fs-7 fw-bold" href="/signup">Sign Up</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light fs-7" href="/login">Login</a>
-          </li>
-        </ng-container>
-
-        <!-- لو في username -->
-        <ng-container *ngIf="username">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-light fs-7" href="#" id="userDropdown" data-bs-toggle="dropdown"
-              aria-expanded="false" (click)="$event.preventDefault()">
-              {{ username }}
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li>
-                <a class="dropdown-item" href="/my-profile">My Profile</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="/myAppointment">My Appointments</a>
-              </li>
-              <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
-            </ul>
-          </li>
-        </ng-container>
-
-        <!-- روابط عامة -->
-        <li class="nav-item">
-          <a class="nav-link text-light fs-7" href="/loginForDoctor">HealthCare For Doctors</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light fs-7" href="/contactUS">Contact Us</a>
-        </li>
-      </ul>
-
-      <!-- Country Dropdown -->
-      <div class="d-flex align-items-center ms-3">
-        <div class="dropdown">
-          <button class="btn text-light dropdown-toggle fs-7" type="button" data-bs-toggle="dropdown"
-            style="background-color: #0052ac">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg" width="20" />
-            Egypt
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Egypt</a></li>
-            <li><a class="dropdown-item" href="#">السعودية</a></li>
-          </ul>
-        </div>
+    <ng-container *ngIf="isAdminLoggedIn; else checkDoctor">
+      <!-- هيدر مخصص للأدمن -->
+      <div class="ms-auto d-flex align-items-center gap-3">
+        <button class="btn btn-danger" (click)="logout()">
+          Admin <i class="fa-solid fa-right-from-bracket"></i>
+        </button>
       </div>
-    </div>
+    </ng-container>
+    
+    <ng-template #checkDoctor>
+      <ng-container *ngIf="isDoctorLoggedIn; else normalHeader">
+        <!-- زر Logout لو الدكتور -->
+        <button class="btn btn-danger ms-auto" (click)="logout()">
+          Doctor <i class="fa-solid fa-right-from-bracket"></i>
+        </button>
+      </ng-container>
+    </ng-template>
+    
+
+    <!-- الهيدر العادي لما مش دكتور -->
+    <ng-template #normalHeader>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav d-flex align-items-center text-light">
+          <ng-container *ngIf="!username">
+            <li class="nav-item">
+              <a class="btn btn-outline-light fs-7 fw-bold" href="/signup">Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light fs-7" href="/login">Login</a>
+            </li>
+          </ng-container>
+
+          <ng-container *ngIf="username">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-light fs-7" href="#" id="userDropdown" data-bs-toggle="dropdown"
+                aria-expanded="false" (click)="$event.preventDefault()">
+                {{ username }}
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="/my-profile">My Profile</a></li>
+                <li><a class="dropdown-item" href="/myAppointment">My Appointments</a></li>
+                <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
+              </ul>
+            </li>
+          </ng-container>
+
+          <li class="nav-item">
+            <a class="nav-link text-light fs-7" href="/loginForDoctor">HealthCare For Doctors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light fs-7" href="/contactUS">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </ng-template>
   </div>
 </nav>

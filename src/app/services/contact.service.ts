@@ -13,4 +13,12 @@ export class ContactService {
   submitContactForm(contactData: any): Observable<any> {
     return this.http.post(this.apiUrl, contactData);
   }
+
+  getAllMessages(): Observable<any> {
+    return this.http.get(this.apiUrl);
+  }
+
+  deleteMessage(id: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${id}`);
+  }
 }

@@ -1,0 +1,40 @@
+<form [formGroup]="doctorForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data" class="p-4 border rounded mt-3" style="max-width: 600px; margin: auto;">
+    <h4 class="mb-4">Doctor Profile</h4>
+
+    <div class="mb-3">
+        <label class="form-label">Profile Image</label><br />
+        <img *ngIf="currentDoctorImage" [src]="currentDoctorImage" class="img-thumbnail" style="width: 120px; height: 120px;" />
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Update Image</label>
+        <input type="file" class="form-control" (change)="onImageSelected($event)" />
+      </div>
+
+    <div class="mb-3">
+      <label class="form-label">Full Name</label>
+      <input class="form-control" formControlName="doctorFullName" />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Phone Number</label>
+      <input class="form-control" formControlName="doctorPhoneNumber" />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Specialty</label>
+      <input class="form-control" formControlName="doctorSpecialty" />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Degree</label>
+      <input class="form-control" formControlName="doctorDegree" />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Fees</label>
+      <input class="form-control" formControlName="doctorFees" type="number" />
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">Update</button>
+</form>

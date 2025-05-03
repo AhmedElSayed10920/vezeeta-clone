@@ -1,0 +1,16 @@
+<div class="doctor-search mt-3">
+    <input [(ngModel)]="searchTerm" (input)="loadDoctors()" placeholder="Search for Doctor..." />
+  </div>
+  
+  <div class="doctor-list">
+    <div *ngFor="let doctor of doctors" class="doctor-item">
+      <img [src]="getDoctorImage(doctor.id,doctor)" alt="Doctor Image" class="doctor-image" />
+      <div class="doctor-info">
+        <h3>{{ doctor.doctorName }}</h3>
+        <p>{{ doctor.phoneNumber }}</p>
+        <p>{{ doctor.mainSpecialty }}</p>
+      </div>
+      <button (click)="deleteDoctor(doctor.id)" class="delete-button">Delete</button>
+    </div>
+  </div>
+  

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { TokenService } from '../services/token.service';
+import { DoctorisloggedService } from '../services/doctorislogged.service';
 
 @Component({
   selector: 'app-header',
@@ -12,18 +13,28 @@ import { TokenService } from '../services/token.service';
 })
 export class HeaderComponent implements OnInit {
   username: string | null = null;
-
-  constructor(private router: Router, private tokenService: TokenService) {}
+  isDoctorLoggedIn = false;
+  isAdminLoggedIn = false;
+  constructor(private router: Router, private tokenService: TokenService, private doctorisloggedService: DoctorisloggedService) {}
 
   ngOnInit(): void {
     this.tokenService.getUsernameObservable().subscribe((name) => {
       this.username = name;
     });
+    this.doctorisloggedService.doctorLoggedIn$.subscribe((status) => {
+      this.isDoctorLoggedIn = status;
+    });
+    this.doctorisloggedService.isAdminLoggedIn$.subscribe((status) => {
+      this.isAdminLoggedIn = status;
+    });
+
   }
 
   logout() {
     localStorage.clear(); 
     this.tokenService.clearUsername();
+    this.isDoctorLoggedIn = false;
+    this.isAdminLoggedIn = false;
     this.router.navigate(['/home']);
   }
 

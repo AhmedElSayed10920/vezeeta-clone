@@ -1,0 +1,29 @@
+<div class="appointments-container">
+    <h2>Booked appointments</h2>
+  
+    <div *ngIf="appointments?.length === 0; else appointmentsList" class="text-center text-muted mt-4">
+        <p>No appointments booked yet.</p>
+        <p>Check back later!</p>
+    </div>
+  
+    <ng-template #appointmentsList>
+      <mat-list>
+        <mat-list-item *ngFor="let appointment of appointments" class="d-flex justify-content-between align-items-center">
+          <div>
+            {{ appointment.patientName }} -
+            {{ appointment.date | date }} -
+            {{ appointment.time | date:'shortTime' }}
+          </div>
+          <div class="ms-auto">
+            <button class="btn btn-success me-2" mat-button>
+              Done
+            </button>
+            <button class="btn btn-danger" mat-button>
+              Cancel
+            </button>
+          </div>
+        </mat-list-item>
+      </mat-list>
+    </ng-template>
+  </div>
+  

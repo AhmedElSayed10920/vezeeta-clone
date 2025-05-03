@@ -20,7 +20,6 @@ export class BookingComponent {
   specialties: string[] = [];
   cities: string[] = [];
   governorates: string[] = [];
-
   selectedSpecialty: string = '';
   selectedCity: string = '';
   selectedGovernorate: string = '';

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Doctor } from '../doctor';
+import { Doctor } from '../models/doctor'; 
 import { CommonModule } from '@angular/common';
 import { ViewChildren, QueryList, ElementRef, AfterViewInit } from '@angular/core';
 

@@ -11,6 +11,7 @@ import { AppointmentReservationComponent } from '../appointment-reservation/appo
 import { ImageService } from '../shared/image.service';
 import { BookRequestService } from '../services/book-request.service';
 import { Filters } from '../models/filters';
+import { Doctor } from '../models/doctor';
 
 @Component({
   selector: 'app-doctors-list',
@@ -29,9 +30,13 @@ export class DoctorsListComponent implements OnChanges {
   imageService = inject(ImageService);
   bookRequestService = inject(BookRequestService);
 
-  getDoctorImage(doctorId: number): string {
-    return this.imageService.getImagePath(doctorId.toString());
-  }
+   getDoctorImage(doctorId: number, doctor: Doctor): string {
+      if (doctor.image?.includes('ma7moudsayed-001-site1')) {
+        return this.imageService.getImagePath(doctorId.toString());
+      } else {
+        return doctor.image!;
+      }
+    }
 
   ngOnInit() {
     this.route.queryParams.subscribe((params) => {

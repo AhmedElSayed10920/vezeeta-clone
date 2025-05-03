@@ -1,0 +1,36 @@
+<div class="container my-5">
+    <h2 class="text-center mb-4">Contact Us Messages</h2>
+  
+    <div *ngIf="contactMessages.length === 0" class="alert alert-warning text-center">
+      <p>No messages available.</p>
+    </div>
+  
+    <div *ngIf="contactMessages.length > 0">
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-4" *ngFor="let message of paginatedMessages">
+          <div class="card shadow-sm mb-4">
+            <div class="card-header bg-primary text-white">
+              <h5 class="card-title">{{ message.name }} - {{ message.mobile }}</h5>
+              <p class="card-text">{{ message.email }}</p>
+            </div>
+            <div class="card-body">
+              <p class="card-text">{{ message.comments }}</p>
+            </div>
+            <div class="card-footer text-muted text-center d-flex justify-content-between align-items-center">
+                <button class="btn btn-sm btn-danger" (click)="deleteMessage(message.id)">Delete</button>
+              </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Pagination -->
+      <div class="d-flex justify-content-between mt-4">
+        <button class="btn btn-outline-primary" (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+        <span class="d-flex align-items-center">
+          Page {{ currentPage }} of {{ totalMessages / pageSize | number: '1.0-0' }}
+        </span>
+        <button class="btn btn-outline-primary" (click)="nextPage()" [disabled]="currentPage * pageSize >= totalMessages">Next</button>
+      </div>
+    </div>
+  </div>
+  

@@ -17,11 +17,8 @@ export class BookingFormComponent implements OnInit {
   selectedDate: string = '';
   patientId: number | null = null;
   isLoggedIn: boolean = false;
-
   captchaToken: string | null = null;
-
   showCaptcha: boolean = false;
-
   bookingData = {
     name: '',
     phone: '',
