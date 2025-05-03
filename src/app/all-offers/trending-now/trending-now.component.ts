@@ -81,7 +81,7 @@ export class TrendingNowComponent {
     },
     {
       id: 6,
-      title: 'Carboxy - Injection For Lipolysis',
+      title: 'Carboxy-Injection For Lipolysis',
       offerLink: '/offers/51',
       description: '4 Injection session Lipodissolve',
       originalPrice: 2000,
@@ -92,7 +92,7 @@ export class TrendingNowComponent {
     },
     {
       id: 7,
-      title: 'cold peeling to face or sensitive area',
+      title: 'cold peeling to face',
       description: '3 Session Face peeling',
       offerLink: '/offers/35',
       originalPrice: 3000,

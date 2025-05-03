@@ -2,3 +2,16 @@
 <app-slides></app-slides>
 <app-trending-now></app-trending-now>
 <app-the-most-requested></app-the-most-requested>
+<div class="  text-center mb-3">
+    <a routerLink="/" class="btn btn-primary"  > Back To Home </a>
+  </div>
+
+    <div>
+    <button *ngIf="showScrollTop"
+    class="btn btn-warning position-fixed bottom-0 end-0 m-4 rounded-circle shadow"
+    style="width: 45px; height: 45px;"
+    (click)="scrollToTop()">
+  &#8679;
+  </button>
+  
+  </div>

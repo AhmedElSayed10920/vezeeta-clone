@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { StripeService } from '../stripe.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,10 @@ export class AppointmentService {
   private newPatient = 'https://localhost:7167/api/Patient/register';
 
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private stripeService: StripeService
+  ) {}
 
   bookAppointment(payload: {
     adate: string,
@@ -48,4 +52,6 @@ export class AppointmentService {
   }
 //////////////////////////////////////
 
+
 }
+

@@ -12,6 +12,8 @@ import { Service } from '../../models/service';
 })
 export class TheMostRequestedComponent {
   services: Service[] = [
+   
+   
     {
       id: 1,
       discount: 30,
@@ -58,6 +60,165 @@ export class TheMostRequestedComponent {
 
     },
     {
+      id: 17,
+      discount: 20,
+      image:
+        '/images/offerImage/17.png',
+      title: 'Special offer: hair removal of half the hands, 450 pounds',
+      description: '1 Session Laser Hair Removal',
+      rating: 5,
+      reviewCount: 200,
+      bookedCount: 1545,
+      originalPrice: 688,
+      discountPrice: 138,
+      offersLink: `/offers/17`,
+    },
+    {
+      id: 18,
+      discount: 20,
+      image:
+        '/images/offerImage/18.png',
+      title: 'Laser Hair removal Of Half Arms',
+      description: '1 Session Laser Hair Removal',
+      rating: 4.5,
+      reviewCount: 40,
+      bookedCount: 570,
+      originalPrice: 1750,
+      discountPrice: 350,
+      offersLink: `/offers/18`,
+    },
+    {
+      id: 19,
+      discount: 54,
+      image:
+        '/images/offerImage/19.png',
+      title: 'Laser hair removal of bikini',
+      description: '1 Session Laser Hair Removal for bikini',
+      rating: 3.5,
+      reviewCount: 12,
+      bookedCount: 371,
+      originalPrice: 400,
+      discountPrice: 216,
+      offersLink: `/offers/19`,
+    },
+    {
+      id: 20,
+      discount: 20,
+      image:
+        '/images/offerImage/20.png',
+      title: 'Special offer for mens area for 600 pound',
+      description: '1 Session Legs Laser Hair Removal',
+      rating: 3,
+      reviewCount: 10,
+      bookedCount: 25,
+      originalPrice: 750,
+      discountPrice: 150,
+      offersLink: `/offers/20`,
+    },
+    
+    {
+      id: 1,
+      discount: 50,
+      image:
+        '/images/offerImage/61.png',
+      title: 'Reduction on laparoscopic cholecystectomy',
+      description: '1 Surgery Laparoscopic Cholecystectomy',
+      rating: 5,
+      reviewCount: 200,
+      bookedCount: 1545,
+      originalPrice: 50000,
+      discountPrice: 25000,
+      offersLink: `/offers/67`,
+    },
+    {
+      id: 2,
+      discount: 50,
+      image:
+        '/images/offerImage/62.png',
+      title: 'Discount fifty percent',
+      description: '1 Surgery Hemorrhoidectomy',
+      rating: 4.5,
+      reviewCount: 40,
+      bookedCount: 570,
+      originalPrice: 20000,
+      discountPrice: 10000,
+      offersLink: `/offers/68`,
+    },
+    {
+      id: 3,
+      discount: 50,
+      image:
+        '/images/offerImage/63.png',
+      title: 'Discount fifty percent',
+      description: '1 Surgery Hemorrhoidectomy',
+      rating: 3.5,
+      reviewCount: 12,
+      bookedCount: 371,
+      originalPrice: 40000,
+      discountPrice: 20000,
+      offersLink: `/offers/69`,
+    },
+    {
+      id: 1,
+      discount: 50,
+      image:
+        '/images/offerImage/46.png',
+      title: 'Fifty percent discount',
+      description: '1 Surgery Gastric bypass',
+      rating: 5,
+      reviewCount: 200,
+      bookedCount: 1545,
+      originalPrice: 1600,
+      discountPrice: 800,
+      offersLink: `/offers/52`,
+
+    },
+    {
+      id: 2,
+      discount: 50,
+      image:
+        '/images/offerImage/47.png',
+      title: 'Fifty percent discount',
+      description: '1 Surgery Gynaecomastia for Men',
+      rating: 4.5,
+      reviewCount: 40,
+      bookedCount: 570,
+      originalPrice: 50000,
+      discountPrice: 25000,
+      offersLink: `/offers/53`,
+
+    },
+    {
+      id: 3,
+      discount: 20,
+      image:
+        '/images/offerImage/48.png',
+      title: 'Gastric ballon for weight loss',
+      description: '1 Surgery Gastric balloon',
+      rating: 3.5,
+      reviewCount: 12,
+      bookedCount: 371,
+      originalPrice: 17000,
+      discountPrice: 3400,
+      offersLink: `/offers/54`,
+
+    },
+    {
+      id: 4,
+      discount: 25,
+      image:
+        '/images/offerImage/49.png',
+      title: '12 sessions of physio therapy for one part',
+      description: '1 Session Physical therapy',
+      rating: 3,
+      reviewCount: 0,
+      bookedCount: 25,
+      originalPrice: 4800,
+      discountPrice: 1200,
+      offersLink: `/offers/55`,
+
+    },
+    {
       id: 4,
       discount: 20,
       image:
@@ -87,50 +248,7 @@ export class TheMostRequestedComponent {
       offersLink: `/offers/11`,
       
     },
-    {
-      id: 12,
-      discount: 50,
-      image:
-        '/images/offerImage/12.png',
-      title: 'BPM crown installation',
-      description: '1 Crown BFM crown installation',
-      rating: 5,
-      reviewCount: 0,
-      bookedCount: 25,
-      originalPrice: 2000,
-      discountPrice: 1000,
-      offersLink: `/offers/12`,
-
-    },
-    {
-      id: 13,
-      discount: 50,
-      image: '/images/offerImage/13.png',
-      title: 'Composite white filling',
-      description: '1 Session Composite Filling',
-      rating: 4.5,
-      reviewCount: 40,
-      bookedCount: 570,
-      originalPrice: 1600,
-      discountPrice: 800,
-      offersLink: `/offers/13`,
-      
-    },
-    {
-      id: 14,
-      discount: 20,
-      image:
-      '/images/offerImage/14.png',
-      title: 'Laser teeth whitening',
-      description: '1 Session Laser teeth whitening',
-      rating: 3.5,
-      reviewCount: 12,
-      bookedCount: 371,
-      originalPrice: 2000,
-      discountPrice: 400,
-      offersLink: `/offers/14`,
-
-    },
+    
     {
       id: 15,
       discount: 40,
@@ -189,6 +307,51 @@ export class TheMostRequestedComponent {
       originalPrice: 1600,
       discountPrice: 640,
       offersLink: `/offers/7`,
+
+    },
+    {
+      id: 5,
+      discount: 30,
+      image:
+        '/images/offerImage/50.png',
+      title: 'Physical therapy,rehabilitation',
+      description: '6 Session Physical therapy',
+      rating: 5,
+      reviewCount: 3,
+      bookedCount: 15,
+      originalPrice: 1200,
+      discountPrice: 360,
+      offersLink: `/offers/56`,
+
+    },
+    {
+      id: 6,
+      discount: 20,
+      image:
+        '/images/offerImage/51.png',
+      title: 'Body composition with diet',
+      description: '1 Session Diet plan',
+      rating: 4.5,
+      reviewCount: 0,
+      bookedCount: 8,
+      originalPrice: 2000,
+      discountPrice: 400,
+      offersLink: `/offers/57`,
+
+    },
+    {
+      id: 8,
+      discount: 50,
+      image:
+        '/images/offerImage/52.png',
+      title: 'Cryolipolysis + Cavitation + Carboxy Injection',
+      description: '2 Session Cryolipolysis',
+      rating: 4.5,
+      reviewCount: 40,
+      bookedCount: 570,
+      originalPrice: 1600,
+      discountPrice: 800,
+      offersLink: `/offers/58`,
 
     },
     {
@@ -251,7 +414,92 @@ export class TheMostRequestedComponent {
       offersLink: `/offers/16`,
 
     },
+    {
+      id: 6,
+      discount: 33,
+      image:
+        '/images/offerImage/33.png',
+      title: 'Skin booster for whitening, glow and skin rejuvenation',
+      description: '1 Session Stem cells skin care',
+      rating: 4.5,
+      reviewCount: 0,
+      bookedCount: 8,
+      originalPrice: 1200,
+      discountPrice: 396,
+      offersLink: `/offers/33`,
+    },
+    {
+      id: 7,
+      discount: 20,
+      image:
+        '/images/offerImage/34.png',
+      title: 'Special discount on skin cleaning 450 pounds',
+      description: '1 Session Facial Cleansing',
+      rating: 4,
+      reviewCount: 200,
+      bookedCount: 1545,
+      originalPrice: 563,
+      discountPrice: 113,
+      offersLink: `/offers/34`,
+    },
+    {
+      id: 8,
+      discount: 20,
+      image:
+        '/images/offerImage/35.png',
+      title: '3 sessions of cold peeling to face or sensitive area',
+      description: '3 Session Face peeling',
+      rating: 5,
+      reviewCount: 200,
+      bookedCount: 1545,
+      originalPrice: 3000,
+      discountPrice: 600,
+      offersLink: `/offers/35`,
+    },
+    {
+      id: 12,
+      discount: 50,
+      image:
+        '/images/offerImage/12.png',
+      title: 'BPM crown installation',
+      description: '1 Crown BFM crown installation',
+      rating: 5,
+      reviewCount: 0,
+      bookedCount: 25,
+      originalPrice: 2000,
+      discountPrice: 1000,
+      offersLink: `/offers/12`,
 
+    },
+    {
+      id: 13,
+      discount: 50,
+      image: '/images/offerImage/13.png',
+      title: 'Composite white filling',
+      description: '1 Session Composite Filling',
+      rating: 4.5,
+      reviewCount: 40,
+      bookedCount: 570,
+      originalPrice: 1600,
+      discountPrice: 800,
+      offersLink: `/offers/13`,
+      
+    },
+    {
+      id: 14,
+      discount: 20,
+      image:
+      '/images/offerImage/14.png',
+      title: 'Laser teeth whitening',
+      description: '1 Session Laser teeth whitening',
+      rating: 3.5,
+      reviewCount: 12,
+      bookedCount: 371,
+      originalPrice: 2000,
+      discountPrice: 400,
+      offersLink: `/offers/14`,
+
+    },
     {
       id: 1,
       discount: 50,
@@ -312,51 +560,7 @@ export class TheMostRequestedComponent {
       offersLink: `/offers/55`,
 
     },
-    {
-      id: 5,
-      discount: 30,
-      image:
-        '/images/offerImage/50.png',
-      title: 'Physical therapy,rehabilitation',
-      description: '6 Session Physical therapy',
-      rating: 5,
-      reviewCount: 3,
-      bookedCount: 15,
-      originalPrice: 1200,
-      discountPrice: 360,
-      offersLink: `/offers/56`,
 
-    },
-    {
-      id: 6,
-      discount: 20,
-      image:
-        '/images/offerImage/51.png',
-      title: 'Body composition with diet',
-      description: '1 Session Diet plan',
-      rating: 4.5,
-      reviewCount: 0,
-      bookedCount: 8,
-      originalPrice: 2000,
-      discountPrice: 400,
-      offersLink: `/offers/57`,
-
-    },
-    {
-      id: 8,
-      discount: 50,
-      image:
-        '/images/offerImage/52.png',
-      title: 'Cryolipolysis + Cavitation + Carboxy Injection',
-      description: '2 Session Cryolipolysis',
-      rating: 4.5,
-      reviewCount: 40,
-      bookedCount: 570,
-      originalPrice: 1600,
-      discountPrice: 800,
-      offersLink: `/offers/58`,
-
-    },
     {
       id: 9,
       discount: 30,
@@ -524,48 +728,6 @@ export class TheMostRequestedComponent {
     },
 
     {
-      id: 1,
-      discount: 50,
-      image:
-        '/images/offerImage/61.png',
-      title: 'Reduction on laparoscopic cholecystectomy',
-      description: '1 Surgery Laparoscopic Cholecystectomy',
-      rating: 5,
-      reviewCount: 200,
-      bookedCount: 1545,
-      originalPrice: 50000,
-      discountPrice: 25000,
-      offersLink: `/offers/67`,
-    },
-    {
-      id: 2,
-      discount: 50,
-      image:
-        '/images/offerImage/62.png',
-      title: 'Discount fifty percent',
-      description: '1 Surgery Hemorrhoidectomy',
-      rating: 4.5,
-      reviewCount: 40,
-      bookedCount: 570,
-      originalPrice: 20000,
-      discountPrice: 10000,
-      offersLink: `/offers/68`,
-    },
-    {
-      id: 3,
-      discount: 50,
-      image:
-        '/images/offerImage/63.png',
-      title: 'Discount fifty percent',
-      description: '1 Surgery Hemorrhoidectomy',
-      rating: 3.5,
-      reviewCount: 12,
-      bookedCount: 371,
-      originalPrice: 40000,
-      discountPrice: 20000,
-      offersLink: `/offers/69`,
-    },
-    {
       id: 4,
       discount: 50,
       image:
@@ -665,62 +827,7 @@ export class TheMostRequestedComponent {
       offersLink: `/offers/66`,
     },
 
-    {
-      id: 17,
-      discount: 20,
-      image:
-        '/images/offerImage/17.png',
-      title: 'Special offer: hair removal of half the hands, 450 pounds',
-      description: '1 Session Laser Hair Removal',
-      rating: 5,
-      reviewCount: 200,
-      bookedCount: 1545,
-      originalPrice: 688,
-      discountPrice: 138,
-      offersLink: `/offers/17`,
-    },
-    {
-      id: 18,
-      discount: 20,
-      image:
-        '/images/offerImage/18.png',
-      title: 'Laser Hair removal Of Half Arms',
-      description: '1 Session Laser Hair Removal',
-      rating: 4.5,
-      reviewCount: 40,
-      bookedCount: 570,
-      originalPrice: 1750,
-      discountPrice: 350,
-      offersLink: `/offers/18`,
-    },
-    {
-      id: 19,
-      discount: 54,
-      image:
-        '/images/offerImage/19.png',
-      title: 'Laser hair removal of bikini',
-      description: '1 Session Laser Hair Removal for bikini',
-      rating: 3.5,
-      reviewCount: 12,
-      bookedCount: 371,
-      originalPrice: 400,
-      discountPrice: 216,
-      offersLink: `/offers/19`,
-    },
-    {
-      id: 20,
-      discount: 20,
-      image:
-        '/images/offerImage/20.png',
-      title: 'Special offer for mens area for 600 pound',
-      description: '1 Session Legs Laser Hair Removal',
-      rating: 3,
-      reviewCount: 10,
-      bookedCount: 25,
-      originalPrice: 750,
-      discountPrice: 150,
-      offersLink: `/offers/20`,
-    },
+   
     {
       id: 21,
       discount: 20,
@@ -923,48 +1030,7 @@ export class TheMostRequestedComponent {
       discountPrice: 1140,
       offersLink: `/offers/26`,
     },
-    {
-      id: 6,
-      discount: 33,
-      image:
-        '/images/offerImage/33.png',
-      title: 'Skin booster for whitening, glow and skin rejuvenation',
-      description: '1 Session Stem cells skin care',
-      rating: 4.5,
-      reviewCount: 0,
-      bookedCount: 8,
-      originalPrice: 1200,
-      discountPrice: 396,
-      offersLink: `/offers/33`,
-    },
-    {
-      id: 7,
-      discount: 20,
-      image:
-        '/images/offerImage/34.png',
-      title: 'Special discount on skin cleaning 450 pounds',
-      description: '1 Session Facial Cleansing',
-      rating: 4,
-      reviewCount: 200,
-      bookedCount: 1545,
-      originalPrice: 563,
-      discountPrice: 113,
-      offersLink: `/offers/34`,
-    },
-    {
-      id: 8,
-      discount: 20,
-      image:
-        '/images/offerImage/35.png',
-      title: '3 sessions of cold peeling to face or sensitive area',
-      description: '3 Session Face peeling',
-      rating: 5,
-      reviewCount: 200,
-      bookedCount: 1545,
-      originalPrice: 3000,
-      discountPrice: 600,
-      offersLink: `/offers/35`,
-    },
+
     {
       id: 9,
       discount: 50,

@@ -1,13 +1,13 @@
 <div class="container my-4">
     <h2 class="fs-4 mb-4">Trending Now</h2>
 
-    <div class="position-relative">
+    <div class="position-relative px-5">
         <!-- Offer cards container -->
         <div class="row flex-nowrap overflow-hidden" #carouselContainer>
             <div *ngFor="let offer of visibleOffers" class="col-md-3 col-6">
                <div class="card offer-card border-0 shadow-sm" (click)="goToDetails(offer.id)"
                     style="cursor: pointer;">
-                    <div class="position-relative">
+                    <div class="position-relative ">
                         <a class="text-decoration-none" routerLink="{{offer.offerLink}}"><img src="{{ offer.image }}" class="card-img-top rounded-3" alt="{{ offer.title }}"></a>
                         <a class="text-decoration-none" routerLink="{{offer.offerLink}}"><span class="badge bg-danger position-absolute top-0 start-0 m-2 px-2 py-1">
                             {{ offer.discount }}% OFF
@@ -30,13 +30,13 @@
 
         <!-- Left navigation button -->
         <button
-            class="btn btn-light border position-absolute start-0 top-50 translate-middle-y rounded-circle shadow-sm"
+            class="btn btn-light border position-absolute start-0 top-50 translate-middle-y rounded-circle shadow-sm ms-2"
             (click)="prevSlide()" [disabled]="currentIndex === 0">
             &#10094;
         </button>
 
         <!-- Right navigation button -->
-        <button class="btn btn-light border position-absolute end-0 top-50 translate-middle-y rounded-circle shadow-sm"
+        <button class="btn btn-light border position-absolute end-0 top-50 translate-middle-y rounded-circle shadow-sm me-2"
             (click)="nextSlide()" [disabled]="currentIndex + 4 >= offers.length">
             &#10095;
         </button>

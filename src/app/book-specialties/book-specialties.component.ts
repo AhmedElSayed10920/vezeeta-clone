@@ -69,8 +69,8 @@ export class BookSpecialtiesComponent implements OnInit {
   }
 
   nextSlide() {
-    if (this.currentIndex + 4 < this.specialties.length) {
-      this.currentIndex += 4;
+    if (this.currentIndex + 1 < this.specialties.length) {
+      this.currentIndex += 1;
     } else {
       this.currentIndex = 0;
     }
@@ -79,7 +79,7 @@ export class BookSpecialtiesComponent implements OnInit {
 
   prevSlide() {
     if (this.currentIndex > 0) {
-      this.currentIndex -= 4;
+      this.currentIndex -= 1;
     } else {
       this.currentIndex = Math.max(0, this.specialties.length - 4);
     }

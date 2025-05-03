@@ -1,3 +1,4 @@
+import { RouterLink } from '@angular/router';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Service } from '../../models/service';
@@ -7,7 +8,7 @@ import { ServiceCardComponent } from '../../all-offers/service-card/service-card
 @Component({
   selector: 'app-beauty',
   standalone: true,
-  imports: [ServiceCardComponent, CommonModule, NavbarOffersComponent],
+  imports: [ServiceCardComponent, CommonModule, NavbarOffersComponent,RouterLink],
   templateUrl: './beauty.component.html',
   styleUrls: ['./beauty.component.css'],
 })
