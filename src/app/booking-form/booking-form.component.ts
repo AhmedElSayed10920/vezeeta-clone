@@ -25,7 +25,7 @@ export class BookingFormComponent implements OnInit {
     email: '',
   };
 
-   clinics = [
+  clinics = [
     { id: 1000, name: 'Future Care Clinic', phone: '01002223344' },
     { id: 1001, name: 'Al-Hayat Medical Center', phone: '01005556677' },
     { id: 1002, name: 'Al-Salam Specialized Clinic', phone: '01001234567' },
@@ -73,7 +73,7 @@ export class BookingFormComponent implements OnInit {
     private appointmentService: AppointmentService,
     private location: Location,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     const userJson = localStorage.getItem('user');
@@ -173,9 +173,8 @@ export class BookingFormComponent implements OnInit {
   }
 
   sendBooking(pid: number) {
-    const clinicName = this.bookingInfo?.doctor?.clinicName || '';
-    const matchedClinic = this.clinics.find((c) => c.name === clinicName);
-
+    const matchedClinic = this.bookingInfo?.doctor?.clinicName || '';
+  
     if (!matchedClinic) {
       Swal.fire({
         icon: 'error',
@@ -184,18 +183,32 @@ export class BookingFormComponent implements OnInit {
       });
       return;
     }
-
-    const payload = {
+  
+    const doctor = this.bookingInfo?.doctor;
+  
+    const payload: any = {
       adate: this.formatDate(this.selectedDate),
       atime: this.formatTime(this.bookingInfo?.time),
       pid: pid,
-      cid: matchedClinic.id,
-      did: this.bookingInfo?.doctor?.id,
+      cid: 1001,
       captchaToken: this.captchaToken!,
-      // ///////////////////
-      paymentIntentId: this.bookingInfo?.paymentIntentId
+      paymentIntentId: this.bookingInfo?.paymentIntentId,
     };
-
+  
+    // ✅ فرق بين Doctor القديم والجديد
+    if (doctor?.id > 71) {
+      payload.doctorID = doctor.id;
+    } else if (doctor?.id) {
+      payload.did = doctor.id;
+    } else {
+      Swal.fire({
+        icon: 'error',
+        title: 'Doctor Not Selected',
+        text: 'No doctor was selected for this appointment.',
+      });
+      return;
+    }
+  
     this.appointmentService.bookAppointment(payload).subscribe({
       next: (res) => {
         const confirmationData = {
@@ -203,17 +216,16 @@ export class BookingFormComponent implements OnInit {
             date: payload.adate,
             time: payload.atime,
             clinicId: payload.cid,
-            clinicNumber: matchedClinic.phone,
-
+            clinicNumber: matchedClinic.phone ?? this.bookingInfo?.doctor?.phone,
           },
-          doctor: this.bookingInfo?.doctor,
+          doctor: doctor,
           patient: {
             name: this.bookingData.name,
             phone: this.bookingData.phone,
             email: this.bookingData.email,
           },
         };
-
+  
         Swal.fire({
           icon: 'success',
           title: 'Appointment Booked',
@@ -229,15 +241,14 @@ export class BookingFormComponent implements OnInit {
         Swal.fire({
           icon: 'error',
           title: 'Booking Failed',
-           text: err.error || 'There was an error booking your appointment. Please try again later.',
-
+          text: err.error || 'There was an error booking your appointment. Please try again later.',
           confirmButtonText: 'OK',
         });
         console.error(err);
-
       },
     });
   }
+  
 
   formatDate(inputDate: string): string {
     const parts = inputDate.split('/');

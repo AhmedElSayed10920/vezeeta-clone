@@ -47,28 +47,27 @@ export class AlldoctorsComponent {
       reverseButtons: true
     }).then((result) => {
       if (result.isConfirmed) {
-        // إظهار نافذة التحميل عند بدء الحذف
+              
         Swal.fire({
           title: 'Deleting...',
           text: 'Please wait while the doctor is being deleted.',
           icon: 'info',
           showConfirmButton: false,
-          allowOutsideClick: false, // منع المستخدم من إغلاق النافذة أثناء الحذف
+          allowOutsideClick: false,        
           willOpen: () => {
-            Swal.showLoading();
+            Swal.showLoading(Swal.getConfirmButton());
           }
         });
 
-        // استدعاء خدمة الحذف
         this.doctorService.deleteDoctor(doctorId).subscribe(
           (response) => {
-            console.log('Delete successful:', response);  // طباعة الاستجابة للتحقق منها
-            this.loadDoctors();  // إعادة تحميل البيانات بعد الحذف
+            console.log('Delete successful:', response);  
+            this.loadDoctors();  
             Swal.fire('Deleted!', 'The doctor has been deleted successfully.', 'success');
           },
           (error) => {
-            console.error('Delete error:', error);  // طباعة الخطأ للتحقق منه
-            Swal.close();  // إغلاق نافذة التحميل في حالة حدوث خطأ
+            console.error('Delete error:', error); 
+            Swal.close();  
             Swal.fire('Error!', 'There was an error deleting the doctor.', 'error');
           }
         );

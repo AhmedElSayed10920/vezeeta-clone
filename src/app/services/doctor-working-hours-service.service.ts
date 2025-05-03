@@ -49,4 +49,8 @@ export class DoctorWorkingHoursService {
     });
     return this.http.delete(`${this.apiUrl}/${id}`, { headers });
   }
+
+  getDoctorWeeklyWorkingHours(doctorId: number): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/doctor-working-hours/next7days/${doctorId}`);
+  }
 }
