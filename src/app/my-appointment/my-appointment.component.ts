@@ -104,6 +104,8 @@ export class MyAppointmentComponent implements OnInit {
   }
 
 
+
+
   goToDoctorsPage() {
     this.router.navigate(['/allDoctors']);
   }
@@ -114,6 +116,8 @@ export class MyAppointmentComponent implements OnInit {
     date.setHours(hours, minutes, seconds || 0, 0);
     return date;
   }
+
 }
+
 
 
