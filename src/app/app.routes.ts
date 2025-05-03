@@ -1,6 +1,5 @@
 import { AllOffersComponent } from './all-offers/all-offers.component';
 import { Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
 import { LoginForDoctorComponent } from './login-for-doctor/login-for-doctor.component';
 import { SignupForDoctorComponent } from './signup-for-doctor/signup-for-doctor.component';
 import { ContactUSComponent } from './contact-us/contact-us.component';
