@@ -4,7 +4,7 @@
       <div class="card-content">
         <!-- Doctor Image -->
         <div class="logo-container">
-          <img [src]="getDoctorImage()" class="doctor-img" alt="Doctor Image" />
+          <img [src]="getDoctorImage(doctor.id,doctor)" class="doctor-img" alt="Doctor Image" />
         </div>
 
         <!-- Doctor Info -->
@@ -35,7 +35,7 @@
           </div>
           <div class="info-item">
             <i class="fa-solid fa-phone" style="color: #ff6347;"></i>
-            <span>{{ doctor.phone }}</span>
+            <span>{{ doctor.PhoneNumber }}</span>
             <span class="rating-text">16676</span>
           </div>
         </div>

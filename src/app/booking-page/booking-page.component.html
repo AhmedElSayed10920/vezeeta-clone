@@ -3,7 +3,7 @@
     <div class="card-content">
       <div class="doctor-info">
         <div class="logo-container">
-          <img [src]="getDoctorImage(bookingInfo.doctor.id)" class="clinic-logo" alt="Clinic Logo" />
+          <img [src]="getDoctorImage(bookingInfo.doctor.id,bookingInfo.doctor)" class="clinic-logo" alt="Clinic Logo" />
         </div>
         <div class="details">
           <h5 class="doctor-name">{{ bookingInfo.doctor.doctorName }}</h5>

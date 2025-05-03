@@ -3,7 +3,7 @@ import { Component, inject, Input, OnChanges, OnInit, signal, SimpleChanges } fr
 import { ActivatedRoute, RouterModule, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { DoctorService } from '../services/doctor.service';
-import { Doctor } from '../doctor';
+import { Doctor } from '../models/doctor';
 import { ImageService } from '../shared/image.service';
 import { AppointmentReservationComponent } from "../appointment-reservation/appointment-reservation.component";
 import { BookRequestService } from '../services/book-request.service';
@@ -27,48 +27,46 @@ export class AllDoctorsComponent implements OnInit, OnChanges {
 
   bookedAppointments: { [doctorId: number]: { [day: string]: string[] } } = {};
   displayedDays: { dayName: string; date: string; displayText: string }[] = [];
-  // Use an object to store currentDayIndex for each doctor
   currentDayIndices: { [doctorId: number]: number } = {};
 
   constructor(
     private doctorsService: DoctorService,
-    // private route: ActivatedRoute,
-    private bookService : BookRequestService,
+    private bookService: BookRequestService,
     private imageService: ImageService,
     private router: Router
-  ) {}
+  ) { }
 
   route = inject(ActivatedRoute);
   doctors: any[] = [];
 
-ngOnInit(): void {
-  this.route.queryParams.subscribe((params) => {
-    console.log('Query Params:', params);
+  ngOnInit(): void {
+    this.route.queryParams.subscribe((params) => {
+      console.log('Query Params:', params);
 
-    if (!this.filters) {
-      this.filters = {
-        specialty: '',
-        city: '',
-        governorate: '',
-        name: ''
-      };
-    }
+      if (!this.filters) {
+        this.filters = {
+          specialty: '',
+          city: '',
+          governorate: '',
+          name: ''
+        };
+      }
 
 
-    if (params['specialty']) {
-      this.filters.specialty = params['specialty'];
-      this.specialty = params['specialty'];
-      console.log('Specialty from query:', this.specialty);
-    }
+      if (params['specialty']) {
+        this.filters.specialty = params['specialty'];
+        this.specialty = params['specialty'];
+        console.log('Specialty from query:', this.specialty);
+      }
 
-    const nav = this.router.getCurrentNavigation();
-    this.doctors = nav?.extras?.state?.['filteredData'] || [];
+      const nav = this.router.getCurrentNavigation();
+      this.doctors = nav?.extras?.state?.['filteredData'] || [];
 
-    this.generateDisplayedDays();
+      this.generateDisplayedDays();
 
-    this.fetchDoctorsBasedOnFilters();
-  });
-}
+      this.fetchDoctorsBasedOnFilters();
+    });
+  }
 
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -77,51 +75,6 @@ ngOnInit(): void {
       this.fetchDoctorsBasedOnFilters();
     }
   }
-
-
-  // fetchDoctorsBasedOnFilters(): void {
-  //   const { specialty, city, governorate, name } = this.filters;
-
-  //   this.bookService.getBookingData(specialty, city, governorate).subscribe(
-  //     (response: any[]) => {
-  //       console.log('Raw response from bookService:', response); // Debugging line
-  //       let filteredDoctors = response;
-
-  //       // Only apply the specialty filter if the specialty is not "All Specialties"
-  //       if (specialty && specialty.toLowerCase() !== 'all specialties') {
-  //         filteredDoctors = filteredDoctors.filter(doc =>
-  //           doc.mainSpecialty?.toLowerCase().includes(specialty.toLowerCase())
-  //         );
-  //       }
-
-  //       console.log('Filtered by specialty:', filteredDoctors);
-
-  //       if (city) {
-  //         filteredDoctors = filteredDoctors.filter(doc =>
-  //           doc.city?.toLowerCase().includes(city.toLowerCase())
-  //         );
-  //       }
-
-  //       if (governorate) {
-  //         filteredDoctors = filteredDoctors.filter(doc =>
-  //           doc.governorate?.toLowerCase().includes(governorate.toLowerCase())
-  //         );
-  //       }
-
-  //       if (name) {
-  //         filteredDoctors = filteredDoctors.filter(doc =>
-  //           doc.doctorName?.toLowerCase().includes(name.toLowerCase())
-  //         );
-  //       }
-
-  //       this.doctors = filteredDoctors;
-  //       this.updateVisibleDoctors();
-  //     },
-  //     error => {
-  //       console.error('Error fetching filtered doctors', error);
-  //     }
-  //   );
-  // }
 
   fetchDoctorsBasedOnFilters(): void {
     const { specialty, city, governorate, name } = this.filters;
@@ -232,9 +185,14 @@ ngOnInit(): void {
     this.goToPage(this.currentPage() + 1);
   }
 
-  getDoctorImage(doctorId: number): string {
-    return this.imageService.getImagePath(doctorId.toString());
+  getDoctorImage(doctorId: number, doctor: Doctor): string {
+    if (doctor.image?.includes('ma7moudsayed-001-site1')) {
+      return this.imageService.getImagePath(doctorId.toString());
+    } else {
+      return doctor.image!;
+    }
   }
+  
 
   bookAppointment(doctorId: number, time: string, day: string): void {
     if (!this.bookedAppointments[doctorId][day]) {
@@ -270,17 +228,14 @@ ngOnInit(): void {
     const todayIndex = this.displayedDays.findIndex(day => day.date === todayFormatted);
     const currentDayIndex = this.displayedDays.findIndex(day => day.date === date);
 
-    // Check if the day is a Friday
     if (dayName === 'Fri') {
       return 'No Available Appointments';
     }
 
-    // Check if the day is within the first 7 days from today
     if (currentDayIndex >= todayIndex && currentDayIndex < todayIndex + 7) {
       return '10:00 AM - 11:00 PM';
     }
 
-    // For days before today or after the first 7 days
     return 'No Available Appointments';
   }
 }

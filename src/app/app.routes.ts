@@ -1,6 +1,5 @@
 import { AllOffersComponent } from './all-offers/all-offers.component';
 import { Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
 import { LoginForDoctorComponent } from './login-for-doctor/login-for-doctor.component';
 import { SignupForDoctorComponent } from './signup-for-doctor/signup-for-doctor.component';
 import { ContactUSComponent } from './contact-us/contact-us.component';
@@ -77,8 +76,14 @@ import { MyAppointmentComponent } from './my-appointment/my-appointment.componen
 import { VerifyOtpComponent } from './verify-otp-component/verify-otp.component';
 import { ChatAIComponent } from './components/chat-ai/chat-ai.component';
 import { PaymentComponent } from './payment/payment.component';
+<<<<<<< HEAD
 import { OfferListComponent } from './offer-list/offer-list.component';
 // import { BotAiComponent } from './components/bot-ai/bot-ai.component';import { PaymentComponent } from './payment/payment.component';
+=======
+import { DoctorDashboardComponent } from './dashboards/doctors-dashboard/doctor-dashboard-home/doctor-dashboard.component';
+import { AdminDashboardComponent } from './dashboards/admins-dashboard/admin-dashboard/admin-dashboard.component';
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
+>>>>>>> 074be7bcb909554dadf99952ce9b965dbfec758f
 
 
 export const routes: Routes = [
@@ -157,7 +162,6 @@ export const routes: Routes = [
     component: GeneralPsychiatryServicesComponent,
   },
 
-  // { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'loginForDoctor', component: LoginForDoctorComponent },
   { path: 'signupForDoctor', component: SignupForDoctorComponent },
@@ -184,6 +188,12 @@ export const routes: Routes = [
   { path: 'bookingPage', component: BookingPageComponent },
   { path: 'SuccessReservation', component: SuccessReservationComponent },
   { path: 'myAppointment', component: MyAppointmentComponent },
+  { path: 'doctorDashboard', component: DoctorDashboardComponent },
+  { path: 'adminDashboard', component: AdminDashboardComponent },
+  { path: 'adminLogin', component: AdminloginComponent },
+
+
+
   {
     path: 'appointmentReservation/:id',
     component: AppointmentReservationComponent,

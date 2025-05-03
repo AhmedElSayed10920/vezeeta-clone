@@ -6,16 +6,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class RegisterDoctorService {
-  private apiUrl = 'https://localhost:7167/api/Doctor/register';
+  private apiUrl = 'https://localhost:7167/api/NewDoctors/register';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  registerDoctor(data: any): Observable<any> {
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-    });
+  registerDoctor(doctorData: FormData): Observable<any> {
 
-    return this.http.post(this.apiUrl, data, { headers });
+
+    return this.http.post(this.apiUrl, doctorData);
+
   }
 }

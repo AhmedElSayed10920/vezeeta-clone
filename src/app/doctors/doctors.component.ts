@@ -1,7 +1,7 @@
 import { Component, computed, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DoctorService } from '../services/doctor.service';
-import { Doctor } from '../doctor';
+import { Doctor } from '../models/doctor';
 import { RouterModule } from '@angular/router';
 import { ImageService } from '../shared/image.service';
 
@@ -37,7 +37,7 @@ export class DoctorsComponent {
 
   fetchSpecialties() {
     this.doctorsService.getDoctors().subscribe(data => {
-      const uniqueSpecialties = Array.from(new Set(data.map(doc => doc.mainSpecialty).filter(s => s)));
+      const uniqueSpecialties = Array.from(new Set(data.map(doc => doc.mainSpecialty).filter((s): s is string => s !== undefined)));
       this.specialties.set(['All Specialties', ...uniqueSpecialties]);
     });
   }
@@ -51,7 +51,11 @@ export class DoctorsComponent {
     );
   }
 
-  getDoctorImage(doctorId: number): string {
-    return this.imageService.getImagePath(doctorId.toString());
+  getDoctorImage(doctorId: number, doctor: Doctor): string {
+    if (doctor.image?.includes('ma7moudsayed-001-site1')) {
+      return this.imageService.getImagePath(doctorId.toString());
+    } else {
+      return doctor.image!;
+    }
   }
 }

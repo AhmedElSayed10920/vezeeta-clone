@@ -1,0 +1,11 @@
+.appointments-container {
+    margin: 10px 0;
+    width: 50%;
+    margin: auto;
+}
+
+.appointments-container h2 {
+    text-align: center;
+    margin: 20px 0;
+    color: #3f51b5;
+}

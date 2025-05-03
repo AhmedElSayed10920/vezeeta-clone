@@ -15,7 +15,7 @@
       <div class="doctors-wrapper">
         <div class="doctor-card" *ngFor="let doctor of filteredDoctors()" [routerLink]="['doctorDetails', doctor.id]"
           style="cursor: pointer;">
-          <img [src]="getDoctorImage(doctor.id)" class="doctor-img" alt="Doctor Image" />
+          <img [src]="getDoctorImage(doctor.id,doctor)" class="doctor-img" alt="Doctor Image" />
           <div class="doctor-info">
             <h5 class="doctor-name">{{ doctor.doctorName }}</h5>
             <p class="specialty">{{ doctor.mainSpecialty }}</p>

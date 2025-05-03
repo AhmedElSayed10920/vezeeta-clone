@@ -1,0 +1,26 @@
+<div class="container mt-3">
+    <h2 class="text-center mb-4">Unverified Doctors</h2>
+
+    <div *ngIf="unverifiedDoctors.length === 0" class="alert alert-warning text-center">
+        <p>No unverified doctors available.</p>
+    </div>
+
+    <div *ngIf="unverifiedDoctors.length > 0">
+        <div class="row">
+            <div class="col-md-4 mb-4" *ngFor="let doctor of unverifiedDoctors">
+                <div class="card">
+
+                    <img [src]="doctor.doctorCertificateImage" class="card-img-top" alt="{{ doctor.DoctorFullName }}" />
+
+                    <div class="card-body">
+                        <h5 class="card-title">Dr. {{ doctor.doctorFullName?.trim() || 'Unknown Doctor' }}</h5>
+
+                        <button class="btn btn-success" (click)="approveDoctor(doctor.doctorID)">
+                            Approve
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

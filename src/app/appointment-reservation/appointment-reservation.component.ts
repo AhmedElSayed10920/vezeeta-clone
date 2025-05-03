@@ -1,14 +1,16 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Doctor } from '../doctor';
+import { Doctor } from '../models/doctor';
 import { CommonModule } from '@angular/common';
 import { ViewChildren, QueryList, ElementRef, AfterViewInit } from '@angular/core';
+import { DoctorWorkingHoursService } from '../services/doctor-working-hours-service.service';
 
 @Component({
   selector: 'app-appointment-reservation',
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './appointment-reservation.component.html',
-  styleUrls: ['./appointment-reservation.component.css'] // ✅ Corrected property name
+  styleUrls: ['./appointment-reservation.component.css']
 })
 export class AppointmentReservationComponent implements OnInit, AfterViewInit {
   @Input() doctor!: Doctor;
@@ -16,21 +18,34 @@ export class AppointmentReservationComponent implements OnInit, AfterViewInit {
 
   displayedDays: { dayName: string; date: string; displayText: string }[] = [];
   currentDayIndex: number = 0;
-  bookedAppointments: { [doctorId: string]: { [day: string]: string[] } } = {};
+
+  availableSlots: { [date: string]: string[] } = {}; // ✅ المواعيد القادمة من السيرفر
+  bookedAppointments: { [doctorId: string]: { [day: string]: string[] } } = {}; // ✅ لتتبع المواعيد المحجوزة
+
   selectedTime: string | null = null;
   selectedDate: string | null = null;
-  constructor(private router: Router) { }
+
+  constructor(private router: Router, private doctorworkinghours: DoctorWorkingHoursService) { }
 
   ngOnInit(): void {
     this.generateDisplayedDays();
+
     if (!this.bookedAppointments[this.doctor.id]) {
       this.bookedAppointments[this.doctor.id] = {};
     }
 
-    this.displayedDays.forEach(day => {
-      if (!this.bookedAppointments[this.doctor.id][day.date]) {
-        this.bookedAppointments[this.doctor.id][day.date] = [];
-      }
+    this.doctorworkinghours.getDoctorWeeklyWorkingHours(this.doctor.id).subscribe(workingHours => {
+      workingHours.forEach(hour => {
+        const dateParts = hour.date.split('-');
+        const formattedDate = `${dateParts[2]}/${dateParts[1]}`;
+
+        const slots = this.generateTimeSlots(hour.startTime, hour.endTime);
+        this.availableSlots[formattedDate] = slots;
+
+        if (!this.bookedAppointments[this.doctor.id][formattedDate]) {
+          this.bookedAppointments[this.doctor.id][formattedDate] = [];
+        }
+      });
     });
   }
 
@@ -62,18 +77,8 @@ export class AppointmentReservationComponent implements OnInit, AfterViewInit {
       const date = new Date(today);
       date.setDate(today.getDate() + i);
       const dayName = daysOfWeek[date.getDay()];
-      const formattedDate = `${date.getDate().toString().padStart(2, '0')}/${(date.getMonth() + 1)
-        .toString()
-        .padStart(2, '0')}`;
-      let displayText = '';
-
-      if (i === 0) {
-        displayText = 'Today';
-      } else if (i === 1) {
-        displayText = 'Tomorrow';
-      } else {
-        displayText = `${dayName} ${formattedDate}`;
-      }
+      const formattedDate = `${date.getDate().toString().padStart(2, '0')}/${(date.getMonth() + 1).toString().padStart(2, '0')}`;
+      let displayText = i === 0 ? 'Today' : i === 1 ? 'Tomorrow' : `${dayName} ${formattedDate}`;
 
       this.displayedDays.push({ dayName, date: formattedDate, displayText });
     }
@@ -95,15 +100,17 @@ export class AppointmentReservationComponent implements OnInit, AfterViewInit {
     }
   }
 
-  generateTimeSlots(): string[] {
+  generateTimeSlots(startTime: string, endTime: string): string[] {
+    const [startHour, startMin] = startTime.split(':').map(Number);
+    const [endHour, endMin] = endTime.split(':').map(Number);
+
     const start = new Date();
-    start.setHours(10, 0, 0, 0);
+    start.setHours(startHour, startMin, 0, 0);
 
     const end = new Date();
-    end.setHours(23, 0, 0, 0);
+    end.setHours(endHour, endMin, 0, 0);
 
     const slots: string[] = [];
-
     while (start < end) {
       const hours = start.getHours();
       const minutes = start.getMinutes().toString().padStart(2, '0');
@@ -115,6 +122,12 @@ export class AppointmentReservationComponent implements OnInit, AfterViewInit {
     }
 
     return slots;
+  }
+
+  getAppointmentsForDay(day: { dayName: string; date: string; displayText: string }): string[] {
+    if (day.dayName === 'Fri') return [];
+    const slots = this.availableSlots[day.date] ?? this.generateTimeSlots('11:00', '17:00');
+    return slots.filter(slot => !this.isBooked(day.date, slot));
   }
 
   isBooked(date: string, time: string): boolean {
@@ -134,55 +147,64 @@ export class AppointmentReservationComponent implements OnInit, AfterViewInit {
     return appointmentDateTime < new Date();
   }
 
-  getAppointmentsForDay(day: { dayName: string; date: string; displayText: string }): string[] {
-    if (day.dayName === 'Fri') {
-      return [];
-    }
-
-    return this.generateTimeSlots().filter(
-      slot => !this.bookedAppointments[this.doctor.id]?.[day.date]?.includes(slot)
-    );
-  }
-
   hasPatientBookedOnDate(date: string): boolean {
-    return this.bookedAppointments[this.doctor.id]?.[date]?.length > 0;
+    return (this.bookedAppointments[this.doctor.id]?.[date]?.length || 0) > 0;
   }
 
   bookAppointment(time: string, day: string): void {
     if (this.isBooked(day, time)) {
-      alert('You have already booked this time slot.');
+      alert('This time slot is already booked.');
       return;
     }
-
+  
     if (this.hasPatientBookedOnDate(day)) {
-      alert('You already booked an appointment with this doctor on this day.');
+      alert('You have already booked an appointment with this doctor on this day.');
       return;
     }
+  
     this.selectedTime = time;
     this.selectedDate = day;
+  
+    // تأكد من تهيئة جميع المستويات قبل push
+    if (!this.bookedAppointments[this.doctor.id]) {
+      this.bookedAppointments[this.doctor.id] = {};
+    }
+  
+    if (!this.bookedAppointments[this.doctor.id][day]) {
+      this.bookedAppointments[this.doctor.id][day] = [];
+    }
+  
     this.bookedAppointments[this.doctor.id][day].push(time);
-
+  
     const bookingData = {
       doctor: this.doctor,
       time: time,
       day: day
     };
-
+  
     this.router.navigate(['/bookingPage'], { state: bookingData });
   }
+
   confirmBooking(): void {
     if (!this.selectedTime || !this.selectedDate) return;
-
-    // احجز الموعد في المصفوفة
+  
+    // تأكد من تهيئة جميع المستويات قبل push
+    if (!this.bookedAppointments[this.doctor.id]) {
+      this.bookedAppointments[this.doctor.id] = {};
+    }
+  
+    if (!this.bookedAppointments[this.doctor.id][this.selectedDate]) {
+      this.bookedAppointments[this.doctor.id][this.selectedDate] = [];
+    }
+  
     this.bookedAppointments[this.doctor.id][this.selectedDate].push(this.selectedTime);
-
+  
     const bookingData = {
       doctor: this.doctor,
       time: this.selectedTime,
       day: this.selectedDate
     };
-
+  
     this.router.navigate(['/bookingPage'], { state: bookingData });
   }
-
 }

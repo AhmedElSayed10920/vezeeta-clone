@@ -8,19 +8,14 @@
         <div class="card-content">
           <!-- Clinic Logo -->
           <div class="logo-container">
-            <img [src]="getDoctorImage(doctor.id)" class="clinic-logo" alt="Clinic Logo" />
+            <img [src]="getDoctorImage(doctor.id,doctor)" class="clinic-logo" alt="Clinic Logo" />
           </div>
 
-          <!-- Doctor Info and Appointments -->
           <div class="doctor-details">
-            <!-- Doctor Info -->
             <div class="doctor-info">
               <h5 class="doctor-name">{{ doctor.doctorName }} </h5>
               <p class="main-specialty">{{ doctor.clinicName }} {{ doctor.mainSpecialty }}</p>
-              <div class="rating">
-                <span class="stars">★★★★★</span>
-                <span class="rating-text">Overall Rating From 104 Visitors</span>
-              </div>
+           
               <p class="sub-specialty">{{ doctor.subSpecialty }}</p>
 
               <div class="info-item">
@@ -35,18 +30,14 @@
                 <i class="fa-solid fa-money-bill" style="color: #32cd32;"></i>
                 <span>{{ doctor.fees }} EGP</span>
               </div>
-              <div class="info-item">
-                <i class="fa-solid fa-clock" style="color: #4682b4;"></i>
-                <span>Waiting Time: 15 Minutes</span>
-              </div>
+          
               <div class="info-item">
                 <i class="fa-solid fa-phone" style="color: #ff6347;"></i>
-                <span>{{ doctor.phone }}</span>
+                <span>{{ doctor.PhoneNumber }}</span>
                 <span class="rating-text">16676</span>
               </div>
             </div>
 
-            <!-- Appointment Reservation Section -->
             <div class="reservation">
               <app-appointment-reservation [doctor]="doctor"></app-appointment-reservation>
             </div>

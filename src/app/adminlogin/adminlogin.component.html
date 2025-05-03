@@ -1,0 +1,42 @@
+<div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+  <div class="card shadow p-4" style="width: 350px;">
+    <h4 class="text-center mb-4">Admin Login</h4>
+    <form (ngSubmit)="onLogin()" #loginForm="ngForm" novalidate>
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          class="form-control"
+          [(ngModel)]="username"
+          required
+          #usernameField="ngModel"
+        />
+        <div class="text-danger" *ngIf="usernameField.invalid && usernameField.touched">
+          Username is required.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          class="form-control"
+          [(ngModel)]="password"
+          required
+          #passwordField="ngModel"
+        />
+        <div class="text-danger" *ngIf="passwordField.invalid && passwordField.touched">
+          Password is required.
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100" [disabled]="loginForm.invalid">Login</button>
+
+      <div *ngIf="error" class="text-danger mt-3 text-center">{{ error }}</div>
+    </form>
+  </div>
+</div>

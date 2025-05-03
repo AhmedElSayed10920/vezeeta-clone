@@ -103,6 +103,7 @@ export class MyAppointmentComponent implements OnInit {
     });
   }
 
+
   goToDoctorsPage() {
     this.router.navigate(['/allDoctors']);
   }
@@ -114,3 +115,5 @@ export class MyAppointmentComponent implements OnInit {
     return date;
   }
 }
+
+

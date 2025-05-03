@@ -1,6 +1,4 @@
-<div
-  class="container d-flex justify-content-center align-items-center mb-3 mt-3"
->
+<div class="container d-flex justify-content-center align-items-center mb-3 mt-3">
   <div class="card p-4 shadow-lg" style="max-width: 600px; width: 100%">
     <h3 class="mb-3 text-center">Enter your personal info</h3>
     <p class="text-center text-muted">
@@ -12,38 +10,23 @@
       <!-- Profile Image Upload -->
       <div class="d-flex justify-content-center mb-3">
         <label for="profileImage" class="profile-upload">
-          <img
-            *ngIf="profileImage; else defaultImage"
-            [src]="profileImage"
-            class="profile-preview rounded-circle"
-          />
+          <img *ngIf="profileImagePreview; else defaultImage" [src]="profileImagePreview"
+            class="profile-preview rounded-circle" />
+
           <ng-template #defaultImage>
-            <div
-              class="profile-placeholder rounded-circle d-flex align-items-center justify-content-center"
-            >
+            <div class="profile-placeholder rounded-circle d-flex align-items-center justify-content-center">
               <i class="fas fa-camera fa-2x text-primary"></i>
             </div>
           </ng-template>
-          <input
-            type="file"
-            id="profileImage"
-            (change)="onFileSelected($event)"
-            hidden
-            accept="image/*"
-          />
+          <input type="file" id="profileImage" (change)="onFileSelected($event)" hidden accept="image/*" />
         </label>
       </div>
 
       <!-- Full Name -->
       <div class="mb-3">
         <label class="form-label"><i class="fas fa-user"></i> Full Name*</label>
-        <input
-          type="text"
-          class="form-control"
-          formControlName="FullName"
-          placeholder="Full Name"
-          [class.is-invalid]="isInvalid('FullName')"
-        />
+        <input type="text" class="form-control" formControlName="FullName" placeholder="Full Name" required
+          [class.is-invalid]="isInvalid('FullName')" />
         <div *ngIf="isInvalid('FullName')" class="invalid-feedback">
           Full name must be at least 3 characters and contain only English
           letters and spaces.
@@ -52,20 +35,11 @@
 
       <!-- Mobile Number -->
       <div class="mb-3">
-        <label class="form-label"
-          ><i class="fas fa-phone"></i> Mobile Number*</label
-        >
+        <label class="form-label"><i class="fas fa-phone"></i> Mobile Number*</label>
         <div class="input-group">
-          <span class="input-group-text"
-            ><i class="fas fa-flag text-danger"></i> 🇪🇬 +20</span
-          >
-          <input
-            type="text"
-            class="form-control"
-            formControlName="mobileNumber"
-            placeholder="Mobile Number"
-            [ngClass]="{ 'is-invalid': isInvalid('mobileNumber') }"
-          />
+          <span class="input-group-text"><i class="fas fa-flag text-danger"></i> 🇪🇬 +20</span>
+          <input type="text" class="form-control" formControlName="mobileNumber" placeholder="Mobile Number" required
+            [ngClass]="{ 'is-invalid': isInvalid('mobileNumber') }" />
         </div>
         <div *ngIf="isInvalid('mobileNumber')" class="invalid-feedback d-block">
           Mobile number must be exactly 11 digits and start with 010, 011, 012,
@@ -73,18 +47,60 @@
         </div>
       </div>
 
+      <div class="mb-3 d-flex align-items-center">
+        <label class="col-sm-4 col-form-label text-start">Gender *</label>
+        <div class="d-flex">
+          <div class="form-check me-3">
+            <input class="form-check-input" type="radio" formControlName="gender" name="gender" value="Male" required />
+            <label class="form-check-label">Male</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" formControlName="gender" name="gender" value="Female"
+              required />
+            <label class="form-check-label">Female</label>
+          </div>
+        </div>
+      </div>
+      <!-- Address Fields -->
+      <div class="mb-3">
+        <label class="form-label"><i class="fas fa-map-marker-alt"></i> Governorate*</label>
+        <input type="text" class="form-control" formControlName="governorate" placeholder="Governorate"
+          [class.is-invalid]="isInvalid('governorate')" />
+        <div *ngIf="isInvalid('governorate')" class="invalid-feedback">
+          Please enter a valid governorate.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label"><i class="fas fa-city"></i> City*</label>
+        <input type="text" class="form-control" formControlName="city" placeholder="City"
+          [class.is-invalid]="isInvalid('city')" />
+        <div *ngIf="isInvalid('city')" class="invalid-feedback">
+          Please enter a valid city.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label"><i class="fas fa-road"></i> Street*</label>
+        <input type="text" class="form-control" formControlName="street" placeholder="Street"
+          [class.is-invalid]="isInvalid('street')" />
+        <div *ngIf="isInvalid('street')" class="invalid-feedback">
+          Please enter a valid street.
+        </div>
+      </div>
+
+      <select class="form-select mb-3" formControlName="degree" required>
+        <option value="" disabled selected>Select Degree</option>
+        <option value="Master">Master</option>
+        <option value="PhD">PhD</option>
+        <option value="Bachelor">Bachelor</option>
+      </select>
+
       <!-- Specialty -->
       <div class="mb-3">
-        <label class="form-label"
-          ><i class="fas fa-user-md"></i> Specialty*</label
-        >
-        <input
-          type="text"
-          class="form-control"
-          formControlName="specialty"
-          placeholder="Enter Specialty"
-          [class.is-invalid]="isInvalid('specialty')"
-        />
+        <label class="form-label"><i class="fas fa-user-md"></i> Specialty*</label>
+        <input type="text" class="form-control" required formControlName="specialty" placeholder="Enter Specialty"
+          [class.is-invalid]="isInvalid('specialty')" />
         <div *ngIf="isInvalid('specialty')" class="invalid-feedback">
           Please enter a valid specialty.
         </div>
@@ -92,16 +108,9 @@
 
       <!-- Email Address -->
       <div class="mb-3">
-        <label class="form-label"
-          ><i class="fas fa-envelope"></i> Email Address*</label
-        >
-        <input
-          type="email"
-          class="form-control"
-          formControlName="email"
-          placeholder="Email Address"
-          [class.is-invalid]="isInvalid('email')"
-        />
+        <label class="form-label"><i class="fas fa-envelope"></i> Email Address*</label>
+        <input type="email" class="form-control" required formControlName="email" placeholder="Email Address"
+          [class.is-invalid]="isInvalid('email')" />
         <div *ngIf="isInvalid('email')" class="invalid-feedback">
           Please enter a valid email address.
         </div>
@@ -109,26 +118,33 @@
 
       <!-- Password -->
       <div class="mb-3">
-        <label class="form-label"
-          ><i class="fas fa-lock"></i> Password (You can change it
-          later)*</label
-        >
-        <input
-          type="password"
-          class="form-control"
-          formControlName="password"
-          placeholder="Password"
-          [class.is-invalid]="isInvalid('password')"
-        />
+        <label class="form-label"><i class="fas fa-lock"></i> Password (You can change it
+          later)*</label>
+        <input type="password" class="form-control" formControlName="password" placeholder="Password" required
+          [class.is-invalid]="isInvalid('password')" />
         <div *ngIf="isInvalid('password')" class="invalid-feedback">
           Password must be at least 6 characters long and contain at least one
           uppercase letter and one lowercase letter.
         </div>
       </div>
-
+      <div class="mb-3">
+        <label for="certificateImage" class="form-label"><i class="fas fa-certificate"></i> Upload your
+          Certificate*</label>
+        <div class="d-flex justify-content-center mb-3">
+          <label for="certificateImage" class="certificate-upload">
+            <input type="file" id="certificateImage" (change)="onCertificateSelected($event)" hidden accept="image/*" />
+            <div class="certificate-placeholder d-flex align-items-center justify-content-center">
+              <i class="fas fa-upload fa-2x text-primary"></i>
+            </div>
+          </label>
+        </div>
+        <div *ngIf="isInvalid('certificateImage')" class="invalid-feedback">
+          Please upload a valid certificate image.
+        </div>
+      </div>
       <!-- Submit Button -->
       <button type="submit" class="btn btn-primary w-100">
-        Create Account
+        Continue
       </button>
     </form>
   </div>

@@ -34,6 +34,6 @@ export class SuccessReservationComponent {
     date.setHours(hours, minutes, seconds || 0, 0);
     return date;
   }
-  
-  
+
+
 }

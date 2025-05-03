@@ -17,18 +17,15 @@ export class BookingFormComponent implements OnInit {
   selectedDate: string = '';
   patientId: number | null = null;
   isLoggedIn: boolean = false;
-
   captchaToken: string | null = null;
-
   showCaptcha: boolean = false;
-
   bookingData = {
     name: '',
     phone: '',
     email: '',
   };
 
-   clinics = [
+  clinics = [
     { id: 1000, name: 'Future Care Clinic', phone: '01002223344' },
     { id: 1001, name: 'Al-Hayat Medical Center', phone: '01005556677' },
     { id: 1002, name: 'Al-Salam Specialized Clinic', phone: '01001234567' },
@@ -76,7 +73,7 @@ export class BookingFormComponent implements OnInit {
     private appointmentService: AppointmentService,
     private location: Location,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     const userJson = localStorage.getItem('user');
@@ -176,9 +173,8 @@ export class BookingFormComponent implements OnInit {
   }
 
   sendBooking(pid: number) {
-    const clinicName = this.bookingInfo?.doctor?.clinicName || '';
-    const matchedClinic = this.clinics.find((c) => c.name === clinicName);
-
+    const matchedClinic = this.bookingInfo?.doctor?.clinicName || '';
+  
     if (!matchedClinic) {
       Swal.fire({
         icon: 'error',
@@ -187,16 +183,32 @@ export class BookingFormComponent implements OnInit {
       });
       return;
     }
-
-    const payload = {
+  
+    const doctor = this.bookingInfo?.doctor;
+  
+    const payload: any = {
       adate: this.formatDate(this.selectedDate),
       atime: this.formatTime(this.bookingInfo?.time),
       pid: pid,
-      cid: matchedClinic.id,
-      did: this.bookingInfo?.doctor?.id,
+      cid: 1001,
       captchaToken: this.captchaToken!,
+      paymentIntentId: this.bookingInfo?.paymentIntentId,
     };
-
+  
+    // ✅ فرق بين Doctor القديم والجديد
+    if (doctor?.id > 71) {
+      payload.doctorID = doctor.id;
+    } else if (doctor?.id) {
+      payload.did = doctor.id;
+    } else {
+      Swal.fire({
+        icon: 'error',
+        title: 'Doctor Not Selected',
+        text: 'No doctor was selected for this appointment.',
+      });
+      return;
+    }
+  
     this.appointmentService.bookAppointment(payload).subscribe({
       next: (res) => {
         const confirmationData = {
@@ -204,16 +216,16 @@ export class BookingFormComponent implements OnInit {
             date: payload.adate,
             time: payload.atime,
             clinicId: payload.cid,
-            clinicNumber: matchedClinic.phone,
+            clinicNumber: matchedClinic.phone ?? this.bookingInfo?.doctor?.phone,
           },
-          doctor: this.bookingInfo?.doctor,
+          doctor: doctor,
           patient: {
             name: this.bookingData.name,
             phone: this.bookingData.phone,
             email: this.bookingData.email,
           },
         };
-
+  
         Swal.fire({
           icon: 'success',
           title: 'Appointment Booked',
@@ -236,6 +248,7 @@ export class BookingFormComponent implements OnInit {
       },
     });
   }
+  
 
   formatDate(inputDate: string): string {
     const parts = inputDate.split('/');
@@ -247,14 +260,14 @@ export class BookingFormComponent implements OnInit {
   formatTime(time: string): string {
     const timeParts = time.match(/(\d+):(\d+)\s?(AM|PM)/i);
     if (!timeParts) return '00:00:00';
-  
+
     let hours = parseInt(timeParts[1], 10);
     const minutes = parseInt(timeParts[2], 10);
     const period = timeParts[3].toUpperCase();
-  
+
     if (period === 'PM' && hours !== 12) hours += 12;
     if (period === 'AM' && hours === 12) hours = 0;
-  
+
     const hh = hours.toString().padStart(2, '0');
     const mm = minutes.toString().padStart(2, '0');
     return `${hh}:${mm}:00`;
@@ -262,5 +275,5 @@ export class BookingFormComponent implements OnInit {
   onCancel() {
     this.location.back();
   }
-  
+
 }
