@@ -21,6 +21,7 @@ export class MyAppointmentComponent implements OnInit {
 
   ngOnInit() {
     const token = localStorage.getItem('token');
+    console.log('appointments:', this.appointments);
     if (token) {
       const payload = JSON.parse(atob(token.split('.')[1]));
       this.patientId = parseInt(payload.patientId, 10);

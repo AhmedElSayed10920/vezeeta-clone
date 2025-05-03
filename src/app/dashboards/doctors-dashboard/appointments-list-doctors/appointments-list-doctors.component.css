@@ -1,11 +1,45 @@
 .appointments-container {
-    margin: 10px 0;
-    width: 50%;
-    margin: auto;
-}
-
-.appointments-container h2 {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+  }
+  
+  .appointments-container h2 {
     text-align: center;
-    margin: 20px 0;
+    margin-bottom: 30px;
     color: #3f51b5;
-}
+    font-weight: bold;
+  }
+  
+  .appointment-card {
+    background-color: #f9f9ff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  }
+  
+  .appointment-info h5 {
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .appointment-info p {
+    margin: 0;
+    color: #666;
+  }
+  
+  .appointment-actions button {
+    min-width: 90px;
+  }
+  
+  .done-appointment {
+    background-color: #e6ffe6;
+    border-left: 6px solid #28a745;
+    opacity: 0.85;
+  }
+  
+  .done-appointment .appointment-info {
+    text-decoration: line-through;
+    color: #777;
+  }
+  
