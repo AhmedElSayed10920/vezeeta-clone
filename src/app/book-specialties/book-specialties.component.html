@@ -1,5 +1,5 @@
 <div class="specialties-container bg-light py-5">
-    <div class="container position-relative">
+    <div class="container position-relative px-5">
         <h2 class="mb-4 h2-style">Book from top specialties</h2>
         <div class="row flex-nowrap overflow-hidden">
             <div *ngFor="let specialty of visibleSpecialties" class="col-md-3 col-6 mb-4">
@@ -15,11 +15,11 @@
 
         <!-- Navigation buttons -->
         <button
-            class="btn btn-light border position-absolute top-50 start-0 translate-middle-y rounded-circle shadow-sm"
+            class="btn btn-light border position-absolute top-50 start-0 translate-middle-y rounded-circle shadow-sm ms-2"
             (click)="prevSlide()" [disabled]="currentIndex === 0">
             &#10094;
         </button>
-        <button class="btn btn-light border position-absolute top-50 end-0 translate-middle-y rounded-circle shadow-sm"
+        <button class="btn btn-light border position-absolute top-50 end-0 translate-middle-y rounded-circle shadow-sm me-2"
             (click)="nextSlide()" [disabled]="currentIndex + 4 >= specialties.length">
             &#10095;
         </button>

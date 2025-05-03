@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-offer-list',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule,RouterLink],
   templateUrl: './offer-list.component.html',
   styleUrls: ['./offer-list.component.css'],
 })
@@ -119,15 +119,15 @@ export class OfferListComponent {
   }
 
   nextSlide() {
-    if (this.currentIndex + 4 < this.offers.length) {
-      this.currentIndex += 4;
+    if (this.currentIndex + 1 < this.offers.length) {
+      this.currentIndex += 1;
       this.updateVisibleOffers();
     }
   }
 
   prevSlide() {
     if (this.currentIndex > 0) {
-      this.currentIndex -= 4;
+      this.currentIndex -= 1;
       this.updateVisibleOffers();
     }
   }

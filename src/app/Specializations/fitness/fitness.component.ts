@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common';
 import { Service } from '../../models/service';
 import { NavbarOffersComponent } from '../../all-offers/navbar-offers/navbar-offers.component';
 import { ServiceCardComponent } from '../../all-offers/service-card/service-card.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-fitness',
   standalone: true,
-  imports: [ServiceCardComponent, CommonModule, NavbarOffersComponent],
+  imports: [ServiceCardComponent, CommonModule, NavbarOffersComponent,RouterLink],
   templateUrl: './fitness.component.html',
   styleUrl: './fitness.component.css'
 })

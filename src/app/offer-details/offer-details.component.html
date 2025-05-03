@@ -1,4 +1,3 @@
-
 <div class="outer-container">
   <div class="offer-details-container">
     <div class="main-image">
@@ -32,8 +31,8 @@
         </div>
       </div>
       <div class="stats">
-        <span class="stat-item"><span class="icon">🖱️</span> 7 Bookings</span>
-        <span class="stat-item"><span class="icon">👁️</span> 409 Views</span>
+        <!-- <span class="stat-item"><span class="icon">🖱️</span> 7 Bookings</span>
+        <span class="stat-item"><span class="icon">👁️</span> 409 Views</span> -->
         <span class="stat-item"><span class="icon">⏳</span> LIMITED TIME</span>
       </div>
     </div>
@@ -51,6 +50,21 @@
     </div>
   </div>
 </div>
+<!-- added by MA -->
+<!-- <div class="  text-center mb-3">
+  <a routerLink="/allOffers" class="btn btn-primary"  > Back To All Offers </a>
+</div> -->
+<div class="  text-center mb-3">
+  <button class="btn btn-primary px-5 " (click)="goBack()"> Back</button>
+</div>
 
+<div>
+  <button *ngIf="showScrollTop"
+  class="btn btn-warning position-fixed bottom-0 end-0 m-4 rounded-circle shadow"
+  style="width: 45px; height: 45px;"
+  (click)="scrollToTop()">
+&#8679;
+</button>
 
+</div>
 

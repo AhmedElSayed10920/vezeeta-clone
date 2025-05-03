@@ -1,7 +1,7 @@
 <div class="container my-4">
     <h2 class="fw-bold mb-4">Choose from top offers <a  routerLink="/allOffers"  class="text-primary float-end fs-6 text-decoration-none" style="cursor: pointer;"  >All Offers &rsaquo;</a></h2>
 
-    <div class="position-relative">
+    <div class="position-relative  px-5">
         <!-- Offer cards container -->
         <div class="row flex-nowrap overflow-hidden" #carouselContainer>
             <div *ngFor="let offer of visibleOffers" class="col-md-3 col-6">
@@ -18,24 +18,25 @@
                             <a class="text-decoration-none" routerLink={{offer.SpecializationLink}} class="text-decoration-none"> <span class="text-muted text-decoration-line-through me-2">{{ offer.originalPrice }} EGP</span></a>
                                 <a class="text-decoration-none" routerLink={{offer.SpecializationLink}} class="text-decoration-none"> <span class="text-primary fw-bold">{{ offer.price }} EGP</span></a>
                         </p>
-                        <a class="text-decoration-none" routerLink={{offer.SpecializationLink}} class="text-decoration-none"> <p class="text-muted small">{{ offer.offersCount }} Offers</p></a>
+                        <!-- <a class="text-decoration-none" routerLink={{offer.SpecializationLink}} class="text-decoration-none"> <p class="text-muted small">{{ offer.offersCount }} Offers</p></a> -->
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Left navigation button -->
-        <button class="btn btn-light border position-absolute start-0 top-50 translate-middle-y rounded-circle shadow-sm"
+        <button class="btn btn-light border position-absolute start-0 top-50 translate-middle-y rounded-circle shadow-sm ms-2"
                 (click)="prevSlide()"
                 [disabled]="currentIndex === 0">
             &#10094;
         </button>
 
         <!-- Right navigation button -->
-        <button class="btn btn-light border position-absolute end-0 top-50 translate-middle-y rounded-circle shadow-sm"
+        <button class="btn btn-light border position-absolute end-0 top-50 translate-middle-y rounded-circle shadow-sm me-2"
                 (click)="nextSlide()"
                 [disabled]="currentIndex + 4 >= offers.length">
             &#10095;
         </button>
+ 
     </div>
 </div>

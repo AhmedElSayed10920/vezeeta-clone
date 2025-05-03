@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { DoctorService } from '../services/doctor.service';
 import { ImageService } from '../shared/image.service';
 import { Offer } from '../offer';
 import { BookingFormSimpleComponent } from '../booking-form-simple/booking-form-simple.component';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-offer-details',
@@ -22,7 +23,9 @@ export class OfferDetailsComponent implements OnInit {
     private doctorService: DoctorService,
     private imageService: ImageService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    //added by MA
+    private location: Location
   ) {}
 
   ngOnInit(): void {
@@ -64,5 +67,28 @@ export class OfferDetailsComponent implements OnInit {
       }
     );
   }
+
+//added by MA
+  goBack(): void {
+    if (window.history.length > 1) {
+      this.location.back();
+    } else {
+      this.router.navigate(['/home']); // أو أي مسار افتراضي
+    }
+  }
+
+
+  showScrollTop = false;
+
+@HostListener('window:scroll', [])
+onWindowScroll() {
+  this.showScrollTop = window.scrollY > 200;
+}
+
+scrollToTop(): void {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+  
 
 }

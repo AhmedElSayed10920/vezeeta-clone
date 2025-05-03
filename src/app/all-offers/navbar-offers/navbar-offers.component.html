@@ -6,11 +6,11 @@
                 <!-- Mega Menu Dropdown -->
                 <li class="nav-item dropdown mega-menu position-static">
                     <a class="nav-link text-primary cursor-pointer1" id="allOffersDropdown"
-                    routerLink="/allOffers" [class.show]="isMegaMenuOpen">
+                        (click)="toggleMegaMenu($event)" [class.show]="isMegaMenuOpen">
                         ALL OFFERS <i class="fa-solid fa-caret-down ms-1"></i>
                     </a>
                     <div class="dropdown-menu w-100 mt-0 border-0 shadow rounded-0 mega-menu-container"
-                        [class.show]="isMegaMenuOpen" (mouseleave)="isMegaMenuOpen = false" (mouseenter)="isMegaMenuOpen = true">
+                        [class.show]="isMegaMenuOpen" (mouseleave)="onMegaMenuLeave()">
                         <div class="container-fluid d-flex mega-menu-content">
                             <!-- Categories Column -->
                             <div class="category-column p-3">

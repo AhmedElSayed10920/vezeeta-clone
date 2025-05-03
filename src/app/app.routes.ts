@@ -77,6 +77,7 @@ import { MyAppointmentComponent } from './my-appointment/my-appointment.componen
 import { VerifyOtpComponent } from './verify-otp-component/verify-otp.component';
 import { ChatAIComponent } from './components/chat-ai/chat-ai.component';
 import { PaymentComponent } from './payment/payment.component';
+import { OfferListComponent } from './offer-list/offer-list.component';
 // import { BotAiComponent } from './components/bot-ai/bot-ai.component';import { PaymentComponent } from './payment/payment.component';
 
 
@@ -86,6 +87,8 @@ export const routes: Routes = [
   { path: 'search', component: SearchResultComponent },
 
   { path: 'allOffers', component: AllOffersComponent },
+  { path: 'offerList', component:OfferListComponent},
+
 
   { path: 'dentalCare', component: DentalCareComponent },
   { path: 'smileMakeOver', component: SmileMakeoverComponent },
