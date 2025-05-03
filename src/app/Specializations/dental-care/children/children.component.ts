@@ -15,80 +15,75 @@ import { Service } from '../../../models/service';
 export class ChildrenComponent {
   services: Service[] = [
     {
-      id: 1,
+      id: 9,
       discount: 40,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230523124030970.png',
-      title: 'Scaling and Polishing',
-      description: '1 Session Scaling and Polishing',
-      rating: 5,
+        '/images/offerImage/74.png',
+      title: 'Stop pain now for your child and get the right treatment',
+      description: '1 Child Root canal treatment for Children',
+      rating: 4,
       reviewCount: 200,
       bookedCount: 1545,
       originalPrice: 1600,
-      discountPrice: 800,
-      offersLink: `/offers/1`,
+      discountPrice: 640,
+      offersLink: `/offers/80`,
 
     },
-    {
-      id: 2,
-      discount: 50,
-      image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520241009101111851.png',
-      title: 'Composite white filling',
-      description: '1 Session Composite Filling',
-      rating: 4.5,
-      reviewCount: 40,
-      bookedCount: 570,
-      originalPrice: 1600,
-      discountPrice: 900,
-      offersLink: `/offers/1`,
-
-    },
-    {
-      id: 3,
-      discount: 20,
-      image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520191117102438757.png',
-      title: 'Laser teeth whitening',
-      description: '1 Session Laser teeth whitening',
-      rating: 3.5,
-      reviewCount: 12,
-      bookedCount: 371,
-      originalPrice: 2000,
-      discountPrice: 1600,
-      offersLink: `/offers/1`,
-
-    },
-    {
-      id: 4,
-      discount: 50,
-      image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250329080753344.png',
-      title: 'BPM crown installation',
-      description: '1 Crown BFM crown installation',
-      rating: 3,
-      reviewCount: 0,
-      bookedCount: 25,
-      originalPrice: 2000,
-      discountPrice: 1400,
-      offersLink: `/offers/1`,
-
-    },
-    {
-      id: 5,
-      discount: 33,
-      image:
-      'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520191117102438757.png',
-      title: 'Zircon crown installation',
-      description: '1 Crown Crown Installation',
-      rating: 5,
-      reviewCount: 3,
-      bookedCount: 15,
-      originalPrice: 2000,
-      discountPrice: 1600,
-      offersLink: `/offers/1`,
-    }
   ];
+  currentPage = 1;
+  itemsPerPage = 6;
+  
+  getNumberArray(length: number): number[] {
+    return Array.from({length}, (_, i) => i + 1);
+  }
+
+//test 
+  viewData(){
+    console.log(this.totalPages);
+    console.log(this.services.length);
+  }
+  ngOnInit() {
+    this.viewData();
+  }
+// end of test
+
+  get totalPages(): number {
+   
+    return Math.ceil(this.services.length / this.itemsPerPage);
+  }
+
+  // get paginatedServices(): Service[] {
+  //   const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+  //   return this.services.slice(startIndex, startIndex + this.itemsPerPage);
+  // }
+  get paginatedServices(): Service[] {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    console.log(`Displaying items ${startIndex} to ${endIndex}`);
+    return this.services.slice(startIndex, endIndex);
 }
+
+  goToPage(page: number): void {
+    if (page >= 1 && page <= this.totalPages) {
+      this.currentPage = page;
+    }
+  }
+
+  nextPage(): void {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+    }
+  }
+
+  prevPage(): void {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+    }
+  }
+}
+
+
+
+
 
 

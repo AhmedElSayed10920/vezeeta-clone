@@ -85,27 +85,124 @@ export class ImageService {
 
 
   public imgs: { [key: string]: string } = {
- 
-  "1": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240808112857341.png",
-  "2": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240516111420583.png",
-  "3": "https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/metal_braces/desktop.webp",
-  "4": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250209103619748.png",
-  "5": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250409120005454.png",
-  "6": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250409113349381.png",
-  "7": "https://voffers.s3-eu-west-1.amazonaws.com/Images/375x180/32546716520241013021327921.png",
-  "8": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230613115550518.png",
-  "9": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250225125111530.png",
-  "10": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250406142618773.png",
-  "11": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240129084212886.png",
-  "12": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240710085747347.png",
-  "13": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250207135913372.png",
-  "14": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250308191348717.png",
-  "15": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520241231204542818.png",
-  "16": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520241222185302596.png",
-  "17": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250115154607464.png",
-  "18": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520200313144835045.png",
-  "19": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520241126095602936.png",
-  "20": "https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250121115348302.png",
+
+
+    //dental care
+    '1': '/images/offerImage/1.png',
+    '2': '/images/offerImage/2.png',
+    '3': '/images/offerImage/3.png',
+    '4': '/images/offerImage/4.png',
+    '5': '/images/offerImage/5.png',
+    '6': '/images/offerImage/6.png',
+    '7': '/images/offerImage/7.png',
+    '8': '/images/offerImage/8.png',
+    '9': '/images/offerImage/9.png',
+    '10': '/images/offerImage/10.png',
+    '11': '/images/offerImage/11.png',
+    '12': '/images/offerImage/12.png',
+    '13': '/images/offerImage/13.png',
+    '14': '/images/offerImage/14.png',
+    '15': '/images/offerImage/15.png',
+    '16': '/images/offerImage/16.png',
+    '80': '/images/offerImage/74.png',
+
+
+
+
+    //Laser
+    '17': '/images/offerImage/17.png',
+    '18': '/images/offerImage/18.png',
+    '19': '/images/offerImage/19.png',
+    '20': '/images/offerImage/20.png',
+    '21': '/images/offerImage/21.png',
+    '22': '/images/offerImage/22.png',
+    '23': '/images/offerImage/23.png',
+    '24': '/images/offerImage/24.png',
+    '25': '/images/offerImage/25.png',
+
+    //Hair
+    // '24': '/images/offerImage/24.png',
+    '26': '/images/offerImage/26.png',
+    '27': '/images/offerImage/27.png',
+    '28': '/images/offerImage/28.png',
+
+
+
+    //skin
+    '29': '/images/offerImage/29.png',
+    '30': '/images/offerImage/30.png',
+    '31': '/images/offerImage/31.png',
+    '32': '/images/offerImage/32.png',
+    '33': '/images/offerImage/33.png',
+    '34': '/images/offerImage/34.png',
+    '35': '/images/offerImage/35.png',
+    '36': '/images/offerImage/36.png',
+
+
+    //beauty
+    '37': '/images/offerImage/37.png',
+    '38': '/images/offerImage/38.png',
+    '39': '/images/offerImage/39.png',
+    // '32': '/images/offerImage/32.png',
+    // '28': '/images/offerImage/28.png',
+    '40': '/images/offerImage/40.png',
+    '47': '/images/offerImage/41.png',
+    '48': '/images/offerImage/42.png',
+    '49': '/images/offerImage/43.png',
+    '50': '/images/offerImage/44.png',
+    // '21': '/images/offerImage/21.png',
+    '51': '/images/offerImage/45.png',
+
+
+
+
+    //fitness
+    '52': '/images/offerImage/46.png',
+    '53': '/images/offerImage/47.png',
+    '54': '/images/offerImage/48.png',
+    '55': '/images/offerImage/49.png',
+    '56': '/images/offerImage/50.png',
+    '57': '/images/offerImage/51.png',
+    '58': '/images/offerImage/52.png',
+    '59': '/images/offerImage/53.png',
+    '60': '/images/offerImage/54.png',
+    '61': '/images/offerImage/55.png',
+    '62': '/images/offerImage/56.png',
+
+
+
+
+
+    //scan
+    '63': '/images/offerImage/57.png',
+
+    //ob-gyn
+    '64': '/images/offerImage/58.png',
+    '65': '/images/offerImage/59.png',
+
+    //kidney
+    '66': '/images/offerImage/60.png',
+    //general surgery
+    '67': '/images/offerImage/61.png',
+    '68': '/images/offerImage/62.png',
+    '69': '/images/offerImage/63.png',
+
+    //gastro-im
+    '70': '/images/offerImage/64.png',
+    '71': '/images/offerImage/65.png',
+    '72': '/images/offerImage/66.png',
+    '73': '/images/offerImage/67.png',
+    '74': '/images/offerImage/68.png',
+    '75': '/images/offerImage/69.png',
+    '76': '/images/offerImage/70.png',
+    //psychiatry
+    '77': '/images/offerImage/71.png',
+    '78': '/images/offerImage/72.png',
+    '79': '/images/offerImage/73.png',
+
+
+
+
 
 
 
@@ -117,8 +214,15 @@ export class ImageService {
 
 
   getOfferImage(imageId: string): string {
-    return this.imgs[imageId] || 'https://via.placeholder.com/375x180'; 
+    // return this.imgs[imageId] || 'https://via.placeholder.com/375x180';
+    return this.imgs[imageId] || '/images/offerImage/default.png';
+
   }
+
+
+  // getImagePath(doctorId: string): string {
+  //   return this.images[doctorId] || 'images/doctorImg/default.png'; // Return a default image if the ID is not found
+  // }
 
 }
 

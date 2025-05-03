@@ -5,22 +5,41 @@
     <h2 class="mb-4">Scans</h2>
   
     <div class="row g-4">
-      <div class="col-md-6 col-lg-4" *ngFor="let service of services">
+      <!-- التعديل هنا: تغيير services إلى paginatedServices -->
+      <div class="col-md-6 col-lg-4" *ngFor="let service of paginatedServices">
         <app-service-card
           [image]="service.image"
           [title]="service.title"
           [discount]="service.discount"
           [description]="service.description"
           [rating]="service.rating"
-          [reviewCount]="service.reviewCount||0"
-          [bookedCount]="service.bookedCount||0"
+          [reviewCount]="service.reviewCount"
+          [bookedCount]="service.bookedCount"
           [originalPrice]="service.originalPrice"
           [discountPrice]="service.discountPrice"
           [hasOffer]="service.originalPrice > service.discountPrice"
           [id]="service.id"
-      [offersLink]="service.offersLink || ''"
-        >
+          [offersLink]="service.offersLink || ''">
         </app-service-card>
       </div>
     </div>
-  </section>
+
+    <!-- Pagination controls -->
+    <nav class="mt-4">
+      <ul class="pagination justify-content-center">
+        <li class="page-item" [class.disabled]="currentPage === 1">
+          <button class="page-link" (click)="prevPage()">Previous</button>
+        </li>
+
+        <li class="page-item" 
+            *ngFor="let page of getNumberArray(totalPages)"
+            [class.active]="currentPage === page">
+          <button class="page-link" (click)="goToPage(page)">{{ page }}</button>
+        </li>
+
+        <li class="page-item" [class.disabled]="currentPage === totalPages">
+          <button class="page-link" (click)="nextPage()">Next</button>
+        </li>
+      </ul>
+    </nav>
+</section>

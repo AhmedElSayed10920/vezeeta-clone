@@ -29,7 +29,11 @@ export class DoctorsListComponent implements OnChanges {
   router = inject(Router);
   imageService = inject(ImageService);
   bookRequestService = inject(BookRequestService);
-
+  //pagination variables
+  currentPage = 1;
+  pageSize = 5; // عدد الأطباء في الصفحة الواحدة (تقدر تغيّره)
+  totalPages = 0;
+  
    getDoctorImage(doctorId: number, doctor: Doctor): string {
       if (doctor.image?.includes('ma7moudsayed-001-site1')) {
         return this.imageService.getImagePath(doctorId.toString());
@@ -73,6 +77,41 @@ export class DoctorsListComponent implements OnChanges {
     }
   }
 
+  // applyFilters(filters: any = this.filters) {
+  //   this.filteredDoctors = this.doctors.filter((doc) => {
+  //     const degreeMatches =
+  //       !filters.degree ||
+  //       filters.degree.length === 0 ||
+  //       filters.degree.some((deg: string) =>
+  //         doc.degree?.toLowerCase().includes(deg.toLowerCase())
+  //       );
+
+  //     const genderMatches =
+  //       !filters.gender ||
+  //       (filters.gender === 'M' && doc.gender === 'M') ||
+  //       (filters.gender === 'F' && doc.gender === 'F');
+
+  //     const feeMatches =
+  //       !filters.fees ||
+  //       filters.fees === 'any' ||
+  //       (Array.isArray(filters.fees) &&
+  //         ((filters.fees.includes('lessThan50') && doc.fees < 50) ||
+  //           (filters.fees.includes('from50To100') &&
+  //             doc.fees >= 50 &&
+  //             doc.fees < 100) ||
+  //           (filters.fees.includes('from100To200') &&
+  //             doc.fees >= 100 &&
+  //             doc.fees < 200) ||
+  //           (filters.fees.includes('from200To300') &&
+  //             doc.fees >= 200 &&
+  //             doc.fees < 300) ||
+  //           (filters.fees.includes('greaterThan300') && doc.fees >= 300)));
+
+  //     return degreeMatches && genderMatches && feeMatches;
+  //   });
+
+  //   console.log('Filtered doctors:', this.filteredDoctors);
+  // }
   applyFilters(filters: any = this.filters) {
     this.filteredDoctors = this.doctors.filter((doc) => {
       const degreeMatches =
@@ -81,12 +120,12 @@ export class DoctorsListComponent implements OnChanges {
         filters.degree.some((deg: string) =>
           doc.degree?.toLowerCase().includes(deg.toLowerCase())
         );
-
+  
       const genderMatches =
         !filters.gender ||
         (filters.gender === 'M' && doc.gender === 'M') ||
         (filters.gender === 'F' && doc.gender === 'F');
-
+  
       const feeMatches =
         !filters.fees ||
         filters.fees === 'any' ||
@@ -102,10 +141,30 @@ export class DoctorsListComponent implements OnChanges {
               doc.fees >= 200 &&
               doc.fees < 300) ||
             (filters.fees.includes('greaterThan300') && doc.fees >= 300)));
-
+  
       return degreeMatches && genderMatches && feeMatches;
     });
-
+  
+    this.totalPages = Math.ceil(this.filteredDoctors.length / this.pageSize);
+    this.currentPage = 1; // رجع أول صفحة بعد الفلترة
     console.log('Filtered doctors:', this.filteredDoctors);
   }
+  get paginatedDoctors() {
+    const startIndex = (this.currentPage - 1) * this.pageSize;
+    const endIndex = startIndex + this.pageSize;
+    return this.filteredDoctors.slice(startIndex, endIndex);
+  }
+  
+  nextPage() {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+    }
+  }
+  
+  previousPage() {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+    }
+  }
+    
 }

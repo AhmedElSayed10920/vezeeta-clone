@@ -13,50 +13,74 @@ export class BodySculptingComponent {
 
   services: Service[] = [
     {
-      id: 1,
+      id: 10,
       discount: 20,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240411140939969.png',
-      title: 'Laser teeth whitening',
-      description: '1 Session Laser teeth whitening',
-      rating: 3.5,
-      reviewCount: 12,
-      bookedCount: 371,
-      originalPrice: 2000,
-      discountPrice: 1600,
-      offersLink: `/offers/13`,
-
+        '/images/offerImage/44.png',
+      title: 'Carboxy - Injection For Lipolysis',
+      description: '4 Injection session Lipodissolve',
+      rating: 5,
+      reviewCount: 0,
+      bookedCount: 25,
+      originalPrice: 1200,
+      discountPrice: 240,
+      offersLink: `/offers/50`,
     },
     {
-      id: 2,
+      id: 12,
       discount: 50,
       image:
-      'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520250308073806695.png',
-      title: 'Composite white filling',
-      description: '1 Session Composite Filling',
-      rating: 4.5,
-      reviewCount: 40,
-      bookedCount: 570,
-      originalPrice: 1600,
-      discountPrice: 900,
-      offersLink: `/offers/13`,
-      
-    },
-    {
-      id: 3,
-      discount: 40,
-      image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520240419150327991.png',
-      title: 'Scaling and Polishing',
-      description: '1 Session Scaling and Polishing',
-      rating: 5,
-      reviewCount: 200,
-      bookedCount: 1545,
-      originalPrice: 1600,
-      discountPrice: 800,
-      offersLink: `/offers/13`,
-  
+        '/images/offerImage/45.png',
+        title: 'Carboxy - Injection For Lipolysis',
+        description: '4 Injection session Lipodissolve',
+      rating: 4.55,
+      reviewCount: 0,
+      bookedCount: 8,
+      originalPrice: 2000,
+      discountPrice: 1000,
+      offersLink: `/offers/51`,
     },
   ];
+  currentPage = 1;
+  itemsPerPage = 6;
+
+  getNumberArray(length: number): number[] {
+    return Array.from({ length }, (_, i) => i + 1);
+  }
+
+
+
+  get totalPages(): number {
+
+    return Math.ceil(this.services.length / this.itemsPerPage);
+  }
+
+  get paginatedServices(): Service[] {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    return this.services.slice(startIndex, endIndex);
+  }
+
+  goToPage(page: number): void {
+    if (page >= 1 && page <= this.totalPages) {
+      this.currentPage = page;
+    }
+  }
+
+  nextPage(): void {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+    }
+  }
+
+  prevPage(): void {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+    }
+  }
 }
+
+
+
+
 

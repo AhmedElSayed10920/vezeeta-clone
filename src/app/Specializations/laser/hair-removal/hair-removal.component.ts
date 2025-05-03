@@ -14,172 +14,186 @@ import { Service } from '../../../models/service';
 export class HairRemovalComponent {
   services: Service[] = [
     {
-      id: 1,
-      discount: 50,
-      image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230526131409014.png',
-      title: 'BPM crown installation',
-      description: '1 Crown BFM crown installation',
-      rating: 3.95,
-      reviewCount: 0,
-      bookedCount: 25,
-      originalPrice: 2000,
-      discountPrice: 1400,
-      offersLink: `/offers/4`,
-    },
-    {
-      id: 2,
-      discount: 33,
-      image:
-        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/laser_hair_removal/desktop.webp',
-      title: 'Zircon crown installation',
-      description: '1 Crown Crown Installation',
-      rating: 3,
-      reviewCount: 3,
-      bookedCount: 15,
-      originalPrice: 2000,
-      discountPrice: 1600,
-      offersLink: `/offers/4`,
-    },
-    {
-      id: 3,
+      id: 23,
       discount: 20,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230613090328354.png',
-      title: 'Hollywood Smile with Diremposite Veneer',
-      description: '1 Tooth Hollywood Smile with Direct Composite Veneer',
-      rating: 3.7,
-      reviewCount: 0,
-      bookedCount: 8,
-      originalPrice: 2000,
-      discountPrice: 1600,
-      offersLink: `/offers/4`,
-    },
-    {
-      id: 4,
-      discount: 40,
-      image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520200312230744297.png',
-      title: 'Scaling and Polishing',
-      description: '1 Session Scaling and Polishing',
-      rating: 2.5,
+        '/images/offerImage/23.png',
+      title: 'A special offer, the bean session started at 950 pounds',
+      description: '1 Session Full Body Laser Hair Removal',
+      rating: 4,
       reviewCount: 200,
       bookedCount: 1545,
-      originalPrice: 1600,
-      discountPrice: 800,
-      offersLink: `/offers/4`,
+      originalPrice: 1250,
+      discountPrice: 250,
+      offersLink: `/offers/23`,
     },
     {
-      id: 5,
+      id: 24,
       discount: 50,
       image:
-        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/facial_cleansing/desktop.webp',
-      title: 'Composite white filling',
-      description: '1 Session Composite Filling',
+        '/images/offerImage/24.png',
+      title: 'Laser hair removal face',
+      description: '1 Session Face Laser Hair Removal',
       rating: 4.5,
       reviewCount: 40,
       bookedCount: 570,
-      originalPrice: 1600,
-      discountPrice: 900,
-      offersLink: `/offers/4`,
+      originalPrice: 300,
+      discountPrice: 150,
+      offersLink: `/offers/24`,
     },
     {
-      id: 6,
+      id: 25,
+      discount: 50,
+      image:
+        '/images/offerImage/25.png',
+      title: 'Laser hair removal face',
+      description: '1 Session Face Laser Hair Removal',
+      rating: 5,
+      reviewCount: 0,
+      bookedCount: 25,
+      originalPrice: 1000,
+      discountPrice: 750,
+      offersLink: `/offers/25`,
+    },
+    {
+      id:17,
       discount: 20,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230615112415868.png',
-      title: 'Laser teeth whitening',
-      description: '1 Session Laser teeth whitening',
+        '/images/offerImage/17.png',
+      title: 'Special offer: hair removal of half the hands, 450 pounds',
+      description: '1 Session Laser Hair Removal',
+      rating: 5,
+      reviewCount: 200,
+      bookedCount: 1545,
+      originalPrice: 688,
+      discountPrice: 138,
+      offersLink: `/offers/17`,
+    },
+    {
+      id: 18,
+      discount: 20,
+      image:
+        '/images/offerImage/18.png',
+      title: 'Laser Hair removal Of Half Arms',
+      description: '1 Session Laser Hair Removal',
+      rating: 4.5,
+      reviewCount: 40,
+      bookedCount: 570,
+      originalPrice: 1750,
+      discountPrice: 350,
+      offersLink: `/offers/18`,
+    },
+    {
+      id: 19,
+      discount: 54,
+      image:
+        '/images/offerImage/19.png',
+      title: 'Laser hair removal of bikini',
+      description: '1 Session Laser Hair Removal for bikini',
       rating: 3.5,
       reviewCount: 12,
       bookedCount: 371,
-      originalPrice: 2000,
-      discountPrice: 1600,
-      offersLink: `/offers/4`,
+      originalPrice: 400,
+      discountPrice: 216,
+      offersLink: `/offers/19`,
     },
     {
-      id: 7,
-      discount: 50,
+      id: 20,
+      discount: 20,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520200313010751764.png',
-      title: 'BPM crown installation',
-      description: '1 Crown BFM crown installation',
-      rating: 4.5,
-      reviewCount: 0,
+        '/images/offerImage/20.png',
+      title: 'Special offer for mens area for 600 pound',
+      description: '1 Session Legs Laser Hair Removal',
+      rating: 3,
+      reviewCount: 10,
       bookedCount: 25,
-      originalPrice: 2000,
-      discountPrice: 1400,
-      offersLink: `/offers/4`,
+      originalPrice: 750,
+      discountPrice: 150,
+      offersLink: `/offers/20`,
     },
     {
-      id: 8,
-      discount: 33,
+      id: 21,
+      discount: 20,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520200312230744297.png',
-      title: 'Zircon crown installation',
-      description: '1 Crown Crown Installation',
+        '/images/offerImage/21.png',
+      title: 'Laser Hair Removal Of Half Legs',
+      description: '1 Session Legs Laser Hair Removal',
       rating: 5,
       reviewCount: 3,
       bookedCount: 15,
       originalPrice: 2000,
-      discountPrice: 1600,
-      offersLink: `/offers/4`,
+      discountPrice: 400,
+      offersLink: `/offers/21`,
     },
     {
-      id: 9,
-      discount: 20,
+      id: 22,
+      discount: 45,
       image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230613092055902.png',
-      title: 'Hollywood Smile with Diremposite Veneer',
-      description: '1 Tooth Hollywood Smile with Direct Composite Veneer',
-      rating: 5,
+        '/images/offerImage/22.png',
+      title: 'Laser hair removal Candela bekini and under arm',
+      description: '1 Session Laser Hair Removal for Sensitive Areas',
+      rating: 4.5,
       reviewCount: 0,
       bookedCount: 8,
-      originalPrice: 2000,
-      discountPrice: 1600,
-      offersLink: `/offers/4`,
-    },
-    {
-      id: 10,
-      discount: 40,
-      image:
-        'https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/jenkins-136/images/offers/laser_hair_removal/desktop.webp',
-      title: 'Scaling and Polishing',
-      description: '1 Session Scaling and Polishing',
-      rating: 5,
-      reviewCount: 200,
-      bookedCount: 1545,
-      originalPrice: 1600,
-      discountPrice: 800,
-      offersLink: `/offers/4`,
-    },
-    {
-      id: 11,
-      discount: 50,
-      image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230526131409014.png',
-      title: 'Composite white filling',
-      description: '1 Session Composite Filling',
-      rating: 5,
-      reviewCount: 40,
-      bookedCount: 570,
-      originalPrice: 1600,
-      discountPrice: 900,
-      offersLink: `/offers/4`,
-    },
-    {
-      id: 12,
-      discount: 20,
-      image:
-        'https://d24m94c92si2vv.cloudfront.net/Images/375x180/32546716520230613090328354.png',
-      title: 'Laser teeth whitening',
-      description: '1 Session Laser teeth whitening',
-      rating: 5,
-      reviewCount: 12,
-      bookedCount: 371,
-      originalPrice: 2000,
-      discountPrice: 1600,
-      offersLink: `/offers/4`,
+      originalPrice: 650,
+      discountPrice: 293,
+      offersLink: `/offers/22`,
     },
   ];
+
+
+
+  currentPage = 1;
+  itemsPerPage = 6;
+  
+  getNumberArray(length: number): number[] {
+    return Array.from({length}, (_, i) => i + 1);
+  }
+
+//test 
+  viewData(){
+    console.log(this.totalPages);
+    console.log(this.services.length);
+  }
+  ngOnInit() {
+    this.viewData();
+  }
+// end of test
+
+  get totalPages(): number {
+   
+    return Math.ceil(this.services.length / this.itemsPerPage);
+  }
+
+  // get paginatedServices(): Service[] {
+  //   const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+  //   return this.services.slice(startIndex, startIndex + this.itemsPerPage);
+  // }
+  get paginatedServices(): Service[] {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    console.log(`Displaying items ${startIndex} to ${endIndex}`);
+    return this.services.slice(startIndex, endIndex);
 }
+
+  goToPage(page: number): void {
+    if (page >= 1 && page <= this.totalPages) {
+      this.currentPage = page;
+    }
+  }
+
+  nextPage(): void {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+    }
+  }
+
+  prevPage(): void {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+    }
+  }
+  
+}
+
+

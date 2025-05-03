@@ -25,6 +25,11 @@ export class BookingComponent {
   selectedGovernorate: string = '';
   doctorName: string = '';
 
+  //store the cities for each governorate
+  governorateCitiesMap: { [key: string]: string[] } = {};
+  filteredCities: string[] = [];
+
+
   search() {
     if (this.doctorName) {
       this.searchDoctorName();
@@ -83,14 +88,41 @@ export class BookingComponent {
         this.cities = Array.from(
           new Set(response.map((doc) => doc.city as string))
         );
+        this.filteredCities = this.cities; 
+
         this.governorates = Array.from(
           new Set(response.map((doc) => doc.governorate as string))
         );
-      },
 
+        // بناء الماب محافظة -> مدنها
+        response.forEach((doc) => {
+          const governorate = doc.governorate;
+          const city = doc.city;
+          if (governorate) {
+            if (!this.governorateCitiesMap[governorate]) {
+              this.governorateCitiesMap[governorate] = [];
+            }
+            if (city && !this.governorateCitiesMap[governorate].includes(city)) {
+              this.governorateCitiesMap[governorate].push(city);
+            }
+          }
+        });
+      },
       (error) => {
         console.error('error fetching data', error);
-      }
-    );
-  }
+      }
+    );
+  }
+
+  //when the user selects a governorate, filter the cities based on the selected governorate
+  onGovernorateChange() {
+    if (!this.selectedGovernorate) {
+      this.filteredCities = this.cities;
+    } else if (this.governorateCitiesMap[this.selectedGovernorate]) {
+      this.filteredCities = this.governorateCitiesMap[this.selectedGovernorate];
+    } else {
+      this.filteredCities = [];
+    }
+    this.selectedCity = ''; 
+  }
 }

@@ -15,7 +15,7 @@ import { BookingFormSimpleComponent } from '../booking-form-simple/booking-form-
   styleUrls: ['./offer-details.component.css']
 })
 export class OfferDetailsComponent implements OnInit {
-  imageUrl: string = 'https://via.placeholder.com/375x180';
+  imageUrl: string = '/images/offerImage/default.png';
   offer: Partial<Offer> | null = null;
 
   constructor(
@@ -28,8 +28,8 @@ export class OfferDetailsComponent implements OnInit {
   ngOnInit(): void {
     const offerId = this.route.snapshot.paramMap.get('id') || '1';
     const offerIdNumber = parseInt(offerId);
-
-    if (isNaN(offerIdNumber) || offerIdNumber < 1 || offerIdNumber > 20) {
+// هتعدل الشرط ده لو عدد الافر زاد عن اربعين عشان مش هيبقى نفس الرقم يويده على النوت فاوند 
+    if (isNaN(offerIdNumber) || offerIdNumber < 1 || offerIdNumber > 100) {
       this.router.navigate(['/offerNotFound']);
       return;
     }
@@ -54,13 +54,13 @@ export class OfferDetailsComponent implements OnInit {
           this.imageUrl = this.imageService.getOfferImage(this.offer.id?.toString() || '1');
         } else {
           this.offer = null;
-          this.imageUrl = 'https://via.placeholder.com/375x180';
+          this.imageUrl = '/images/offerImage/default.png';
         }
       },
       (error) => {
         console.error('Error fetching offer:', error);
         this.offer = null;
-        this.imageUrl = 'https://via.placeholder.com/375x180';
+        this.imageUrl = '/images/offerImage/default.png';
       }
     );
   }
