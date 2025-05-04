@@ -77,10 +77,10 @@ import { VerifyOtpComponent } from './verify-otp-component/verify-otp.component'
 import { ChatAIComponent } from './components/chat-ai/chat-ai.component';
 import { PaymentComponent } from './payment/payment.component';
 import { OfferListComponent } from './offer-list/offer-list.component';
-import { AdminloginComponent } from './adminlogin/adminlogin.component';
-import { AdminDashboardComponent } from './dashboards/admins-dashboard/admin-dashboard/admin-dashboard.component';
 import { DoctorDashboardComponent } from './dashboards/doctors-dashboard/doctor-dashboard-home/doctor-dashboard.component';
-// import { BotAiComponent } from './components/bot-ai/bot-ai.component';import { PaymentComponent } from './payment/payment.component';
+import { AdminDashboardComponent } from './dashboards/admins-dashboard/admin-dashboard/admin-dashboard.component';
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
+
 
 
 export const routes: Routes = [
