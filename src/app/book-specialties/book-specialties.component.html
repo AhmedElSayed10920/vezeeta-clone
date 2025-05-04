@@ -3,8 +3,8 @@
         <h2 class="mb-4 h2-style">Book from top specialties</h2>
         <div class="row flex-nowrap overflow-hidden">
             <div *ngFor="let specialty of visibleSpecialties" class="col-md-3 col-6 mb-4">
-                <div class="card h-100 shadow-sm" (click)="navigateToSpecialtyDetails(specialty.id)"
-                    style="cursor: pointer;">
+                <!-- <div class="card h-100 shadow-sm" (click)="navigateToSpecialtyDetails(specialty.id)" style="cursor: pointer;"> -->
+                <div class="card h-100 shadow-sm"  style="cursor: pointer;">
                     <a routerLink={{specialty.specialistName}}><img [src]="specialty.image" class="card-img-top rounded-top" [alt]="specialty.title"></a>
                     <div class="card-body">
                         <h5 class="card-title title">{{ specialty.title }}</h5>

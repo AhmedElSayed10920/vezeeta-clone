@@ -86,7 +86,7 @@ export class BookSpecialtiesComponent implements OnInit {
     this.updateVisibleSpecialties();
   }
 
-  navigateToSpecialtyDetails(specialtyId: number) {
-    this.router.navigate(['/specialty-details', specialtyId]);
-  }
+  // navigateToSpecialtyDetails(specialtyId: number) {
+  //   this.router.navigate(['/specialty-details', specialtyId]);
+  // }
 }

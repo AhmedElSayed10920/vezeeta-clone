@@ -5,7 +5,8 @@
         <!-- Offer cards container -->
         <div class="row flex-nowrap overflow-hidden" #carouselContainer>
             <div *ngFor="let offer of visibleOffers" class="col-md-3 col-6">
-                <div class="card offer-card border-0 shadow-sm" (click)="goToDetails(offer.id)" style="cursor: pointer;">
+                <!-- <div class="card offer-card border-0 shadow-sm" (click)="goToDetails(offer.id)"  style="cursor: pointer;"> -->
+                <div class="card offer-card border-0 shadow-sm"  style="cursor: pointer;">
                     <div class="position-relative">
                         <a class="text-decoration-none" routerLink={{offer.SpecializationLink}} class="text-decoration-none"><img src="{{ offer.image }}" class="card-img-top rounded-3" alt="{{ offer.title }}"></a>
                             <a class="text-decoration-none" routerLink={{offer.SpecializationLink}} class="text-decoration-none"><span class="badge bg-danger position-absolute top-0 start-0 m-2 px-2 py-1">

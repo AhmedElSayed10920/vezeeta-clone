@@ -154,7 +154,7 @@ export class TrendingNowComponent {
     }
   }
 
-  goToDetails(offerId: number) {
-    this.router.navigate(['/offer-details', offerId]);
-  }
+  // goToDetails(offerId: number) {
+  //   this.router.navigate(['/offer-details', offerId]);
+  // }
 }
