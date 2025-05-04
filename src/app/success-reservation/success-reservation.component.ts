@@ -10,7 +10,10 @@ import { Router } from '@angular/router';
 })
 export class SuccessReservationComponent {
   bookingData: any;
-
+  ngOnInit(): void {
+    this.bookingData = history.state;  // تأكد من استلام البيانات هنا
+    console.log(this.bookingData);  // تحقق من البيانات المستلمة
+  }
   constructor(private router: Router) {
     const nav = this.router.getCurrentNavigation();
     this.bookingData = nav?.extras?.state;
@@ -19,7 +22,7 @@ export class SuccessReservationComponent {
     const token = localStorage.getItem('token');
 
     if (token) {
-      this.router.navigate(['/myAppointment']);
+      this.router.navigate(['/myAppointment'], { state: this.bookingData });
     } else {
       this.router.navigate(['/login']);
     }

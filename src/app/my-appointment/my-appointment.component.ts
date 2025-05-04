@@ -21,6 +21,7 @@ export class MyAppointmentComponent implements OnInit {
 
   ngOnInit() {
     const token = localStorage.getItem('token');
+    console.log('appointments:', this.appointments);
     if (token) {
       const payload = JSON.parse(atob(token.split('.')[1]));
       this.patientId = parseInt(payload.patientId, 10);
@@ -104,6 +105,8 @@ export class MyAppointmentComponent implements OnInit {
   }
 
 
+
+
   goToDoctorsPage() {
     this.router.navigate(['/allDoctors']);
   }
@@ -114,6 +117,81 @@ export class MyAppointmentComponent implements OnInit {
     date.setHours(hours, minutes, seconds || 0, 0);
     return date;
   }
+
+ ////////////////////////////////
+//  refundAppointment(paymentIntentId: string): void {
+//   Swal.fire({
+//     title: 'Are you sure?',
+//     text: 'Do you want to refund this payment?',
+//     icon: 'warning',
+//     showCancelButton: true,
+//     confirmButtonColor: '#3085d6',
+//     cancelButtonColor: '#d33',
+//     confirmButtonText: 'Yes, refund it!',
+//   }).then((result) => {
+//     if (result.isConfirmed) {
+//       this.appointmentService.refundPayment(paymentIntentId).subscribe({
+//         next: (res) => {
+//           Swal.fire({
+//             icon: 'success',
+//             title: 'Refund Successful',
+//             text: res.message,
+//             confirmButtonColor: '#3085d6',
+//           });
+//           this.getAppointments(this.patientId!);
+//         },
+//         error: (err) => {
+//           Swal.fire({
+//             icon: 'error',
+//             title: 'Refund Failed',
+//             text: err.error?.message || 'An error occurred during refund.',
+//             confirmButtonColor: '#d33',
+//           });
+//         },
+//       });
+//     }
+//   });
+// }
+
+refundAppointment(paymentIntentId: string): void {
+  console.log('🔁 Sending refund for:', paymentIntentId); // ✅ طباعة القيمة
+
+  Swal.fire({
+    title: 'Are you sure?',
+    text: 'Do you want to refund this payment?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, refund it!',
+  }).then((result) => {
+    if (result.isConfirmed) {
+      this.appointmentService.refundPayment(paymentIntentId).subscribe({
+        next: (res) => {
+          Swal.fire({
+            icon: 'success',
+            title: 'Refund Successful',
+            text: res.message,
+            confirmButtonColor: '#3085d6',
+          });
+          this.getAppointments(this.patientId!);
+        },
+        error: (err) => {
+          Swal.fire({
+            icon: 'error',
+            title: 'Refund Failed',
+            text: err.error?.message || 'An error occurred during refund.',
+            confirmButtonColor: '#d33',
+          });
+        },
+      });
+    }
+  });
 }
+
+//////////////////////////////////
+
+}
+
 
 

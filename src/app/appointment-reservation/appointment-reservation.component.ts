@@ -152,20 +152,20 @@ export class AppointmentReservationComponent implements OnInit, AfterViewInit {
   }
 
   bookAppointment(time: string, day: string): void {
-    if (this.isBooked(day, time)) {
-      alert('This time slot is already booked.');
-      return;
-    }
-  
+
     if (this.hasPatientBookedOnDate(day)) {
       alert('You have already booked an appointment with this doctor on this day.');
+      return;
+    } 
+
+    if (this.isBooked(day, time)) {
+      alert('This time slot is already booked.');
       return;
     }
   
     this.selectedTime = time;
     this.selectedDate = day;
   
-    // تأكد من تهيئة جميع المستويات قبل push
     if (!this.bookedAppointments[this.doctor.id]) {
       this.bookedAppointments[this.doctor.id] = {};
     }
@@ -188,7 +188,6 @@ export class AppointmentReservationComponent implements OnInit, AfterViewInit {
   confirmBooking(): void {
     if (!this.selectedTime || !this.selectedDate) return;
   
-    // تأكد من تهيئة جميع المستويات قبل push
     if (!this.bookedAppointments[this.doctor.id]) {
       this.bookedAppointments[this.doctor.id] = {};
     }

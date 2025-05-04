@@ -29,6 +29,9 @@ export class NewdoctorsVerificationComponent {
       }
     });
   }
+  removeDoctor(doctorId: number): void {
+    this.unverifiedDoctors = this.unverifiedDoctors.filter(d => d.doctorID !== doctorId);
+  }
   approveDoctor(doctorId: number): void {
     this.doctorVerificationService.approveDoctor(doctorId).subscribe({
       next: () => {

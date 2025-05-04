@@ -1,29 +1,35 @@
 <div class="appointments-container">
-    <h2>Booked appointments</h2>
-  
-    <div *ngIf="appointments?.length === 0; else appointmentsList" class="text-center text-muted mt-4">
-        <p>No appointments booked yet.</p>
-        <p>Check back later!</p>
-    </div>
-  
-    <ng-template #appointmentsList>
-      <mat-list>
-        <mat-list-item *ngFor="let appointment of appointments" class="d-flex justify-content-between align-items-center">
-          <div>
-            {{ appointment.patientName }} -
-            {{ appointment.date | date }} -
-            {{ appointment.time | date:'shortTime' }}
-          </div>
-          <div class="ms-auto">
-            <button class="btn btn-success me-2" mat-button>
-              Done
-            </button>
-            <button class="btn btn-danger" mat-button>
-              Cancel
-            </button>
-          </div>
-        </mat-list-item>
-      </mat-list>
-    </ng-template>
+  <h2>Booked Appointments</h2>
+
+  <div *ngIf="appointments?.length === 0; else appointmentsList" class="text-center text-muted mt-4">
+    <p>No appointments booked yet.</p>
+    <p>Check back later!</p>
   </div>
-  
+
+  <ng-template #appointmentsList>
+    <div
+      class="card mb-3 appointment-card"
+      *ngFor="let appointment of appointments"
+      [ngClass]="{ 'done-appointment': appointment.isDone }"
+    >
+      <div class="card-body d-flex justify-content-between align-items-center">
+        <div class="appointment-info">
+          <h5 class="card-title">{{ appointment.patientName }}</h5>
+          <p class="card-text">
+            {{ appointment.date | date: 'fullDate' }}<br />
+            <strong>{{ formatTimeTo12Hour(appointment.time) }}</strong>
+
+          </p>
+        </div>
+        <div class="appointment-actions">
+          <button class="btn btn-success me-2" (click)="markAsDone(appointment)" [disabled]="appointment.isDone">
+            ✅ Done
+          </button>
+          <button class="btn btn-danger" (click)="cancelAppointment(appointment.appointmentId)">
+            ❌ Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>

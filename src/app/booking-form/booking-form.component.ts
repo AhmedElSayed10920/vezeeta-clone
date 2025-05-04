@@ -195,7 +195,6 @@ export class BookingFormComponent implements OnInit {
       paymentIntentId: this.bookingInfo?.paymentIntentId,
     };
   
-    // ✅ فرق بين Doctor القديم والجديد
     if (doctor?.id > 71) {
       payload.doctorID = doctor.id;
     } else if (doctor?.id) {

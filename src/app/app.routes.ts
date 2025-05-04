@@ -80,7 +80,7 @@ import { OfferListComponent } from './offer-list/offer-list.component';
 import { DoctorDashboardComponent } from './dashboards/doctors-dashboard/doctor-dashboard-home/doctor-dashboard.component';
 import { AdminDashboardComponent } from './dashboards/admins-dashboard/admin-dashboard/admin-dashboard.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
-// import { BotAiComponent } from './components/bot-ai/bot-ai.component';import { PaymentComponent } from './payment/payment.component';
+
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
