@@ -4,7 +4,8 @@ import { CommonModule } from '@angular/common';
 import { NewDoctorServiceService } from '../../../services/new-doctor-service.service';
 @Component({
   selector: 'app-reviews-doctors',
-  imports: [MatIconModule, CommonModule],
+  imports:
+   [MatIconModule, CommonModule],
   templateUrl: './reviews-doctors.component.html',
   styleUrl: './reviews-doctors.component.css'
 })
