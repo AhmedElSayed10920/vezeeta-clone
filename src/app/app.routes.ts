@@ -82,7 +82,6 @@ import { AdminDashboardComponent } from './dashboards/admins-dashboard/admin-das
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 
 
-
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },

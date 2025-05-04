@@ -132,7 +132,7 @@ export class OfferListComponent {
     }
   }
 
-  goToDetails(offerId: number) {
-    this.router.navigate(['/offer-details', offerId]);
-  }
+  // goToDetails(offerId: number) {
+  //   this.router.navigate(['/offers', offerId]);
+  // }
 }
