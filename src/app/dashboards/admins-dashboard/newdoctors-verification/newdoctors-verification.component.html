@@ -12,12 +12,15 @@
 
                     <img [src]="doctor.doctorCertificateImage" class="card-img-top" alt="{{ doctor.DoctorFullName }}" />
 
-                    <div class="card-body">
+                    <div class="card-body mt-3">
                         <h5 class="card-title">Dr. {{ doctor.doctorFullName?.trim() || 'Unknown Doctor' }}</h5>
 
-                        <button class="btn btn-success" (click)="approveDoctor(doctor.doctorID)">
+                        <button class="btn btn-success mt-3" (click)="approveDoctor(doctor.doctorID)">
                             Approve
                         </button>
+                        <button class="btn btn-danger ms-3 mt-3" (click)="removeDoctor(doctor.doctorID)">
+                            Cancel
+                          </button>
                     </div>
                 </div>
             </div>
